@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> The Daily Sports</title>
+<link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+<style>
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: #360f5a;
+        transition: background-image 1s ease-in-out;
+        min-height: 100vh;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color:#360f5a;
+        color:#ccc;
+        font-family: 'figtree', sans-serif;
+        text-align: center;
+        width:100%;
+        height: 50px;
+        margin-bottom: 50px;
+    }
+
+    .left-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        font-family: "Avenir Next", sans-serif;
+        font-weight:600;
+        margin-left: 60px;
+    }
+
+    .logo-links img {
+        width: 30px;
+        height: auto;
+        margin-left: 20px;
+        padding-right: 50px;
+        vertical-align: middle;
+    }
+
+    .login-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        font-family: 'figtree', sans-serif;
+        width: 300px;
+        height: 500px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        position: absolute;
+        top: 200px;
+        left: 100px;
+    }
+
+    .login-logo {
+        width: 200px;
+        height: auto;
+        margin-top: 3px;
+        margin-bottom:30px;
+    }
+
+    .login-box input {
+        width: 200px;
+        height: 20px;
+        padding-top: 10px;
+        padding-left:5px;
+        padding-right:5px;
+        padding-bottom:10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        font-family: "figtree", sans-serif;
+        border: 1px solid #ccc;
+    }
+
+    .login-box button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+        width: 200px;
+        height: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        background-color: #360f5a;
+        color:white;
+        text-align: center;
+        font-family: "figtree", sans-serif;
+        border: 1px solid #ccc;
+    }
+
+    .login-box a {
+        color: #360f5a;
+        text-align: center;
+        font-family: "figtree", sans-serif;
+        margin-top: 25px;
+        margin-bottom: 2px;
+    }
+
+    .bottom{
+        background-color:#360f5a;
+        background-attachment: fixed;
+        color: white;
+        text-align: center;
+        font-family: 'Avenir Next', sans-serif;
+        font-size: 12px;
+
+        width: 100%;
+        height: 25px;
+        position:fixed;
+        bottom:0;
+    }
+
+</style>
+</head>
+
+<body>
+    <section>   
+        <nav>
+            <div class="left-links">
+                <a href="https://www.dailyuw.com/"><b>THE DAILY UW</b></a>
+                <a href="https://www.dailyuw.com/page/about-us"><b>ABOUT US</b></a>
+                <a href="../staff/staff.html"><b>STAFF</b></a>
+                <a href="https://www.dailyuw.com/page/contact"><b>CONTACT US</b></a>
+                <a href="https://gohuskies.com/"><b>UW ATHLETICS</b></a>
+            </div>
+            <div class="logo-links">
+                <a href="https://x.com/UWDailySports"><img src="../images/daily_sports_x_logo.png" alt="X"></a>
+                <a href="https://www.instagram.com/uwdailysports/"><img src="../images/daily_sports_insta_logo.png" alt="Instagram"></a>
+            </div>
+        </nav>
+    </section>
+    <div class="login-box">
+        <img src="../images/daily_sports_logo.jpg" alt="Daily Sports Logo" width="150" height="150" class="login-logo">
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit"><b>LOGIN</b></button>
+        <a href="../forgot_password/forgot_password.html">Forgot Password?</a>
+
+    </div>
+        <div class = "bottom">
+        <p>The Daily Sports 2026</p>
+    </div>
+
+    <script>
+        const images = [
+            '../images/image1.webp',
+            '../images/image2.webp',
+            '../images/image3.webp',
+            '../images/image4.webp',
+            '../images/image5.webp',
+            '../images/image6.webp',
+            '../images/image7.webp'
+        ];
+
+        images.forEach((image) => {
+            const img = new Image();
+            img.src = image;
+            });
+
+        let currentIndex = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000); // Change every 5 seconds
+        changeBackground(); // Initial call
+    </script>
+</body>
+
+</html> 
