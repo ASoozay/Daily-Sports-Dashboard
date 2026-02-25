@@ -13,7 +13,7 @@
 
         .main {
             display: flex;
-            flex: 1;
+            height: calc(100vh - 120px); /* subtract header + tab height */
         }
 
         .page {
@@ -65,29 +65,66 @@
 
         .content {
             flex: 5.67;
-            background: whitesmoke;
-            border: 1px solid-black
+            min-height: 400px; /* ensures space for grid */
+            width: 85%;        /* keeps content 85% of width */
+            margin: 0 auto;    /* center horizontally */
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+
         }
 
         .X {
-            display: flex;
-            flex: 1;
-            justify-content: center; 
-            border-left: 1px solid #ccc;
+            flex: 1; 
             overflow-y: auto;
-            color: black;
-            font-family: "Arial";
-            height: 100%; 
         }
+
         .tab-content {
             display: none;
+        }
+
+        /* Container fills content */
+        .invoice-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            gap: 20px;
+            column-gap: 20px;
+            width: 100%;
+            
+            justify-content: center;
+            padding-left: 400px;
+            padding-right: 400px;
+            padding-top: 100px;
+        }
+
+        .invoice-box {
+            background-color: #f0f0f0;
+            border: 1px solid #360f5a;
+            cursor: pointer;
+
+            width: 40%;
+            aspect-ratio: 1 / 1; /* guarantees square */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-size: 28px;
+        }
+
+        .invoice-icon {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 50px;
         }
 
         .resources-dropdown {
             width: 100%;
             height: 100px;
             background-color: lightgray;
-            border: 1px solid-black;
+            border: 1px solid black;
             padding: 20px;
 
             display: flex;
@@ -170,56 +207,113 @@
     </div>
 
     <div class="main">
+        <!-- Main tab content -->
+<div class="content">
 
-        <div class="content">
-            <div id="schedule" class="tab-content">
-                <h2>Schedule</h2>
-                <p>This is the schedule content.</p>
-            </div>
-
-            <div id="games" class="tab-content">
-                <h2>Available Games</h2>
-                <p>This is the games content.</p>
-            </div>
-
-            <div id="invoices" class="tab-content">
-                <h2>Invoices</h2>
-                <p>This is the invoices content.</p>
-            </div>
-
-        <div id="resources" class="tab-content">
-            <div class="resources-container">
-
-                <button class="resources-dropdown" onclick="toggleResources()">
-                    <span>Sports Dev</span>
-                    <span class="arrow">▼</span>
-                </button>
-
-                <div id="resources-list" class="resources-list">
-                    <a href="./resources/Sports-Dev-Day-1-Introduction.pdf" target="_blank">Day 1: Introduction</a>
-                    <a href="./resources/Sports-Dev-Day-2-Writing-For-The-Daily-Sports.pdf" target="_blank">Day 2: Writing</a>
-                    <a href="./resources/Sports-Dev-Day-3-Writing-Sports-Articles.pdf" target="_blank">Day 3: Articles</a>
-                    <a href="./resources/Sports-Dev-Day-4-AP-Style.pdf" target="_blank">Day 4: AP Style</a>
-                    <a href="./resources/Sports-Dev-Day-5-Covering-UW-Athletics.pdf" target="_blank">Day 5: Covering UW Athletics</a>
-                    <a href="./resources/Sports-Dev-Day-6-AP-Style-Practice-Test.pdf" target="_blank">Day 6: Practice Test</a>
-                    <a href="./resources/Sports-Dev-Day-7-Hiring.pdf" target="_blank">Day 7: Hiring</a>
-                </div>
-
-            </div>
-        </div>          
+    <div id="schedule" class="tab-content">
+        <h2>Schedule</h2>
+        <p>This is the schedule content.</p>
     </div>
 
+    <div id="games" class="tab-content">
+        <h2>Available Games</h2>
+        <p>This is the games content.</p>
+    </div>
+
+    <div id="invoices" class="tab-content">
+          <div class="invoice-container">
+            <div class="invoice-option">
+                <a href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?usp=sharing" style="text-decoration: none;">
+                    <div class="invoice-box">
+                        <img src="./invoice/Spreadsheet.png" class="invoice-icon" alt="Invoice 1">
+                        Invoice Template
+                    </div>
+                </a>
+            </div>
+            <div class="invoice-option">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" style="text-decoration: none;">
+                    <div class="invoice-box">
+                        <img src="./invoice/Upload.png" class="invoice-icon" alt="Invoice 2">
+                        Submit Invoice
+                    </div>
+                </a>
+            </div>
+            <div class="invoice-option">
+                <a href="link3.html" style="text-decoration: none;">
+                    <div class="invoice-box">
+                        <img src="./invoice/History.png" class="invoice-icon" alt="Invoice 3">
+                        Invoice History
+                    </div>
+                </a>
+            </div>
+            <div class="invoice-option">
+                <a href="./invoice/Pay-Scale.png" style="text-decoration: none;">
+                    <div class="invoice-box">
+                        <img src="./invoice/Pay.png" class="invoice-icon" alt="Invoice 4">
+                        Pay Scale
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+            <div id="resources" class="tab-content">
+                <div class="resources-container">
+                    <button class="resources-dropdown" onclick="toggleResources()">
+                        <span>Sports Dev</span>
+                        <span class="arrow">▼</span>
+                    </button>
+
+                    <div id="resources-list" class="resources-list">
+                        <a href="./resources/Sports-Dev-Day-1-Introduction.pdf">Day 1: Welcome to The Daily Sports</a>
+                        <a href="./resources/Sports-Dev-Day-2-Writing-For-The-Daily-Sports.pdf">Day 2: Writing for The Daiy Sports</a>
+                        <a href="./resources/Sports-Dev-Day-3-Writing-Sports-Articles.pdf">Day 3: Writing Sports Articles</a>
+                        <a href="./resources/Sports-Dev-Day-4-AP-Style.pdf">Day 4: AP Style</a>
+                        <a href="./resources/Sports-Dev-Day-5-Covering-UW-Athletics.pdf">Day 5: Covering UW Athletics</a>
+                        <a href="./resources/Sports-Dev-Day-6-AP-Style-Practice-Test.pdf">Day 6: AP Style Practice Test</a>
+                        <a href="./resources/Sports-Dev-Day-7-Hiring.pdf">Day 7: Hiring</a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- CLOSE .content HERE -->
+
+        <!-- Sidebar / Twitter feed -->
         <div class="X">
-            <a class="twitter-timeline" 
-            href="https://twitter.com/UWDailySports?ref_src=twsrc%5Etfw"
-            data-height="600"
-            data-width="100%"
-            data-chrome="noheader nofooter noborders">
+            <a class="twitter-timeline" href="https://twitter.com/UWDailySports"
+            data-height="600" data-width="100%" data-chrome="noheader nofooter noborders">
             Tweets by UWDailySports
             </a>
         </div>
+    </div> <!-- CLOSE .main -->
 
-        <script>window.twttr = (function(d, s, id) {
+    <div class="bottom">
+        <p>The Daily Sports 2026</p>
+    </div>
+
+</div>
+
+<!---- Java Scripts--> 
+<script>
+function showTab(tabId) {
+    // Hide all tabs
+    const tabs = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    // Show the selected tab
+    document.getElementById(tabId).style.display = "block";
+
+}
+
+// Default tab on page load
+window.onload = function() {
+    showTab("invoices"); // invoices visible by default
+};
+</script>
+
+<script>
+    window.twttr = (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0],
             t = window.twttr || {};
         if (d.getElementById(id)) return t;
@@ -235,31 +329,7 @@
 
         return t;
         }(document, "script", "twitter-wjs"));
-        </script>         
-
-    </div>
-
-    <div class="bottom">
-        <p>The Daily Sports 2026</p>
-    </div>
-
-</div>
-
-<!---- Java Scripts--> 
-<script>
-function showTab(tabId) {
-    const tabs = document.getElementsByClassName("tab-content");
-    for (let i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "none";
-    }
-
-       document.getElementById(tabId).style.display = "block";
-}
-
-window.onload = function() {
-    showTab("schedule");
-};
-</script>
+</script>   
 
 <script>
 function openPDF(path) {
