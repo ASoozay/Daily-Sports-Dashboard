@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> Dashboard - The Daily Sports</title>
+<link rel="icon" type="image/x-icon" href="./images/favicon.ico?v=2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        .main {
+            display: flex;
+            flex: 1;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .account {
+            /*background*/
+            background: #360f5a;
+
+            /*display*/
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding-left: 50px;
+
+            /*text*/
+            color: white;
+            font-family: "Verdana";
+            font-size: 40px;
+          }
+
+        .tab-container {
+
+            /*display*/
+            display: flex;
+            width: 85%;
+            height: 60px;
+            padding-bottom: 10px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background: #eee;
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+        .tab-button:hover {
+            background: #ddd;
+        }
+
+        .content {
+            flex: 5.67;
+            background: whitesmoke;
+            border: 1px solid-black
+        }
+
+        .X {
+            display: flex;
+            flex: 1;
+            justify-content: center; 
+            border-left: 1px solid #ccc;
+            overflow-y: auto;
+            color: black;
+            font-family: "Arial";
+            height: 100%; 
+        }
+        .tab-content {
+            display: none;
+        }
+
+        .resources-dropdown {
+            width: 100%;
+            height: 100px;
+            background-color: lightgray;
+            border: 1px solid-black;
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            cursor: pointer;
+        }
+
+        .resources-dropdown:hover {
+            background-color: #d3d3d3;
+        }
+
+        .arrow {
+            font-size: 20px;
+        }
+
+        .resources-list {
+            display: none;
+            width: 100%;
+            background-color: #f5f5f5;
+            border: 1px solid #888;
+            border-top: none;
+        }
+
+        .resources-list a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .resources-list a:hover {
+            background-color: #ddd;
+        }
+
+        .bottom {
+            /*background*/
+            background-color:#360f5a;
+            background-attachment: fixed;
+
+            /*display*/
+            width: 100%;
+            height: 25px;
+            position:fixed;
+            bottom:0;
+            padding-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /*text*/
+            color: white;
+            font-family: 'Avenir Next', sans-serif;
+            font-size: 12px;
+
+        }
+
+    </style>    
+</head>
+
+<body>
+<div class="page">
+
+    <div class="account">
+        <h6>Hi, Andrew!</h6> 
+    </div>
+
+    <div class="tab-container">
+        <button class="tab-button" onclick="showTab('schedule')">Schedule</button>
+        <button class="tab-button" onclick="showTab('games')">Available Games</button>
+        <button class="tab-button" onclick="showTab('invoices')">Invoices</button>
+        <button class="tab-button" onclick="showTab('resources')">Resources</button>
+    </div>
+
+    <div class="main">
+
+        <div class="content">
+            <div id="schedule" class="tab-content">
+                <h2>Schedule</h2>
+                <p>This is the schedule content.</p>
+            </div>
+
+            <div id="games" class="tab-content">
+                <h2>Available Games</h2>
+                <p>This is the games content.</p>
+            </div>
+
+            <div id="invoices" class="tab-content">
+                <h2>Invoices</h2>
+                <p>This is the invoices content.</p>
+            </div>
+
+        <div id="resources" class="tab-content">
+            <div class="resources-container">
+
+                <button class="resources-dropdown" onclick="toggleResources()">
+                    <span>Sports Dev</span>
+                    <span class="arrow">▼</span>
+                </button>
+
+                <div id="resources-list" class="resources-list">
+                    <a href="./resources/Sports-Dev-Day-1-Introduction.pdf" target="_blank">Day 1: Introduction</a>
+                    <a href="./resources/Sports-Dev-Day-2-Writing-For-The-Daily-Sports.pdf" target="_blank">Day 2: Writing</a>
+                    <a href="./resources/Sports-Dev-Day-3-Writing-Sports-Articles.pdf" target="_blank">Day 3: Articles</a>
+                    <a href="./resources/Sports-Dev-Day-4-AP-Style.pdf" target="_blank">Day 4: AP Style</a>
+                    <a href="./resources/Sports-Dev-Day-5-Covering-UW-Athletics.pdf" target="_blank">Day 5: Covering UW Athletics</a>
+                    <a href="./resources/Sports-Dev-Day-6-AP-Style-Practice-Test.pdf" target="_blank">Day 6: Practice Test</a>
+                    <a href="./resources/Sports-Dev-Day-7-Hiring.pdf" target="_blank">Day 7: Hiring</a>
+                </div>
+
+            </div>
+        </div>          
+    </div>
+
+        <div class="X">
+            <a class="twitter-timeline" 
+            href="https://twitter.com/UWDailySports?ref_src=twsrc%5Etfw"
+            data-height="600"
+            data-width="100%"
+            data-chrome="noheader nofooter noborders">
+            Tweets by UWDailySports
+            </a>
+        </div>
+
+        <script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.x.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+        }(document, "script", "twitter-wjs"));
+        </script>         
+
+    </div>
+
+    <div class="bottom">
+        <p>The Daily Sports 2026</p>
+    </div>
+
+</div>
+
+<!---- Java Scripts--> 
+<script>
+function showTab(tabId) {
+    const tabs = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+       document.getElementById(tabId).style.display = "block";
+}
+
+window.onload = function() {
+    showTab("schedule");
+};
+</script>
+
+<script>
+function openPDF(path) {
+    if (path !== "") {
+        window.open(path, "_blank");
+    }
+}
+</script>
+
+<script>
+function toggleResources() {
+    const list = document.getElementById("resources-list");
+
+    if (list.style.display === "block") {
+        list.style.display = "none";
+    } else {
+        list.style.display = "block";
+    }
+}
+</script>
+
+</body>
+
+</html>
+
+
