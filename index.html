@@ -208,18 +208,19 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
 </script>
 
 <script>
-  // Function to handle login action
   function loginUser() {
+    // Get the values from the input fields
     const username = document.querySelector('input[name="username"]').value;
     const password = document.querySelector('input[name="password"]').value;
 
-    // Assuming you're using Netlify Identity, initiate login here
+    // Use Netlify Identity to handle the login
     netlifyIdentity.login({ username, password })
       .then((user) => {
-        // If login successful, redirect to the dashboard
         if (user) {
-          window.location.href = "/dashboard.html"; // Redirect to dashboard
+          // If login is successful, redirect to dashboard
+          window.location.href = "/pages/dashboard/dashboard.html";
         } else {
+          // If login fails, show an error message
           alert('Login failed! Please check your username/password.');
         }
       })
