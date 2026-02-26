@@ -186,50 +186,19 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
-document.getElementById('loginBtn').addEventListener('click', async () => {
-    const email = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+        // Listen for when the user logs in
+        netlifyIdentity.on("login", function(user) {
+            // Check if the user is logged in, and redirect them to the dashboard
+            if (user) {
+                window.location.href = "/pages/dashboard/dashboard.html"; // Correct path to the dashboard
+            }
+        });
 
-    const response = await fetch('/.netlify/functions/login', {
-        method: 'POST',
-        body: JSON.stringify({ username, password }),
-        headers: { 'Content-Type': 'application/json' }
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-        // Redirect to dashboard
-        window.location.href = 'pages/dashboard/dashboard.html';
-    } else {
-        document.getElementById('loginError').innerText = data.message;
-    }
-});
-</script>
-
-<script>
-  function loginUser() {
-    // Get the values from the input fields
-    const username = document.querySelector('input[name="username"]').value;
-    const password = document.querySelector('input[name="password"]').value;
-
-    // Use Netlify Identity to handle the login
-    netlifyIdentity.login({ username, password })
-      .then((user) => {
-        if (user) {
-          // If login is successful, redirect to dashboard
-          window.location.href = "/pages/dashboard/dashboard.html";
-        } else {
-          // If login fails, show an error message
-          alert('Login failed! Please check your username/password.');
-        }
-      })
-      .catch((error) => {
-        console.error('Login error:', error);
-        alert('An error occurred during login.');
-      });
-  }
-</script>
+        // Optionally handle log out, if you want to provide a log out button
+        netlifyIdentity.on("logout", function() {
+            window.location.href = "/"; // Redirect to the login page
+        });
+    </script>
 
 </body>
 
