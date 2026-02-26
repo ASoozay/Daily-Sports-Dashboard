@@ -65,6 +65,11 @@
             background: #ddd;
         }
 
+        .active-tab {
+            background-color: #360f5a;
+            color: white;
+        }        
+
         .content {
             flex: 5.67;
             min-height: 400px; /* ensures space for grid */
@@ -88,32 +93,16 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns */
-            gap: 20px;
-            column-gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
             width: 100%;
-            
-            justify-content: center;
-            padding-left: 400px;
-            padding-right: 400px;
-            padding-top: 100px;
+            max-width: 900px;
+            margin: 100px auto 0 auto;
         }
 
         .invoice-box {
-            background-color: #360f5a;
-            border: 1px solid #360f5a;
-            cursor: pointer;
-
-            width: 40%;
-            aspect-ratio: 1 / 1; /* guarantees square */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
-            font-size: 28px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
         }
 
         .invoice-icon {
@@ -344,16 +333,27 @@
 
 <!---- Java Scripts--> 
 <script>
+netlifyIdentity.on("init", user => {
+  if (!user) {
+    window.location.href = "/";
+  }
+});
+</script>
+<script>
 function showTab(tabId) {
-    // Hide all tabs
     const tabs = document.getElementsByClassName("tab-content");
+    const buttons = document.getElementsByClassName("tab-button");
+
     for (let i = 0; i < tabs.length; i++) {
         tabs[i].style.display = "none";
     }
 
-    // Show the selected tab
-    document.getElementById(tabId).style.display = "block";
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active-tab");
+    }
 
+    document.getElementById(tabId).style.display = "block";
+    event.currentTarget.classList.add("active-tab");
 }
 
 // Default tab on page load
