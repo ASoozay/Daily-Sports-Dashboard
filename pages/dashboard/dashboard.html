@@ -42,6 +42,7 @@
 
         .logout {
             float: right;
+            justify-content: right;
             margin-right: 20px;  /* Add a bit of space from the right edge */
             color: #d3d3d3;
             font-family: 'Open Sans', sans-serif;
@@ -245,7 +246,7 @@
 
     <div class="account">
         <h6>Hi, Andrew!</h6>
-        <button class = "logout" onclick="netlifyIdentity.logout()">Logout</button> 
+        <button onclick="netlifyIdentity.logout()">Logout</button>
     </div>
 
     <div class="tab-container">
