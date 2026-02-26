@@ -246,7 +246,7 @@
 
     <div class="account">
         <h6>Hi, Andrew!</h6>
-        <button onclick="netlifyIdentity.logout()">Logout</button>
+        <button onclick="netlifyIdentity.logout(); window.location.href = '/'">Logout</button>
     </div>
 
     <div class="tab-container">
@@ -360,44 +360,27 @@
             }
         });
 
-        // Logout function with debugging
-        function logoutUser() {
-            console.log("Attempting to log out...");
-
-            if (netlifyIdentity.currentUser()) {
-                console.log("Logging out user:", netlifyIdentity.currentUser().user_metadata.full_name);
-
-                // Perform logout
-                netlifyIdentity.logout();
-
-                // After logout, redirect to the login page
-                window.location.href = "/"; // Adjust path to your login page
-            } else {
-                console.log('No user is currently logged in.');
-            }
-        }
-
         // Show tab content function
         function showTab(tabId) {
             const tabs = document.getElementsByClassName("tab-content");
             const buttons = document.getElementsByClassName("tab-button");
 
+            // Hide all tabs
             for (let i = 0; i < tabs.length; i++) {
                 tabs[i].style.display = "none";
             }
 
+            // Remove 'active' class from all buttons
             for (let i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove("active-tab");
             }
 
+            // Show the selected tab
             document.getElementById(tabId).style.display = "block";
+
+            // Use 'this' for the clicked button to add 'active-tab' class
             this.classList.add("active-tab");
         }
-
-        // Default tab on page load
-        window.onload = function () {
-            showTab("invoices"); // invoices visible by default
-        };
     </script>
 
 
