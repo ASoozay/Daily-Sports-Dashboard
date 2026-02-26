@@ -32,7 +32,6 @@
             height: 60px;
             display: flex;
             align-items: center;
-            justify-content: left;
             padding-left: 50px;
 
             /*text*/
@@ -45,6 +44,7 @@
             justify-content: right;
 
             color:#d3d3d3;
+            background-color: #360f5a;
             font-family: 'Open Sans', sans-serif;
         }
 
@@ -342,22 +342,27 @@
 <!---- Java Scripts--> 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <script>
-    // Check if the user is logged in, and if not, redirect to the login page
-    netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.location.href = "/"; // Redirect to login page if not logged in
-      }
-    });
+<script>
+  // Initialize Netlify Identity
+  netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.location.href = "/"; // Redirect to login page if not logged in
+    }
+  });
 
-    // Logout function
-    function logoutUser() {
+  // Logout function
+  function logoutUser() {
+    // Make sure Netlify Identity is loaded
+    if (netlifyIdentity.currentUser()) {
       netlifyIdentity.logout(); // Log the user out
 
       // Redirect to the login page after logout
-      window.location.href = "/";
+      window.location.href = "/"; // Adjust path to your login page
+    } else {
+      console.log('No user is logged in');
     }
-  </script>
+  }
+</script>
 
 <script>
 function showTab(tabId) {
