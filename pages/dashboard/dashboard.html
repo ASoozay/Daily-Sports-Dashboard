@@ -246,7 +246,7 @@
 
     <div class="account">
         <h6>Hi, Andrew!</h6>
-        <button onclick="netlifyIdentity.logout(); window.location.href = '/'">Logout</button>
+        <button class = "logout" onclick="logout()">Logout</button>
     </div>
 
     <div class="tab-container">
@@ -359,6 +359,20 @@
                 window.location.href = "/"; // Redirect to login page if not logged in
             }
         });
+
+            function logout() {
+        console.log("Attempting to log out...");
+
+        // Logout from Netlify Identity
+        netlifyIdentity.logout();
+
+        // Clear localStorage and cookies (force logout)
+        localStorage.removeItem("netlify_identity"); // Clear Netlify Identity session from localStorage
+        document.cookie = "netlify_identity=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC"; // Expire the session cookie
+
+        // After logout, redirect to the login page
+        window.location.href = "/";  // Adjust path if needed
+    }
 
         // Show tab content function
         function showTab(tabId) {
