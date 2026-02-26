@@ -351,50 +351,55 @@
 <!---- Java Scripts--> 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-<script>
-  // Initialize Netlify Identity
-  netlifyIdentity.on("init", user => {
-    if (!user) {
-      window.location.href = "/"; // Redirect to login page if not logged in
-    }
-  });
+    <script>
+        // Initialize Netlify Identity
+        netlifyIdentity.on("init", user => {
+            console.log('Netlify Identity Initialized:', user); // Debugging log
+            if (!user) {
+                window.location.href = "/"; // Redirect to login page if not logged in
+            }
+        });
 
-  // Logout function
-  function logoutUser() {
-    // Make sure Netlify Identity is loaded
-    if (netlifyIdentity.currentUser()) {
-      netlifyIdentity.logout(); // Log the user out
+        // Logout function with debugging
+        function logoutUser() {
+            console.log("Attempting to log out...");
 
-      // Redirect to the login page after logout
-      window.location.href = "/"; // Adjust path to your login page
-    } else {
-      console.log('No user is logged in');
-    }
-  }
-</script>
+            if (netlifyIdentity.currentUser()) {
+                console.log("Logging out user:", netlifyIdentity.currentUser().user_metadata.full_name);
 
-<script>
-function showTab(tabId) {
-    const tabs = document.getElementsByClassName("tab-content");
-    const buttons = document.getElementsByClassName("tab-button");
+                // Perform logout
+                netlifyIdentity.logout();
 
-    for (let i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "none";
-    }
+                // After logout, redirect to the login page
+                window.location.href = "/"; // Adjust path to your login page
+            } else {
+                console.log('No user is currently logged in.');
+            }
+        }
 
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove("active-tab");
-    }
+        // Show tab content function
+        function showTab(tabId) {
+            const tabs = document.getElementsByClassName("tab-content");
+            const buttons = document.getElementsByClassName("tab-button");
 
-    document.getElementById(tabId).style.display = "block";
-    event.currentTarget.classList.add("active-tab");
-}
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
 
-// Default tab on page load
-window.onload = function() {
-    showTab("invoices"); // invoices visible by default
-};
-</script>
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active-tab");
+            }
+
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.classList.add("active-tab");
+        }
+
+        // Default tab on page load
+        window.onload = function () {
+            showTab("invoices"); // invoices visible by default
+        };
+    </script>
+
 
 <script>
     window.twttr = (function(d, s, id) {
