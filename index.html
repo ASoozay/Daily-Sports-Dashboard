@@ -151,11 +151,7 @@
         <img src="./images/daily_sports_logo.jpg" alt="Daily Sports Logo" width="150" height="150" class="login-logo">
         <input type="text" placeholder="Username" name="username" required>
         <input type="password" placeholder="Password" name="password" required>
-        <a href = "pages/dashboard/dashboard.html">
             <button onclick="netlifyIdentity.open()">LOGIN</button>
-        </a>
-        <a href="./pages/forgot_password.html">Forgot Password?</a>
-
     </div>
         <div class = "bottom">
         <p>The Daily Sports 2026</p>
@@ -193,7 +189,7 @@
 
     <script>
 document.getElementById('loginBtn').addEventListener('click', async () => {
-    const email = document.getElementById('email').value;
+    const email = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
     const response = await fetch('/.netlify/functions/login', {
@@ -206,12 +202,36 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
 
     if (data.success) {
         // Redirect to dashboard
-        window.location.href = '/dashboard.html';
+        window.location.href = 'pages/dashboard/dashboard.html';
     } else {
         document.getElementById('loginError').innerText = data.message;
     }
 });
 </script>
+
+<script>
+  // Function to handle login action
+  function loginUser() {
+    const username = document.querySelector('input[name="username"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+
+    // Assuming you're using Netlify Identity, initiate login here
+    netlifyIdentity.login({ username, password })
+      .then((user) => {
+        // If login successful, redirect to the dashboard
+        if (user) {
+          window.location.href = "/dashboard.html"; // Redirect to dashboard
+        } else {
+          alert('Login failed! Please check your username/password.');
+        }
+      })
+      .catch((error) => {
+        console.error('Login error:', error);
+        alert('An error occurred during login.');
+      });
+  }
+</script>
+
 </body>
 
 </html> 
