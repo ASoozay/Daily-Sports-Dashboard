@@ -246,7 +246,7 @@
 
     <div class="account">
         <h6>Hi, Andrew!</h6>
-        <button onclick="netlifyIdentity.logoutUser()">Logout</button>
+        <button onclick="netlifyIdentity.logout()">Logout</button>
     </div>
 
     <div class="tab-container">
@@ -391,7 +391,7 @@
             }
 
             document.getElementById(tabId).style.display = "block";
-            event.currentTarget.classList.add("active-tab");
+            this.classList.add("active-tab");
         }
 
         // Default tab on page load
