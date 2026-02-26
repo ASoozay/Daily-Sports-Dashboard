@@ -41,6 +41,13 @@
             font-size: 40px;
           }
 
+        .logout {
+            justify-content: right;
+
+            color:#d3d3d3;
+            font-family: 'Open Sans', sans-serif;
+        }
+
         .tab-container {
 
             /*display*/
@@ -229,7 +236,8 @@
 <div class="page">
 
     <div class="account">
-        <h6>Hi, Andrew!</h6> 
+        <h6>Hi, Andrew!</h6>
+        <button class = "logout" onclick="netlifyIdentity.logout()">Logout</button> 
     </div>
 
     <div class="tab-container">
@@ -332,14 +340,25 @@
 </div>
 
 <!---- Java Scripts--> 
-<script>
-  netlifyIdentity.on("init", user => {
-    if (!user) {
-      // If no user is logged in, redirect them to the login page
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <script>
+    // Check if the user is logged in, and if not, redirect to the login page
+    netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.location.href = "/"; // Redirect to login page if not logged in
+      }
+    });
+
+    // Logout function
+    function logoutUser() {
+      netlifyIdentity.logout(); // Log the user out
+
+      // Redirect to the login page after logout
       window.location.href = "/";
     }
-  });
-</script>
+  </script>
+
 <script>
 function showTab(tabId) {
     const tabs = document.getElementsByClassName("tab-content");
