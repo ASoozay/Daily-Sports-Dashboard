@@ -370,8 +370,9 @@
         localStorage.removeItem("netlify_identity"); // Clear Netlify Identity session from localStorage
         document.cookie = "netlify_identity=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC"; // Expire the session cookie
 
+
         // After logout, redirect to the login page
-        window.location.href = "/";  // Adjust path if needed
+        window.location.reload();
     }
 
         // Show tab content function
