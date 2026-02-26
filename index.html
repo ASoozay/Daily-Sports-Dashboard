@@ -185,16 +185,22 @@
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <script>
-        // Listen for when the user logs in
-// On index.html, check if the user is logged in when the page is loaded
-netlifyIdentity.on('init', function(user) {
-    if (user) {
-        // If the user is logged in, redirect them to the dashboard
+<script>
+    // Listen for when the user logs in
+    netlifyIdentity.on('login', function(user) {
+        // After successful login, redirect to the dashboard
+        console.log('User logged in:', user);
         window.location.href = "/pages/dashboard/dashboard.html";
-    }
-});
-    </script>
+    });
+
+    // On index.html, check if the user is logged in when the page is loaded
+    netlifyIdentity.on('init', function(user) {
+        if (user) {
+            // If the user is already logged in, redirect them to the dashboard
+            window.location.href = "/pages/dashboard/dashboard.html";
+        }
+    });
+</script>
 
 </body>
 
