@@ -44,7 +44,7 @@ exports.handler = async function(event) {
       statusCode: 200,
       body: JSON.stringify({
         writer: writerResult.rows[0],
-        assignments: assignmentResult.rows
+        /*assignments: assignmentResult.rows8*/
       })
     };
 
