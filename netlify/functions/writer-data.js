@@ -18,7 +18,7 @@ exports.handler = async function(event) {
 
         await client.connect();
         const writerResult = await client.query(
-            "SELECT * FROM Writers WHERE email = $1",
+            'SELECT * FROM "Writers" WHERE email = $1',
             [email]
         );
         await client.end();
