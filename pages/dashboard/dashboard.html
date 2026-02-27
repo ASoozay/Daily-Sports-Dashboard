@@ -369,21 +369,20 @@
         });
 
         async function fetchWriterData(user) {
-            const token = user.token.access_token;
-            console.log("Fetching data for user...");
+            // Get the user's email directly from Netlify Identity
+            const email = user.email;
 
+            // Fetch writer data from your DB using the email
             const response = await fetch("/.netlify/functions/writer-data", {
-                headers: {
-                    Authorization: "Bearer " + token
-                }
+                method: "POST", 
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email })
             });
 
             const data = await response.json();
-            console.log(data);  // Check if data is being fetched correctly
+            console.log(data);
 
-            // Assuming data has a 'last_name' field, create a greeting
-            if (data.writer.last_name) {
-                console.log(`Hello, ${data.writer.last_name}`);
+            if (data.writer && data.writer.last_name) {
                 document.getElementById("greetingHeader").textContent = `Hi, ${data.writer.last_name}`;
             } else {
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
