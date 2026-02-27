@@ -1,0 +1,23 @@
+{
+  "name": "daily-sports-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ASoozay/Daily-Sports-Dashboard#readme",
+  "bugs": {
+    "url": "https://github.com/ASoozay/Daily-Sports-Dashboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ASoozay/Daily-Sports-Dashboard.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "pg": "^8.19.0"
+  }
+}
