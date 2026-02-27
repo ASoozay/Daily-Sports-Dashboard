@@ -370,6 +370,7 @@
 
         async function fetchWriterData(user) {
             const token = user.token.access_token;
+            console.log("Fetching data for user...");
 
             const response = await fetch("/.netlify/functions/writer-data", {
                 headers: {
@@ -378,14 +379,13 @@
             });
 
             const data = await response.json();
-            console.log(data);  // Check the structure of the data
+            console.log(data);  // Check if data is being fetched correctly
 
-            // Assuming data has a 'name' field, create a greeting
-            if (data.last_name) {
-                // Create the greeting message and display it in the header
-                document.getElementById("greetingHeader").textContent = `Hi, ${data.last_name}`;
+            // Assuming data has a 'last_name' field, create a greeting
+            if (data.writer.last_name) {
+                console.log(`Hello, ${data.writer.last_name}`);
+                document.getElementById("greetingHeader").textContent = `Hi, ${data.writer.last_name}`;
             } else {
-                // If name isn't found, show a generic message
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
             }
         }
