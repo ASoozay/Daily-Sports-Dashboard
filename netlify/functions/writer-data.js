@@ -9,6 +9,8 @@ exports.handler = async function(event) {
             return { statusCode: 400, body: JSON.stringify({ error: "Missing email" }) };
         }
 
+        console.log("Fetching writer data for:", email); // <-- Log email
+
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: { rejectUnauthorized: false }
@@ -21,11 +23,14 @@ exports.handler = async function(event) {
         );
         await client.end();
 
+        console.log("Query result:", writerResult.rows); // <-- Log query result
+
         return {
             statusCode: 200,
             body: JSON.stringify({ writer: writerResult.rows[0] })
         };
     } catch (err) {
+        console.error("Function error:", err); // <-- Log the full error
         return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
     }
 };
