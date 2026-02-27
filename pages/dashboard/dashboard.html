@@ -245,7 +245,7 @@
 <div class="page">
 
     <div class="account">
-        <h6>Hi, Andrew!</h6>
+        <h6 id = "greetingHeader"></h6>
         <button class = "logout" onclick="logout()">Logout</button>
     </div>
 
@@ -360,7 +360,37 @@
             }
         });
 
-            function logout() {
+            netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.location.href = "/";
+        } else {
+            fetchWriterData(user);
+        }
+        });
+
+        async function fetchWriterData(user) {
+            const token = user.token.access_token;
+
+            const response = await fetch("/.netlify/functions/writer-data", {
+                headers: {
+                    Authorization: "Bearer " + token
+                }
+            });
+
+            const data = await response.json();
+            console.log(data);  // Check the structure of the data
+
+            // Assuming data has a 'name' field, create a greeting
+            if (data.last_name) {
+                // Create the greeting message and display it in the header
+                document.getElementById("greetingHeader").textContent = `Hi, ${data.last_name}`;
+            } else {
+                // If name isn't found, show a generic message
+                document.getElementById("greetingHeader").textContent = "Hi, Guest";
+            }
+        }
+
+    function logout() {
         console.log("Attempting to log out...");
 
         // Logout from Netlify Identity
