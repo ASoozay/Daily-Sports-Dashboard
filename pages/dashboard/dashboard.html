@@ -550,7 +550,7 @@
         </div>
     </div>
 
-    <div id="available_games" class="tab-content">
+    <div id = "available-games" class="tab-content">
         <div id = "available-games-container" class = "schedule-container"></div>
     </div>
 
@@ -740,7 +740,7 @@
             document.getElementById(tabId).style.display = "block";
             event.currentTarget.classList.add("active-tab");
 
-            if (tabId === "available_games") {
+            if (tabId == "available-games") {
                 fetchAvailableGames();
             }
         }
