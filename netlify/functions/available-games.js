@@ -13,10 +13,15 @@ exports.handler = async (event) => {
     await client.connect();
 
     const availableGames = await client.query(
-      'SELECT * FROM "Games" WHERE TO_DATE(date, "FMMonth/FMDAY/FMYEAR") >= CURRENT_DATE AND available = TRUE ORDER BY date, time'
+    `SELECT * FROM "Games" 
+    WHERE TO_DATE(date, 'FM9/FM9/FMMM') >= CURRENT_DATE 
+    AND available = TRUE 
+    ORDER BY date, time`
     );
 
     await client.end();
+
+    console.log(availableGames.rows); // Log the returned rows to inspect the data.
 
     return {
       statusCode: 200,
