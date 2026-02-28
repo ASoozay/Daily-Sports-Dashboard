@@ -234,6 +234,7 @@
         }
 
         .time {
+            display: flex;
             align-self: center;
             height: 30%;
             margin-right: 15%;
@@ -264,6 +265,7 @@
         }
 
         .add {
+            display: flex;
             align-items: center;
             justify-content: center;
             height: 50%;
@@ -604,7 +606,7 @@
                 let recap = "";
                 let recap_css = "";
                                 
-                if(location == "Seattle, Wash."){
+                if(location == "Seattle, Wash. " || location == "Seattle, Wash."){
                     where = "vs";
                     recap_css = "home-recap"
                 } else {
