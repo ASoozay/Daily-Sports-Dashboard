@@ -12,12 +12,10 @@ exports.handler = async (event) => {
 
     await client.connect();
 
-    const availableGames = await client.query(
-    `SELECT * FROM "Games" 
-    WHERE TO_DATE(date, 'FM9/FM9/FMMM') >= CURRENT_DATE 
-    AND available = TRUE 
-    ORDER BY date, time`
-    );
+    const query =  `SELECT * FROM "Games" WHERE TO_DATE(date, 'FM9/FM9/FMMM') >= CURRENT_DATE AND available = TRUE ORDER BY date, time`;
+    console.log("Query: ", query);
+
+    const availableGames = await client.query(query);
 
     await client.end();
 
