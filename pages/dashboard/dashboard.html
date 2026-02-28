@@ -12,9 +12,13 @@
             background-color: whitesmoke;
         }
 
+        .page {
+            height: 100%;
+        }
+
         .main {
             display: flex;
-            height: calc(100vh - 120px); /* subtract header + tab height */
+            height: 100vh; /* subtract header + tab height */
         }
 
         .page {
@@ -89,14 +93,191 @@
 
         .content {
             flex: 5.67;
-            min-height: 400px; /* ensures space for grid */
-            width: 85%;        /* keeps content 85% of width */
-            margin: 0 auto;    /* center horizontally */
-            border: 1px solid black;
             display: flex;
             flex-direction: column;
-
+            width: 85%;
+            margin: 0 auto;
+            border: 1px solid black;
         }
+
+        .schedule-container {
+            flex: 1;              /* fills remaining vertical space */
+            display: grid;
+            width: 100%;
+            overflow-y: scroll;     /* allows scrolling */
+            gap: 1%;
+            padding: 1% 0 0 10px;
+        }
+
+        .game-box {
+            align-items: center;
+            display: flex;
+            width: 95%;
+            height: 150px;
+            background-color: rgb(211, 210, 210);
+            border-radius: 20px;
+            border: 3px;
+            border-color: gray;
+        }
+
+        .sport-box {
+            align-self: left;
+            margin-left:1%;
+            margin-top: 1%;
+            width: 8%;
+            height: 30%;
+
+            background-color: transparent;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+
+            margin-right: 5%;
+        }
+
+        .washington-icon {
+            align-items: center;
+            height: 80%;
+            aspect-ratio: 1/1; 
+            margin-right: 1%;
+        }
+
+        .where {
+            align-items: center;
+            height: 30%;
+            margin-right: 1%;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+        }
+
+        .opp-icon {
+            align-items: center;
+            height: 80%;
+            aspect-ratio: 1/1; 
+            margin-right: 8%;
+        }
+
+        .recap-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1%;
+            width: 10%;
+            height: 80%;
+            justify-content: center; 
+            background-color: transparent;
+            margin-right: 10%;
+        }
+
+        .home-recap {
+            display: flex;
+            height: 80%;
+            width: 100%;
+            background-color: #360f5a;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 7%;
+
+            color: white;
+            font-size: x-large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        .home-recap::before {
+            content: "Home recap";
+        }
+
+        .away-recap {
+            display: flex;
+            height: 80%;
+            width: 100%;
+            background-color: #B7A57A;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+
+            color: black;
+            font-size: x-large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+        
+        .away-recap::before {
+            content: "Away recap";
+        }
+        
+        .recap-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: grey;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .date {
+            align-self: center;
+            height: 30%;
+            margin-right: 6%;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;            
+        }
+
+        .time {
+            align-self: center;
+            height: 30%;
+            margin-right: 15%;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+        }
+
+        .remove {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50%;
+            width: 10%;
+            border-radius: 10px;
+            background-color: rgb(139, 39, 39);
+
+            text-align: center;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        .remove::before {
+            content: "REMOVE";
+        }
+
+        .add {
+            align-items: center;
+            height: 50%;
+            width: 10%;
+            border-radius: 10px;
+            background-color: #360f5a;
+
+            text-align: center;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        .add::before {
+            content: "ADD";
+        }        
 
         .X {
             flex: 1; 
@@ -110,22 +291,47 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            width: 100%;
-            max-width: 900px;
-            margin: 100px auto 0 auto;
+            grid-template-columns: repeat(2, 400px); /* fixed column size */
+            gap: 100px;
+
+            width: 80%;
+            margin: 5% auto;
+
+            justify-content: center; /* centers grid inside container */
+            align-content: center;   /* centers vertically if container has height */
         }
 
         .invoice-box {
-            width: 100%;
-            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            width: 80%;           /* fixed width */
+            height: 80%;          /* fixed height to control icon % */
+            padding: 10px;
+            background-color: #360f5a;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            transition: all 0.2s ease;
         }
 
+        .invoice-box:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Icon takes 20% of the box height */
         .invoice-icon {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 50px;
+            height: 20%;            /* 20% of box height */
+            width: auto;            /* keep aspect ratio */
+            margin-bottom: 10px;    /* spacing from text */
+        }
+
+        /* Text below icon */
+        .invoice-text {
+            font-size: 18px;
+            color: white;
         }
 
         .resources-dropdown {
@@ -262,8 +468,86 @@
 <div class="content">
 
     <div id="schedule" class="tab-content">
-        <h2>Schedule</h2>
-        <p>This is the schedule content.</p>
+        <div class = "schedule-container">
+            <div class = "game-box">
+                <div class = "sport-box">Softball</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">VS</div>
+                <img class = "opp-icon" src = "./schools/Northwestern.webp" alt = "NU">
+                <div class = "recap-container">
+                    <div class = "home-recap"></div>
+                    <p class = "recap-location">Seattle, Wash.</p>
+                </div>
+                <div class = "date">3/6/26</div>
+                <div class = "time">6:00 PM</div>
+                <div class = "remove"></div>
+            </div>
+            <div class = "game-box">
+                <div class = "sport-box">Softball</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">VS</div>
+                <img class = "opp-icon" src = "./schools/Northwestern.webp" alt = "NU">
+                <div class = "recap-container">
+                    <div class = "home-recap"></div>
+                    <p class = "recap-location">Seattle, Wash.</p>
+                </div>
+                <div class = "date">3/7/26</div>
+                <div class = "time">3:00 PM</div>
+                <div class = "remove"></div>
+            </div>
+            <div class = "game-box">
+                <div class = "sport-box">Softball</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">VS</div>
+                <img class = "opp-icon" src = "./schools/Northwestern.webp" alt = "NU">
+                <div class = "recap-container">
+                    <div class = "home-recap"></div>
+                    <p class = "recap-location">Seattle, Wash.</p>
+                </div>
+                <div class = "date">3/8/26</div>
+                <div class = "time">1:00 PM</div>
+                <div class = "remove"></div>
+            </div>
+            <div class = "game-box">
+                <div class = "sport-box">Women's Basketball</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">VS</div>
+                <img class = "opp-icon" src = "./schools/Minnesota.webp" alt = "UM">
+                <div class = "recap-container">
+                    <div class = "away-recap"></div>
+                    <p class = "recap-location">Indianapolis, Ind.</p>
+                </div>
+                <div class = "date">3/13/26</div>
+                <div class = "time">1:00 PM</div>
+                <div class = "remove"></div>
+            </div>
+            <div class = "game-box">
+                <div class = "sport-box">Baseball</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">VS</div>
+                <img class = "opp-icon" src = "./schools/Ohio State.webp" alt = "OSU">
+                <div class = "recap-container">
+                    <div class = "home-recap"></div>
+                    <p class = "recap-location">Seattle, Wash.</p>
+                </div>
+                <div class = "date">3/14/26</div>
+                <div class = "time">7:00 PM</div>
+                <div class = "remove"></div>
+            </div>
+            <div class = "game-box">
+                <div class = "sport-box">Softball</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">VS</div>
+                <img class = "opp-icon" src = "./schools/Michigan.webp" alt = "UM">
+                <div class = "recap-container">
+                    <div class = "away-recap"></div>
+                    <p class = "recap-location">Ann Arbor, Mich.</p>
+                </div>
+                <div class = "date">3/20/26</div>
+                <div class = "time">5:00 PM</div>
+                <div class = "remove"></div>
+            </div>                                                           
+        </div>
     </div>
 
     <div id="games" class="tab-content">
@@ -274,36 +558,20 @@
     <div id="invoices" class="tab-content">
           <div class="invoice-container">
             <div class="invoice-option">
-                <a href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?usp=sharing" style="text-decoration: none;">
-                    <div class="invoice-box">
-                        <img src="./invoice/Spreadsheet.png" class="invoice-icon" alt="Invoice 1">
-                        Invoice Template
-                    </div>
-                </a>
+                <a class="invoice-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240">
+                <img class="invoice-box" src="./invoice/Spreadsheet.png" alt="Invoice 1">Invoice Template</a>
+            </div>
+             <div class="invoice-option">
+                <a class="invoice-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform">
+                <img class="invoice-box" src="./invoice/Upload.png" alt="Invoice 1">Submit Invoice</a>
             </div>
             <div class="invoice-option">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" style="text-decoration: none;">
-                    <div class="invoice-box">
-                        <img src="./invoice/Upload.png" class="invoice-icon" alt="Invoice 2">
-                        Submit Invoice
-                    </div>
-                </a>
+                <a class="invoice-box" href="">
+                <img class="invoice-box" src="./invoice/History.png" alt="Invoice 1">Invoice History</a>
             </div>
             <div class="invoice-option">
-                <a href="link3.html" style="text-decoration: none;">
-                    <div class="invoice-box">
-                        <img src="./invoice/History.png" class="invoice-icon" alt="Invoice 3">
-                        Invoice History
-                    </div>
-                </a>
-            </div>
-            <div class="invoice-option">
-                <a href="./invoice/Pay-Scale.png" style="text-decoration: none;">
-                    <div class="invoice-box">
-                        <img src="./invoice/Pay.png" class="invoice-icon" alt="Invoice 4">
-                        Pay Scale
-                    </div>
-                </a>
+                <a class="invoice-box" href="./invoice/Pay-Scale.png">
+                <img class="invoice-box" src="./invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
             </div>
         </div>
     </div>
