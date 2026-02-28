@@ -241,6 +241,7 @@
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
+            text-size-adjust: inherit;
         }
 
         .remove {
@@ -264,6 +265,7 @@
 
         .add {
             align-items: center;
+            justify-content: center;
             height: 50%;
             width: 10%;
             border-radius: 10px;
@@ -469,84 +471,7 @@
 
     <div id="schedule" class="tab-content">
         <div class = "schedule-container">
-            <div class = "game-box">
-                <div class = "sport-box">Softball</div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
-                <div class = "where">VS</div>
-                <img class = "opp-icon" src = "./schools/Northwestern.webp" alt = "NU">
-                <div class = "recap-container">
-                    <div class = "home-recap"></div>
-                    <p class = "recap-location">Seattle, Wash.</p>
-                </div>
-                <div class = "date">3/6/26</div>
-                <div class = "time">6:00 PM</div>
-                <div class = "remove"></div>
-            </div>
-            <div class = "game-box">
-                <div class = "sport-box">Softball</div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
-                <div class = "where">VS</div>
-                <img class = "opp-icon" src = "./schools/Northwestern.webp" alt = "NU">
-                <div class = "recap-container">
-                    <div class = "home-recap"></div>
-                    <p class = "recap-location">Seattle, Wash.</p>
-                </div>
-                <div class = "date">3/7/26</div>
-                <div class = "time">3:00 PM</div>
-                <div class = "remove"></div>
-            </div>
-            <div class = "game-box">
-                <div class = "sport-box">Softball</div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
-                <div class = "where">VS</div>
-                <img class = "opp-icon" src = "./schools/Northwestern.webp" alt = "NU">
-                <div class = "recap-container">
-                    <div class = "home-recap"></div>
-                    <p class = "recap-location">Seattle, Wash.</p>
-                </div>
-                <div class = "date">3/8/26</div>
-                <div class = "time">1:00 PM</div>
-                <div class = "remove"></div>
-            </div>
-            <div class = "game-box">
-                <div class = "sport-box">Women's Basketball</div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
-                <div class = "where">VS</div>
-                <img class = "opp-icon" src = "./schools/Minnesota.webp" alt = "UM">
-                <div class = "recap-container">
-                    <div class = "away-recap"></div>
-                    <p class = "recap-location">Indianapolis, Ind.</p>
-                </div>
-                <div class = "date">3/13/26</div>
-                <div class = "time">1:00 PM</div>
-                <div class = "remove"></div>
-            </div>
-            <div class = "game-box">
-                <div class = "sport-box">Baseball</div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
-                <div class = "where">VS</div>
-                <img class = "opp-icon" src = "./schools/Ohio State.webp" alt = "OSU">
-                <div class = "recap-container">
-                    <div class = "home-recap"></div>
-                    <p class = "recap-location">Seattle, Wash.</p>
-                </div>
-                <div class = "date">3/14/26</div>
-                <div class = "time">7:00 PM</div>
-                <div class = "remove"></div>
-            </div>
-            <div class = "game-box">
-                <div class = "sport-box">Softball</div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
-                <div class = "where">VS</div>
-                <img class = "opp-icon" src = "./schools/Michigan.webp" alt = "UM">
-                <div class = "recap-container">
-                    <div class = "away-recap"></div>
-                    <p class = "recap-location">Ann Arbor, Mich.</p>
-                </div>
-                <div class = "date">3/20/26</div>
-                <div class = "time">5:00 PM</div>
-                <div class = "remove"></div>
-            </div>                                                           
+                                                          
         </div>
     </div>
 
@@ -679,7 +604,7 @@
                 let recap = "";
                 let recap_css = "";
                                 
-                if(location == "Seattle, Wash"){
+                if(location == "Seattle, Wash."){
                     where = "vs";
                     recap_css = "home-recap"
                 } else {
