@@ -550,9 +550,8 @@
         </div>
     </div>
 
-    <div id="games" class="tab-content">
-        <h2>Available Games</h2>
-        <p>This is the games content.</p>
+    <div id="available_games" class="tab-content">
+        <div id = "schedule-container"></div>
     </div>
 
     <div id="invoices" class="tab-content">
@@ -619,6 +618,9 @@
 
 <!---- Java Scripts--> 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+fetchAvailableGames();
+</script>
 
     <script>
         // Initialize Netlify Identity
@@ -656,6 +658,58 @@
             } else {
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
             }
+        };
+
+        async function fetchAvailableGames() {
+            const response = await fetch("/.netlify/functions/available-games", {
+                method: "POST"
+            });
+
+            const data = await response.json();
+            const games = data.games;
+            
+            const container = document.getElementById("schedule-container");
+            container.innerHTML = "";
+
+            games.forEach(game => {
+                const sport = game.sport;
+                const opp = game.opponent;
+                const location = game.location;
+                const date = game.date;
+                const time = game.time;
+                const notes = game.notes;
+                let where = "";
+                let recap = "";
+                let recap_css = "";
+                                
+                if(location == "Seattle, Wash"){
+                    where = "vs";
+                    recap_css = "home-recap"
+                } else {
+                    where = "@";
+                    recap_css = "away-recap"
+                }
+
+
+                const gameBox = document.createElement("div");
+                gameBox.classList.add("game-box");
+
+            gameBox.innerHTML = `
+                <div class = "sport-box">${sport}</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="./schools/${opp}.webp" alt="${opp}">
+                <div class = "recap-container">
+                    <div class = ${recap_css}></div>
+                    <p class = "${recap-location}">${location}</p>
+                </div>
+                <div class = "date">${date}</div>
+                <div class = "time">${time}</div>
+                <div class = "add"></div>
+            `;
+
+            container.appendChild(gameBox);
+            });
         }
 
     function logout() {
@@ -693,6 +747,10 @@
 
             // Use 'this' for the clicked button to add 'active-tab' class
             this.classList.add("active-tab");
+
+            if(tabId == "Available Games"){
+                fetchAvailableGames();
+            }
         }
     </script>
 
