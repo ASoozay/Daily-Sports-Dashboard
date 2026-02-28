@@ -13,7 +13,7 @@ exports.handler = async (event) => {
     await client.connect();
 
     const availableGames = await client.query(
-      'SELECT * FROM "Games" WHERE available = TRUE'
+      'SELECT * FROM "Games" WHERE TO_DATE(date, "MM/DD/YY") >= CURRENT_DATE AND available = TRUE ORDER BY date, time'
     );
 
     await client.end();
