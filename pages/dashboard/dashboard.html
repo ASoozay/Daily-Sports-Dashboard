@@ -834,16 +834,13 @@
 
         }
 
-    window.onload = function() {
-        // Simulate a click event on the "scheduled-games" tab button when the page loads
-        const defaultTabButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
-        
-        // Trigger the click event to show the scheduled games tab
-        if (defaultTabButton) {
-            defaultTabButton.click();
-            fetchScheduledGames(currWriter.writer_id);
-        }
-    };
+        window.onload = function() {
+            // Directly call the showTab function for the "scheduled-games" tab on page load
+            const scheduledGamesButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
+
+            // Manually call the showTab function for the "scheduled-games" tab
+            showTab({ currentTarget: scheduledGamesButton }, 'scheduled-games');
+        };
     </script>
 
 
