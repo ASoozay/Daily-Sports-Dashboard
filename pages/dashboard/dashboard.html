@@ -587,17 +587,32 @@
         };
 
         async function fetchScheduledGames(writerId) {
+            // Ensure the writerId is being passed correctly
+            if (!writerId) {
+                console.log("Writer ID is missing!");
+                return;  // Exit if writerId is missing
+            }
+
             const response = await fetch("/.netlify/functions/scheduled-games", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ writerId }) // Pass the writerId as part of the body
+                body: JSON.stringify({ writerId: writerId }) // Pass writerId in the body
             });
+
+            if (!response.ok) {
+                console.log("Failed to fetch scheduled games. Status:", response.status);
+                return;
+            }
 
             const data = await response.json();
             const games = data.games;
-            
+
+            if (!games || games.length === 0) {
+                console.log("No scheduled games found.");
+            }
+
             const container = document.getElementById("scheduled-games-container");
             container.innerHTML = "";
 
