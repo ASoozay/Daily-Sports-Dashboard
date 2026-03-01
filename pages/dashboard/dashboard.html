@@ -599,7 +599,13 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                const date = game.date;
+                const date = game.date.toLocaleDateString('en-US', {
+                                                            weekday: 'long',
+                                                            year: 'numeric',
+                                                            month: 'long',
+                                                            day: 'numeric',
+                                                        });
+
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
