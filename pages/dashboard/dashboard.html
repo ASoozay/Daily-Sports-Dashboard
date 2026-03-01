@@ -599,7 +599,8 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                const date = game.date.toLocaleDateString('en-US', {
+                let date = game.date;
+                date = date.toLocaleDateString('en-US', {
                                                             weekday: 'long',
                                                             year: 'numeric',
                                                             month: 'long',
