@@ -23,11 +23,6 @@ exports.handler = async (event) => {
     body: JSON.stringify({ games: availableGames.rows }),
     };
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ games: availableGames.rows })
-    };
-
   } catch (err) {
     return {
       statusCode: 500,

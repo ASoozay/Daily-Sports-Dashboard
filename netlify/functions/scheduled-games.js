@@ -14,22 +14,18 @@ exports.handler = async (event) => {
 
     const {writerId} = JSON.parse(event.body);
 
-    const query = `SELECT * FROM "Assignments" WHERE writer_id = writerId 
-                   JOIN "Games" ON "Games.game_id" = "Assignments.game_id";
+    const query = `SELECT * FROM "Assignments"  
+                   JOIN "Games" ON "Games.game_id" = "Assignments.game_id"
+                   WHERE writer_id = $1
                    ORDER BY date, time`;
     console.log("Query: ", query); // Log the query to confirm it's correct
 
-    const availableGames = await client.query(query);
+    const scheduledGames = await client.query(query, [writerId]);
     console.log("Available games:", availableGames.rows); // Log the result
 
     return {
     statusCode: 200,
     body: JSON.stringify({ games: availableGames.rows }),
-    };
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ games: availableGames.rows })
     };
 
   } catch (err) {
