@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 
     await client.connect();
 
-    const query = `SELECT * FROM "Games" WHERE available = TRUE ORDER BY date, time`;
+    const query = `SELECT * FROM "Games" WHERE date >= CURRENT_DATE AND available = TRUE ORDER BY date, time`;
     console.log("Query: ", query); // Log the query to confirm it's correct
 
     const availableGames = await client.query(query);
