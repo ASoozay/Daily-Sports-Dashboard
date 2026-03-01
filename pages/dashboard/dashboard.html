@@ -577,7 +577,15 @@
 
             const data = await response.json();
             currWriter = data.writer;
-            console.log(data);
+
+            console.log("Writer data:", data);  // Log the writer data
+            console.log("currWriter:", currWriter);  // Log the currWriter object
+
+            if (currWriter && currWriter.writer_id) {
+                console.log("Writer ID:", currWriter.writer_id);  // Check if writer_id exists
+            } else {
+                console.log("No writer_id found in currWriter");
+            }
 
             if (data.writer && data.writer.first_name) {
                 document.getElementById("greetingHeader").textContent = `Hi, ${data.writer.first_name}!`;
