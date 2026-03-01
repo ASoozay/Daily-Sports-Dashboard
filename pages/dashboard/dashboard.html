@@ -226,7 +226,8 @@
         .date {
             align-self: center;
             height: 30%;
-            margin-right: 6%;
+            width: 15%;
+            margin-right: 3%;
 
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -237,7 +238,8 @@
             display: flex;
             align-self: center;
             height: 30%;
-            margin-right: 15%;
+            width: 8%;
+            margin-right: 10%;
 
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -599,7 +601,13 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                let date = game.date;
+                let date = new Date(game.date);
+                date = date.toLocaleDateString('en-US', {
+                    weekday: 'long',  // Full weekday name (e.g., "Saturday")
+                    year: 'numeric',  // Full year (e.g., "2026")
+                    month: 'long',    // Full month name (e.g., "February")
+                    day: 'numeric',   // Day of the month (e.g., "6")
+                });
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
