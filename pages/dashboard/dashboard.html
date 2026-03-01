@@ -600,13 +600,6 @@
                 const opp = game.opponent;
                 const location = game.location;
                 let date = game.date;
-                date = date.toLocaleDateString('en-US', {
-                                                            weekday: 'long',
-                                                            year: 'numeric',
-                                                            month: 'long',
-                                                            day: 'numeric',
-                                                        });
-
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
