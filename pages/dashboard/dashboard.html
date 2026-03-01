@@ -588,7 +588,11 @@
 
         async function fetchScheduledGames(writerId) {
             const response = await fetch("/.netlify/functions/scheduled-games", {
-                method: "POST"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ writerId }) // Pass the writerId as part of the body
             });
 
             const data = await response.json();
@@ -643,8 +647,8 @@
 
             container.appendChild(gameBox);
 
-                const addButton = gameBox.querySelector(".remove");
-                addButton.addEventListener("click", async (e) => {
+                const removeButton = gameBox.querySelector(".remove");
+                removeButton.addEventListener("click", async (e) => {
                     const gameId = e.target.getAttribute("data-game-id");
                     await remove(gameId);
                 });
