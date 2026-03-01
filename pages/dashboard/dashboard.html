@@ -643,7 +643,7 @@
 
             container.appendChild(gameBox);
 
-                const addButton = gameBox.querySelector(".add");
+                const addButton = gameBox.querySelector(".remove");
                 addButton.addEventListener("click", async (e) => {
                     const gameId = e.target.getAttribute("data-game-id");
                     await remove(gameId);
