@@ -100,7 +100,7 @@
             border: 1px solid black;
         }
 
-        .schedule-container {
+        .games-container {
             flex: 1;             
             display: grid;
             width: 100%;
@@ -463,24 +463,21 @@
     </div>
 
     <div class="tab-container">
-        <button class="tab-button" onclick="showTab(event, 'schedule')">Schedule</button>
+        <button class="tab-button" onclick="showTab(event, 'scheduled-games')">Schedule</button>
         <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
         <button class="tab-button" onclick="showTab(event, 'invoices')">Invoices</button>
         <button class="tab-button" onclick="showTab(event, 'resources')">Resources</button>
     </div>
 
     <div class="main">
-        <!-- Main tab content -->
-<div class="content">
+    <div class="content">
 
-    <div id="schedule" class="tab-content">
-        <div class = "schedule-container">
-                                                          
-        </div>
+    <div id="scheduled-games" class="tab-content">
+        <div id = "scheduled-games-container" class = "games-container"></div>
     </div>
 
     <div id = "available-games" class="tab-content">
-        <div id = "available-games-container" class = "schedule-container"></div>
+        <div id = "available-games-container" class = "games-container"></div>
     </div>
 
     <div id="invoices" class="tab-content">
@@ -589,6 +586,71 @@
             }
         };
 
+        async function fetchScheduledGames(writerId) {
+            const response = await fetch("/.netlify/functions/scheduled-games", {
+                method: "POST"
+            });
+
+            const data = await response.json();
+            const games = data.games;
+            
+            const container = document.getElementById("scheduled-games-container");
+            container.innerHTML = "";
+
+            games.forEach(game => {
+                const gameId = game.game_id;
+                const sport = game.sport;
+                const opp = game.opponent;
+                const location = game.location;
+                let date = new Date(game.date);
+                date = date.toLocaleDateString('en-US', {
+                    weekday: 'long',  // Full weekday name (e.g., "Saturday")
+                    year: 'numeric',  // Full year (e.g., "2026")
+                    month: 'long',    // Full month name (e.g., "February")
+                    day: 'numeric',   // Day of the month (e.g., "6")
+                });
+                const time = game.time;
+                const notes = game.notes;
+                let where = "";
+                let recap = "";
+                let recap_css = "";
+                                
+                if(location == "Seattle, Wash. " || location == "Seattle, Wash."){
+                    where = "vs";
+                    recap_css = "home-recap"
+                } else {
+                    where = "@";
+                    recap_css = "away-recap"
+                }
+
+
+                const gameBox = document.createElement("div");
+                gameBox.classList.add("game-box");
+
+            gameBox.innerHTML = `
+                <div class = "sport-box">${sport}</div>
+                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="./schools/${opp}.webp" alt="${opp}">
+                <div class = "recap-container">
+                    <div class="${recap_css}"></div>
+                    <p class="recap-location">${location}</p>
+                </div>
+                <div class = "date">${date}</div>
+                <div class = "time">${time}</div>
+                <button class = "remove" data-game-id = "${gameId}"></div>
+            `;
+
+            container.appendChild(gameBox);
+
+                const addButton = gameBox.querySelector(".add");
+                addButton.addEventListener("click", async (e) => {
+                    const gameId = e.target.getAttribute("data-game-id");
+                    await remove(gameId);
+                });
+            });
+        }
+
         async function fetchAvailableGames() {
             const response = await fetch("/.netlify/functions/available-games", {
                 method: "POST"
@@ -679,6 +741,31 @@
         }
     }   
 
+    async function remove(gameId) {
+        console.log("Game ID: ", gameId);
+        try {
+            // Send a POST request to add the game to the Assignments table and update the Games table
+            const response = await fetch("/.netlify/functions/remove", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ gameId: gameId})
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                alert("Game successfully removed from schedule");
+                // Optionally update the UI to reflect the changes
+            } else {
+                alert("Failed to remove game to schedule.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error removing game from assignments.");
+        }
+    }     
+
     function logout() {
         console.log("Attempting to log out...");
 
@@ -710,9 +797,14 @@
             document.getElementById(tabId).style.display = "block";
             event.currentTarget.classList.add("active-tab");
 
+            if(tabId == "scheduled-games") {
+                fetchScheduledGames(writerId);
+            }
+
             if (tabId == "available-games") {
                 fetchAvailableGames();
             }
+
         }
     </script>
 
