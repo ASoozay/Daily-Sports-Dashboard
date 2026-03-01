@@ -654,7 +654,7 @@
             });
         }
 
-    async function signup(gameId, writer_id) {
+    async function signup(gameId, writerId) {
         try {
             // Send a POST request to add the game to the Assignments table and update the Games table
             const response = await fetch("/.netlify/functions/signup", {
@@ -662,7 +662,7 @@
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ gameId: gameId })
+                body: JSON.stringify({ gameId: gameId, writerId: writerId })
             });
 
             const data = await response.json();
