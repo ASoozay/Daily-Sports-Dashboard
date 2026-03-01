@@ -101,10 +101,10 @@
         }
 
         .schedule-container {
-            flex: 1;              /* fills remaining vertical space */
+            flex: 1;             
             display: grid;
             width: 100%;
-            overflow-y: scroll;     /* allows scrolling */
+            overflow-y: scroll;    
             gap: 1%;
             padding: 1% 0 0 10px;
         }
@@ -549,6 +549,8 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
+        let currWriter = null;
+
         // Initialize Netlify Identity
         netlifyIdentity.on("init", user => {
             console.log('Netlify Identity Initialized:', user); // Debugging log
@@ -577,6 +579,7 @@
             });
 
             const data = await response.json();
+            currWriter = data.writer;
             console.log(data);
 
             if (data.writer && data.writer.first_name) {
@@ -598,6 +601,7 @@
             container.innerHTML = "";
 
             games.forEach(game => {
+                const game_id = game.game_id;
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
@@ -637,12 +641,43 @@
                 </div>
                 <div class = "date">${date}</div>
                 <div class = "time">${time}</div>
-                <div class = "add"></div>
+                <button class = "add" data-game-id = "${game.id}"></div>
             `;
 
             container.appendChild(gameBox);
+
+                const addButton = gameBox.querySelector(".add");
+                addButton.addEventListener("click", async (e) => {
+                    const gameId = e.target.getAttribute("data-game-id");
+                    await signup(gameId, currWriter.writer_id);
+                });
             });
         }
+
+    async function signup(gameId, writer_id) {
+        try {
+            // Send a POST request to add the game to the Assignments table and update the Games table
+            const response = await fetch("/.netlify/functions/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ gameId: gameId })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                alert("Game successfully added to assignments!");
+                // Optionally update the UI to reflect the changes
+                updateGameAvailability(gameId);
+            } else {
+                alert("Failed to add game to assignments.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error adding game to assignments.");
+        }
+    }   
 
     function logout() {
         console.log("Attempting to log out...");
