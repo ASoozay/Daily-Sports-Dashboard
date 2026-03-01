@@ -16,8 +16,8 @@ exports.handler = async (event) => {
 
     const query = `SELECT * 
                     FROM "Assignments"
-                    JOIN "Games" ON "Games.game_id" = "Assignments.game_id" 
-                    WHERE "Assignments.writer_id" = $1  
+                    JOIN "Games" ON "Games".game_id = "Assignments".game_id 
+                    WHERE "Assignments".writer_id = $1  
                     ORDER BY date, time;`;
     console.log("Query: ", query); // Log the query to confirm it's correct
 
