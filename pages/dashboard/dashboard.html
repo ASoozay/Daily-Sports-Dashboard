@@ -798,7 +798,7 @@
             event.currentTarget.classList.add("active-tab");
 
             if(tabId == "scheduled-games") {
-                fetchScheduledGames(writerId);
+                fetchScheduledGames(currWriter.writerId);
             }
 
             if (tabId == "available-games") {
