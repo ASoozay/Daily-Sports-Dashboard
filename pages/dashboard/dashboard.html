@@ -835,11 +835,10 @@
         }
 
         window.onload = function() {
-            // Directly call the showTab function for the "scheduled-games" tab on page load
-            const scheduledGamesButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
-
-            // Manually call the showTab function for the "scheduled-games" tab
-            showTab({ currentTarget: scheduledGamesButton }, 'scheduled-games');
+            setTimeout(function() {
+                const scheduledGamesButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
+                scheduledGamesButton.click();  // Simulate a click after the page loads
+            }, 100);  // Delay for 100ms to allow the page to fully load
         };
     </script>
 
