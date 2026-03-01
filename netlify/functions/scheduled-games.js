@@ -21,11 +21,11 @@ exports.handler = async (event) => {
     console.log("Query: ", query); // Log the query to confirm it's correct
 
     const scheduledGames = await client.query(query, [writerId]);
-    console.log("Available games:", availableGames.rows); // Log the result
+    console.log("Available games:", scheduledGames.rows); // Log the result
 
     return {
     statusCode: 200,
-    body: JSON.stringify({ games: availableGames.rows }),
+    body: JSON.stringify({ games: scheduledGames.rows }),
     };
 
   } catch (err) {
