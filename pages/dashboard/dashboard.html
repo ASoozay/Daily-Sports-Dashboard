@@ -656,6 +656,7 @@
 
     async function signup(gameId, writerId) {
         console.log("Game ID: ", gameId, "  Writer ID: ", writerId);
+        try {
             // Send a POST request to add the game to the Assignments table and update the Games table
             const response = await fetch("/.netlify/functions/signup", {
                 method: "POST",
