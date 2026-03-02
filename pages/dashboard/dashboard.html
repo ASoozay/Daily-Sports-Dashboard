@@ -102,15 +102,6 @@
             min-height: 0;
         }
 
-        .games-filter-container {
-            flex: 0 0 auto; /* Prevent it from growing or shrinking */
-            min-height: 50px;
-            padding: 1vh 1vw;
-            background-color: green;
-            width: 100%; /* Ensure it takes up the full width of the parent */
-            box-sizing: border-box; /* Prevent padding from affecting width */
-        }
-
         .games-container {
             flex: 1; /* Take remaining space */
             display: grid;
@@ -521,7 +512,6 @@
     </div>
 
     <div id = "available-games" class="tab-content">
-        <div class = "games-filter-container"></div>
         <div id = "available-games-container" class = "games-container"></div>
     </div>
 
