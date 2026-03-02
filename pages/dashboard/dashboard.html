@@ -726,6 +726,8 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
+                console.log(game.date);
+                console.log(typeof game.date);
                 const [y, m, d] = game.date.split('-');
                 const date = new Date(y, m - 1, d);
                 const time = game.time;
