@@ -663,13 +663,8 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                let date = new Date(game.date);
-                date = date.toLocaleDateString('en-US', {
-                    weekday: 'long',  // Full weekday name (e.g., "Saturday")
-                    year: 'numeric',  // Full year (e.g., "2026")
-                    month: 'long',    // Full month name (e.g., "February")
-                    day: 'numeric',   // Day of the month (e.g., "6")
-                });
+                const [y, m, d] = game.date.split('-');
+                const date = new Date(y, m - 1, d);
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
@@ -731,13 +726,8 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                let date = new Date(game.date);
-                date = date.toLocaleDateString('en-US', {
-                    weekday: 'long',  // Full weekday name (e.g., "Saturday")
-                    year: 'numeric',  // Full year (e.g., "2026")
-                    month: 'long',    // Full month name (e.g., "February")
-                    day: 'numeric',   // Day of the month (e.g., "6")
-                });
+                const [y, m, d] = game.date.split('-');
+                const date = new Date(y, m - 1, d);
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
