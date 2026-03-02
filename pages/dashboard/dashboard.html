@@ -103,18 +103,18 @@
         }
 
         .games-filter-container {
-            flex: 0 0 auto;
+            flex: 0 0 auto; /* Prevent it from growing or shrinking */
             min-height: 50px;
             padding: 1vh 1vw;
-            width: 100%;
-
             background-color: green;
+            width: 100%; /* Ensure it takes up the full width of the parent */
+            box-sizing: border-box; /* Prevent padding from affecting width */
         }
 
         .games-container {
-            flex: 1;             
+            flex: 1; /* Take remaining space */
             display: grid;
-            width: 100%;
+            width: 100%; 
             overflow-y: scroll;    
             row-gap: 20px;
             padding: 1% 0 0 10px;
