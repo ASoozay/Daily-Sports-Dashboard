@@ -38,6 +38,7 @@
             align-items: center;
             justify-content: space-between;
             padding-left: 50px;
+            margin-bottom: 1%;
 
             /*text*/
             color: white;
@@ -99,6 +100,15 @@
             margin: 0 auto;
             border: 1px solid black;
             min-height: 0;
+        }
+
+        .games-filter-container {
+            display: flex;
+            width: 100%;
+            height: 5%;
+
+            margin: 1%;
+            background-color: #360f5a;
         }
 
         .games-container {
@@ -511,6 +521,7 @@
     </div>
 
     <div id = "available-games" class="tab-content">
+        <div class = "games-filter-container"></div>
         <div id = "available-games-container" class = "games-container"></div>
     </div>
 
