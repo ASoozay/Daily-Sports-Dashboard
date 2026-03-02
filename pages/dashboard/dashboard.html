@@ -663,8 +663,14 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                const [y, m, d] = game.date.split('-');
-                const date = new Date(y, m - 1, d);
+                let date = new Date(game.date);
+                date = date.toLocaleDateString('en-US', {
+                timeZone: 'UTC',  
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                });
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
@@ -726,10 +732,14 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                console.log(game.date);
-                console.log(typeof game.date);
-                const [y, m, d] = game.date.split('-');
-                const date = new Date(y, m - 1, d);
+                let date = new Date(game.date);
+                date = date.toLocaleDateString('en-US', {
+                timeZone: 'UTC',  
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                });
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
