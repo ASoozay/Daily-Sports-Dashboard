@@ -143,7 +143,7 @@
             align-items: center;
             justify-content: left;
             height: 40%;
-            margin-bottom: 10%;
+            margin-bottom: 8%;
 
             background-color: transparent;
 
@@ -689,7 +689,10 @@
                 gameBox.classList.add("game-box");
 
             gameBox.innerHTML = `
-                <div class = "sport-box">${sport}</div>
+                <div class = "sport-container">
+                    <div class = "sport-box">${sport}</div>
+                    <div class = "notes-box">${notes}</div> 
+                </div>
                 <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
                 <div class = "where">${where}</div>
                 <img class="opp-icon" src="./schools/${opp}.webp" alt="${opp}">
