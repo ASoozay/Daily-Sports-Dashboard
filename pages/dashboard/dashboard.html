@@ -121,7 +121,7 @@
             border-color: gray;
         }
 
-        .sport-box {
+        .sport-container {
             display: flex;
             align-items: center;
             justify-content: left;
@@ -136,7 +136,36 @@
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
 
+            margin-right: 5%;            
+        }  
+        .sport-box {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 40%;
+            margin-bottom: 20%;
+
+            background-color: transparent;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+
             margin-right: 5%;
+        }
+
+        .notes-box {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 20%;
+
+            background-color: transparent;
+
+            font-size: small;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            color: black;
         }
 
         .washington-icon {
@@ -725,7 +754,10 @@
                 gameBox.classList.add("game-box");
 
             gameBox.innerHTML = `
-                <div class = "sport-box">${sport}</div>
+                <div class = "sport-container">
+                    <div class = "sport-box">${sport}</div>
+                    <div class = "notes-box">${notes}</div} 
+                </div>
                 <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
                 <div class = "where">${where}</div>
                 <img class="opp-icon" src="./schools/${opp}.webp" alt="${opp}">
