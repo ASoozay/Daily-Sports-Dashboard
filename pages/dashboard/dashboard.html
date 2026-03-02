@@ -98,6 +98,7 @@
             width: 85%;
             margin: 0 auto;
             border: 1px solid black;
+            min-height: 0;
         }
 
         .games-container {
@@ -105,7 +106,7 @@
             display: grid;
             width: 100%;
             overflow-y: scroll;    
-            gap: 1%;
+            row-gap: 10px;
             padding: 1% 0 0 10px;
         }
 
@@ -121,7 +122,9 @@
         }
 
         .sport-box {
-            align-self: left;
+            display: flex;
+            align-items: center;
+            justify-content: left;
             margin-left:1%;
             margin-top: 1%;
             width: 8%;
@@ -239,7 +242,7 @@
             align-self: center;
             height: 30%;
             width: 8%;
-            margin-right: 6%;
+            margin-right: 3%;
 
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -292,6 +295,8 @@
 
         .tab-content {
             display: none;
+            flex: 1;
+            min-height: 0;  
         }
 
         /* Container fills content */
@@ -821,7 +826,7 @@
                 buttons[i].classList.remove("active-tab");
             }
 
-            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).style.display = "flex";
             event.currentTarget.classList.add("active-tab");
 
             if(tabId == "scheduled-games") {
