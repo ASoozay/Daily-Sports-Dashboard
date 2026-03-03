@@ -697,12 +697,9 @@
         });
 
         async function fetchWriterData(user) {
-            // Get the user's email directly from Netlify Identity
             const email = user.email;
-
-            // Fetch writer data from your DB using the email
             const response = await fetch("/.netlify/functions/writer-data", {
-                method: "POST", 
+                method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })
             });
@@ -710,20 +707,13 @@
             const data = await response.json();
             currWriter = data.writer;
 
-            console.log("Writer data:", data);  // Log the writer data
-            console.log("currWriter:", currWriter);  // Log the currWriter object
-
-            if (currWriter && currWriter.writer_id) {
-                console.log("Writer ID:", currWriter.writer_id);  // Check if writer_id exists
-            } else {
-                console.log("No writer_id found in currWriter");
-            }
-
-            if (data.writer && data.writer.first_name) {
-                document.getElementById("greetingHeader").textContent = `Hi, ${data.writer.first_name}!`;
+            if (currWriter && currWriter.first_name) {
+                document.getElementById("greetingHeader").textContent = `Hi, ${currWriter.first_name}!`;
             } else {
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
             }
+
+            return currWriter; // <- return so we can await
         };
 
         let activeFilters = {
@@ -1040,11 +1030,16 @@
         }
 
         window.onload = async function() {
+            const user = netlifyIdentity.currentUser();
+            if (!user) return;
+
+            await fetchWriterData(user); // wait until currWriter is ready
+
             const scheduledTabId = "scheduled-games";
             const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
             const scheduledTab = document.getElementById(scheduledTabId);
 
-            // 1. Activate the tab visually
+            // Activate tab
             const allTabs = document.getElementsByClassName("tab-content");
             const allButtons = document.getElementsByClassName("tab-button");
             for (let tab of allTabs) tab.style.display = "none";
@@ -1053,7 +1048,7 @@
             scheduledTab.style.display = "flex";
             scheduledButton.classList.add("active-tab");
 
-            // 2. Create filters if they don't exist
+            // Create filters once
             const filterContainer = document.getElementById("scheduled-games-filter-container");
             if (!filterContainer.hasChildNodes()) {
                 createGamesFilter("scheduled-games-filter-container", filters => {
@@ -1061,7 +1056,7 @@
                 });
             }
 
-            // 3. Fetch games
+            // Fetch games now that currWriter is ready
             await fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
         };
     </script>
