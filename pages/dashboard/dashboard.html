@@ -1040,10 +1040,22 @@
         }
 
         window.onload = function() {
-            setTimeout(function() {
-                const scheduledGamesButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
-                scheduledGamesButton.click();  // Simulate a click after the page loads
-            }, 100);  // Delay for 100ms to allow the page to fully load
+            const scheduledTab = document.getElementById("scheduled-games");
+            const scheduledButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
+
+            // If the scheduled-games tab is visible by default
+            if (scheduledTab.style.display !== "none") {
+                const filterContainer = document.getElementById("scheduled-games-filter-container");
+                if (!filterContainer.hasChildNodes()) {
+                    createGamesFilter("scheduled-games-filter-container", filters => {
+                        fetchScheduledGames(currWriter.writer_id, filters);
+                    });
+                }
+                fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
+            } else {
+                // Otherwise, simulate a click after a short delay (optional)
+                setTimeout(() => scheduledButton.click(), 200);
+            }
         };
     </script>
 
