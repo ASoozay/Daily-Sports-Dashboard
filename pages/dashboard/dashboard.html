@@ -858,13 +858,11 @@
             });
         }
 
-        async function fetchAvailableGames(filters = null) {
+        async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
             const response = await fetch("/.netlify/functions/available-games", {
                 method: "POST",
-                headers: {
-                "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ filters })
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ filters }) 
             });
 
             const data = await response.json();
