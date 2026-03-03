@@ -1020,8 +1020,6 @@
             if (tabId == "available-games") {
                 const filterContainer = document.getElementById("available-games-filter-container");
 
-                let availableFilters = { sports: [], locations: [] };
-
                 // Only create filters once
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("available-games-filter-container", filters => {
