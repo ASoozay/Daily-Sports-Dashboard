@@ -1017,10 +1017,17 @@
             }
 
             if (tabId == "available-games") {
-                fetchAvailableGames();
-                createGamesFilter("available-games-filter-container", filters => {
-                fetchAvailableGames(filters);
-            });
+                const filterContainer = document.getElementById("available-games-filter-container");
+
+                // Only create filters once
+                if (!filterContainer.hasChildNodes()) {
+                    createGamesFilter("available-games-filter-container", filters => {
+                        fetchAvailableGames(filters); // update games on filter click
+                    });
+                }
+
+                // Fetch all games initially
+                fetchAvailableGames(); 
             }
 
         }
