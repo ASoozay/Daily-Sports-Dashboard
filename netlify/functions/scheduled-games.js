@@ -4,7 +4,7 @@ exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body);
     const writerId = body.writerId;
-    const { filters = {} } = body;
+    const { filters = {} } = body.filters;
     const { sports = [], locations = [] } = filters;
 
     console.log("Request body:", body);
