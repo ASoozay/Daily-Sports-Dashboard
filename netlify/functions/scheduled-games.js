@@ -26,12 +26,6 @@ exports.handler = async (event) => {
     let query = `SELECT * FROM "Assignments" WHERE date >= CURRENT_DATE AND writer_id = $1`;
     let values = [writerId];
 
-    if (sports.length > 0) {
-      values.push(sports);
-      query += ` AND sport = ANY($${values.length})`;
-    }
-
-
 
     query += ` ORDER BY date, time`;
 
