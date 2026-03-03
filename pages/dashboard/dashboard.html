@@ -70,6 +70,7 @@
             width: 85%;
             height: 60px;
             padding-bottom: 10px;
+            margin-bottom: 1%;
         }
 
         .tab-button {
@@ -100,14 +101,61 @@
             margin: 0 auto;
             border: 1px solid black;
             min-height: 0;
+            max-height: 100%;
         }
 
         .games-filter-container {
             display: flex;
             width: 100%;
-            height: 50px;
+            height: 80px;
+            border-radius: 10px;
 
-            background-color: green;
+            background-color: #360f5a;
+        }
+
+        .games-filter {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            height: 100%;
+            padding-left: 20px;
+        }   
+
+        .filter-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-family: 'Calibra', sans-serif;
+            color: white;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-box {
+            padding: 8px 14px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            font-family: 'Calibra', sans-serif;
+        }
+
+        .filter-box:hover {
+            background-color: #ccc;
+        }
+
+        .filter-box.active {
+            background-color: #360f5a;
+            color: white;
         }
 
         .games-container {
@@ -517,11 +565,12 @@
     <div class="content">
 
     <div id="scheduled-games" class="tab-content">
+        <div id="scheduled-games-filter-container" class="games-filter-container"></div>       
         <div id = "scheduled-games-container" class = "games-container"></div>
     </div>
 
     <div id = "available-games" class="tab-content">
-        <div class = "games-filter-container"></div>
+        <div id="available-games-filter-container" class="games-filter-container"></div>
         <div id = "available-games-container" class = "games-container"></div>
     </div>
 
@@ -587,6 +636,44 @@
 
 </div>
 
+<template id="games-filter-template">
+    <div class="games-filter">
+
+        <div class="filter-section">
+            <div class="filter-title">Sport</div>
+            <div class="filter-options sport-options">
+                <div class="filter-box" data-value="Football">FB</div>
+                <div class="filter-box" data-value="Men's Soccer">MSOC</div>
+                <div class="filter-box" data-value="Women' Soccer">WSOC</div>
+                <div class="filter-box" data-value="Volleyball">VB</div>
+                <div class="filter-box" data-value="Men's Golf">MGOLF</div>
+                <div class="filter-box" data-value="Women's Golf">WGOLF</div>
+                <div class="filter-box" data-value="Cross Country">CC</div>
+                <div class="filter-box" data-value="Men's Basketball">MBB</div>
+                <div class="filter-box" data-value="Women's Basketball">WBB</div>
+                <div class="filter-box" data-value="Men's Tennis">MTEN</div>
+                <div class="filter-box" data-value="Women's Tennis">WTEN</div>
+                <div class="filter-box" data-value="Track & Field">TF</div>
+                <div class="filter-box" data-value="Gymnastics">GYM</div>
+                <div class="filter-box" data-value="Beach Volleyball">BVB</div>
+                <div class="filter-box" data-value="Men's Rowing">MROW</div>
+                <div class="filter-box" data-value="Women's Rowing">WROW</div>
+                <div class="filter-box" data-value="Baseball">BSB</div>
+                <div class="filter-box" data-value="Softball">SB</div>
+              </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-title">Location</div>
+            <div class="filter-options location-options">
+                <div class="filter-box" data-value="Home">Home</div>
+                <div class="filter-box" data-value="Away">Away</div>
+            </div>
+        </div>
+
+    </div>
+</template>
+
 <!---- Java Scripts--> 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
@@ -638,6 +725,50 @@
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
             }
         };
+
+        let activeFilters = {
+            sports: [],
+            locations: []
+        };
+
+        function createGamesFilter(containerId, onFilterChange) {
+            const template = document.getElementById("games-filter-template");
+            const clone = template.content.cloneNode(true);
+
+            const container = document.getElementById(containerId);
+            container.appendChild(clone);
+
+            const boxes = container.querySelectorAll(".filter-box");
+
+            boxes.forEach(box => {
+                box.addEventListener("click", () => {
+                    box.classList.toggle("active");
+
+                    const value = box.dataset.value;
+                    const isSport = box.closest(".sport-options");
+                    const isLocation = box.closest(".location-options");
+
+                    if (isSport) {
+                        toggleFilterValue(activeFilters.sports, value);
+                    }
+
+                    if (isLocation) {
+                        toggleFilterValue(activeFilters.locations, value);
+                    }
+
+                    onFilterChange(activeFilters);
+                });
+            });
+        }
+
+        function toggleFilterValue(array, value) {
+            const index = array.indexOf(value);
+            if (index > -1) {
+                array.splice(index, 1);
+            } else {
+                array.push(value);
+            }
+        }        
 
         async function fetchScheduledGames(writerId) {
             // Ensure the writerId is being passed correctly
@@ -727,9 +858,13 @@
             });
         }
 
-        async function fetchAvailableGames() {
+        async function fetchAvailableGames(filters = null) {
             const response = await fetch("/.netlify/functions/available-games", {
-                method: "POST"
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ filters })
             });
 
             const data = await response.json();
@@ -883,6 +1018,9 @@
 
             if (tabId == "available-games") {
                 fetchAvailableGames();
+                createGamesFilter("available-games-filter-container", filters => {
+                fetchAvailableGames(filters);
+            });
             }
 
         }
