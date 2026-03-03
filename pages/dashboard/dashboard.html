@@ -1020,7 +1020,7 @@
                 }
 
                 // Fetch all games initially
-                fetchScheduledGames(currWriter.writer_id); 
+                fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] }); 
             }
 
             if (tabId == "available-games") {
