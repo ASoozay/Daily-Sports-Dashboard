@@ -154,8 +154,8 @@
         }
 
         .filter-box.active {
-            background-color: #360f5a;
-            color: white;
+            background-color: #B7A57A;
+            color: black;
         }
 
         .games-container {
@@ -770,19 +770,18 @@
             }
         }        
 
-        async function fetchScheduledGames(writerId) {
+        async function fetchScheduledGames(writerId, filters = { sports: [], locations: [] }) {
             // Ensure the writerId is being passed correctly
             if (!writerId) {
                 console.log("Writer ID is missing!");
                 return;  // Exit if writerId is missing
             }
+            
 
             const response = await fetch("/.netlify/functions/scheduled-games", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ writerId: writerId }) // Pass writerId in the body
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ writerId, filters }) 
             });
 
             if (!response.ok) {
@@ -1011,7 +1010,17 @@
             event.currentTarget.classList.add("active-tab");
 
             if(tabId == "scheduled-games") {
-                fetchScheduledGames(currWriter.writer_id);
+                const filterContainer = document.getElementById("scheduled-games-filter-container");
+
+                // Only create filters once
+                if (!filterContainer.hasChildNodes()) {
+                    createGamesFilter("scheduled-games-filter-container", filters => {
+                        fetchScheduledGames(currWriter.writer_id, filters); // update games on filter click
+                    });
+                }
+
+                // Fetch all games initially
+                fetchScheduledGames(currWriter.writer_id); 
             }
 
             if (tabId == "available-games") {
