@@ -18,7 +18,8 @@
 
         .main {
             display: flex;
-            height: 100vh; /* subtract header + tab height */
+            flex: 1;
+            min-height: 0;
         }
 
         .page {
@@ -94,13 +95,11 @@
         }        
 
         .content {
-            flex: 5.67;
+            flex: 3;
             display: flex;
             flex-direction: column;
-            width: 85%;
-            margin: 0 auto;
+            width: 100%;
             min-height: 0;
-            max-height: 100%;
         }
 
         .games-filter-container {
@@ -114,11 +113,11 @@
 
         .games-filter {
             display: flex;
-            gap: 300px;
+            flex-wrap: wrap;
+            gap: 40px;
             align-items: center;
-            height: 100%;
-            padding-left: 20px;
-        }   
+            padding: 20px;
+        }  
 
         .filter-section {
             display: flex;
@@ -167,14 +166,14 @@
         }
 
         .game-box {
-            align-items: center;
             display: flex;
-            width: 95%;
-            height: 150px;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            padding: 15px;
             background-color: rgb(211, 210, 210);
             border-radius: 20px;
-            border: 3px;
-            border-color: gray;
+            gap: 15px;
         }
 
         .sport-container {
@@ -374,7 +373,9 @@
         }        
 
         .X {
-            flex: 1; 
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
             overflow-y: auto;
         }
 
@@ -388,14 +389,10 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 400px); /* fixed column size */
-            gap: 100px;
-
-            width: 80%;
-            margin: 5% auto;
-
-            justify-content: center; /* centers grid inside container */
-            align-content: center;   /* centers vertically if container has height */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            width: 90%;
+            margin: 40px auto;
         }
 
         .invoice-box {
@@ -520,28 +517,48 @@
             color: black;            
         }
 
-        .bottom {
-            /*background*/
-            background-color:#360f5a;
-            background-attachment: fixed;
+    .bottom {
+        background-color: #360f5a;
+        width: 100%;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Avenir Next', sans-serif;
+        font-size: 12px;
+    }
+        
+    @media (max-width: 600px) {
 
-            /*display*/
-            width: 100%;
-            height: 25px;
-            position:fixed;
-            bottom:0;
-            padding-top: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    .account {
+        font-size: 22px;
+        padding-left: 20px;
+    }
 
-            /*text*/
-            color: white;
-            font-family: 'Avenir Next', sans-serif;
-            font-size: 12px;
+    .logout {
+        font-size: 16px;
+        margin-right: 20px;
+    }
 
-        }
+    .tab-button {
+        font-size: 14px;
+        padding: 10px;
+    }
 
+    .game-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date, .time {
+        width: 100%;
+    }
+
+    .recap-container {
+        width: 100%;
+    }
+}
     </style>    
 </head>
 
