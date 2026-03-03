@@ -720,6 +720,9 @@
             locations: []
         };
 
+        let scheduleFilters = { sports: [], locations: [] };
+        let availableFilters = { sports: [], locations: [] };
+
         function createGamesFilter(containerId, onFilterChange) {
             const template = document.getElementById("games-filter-template");
             const clone = template.content.cloneNode(true);
@@ -934,6 +937,7 @@
             if (data.success) {
                 alert("Game successfully added to assignments!");
                 // Optionally update the UI to reflect the changes
+                fetchAvailableGames(availableFilters);
             } else {
                 alert("Failed to add game to assignments.");
             }
@@ -998,9 +1002,6 @@
 
             document.getElementById(tabId).style.display = "flex";
             event.currentTarget.classList.add("active-tab");
-
-            let scheduleFilters = { sports: [], locations: [] };
-            let availableFilters = { sports: [], locations: [] };
 
             if(tabId == "scheduled-games") {
                 const filterContainer = document.getElementById("scheduled-games-filter-container");
