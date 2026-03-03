@@ -842,6 +842,7 @@
                 removeButton.addEventListener("click", async (e) => {
                     const gameId = e.target.getAttribute("data-game-id");
                     await remove(gameId);
+                    fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
                 });
             });
         }
@@ -998,18 +999,21 @@
             document.getElementById(tabId).style.display = "flex";
             event.currentTarget.classList.add("active-tab");
 
+            let currentFilters = { sports: [], locations: [] };
+
             if(tabId == "scheduled-games") {
                 const filterContainer = document.getElementById("scheduled-games-filter-container");
 
                 // Only create filters once
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("scheduled-games-filter-container", filters => {
-                        fetchScheduledGames(currWriter.writer_id, filters); // update games on filter click
+                        currentFilters = filters;
+                        fetchScheduledGames(currWriter.writer_id, currentFilters);
                     });
                 }
 
                 // Fetch all games initially
-                fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] }); 
+                fetchScheduledGames(currWriter.writer_id, currentFilters); 
             }
 
             if (tabId == "available-games") {
@@ -1018,12 +1022,13 @@
                 // Only create filters once
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("available-games-filter-container", filters => {
-                        fetchAvailableGames(filters); // update games on filter click
+                        currentFilters = filters;
+                        fetchAvailableGames(currentFilters); // update games on filter click
                     });
                 }
 
                 // Fetch all games initially
-                fetchAvailableGames(); 
+                fetchAvailableGames(currentFilters); 
             }
 
         }
