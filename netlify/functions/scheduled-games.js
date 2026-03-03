@@ -19,12 +19,11 @@ exports.handler = async (event) => {
 
     // Base query
     let query = `SELECT * FROM "Assignments" WHERE date >= CURRENT_DATE AND writer_id = $1`;
-    let values = [];
+    let values = [writerId];  // Add writerId as the first placeholder
 
-    // Filter by sports if any
     if (sports.length > 0) {
-      values.push(sports);
-      query += ` AND sport = ANY($${values.length})`;  // $1, $2, etc.
+    values.push(sports);
+    query += ` AND sport = ANY($${values.length})`; // $2 if writerId is $1
     }
 
     // Filter by locations
