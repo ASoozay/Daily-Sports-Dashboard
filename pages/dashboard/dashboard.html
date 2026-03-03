@@ -999,7 +999,8 @@
             document.getElementById(tabId).style.display = "flex";
             event.currentTarget.classList.add("active-tab");
 
-            let currentFilters = { sports: [], locations: [] };
+            let scheduleFilters = { sports: [], locations: [] };
+            let availableFilters = { sports: [], locations: [] };
 
             if(tabId == "scheduled-games") {
                 const filterContainer = document.getElementById("scheduled-games-filter-container");
@@ -1007,13 +1008,13 @@
                 // Only create filters once
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("scheduled-games-filter-container", filters => {
-                        currentFilters = filters;
-                        fetchScheduledGames(currWriter.writer_id, currentFilters);
+                        scheduleFilters = filters;
+                        fetchScheduledGames(currWriter.writer_id, scheduleFilters);
                     });
                 }
 
                 // Fetch all games initially
-                fetchScheduledGames(currWriter.writer_id, currentFilters); 
+                fetchScheduledGames(currWriter.writer_id, scheduleFilters); 
             }
 
             if (tabId == "available-games") {
