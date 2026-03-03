@@ -1039,23 +1039,30 @@
 
         }
 
-        window.onload = function() {
-            const scheduledTab = document.getElementById("scheduled-games");
-            const scheduledButton = document.querySelector('button[onclick="showTab(event, \'scheduled-games\')"]');
+        window.onload = async function() {
+            const scheduledTabId = "scheduled-games";
+            const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
+            const scheduledTab = document.getElementById(scheduledTabId);
 
-            // If the scheduled-games tab is visible by default
-            if (scheduledTab.style.display !== "none") {
-                const filterContainer = document.getElementById("scheduled-games-filter-container");
-                if (!filterContainer.hasChildNodes()) {
-                    createGamesFilter("scheduled-games-filter-container", filters => {
-                        fetchScheduledGames(currWriter.writer_id, filters);
-                    });
-                }
-                fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
-            } else {
-                // Otherwise, simulate a click after a short delay (optional)
-                setTimeout(() => scheduledButton.click(), 200);
+            // 1. Activate the tab visually
+            const allTabs = document.getElementsByClassName("tab-content");
+            const allButtons = document.getElementsByClassName("tab-button");
+            for (let tab of allTabs) tab.style.display = "none";
+            for (let btn of allButtons) btn.classList.remove("active-tab");
+
+            scheduledTab.style.display = "flex";
+            scheduledButton.classList.add("active-tab");
+
+            // 2. Create filters if they don't exist
+            const filterContainer = document.getElementById("scheduled-games-filter-container");
+            if (!filterContainer.hasChildNodes()) {
+                createGamesFilter("scheduled-games-filter-container", filters => {
+                    fetchScheduledGames(currWriter.writer_id, filters);
+                });
             }
+
+            // 3. Fetch games
+            await fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
         };
     </script>
 
