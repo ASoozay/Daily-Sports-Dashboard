@@ -23,9 +23,23 @@ exports.handler = async (event) => {
 
     await client.connect();
 
-    let query = `SELECT * FROM "Assignments" WHERE date >= CURRENT_DATE AND writer_id = $1`;
+    let query = `SELECT * FROM "Assignments" 
+                JOIN "Games" ON "Games".game_id = "Assignments".game_id 
+                WHERE date >= CURRENT_DATE AND writer_id = $1`;
     let values = [writerId];
 
+    if (sports.length > 0) {
+      values.push(sports);
+      query += ` AND sport = ANY($${values.length})`;
+    }
+
+    if (locations.length === 1) {
+      if (locations[0] === "Home") {
+        query += ` AND location = 'Seattle, Wash.'`;
+      } else if (locations[0] === "Away") {
+        query += ` AND location != 'Seattle, Wash.'`;
+      }
+    }
 
     query += ` ORDER BY date, time`;
 
