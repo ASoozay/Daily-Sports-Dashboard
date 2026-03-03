@@ -31,13 +31,7 @@ exports.handler = async (event) => {
       query += ` AND sport = ANY($${values.length})`;
     }
 
-    if (locations.length === 1) {
-      if (locations[0] === "Home") {
-        query += ` AND location = 'Seattle, Wash.'`;
-      } else if (locations[0] === "Away") {
-        query += ` AND location != 'Seattle, Wash.'`;
-      }
-    }
+
 
     query += ` ORDER BY date, time`;
 
