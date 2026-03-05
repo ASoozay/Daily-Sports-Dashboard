@@ -8,6 +8,7 @@ exports.handler = async (event) => {
     const { sports = [], locations = [] } = filters;
 
     console.log("Request body:", body);
+    console.log("Request event body:", event.body);
 
     if (!writerId) {
       return {
