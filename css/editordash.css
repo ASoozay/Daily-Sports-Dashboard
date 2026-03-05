@@ -393,8 +393,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50%;
-            width: 10%;
+            height: 40%;
+            width: 100%;
+            margin-bottom: 20%;
             border-radius: 10px;
             background-color: #360f5a;
 
@@ -406,7 +407,26 @@
 
         .add::before {
             content: "ADD";
-        }        
+        }    
+        
+        .assign {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40%;
+            width: 100%;
+            border-radius: 10px;
+            background-color: #360f5a;
+
+            text-align: center;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        .assign::before {
+            content: "ASSIGN";
+        }
 
         .X {
             flex: 1; 

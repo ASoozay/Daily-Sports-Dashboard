@@ -248,7 +248,9 @@
                 </div>
                 <div class = "date">${date}</div>
                 <div class = "time">${time}</div>
-                <button class = "remove" data-game-id = "${gameId}"></div>
+                <div class = "options-container">
+                    <button class = "remove" data-game-id = "${gameId}"></button>
+                </div>
             `;
 
             container.appendChild(gameBox);
@@ -320,7 +322,10 @@
                 </div>
                 <div class = "date">${date}</div>
                 <div class = "time">${time}</div>
-                <button class = "add" data-game-id = "${gameId}"></button>
+                <div class = "options-container"> 
+                    <button class = "add" data-game-id = "${gameId}"></button>
+                    <button class = "assign" data-game-id = ${gameId}></button>
+                </div>    
             `;
 
             container.appendChild(gameBox);
