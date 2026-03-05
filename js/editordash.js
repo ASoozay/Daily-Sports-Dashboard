@@ -324,7 +324,7 @@
                 <div class = "time">${time}</div>
                 <div class = "options-container"> 
                     <button class = "add" data-game-id = "${gameId}"></button>
-                    <button class = "assign" data-game-id = ${gameId}></button>
+                    <button class = "assign" onclick="openAssignModal()" data-game-id = ${gameId}></button>
                 </div>    
             `;
 
@@ -388,6 +388,31 @@
             alert("Error removing game from assignments.");
         }
     }     
+
+    function openAssignModal() {
+        document.getElementById("assign-modal").style.display = "flex";
+    }
+
+    async function assign(gameId) {
+        try {
+            console.log("");
+        } catch {
+
+        }
+    };
+
+    const modal = document.getElementById("assign-modal");
+    const closeBtn = document.querySelector(".close-btn");
+
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 
     document.getElementById("logout").onclick = function () {
         console.log("Attempting to log out...");
