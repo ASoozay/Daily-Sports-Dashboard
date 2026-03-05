@@ -416,14 +416,6 @@
         document.getElementById("assign-modal").style.display = "flex";
     }
 
-    async function assign(gameId) {
-        try {
-            console.log("");
-        } catch {
-
-        }
-    };
-
     const modal = document.getElementById("assign-modal");
     const closeBtn = document.querySelector(".close-btn");
 
@@ -446,7 +438,7 @@
         return;
     }
 
-    await assign(currGameId, writerId);
+    await submit(currGameId, writerId);
 
     modal.style.display = "none";
     };
