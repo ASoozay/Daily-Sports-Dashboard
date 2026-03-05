@@ -37,14 +37,17 @@
         async function loadWriters() {
 
             const response = await fetch("/.netlify/functions/get-writers");
-            const writers = await response.json();
+            const data = await response.json();
+
+            const writers = data.writers;   
 
             const select = document.getElementById("writer-select");
+            select.innerHTML = ""; 
 
             writers.forEach(writer => {
                 const option = document.createElement("option");
 
-                option.value = writer.id;     // or email
+                option.value = writer.writer_id;  
                 option.textContent = writer.first_name + " " + writer.last_name;
 
                 select.appendChild(option);
@@ -176,7 +179,7 @@
                     <div class = "time">${time}</div>
                 </div>
                 <div class = "writer">${name}</div>
-                <div class = "option-container"> 
+                <div class = "options-container"> 
                     <button class = "submit"></button>  
                     <button class = "remove" data-game-id = "${gameId}"></button>
                 </div>    
@@ -442,7 +445,7 @@
         return;
     }
 
-    await assign(selectedGameId, writerId);
+    await assign(currGameId, writerId);
 
     modal.style.display = "none";
     };
