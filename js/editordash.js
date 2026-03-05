@@ -156,14 +156,14 @@
                     <div class="${recap_css}"></div>
                     <p class="recap-location">${location}</p>
                 </div>
-                <div class = "when-container>
+                <div class = "when-container">
                     <div class = "date">${date}</div>
                     <div class = "time">${time}</div>
                 </div>
                 <div class = "writer">${name}</div>
                 <div class = "option-container"> 
-                    <button class = "submit"></div>  
-                    <button class = "remove" data-game-id = "${gameId}"></div>
+                    <button class = "submit"></button>  
+                    <button class = "remove" data-game-id = "${gameId}"></button>
                 </div>    
             `;
 
@@ -236,7 +236,7 @@
                 </div>
                 <div class = "date">${date}</div>
                 <div class = "time">${time}</div>
-                <button class = "add" data-game-id = "${gameId}"></div>
+                <button class = "add" data-game-id = "${gameId}"></button>
             `;
 
             container.appendChild(gameBox);
