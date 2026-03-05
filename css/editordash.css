@@ -204,19 +204,18 @@
         }
 
         .when-container {
+            flex: 0 0 120px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-width: 100px;
-            max-width: 15%;
             text-align: center;
         }
 
         .date,
         .time {
-            font-size: small;
-            margin: 2px 0;
+            font-size: 14px;
+            line-height: 1.2;
         }
 
         .writer {
