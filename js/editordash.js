@@ -34,12 +34,6 @@
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
             }
 
-            if (currWriter.position === "Editor") {
-                window.location.href = "/pages/editor.html";
-            } else {
-                window.location.href = "/pages/dashboard/dashboard.html";
-            }
-
             return currWriter; // <- return so we can await
         };
 
@@ -90,14 +84,14 @@
             }
         }        
 
-        async function fetchScheduledGames(writerId, filters = { sports: [], locations: [] }) {
+        async function fetchAllScheduledGames(writerId, filters = { sports: [], locations: [] }) {
             // Ensure the writerId is being passed correctly
             if (!writerId) {
                 console.log("Writer ID is missing!");
                 return;  // Exit if writerId is missing
             }
             
-            const response = await fetch("/.netlify/functions/scheduled-games", {
+            const response = await fetch("/.netlify/functions/all-schedule", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ writerId, filters }) 
@@ -133,6 +127,7 @@
                 });
                 const time = game.time;
                 const notes = game.notes;
+                const name = game.first_name + " " + game.last_name;
                 let where = "";
                 let recap = "";
                 let recap_css = "";
@@ -154,16 +149,22 @@
                     <div class = "sport-box">${sport}</div>
                     <div class = "notes-box">${notes}</div> 
                 </div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
                 <div class = "where">${where}</div>
-                <img class="opp-icon" src="./schools/${opp}.webp" alt="${opp}">
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
                 <div class = "recap-container">
                     <div class="${recap_css}"></div>
                     <p class="recap-location">${location}</p>
                 </div>
-                <div class = "date">${date}</div>
-                <div class = "time">${time}</div>
-                <button class = "remove" data-game-id = "${gameId}"></div>
+                <div class = "when-container>
+                    <div class = "date">${date}</div>
+                    <div class = "time">${time}</div>
+                </div>
+                <div class = "writer">${name}</div>
+                <div class = "option-container"> 
+                    <button class = "submit"></div>  
+                    <button class = "remove" data-game-id = "${gameId}"></div>
+                </div>    
             `;
 
             container.appendChild(gameBox);
@@ -226,9 +227,9 @@
                     <div class = "sport-box">${sport}</div>
                     <div class = "notes-box">${notes}</div> 
                 </div>
-                <img class = "washington-icon" src = "./schools/Washington.webp" alt = "UW">
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
                 <div class = "where">${where}</div>
-                <img class="opp-icon" src="./schools/${opp}.webp" alt="${opp}">
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
                 <div class = "recap-container">
                     <div class="${recap_css}"></div>
                     <p class="recap-location">${location}</p>

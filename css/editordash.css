@@ -312,12 +312,15 @@
         }
 
         .date {
+            height: 40%;
+            margin-bottom: 20%;
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;            
         }
 
         .time {
+            height: 40%;
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
@@ -336,12 +339,38 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
          }
 
+        .options-container {
+            display: grid;
+            height: 80%;
+            width: 10%;
+        } 
+
+        .submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40%;
+            width: 100%;
+            margin-bottom: 20%;
+            border-radius: 10px;
+            background-color: green;
+
+            text-align: center;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;            
+        }
+
+        .submit::before {
+            content: "SUBMIT";
+        }
+
         .remove {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50%;
-            width: 10%;
+            height: 40%;
+            width: 100%;
             border-radius: 10px;
             background-color: rgb(139, 39, 39);
 
