@@ -247,7 +247,7 @@
             height: 80%;
             justify-content: center; 
             background-color: transparent;
-            margin-right: 10%;
+            margin-right: 8%;
         }
 
         .home-recap {
@@ -325,7 +325,7 @@
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
             text-size-adjust: inherit;
-            margin-right: 3%;
+            margin-right: 6%;
         }
 
         .writer {
@@ -350,6 +350,9 @@
             justify-content: center;
             height: 80%;
             width: 10%;
+
+            margin-left: auto;   
+            margin-right: 5%;   
         }
 
         .submit {
