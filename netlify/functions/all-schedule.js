@@ -24,8 +24,9 @@ exports.handler = async (event) => {
     await client.connect();
 
     let query = `SELECT * FROM "Assignments" 
-                JOIN "Games" ON "Games".game_id = "Assignments".game_id 
-                WHERE date >= CURRENT_DATE AND writer_id = $1`;
+                JOIN "Games" ON "Games".game_id = "Assignments".game_id
+                JOIN "Writers" ON "Writers".writer_id = "Assignments".game_id 
+                WHERE date >= CURRENT_DATE`;
     let values = [writerId];
 
     if (sports.length > 0) {
