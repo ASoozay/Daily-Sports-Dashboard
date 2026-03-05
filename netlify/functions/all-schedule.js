@@ -1,21 +1,32 @@
 const { Client } = require("pg");
 
-exports.handler = async (event) => {
+exports.handler = async function(event, context) {
+  console.log("Received request:", event.httpMethod, "body:", event.body);
+
+  if (!event.body) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Missing request body" })
+    };
+  }
+
+  let writerId, filters;
   try {
-    const body = JSON.parse(event.body);
-    const writerId = body.writerId;
-    const { filters = {} } = body;
-    const { sports = [], locations = [] } = filters;
+    ({ writerId, filters } = JSON.parse(event.body));
+  } catch (err) {
+    console.error("Invalid JSON:", err);
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Invalid JSON in request body" })
+    };
+  }
 
-    console.log("Request body:", body);
-    console.log("Request event body:", event.body);
-
-    if (!writerId) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "writerId missing" }),
-      };
-    }
+  if (!writerId) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Missing writerId" })
+    };
+  }
 
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
