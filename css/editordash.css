@@ -316,7 +316,8 @@
         .date {
             font-size: x-large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;            
+            color: black;
+            margin-right: 3%;            
         }
 
         .time {
@@ -324,6 +325,7 @@
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
             text-size-adjust: inherit;
+            margin-right: 3%;
         }
 
         .writer {
@@ -346,7 +348,7 @@
             align-self: center;
             align-items: center;
             justify-content: center;
-            height: 100%;
+            height: 80%;
             width: 10%;
         }
 
