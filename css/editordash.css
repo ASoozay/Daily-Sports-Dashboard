@@ -302,7 +302,7 @@
             text-align: center;
         }
 
-        .when {
+        .when-container {
             display: grid;
             align-self: center;
             align-items: center;
