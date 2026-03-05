@@ -307,21 +307,21 @@
             align-self: center;
             align-items: center;
             height: 80%;
-            width: 18%;
-            margin-right: 3%;
+            width: 20%;
+            margin-right: 1%;
         }
 
         .date {
             height: 40%;
             margin-bottom: 20%;
-            font-size: x-large;
+            font-size: large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;            
         }
 
         .time {
             height: 40%;
-            font-size: x-large;
+            font-size: large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
             text-size-adjust: inherit;
@@ -332,17 +332,18 @@
             align-self: center;
             align-items: center;
             height: 50%;
-            width: 8%;
-            margin-right: 3%;
+            width: 10%;
+            margin-right: 1%;
 
             color: black;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
          }
 
         .options-container {
             display: grid;
             height: 80%;
-            width: 10%;
+            width: 20%;
         } 
 
         .submit {
