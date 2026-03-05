@@ -410,8 +410,9 @@
         }
     }     
 
-    function openAssignModal(gameId) {
+    async function openAssignModal(gameId) {
         currGameId = gameId;
+        await loadWriters();
         document.getElementById("assign-modal").style.display = "flex";
     }
 
@@ -533,8 +534,7 @@
             if (!user) return;
 
             await fetchWriterData(user); // wait until currWriter is ready
-            await loadWriters();
-
+            
             const scheduledTabId = "all-games";
             const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
             const scheduledTab = document.getElementById(scheduledTabId);
