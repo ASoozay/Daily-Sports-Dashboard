@@ -9,22 +9,22 @@
     <style>
         @import url('https://fonts.googleapis.com');
         body {
-            background-color: whitesmoke;
-        }
-
-        .page {
-            height: 100%;
-        }
-
-        .main {
-            display: flex;
-            height: 100vh; /* subtract header + tab height */
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: whitesmoke;
         }
 
         .page {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            padding: 20px;
         }
 
         .account {
@@ -94,87 +94,83 @@
         }        
 
         .content {
-            flex: 5.67;
+            flex: 4;
             display: flex;
             flex-direction: column;
-            width: 85%;
-            margin: 0 auto;
-            min-height: 0;
-            max-height: 100%;
         }
 
         .games-filter-container {
-            display: flex;
             width: 100%;
-            height: 80px;
-            border-radius: 10px;
-
-            background-color: #360f5a;
+            margin-top: 20px;
         }
 
         .games-filter {
             display: flex;
-            gap: 300px;
-            align-items: center;
-            height: 100%;
-            padding-left: 20px;
-        }   
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px 25px;
+            background: #360f5a;
+            border-radius: 14px;
+            align-items: flex-start;
+        }
 
         .filter-section {
             display: flex;
             flex-direction: column;
+            gap: 12px;
+            flex: 1 1 300px;   /* grow, shrink, min width */
+            min-width: 260px;
         }
 
         .filter-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-family: 'Calibra', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
             color: white;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .filter-options {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
+
         .filter-box {
-            padding: 8px 14px;
-            border-radius: 10px;
-            background-color: white;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: white;
+            font-size: 13px;
             cursor: pointer;
-            user-select: none;
-            font-size: 14px;
             transition: all 0.2s ease;
-            font-family: 'Calibra', sans-serif;
         }
 
         .filter-box:hover {
-            background-color: #ccc;
+            background: #ddd;
         }
 
         .filter-box.active {
-            background-color: #B7A57A;
+            background: #B7A57A;
             color: black;
+            font-weight: 600;
         }
 
         .games-container {
-            flex: 1; /* Take remaining space */
             display: grid;
-            width: 100%; 
-            overflow-y: scroll;    
-            row-gap: 20px;
-            padding: 1% 0 0 10px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
+        /* Game card */
         .game-box {
-            align-items: center;
+            background: #d3d2d2;
+            border-radius: 15px;
+            padding: 15px;
             display: flex;
-            width: 95%;
-            height: 150px;
-            background-color: rgb(211, 210, 210);
-            border-radius: 20px;
-            border: 3px;
-            border-color: gray;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .sport-container {
@@ -374,8 +370,8 @@
         }        
 
         .X {
-            flex: 1; 
-            overflow-y: auto;
+            flex: 1;
+            min-width: 250px;
         }
 
         .tab-content {
@@ -388,14 +384,10 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 400px); /* fixed column size */
-            gap: 100px;
-
-            width: 80%;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            width: 90%;
             margin: 5% auto;
-
-            justify-content: center; /* centers grid inside container */
-            align-content: center;   /* centers vertically if container has height */
         }
 
         .invoice-box {
@@ -540,6 +532,127 @@
             font-family: 'Avenir Next', sans-serif;
             font-size: 12px;
 
+        }
+
+            /* ============================= */
+        /* ===== RESPONSIVE FIXES ====== */
+        /* ============================= */
+
+        @media (max-width: 2000px) {
+            .invoice-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+            }
+
+            .games-filter {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            /* Stack main layout vertically */
+            .main {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .X {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .content {
+                width: 95%;
+            }
+
+            /* Stack game boxes better */
+            .game-box {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .sport-container,
+            .recap-container,
+            .date,
+            .time,
+            .remove,
+            .add {
+                width: auto;
+            }
+
+            .washington-icon,
+            .opp-icon {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .account {
+                font-size: 22px;
+                padding-left: 20px;
+            }
+
+            .logout {
+                font-size: 16px;
+                margin-right: 20px;
+            }
+
+            .tab-button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .filter-options {
+                flex-wrap: wrap;
+            }
+
+            .filter-box {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .game-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .date,
+            .time {
+                font-size: 16px;
+            }
+        } 
+        
+
+        @media (max-width: 1200px) {
+            .main {
+                flex-direction: column;
+            }
+
+            .X {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .content {
+                width: 100%;
+                background-color: tomato;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .games-filter {
+                gap: 25px;
+                padding: 15px;
+            }
+
+            .filter-section {
+                min-width: 100%;
+            }
         }
 
     </style>    
