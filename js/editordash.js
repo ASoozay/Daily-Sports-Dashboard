@@ -117,9 +117,9 @@
                 let date = new Date(game.date);
                 date = date.toLocaleDateString('en-US', {
                 timeZone: 'UTC',  
-                weekday: 'long',
+                weekday: 'short',
                 year: 'numeric',
-                month: 'long',
+                month: 'short',
                 day: 'numeric',
                 });
                 const time = game.time;
