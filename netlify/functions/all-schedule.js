@@ -3,18 +3,10 @@ const { Client } = require("pg");
 exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body);
-    const writerId = body.writerId;
-    const { filters = {} } = body;
+    const { writerId, filters = {} } = body;
     const { sports = [], locations = [] } = filters;
 
     console.log("Request body:", body);
-
-    if (!writerId) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "writerId missing" }),
-      };
-    }
 
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
@@ -23,32 +15,35 @@ exports.handler = async (event) => {
 
     await client.connect();
 
-    let query = `SELECT * FROM "Assignments" 
-                JOIN "Games" ON "Games".game_id = "Assignments".game_id
-                JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id 
-                WHERE date >= CURRENT_DATE`;
-    let values = [writerId];
+    let query = `
+      SELECT * FROM "Assignments"
+      JOIN "Games" ON "Games".game_id = "Assignments".game_id
+      JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id
+      WHERE date >= CURRENT_DATE
+    `;
+    const values = [];
 
+    // Sports filter
     if (sports.length > 0) {
       values.push(sports);
-      query += ` AND sport = ANY($${values.length})`;
+      query += ` AND "Games".sport = ANY($${values.length})`;
     }
 
+    // Location filter
     if (locations.length === 1) {
       if (locations[0] === "Home") {
-        query += ` AND location = 'Seattle, Wash.'`;
+        query += ` AND "Games".location = 'Seattle, Wash.'`;
       } else if (locations[0] === "Away") {
-        query += ` AND location != 'Seattle, Wash.'`;
+        query += ` AND "Games".location != 'Seattle, Wash.'`;
       }
     }
 
-    query += ` ORDER BY date, time`;
+    query += ` ORDER BY "Games".date, "Games".time`;
 
     console.log("Final query:", query);
     console.log("Values:", values);
 
     const result = await client.query(query, values);
-
     await client.end();
 
     return {
