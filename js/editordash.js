@@ -109,7 +109,7 @@
                 console.log("No scheduled games found.");
             }
 
-            const container = document.getElementById("scheduled-games-container");
+            const container = document.getElementById("all-games-container");
             container.innerHTML = "";
 
             games.forEach(game => {
@@ -331,6 +331,21 @@
             document.getElementById(tabId).style.display = "flex";
             event.currentTarget.classList.add("active-tab");
 
+            if(tabId == "all-games") {
+                const filterContainer = document.getElementById("all-games-filter-container");
+
+                // Only create filters once
+                if (!filterContainer.hasChildNodes()) {
+                    createGamesFilter("all-games-filter-container", filters => {
+                        scheduleFilters = filters;
+                        fetchAllScheduledGames(currWriter.writer_id, scheduleFilters);
+                    });
+                }
+
+                // Fetch all games initially
+                fetchAllScheduledGames(currWriter.writer_id, scheduleFilters); 
+            }
+
             if(tabId == "scheduled-games") {
                 const filterContainer = document.getElementById("scheduled-games-filter-container");
 
@@ -369,7 +384,7 @@
 
             await fetchWriterData(user); // wait until currWriter is ready
 
-            const scheduledTabId = "scheduled-games";
+            const scheduledTabId = "all-games";
             const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
             const scheduledTab = document.getElementById(scheduledTabId);
 
@@ -383,15 +398,15 @@
             scheduledButton.classList.add("active-tab");
 
             // Create filters once
-            const filterContainer = document.getElementById("scheduled-games-filter-container");
+            const filterContainer = document.getElementById("all-games-filter-container");
             if (!filterContainer.hasChildNodes()) {
-                createGamesFilter("scheduled-games-filter-container", filters => {
-                    fetchScheduledGames(currWriter.writer_id, filters);
+                createGamesFilter("all-games-filter-container", filters => {
+                    fetchAllScheduledGames(currWriter.writer_id, filters);
                 });
             }
 
             // Fetch games now that currWriter is ready
-            await fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
+            await fetchAllScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
         };
 
     window.twttr = (function(d, s, id) {
