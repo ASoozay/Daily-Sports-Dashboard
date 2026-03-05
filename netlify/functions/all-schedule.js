@@ -1,32 +1,20 @@
 const { Client } = require("pg");
 
-exports.handler = async function(event, context) {
-  console.log("Received request:", event.httpMethod, "body:", event.body);
-
-  if (!event.body) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Missing request body" })
-    };
-  }
-
-  let writerId, filters;
+exports.handler = async (event) => {
   try {
-    ({ writerId, filters } = JSON.parse(event.body));
-  } catch (err) {
-    console.error("Invalid JSON:", err);
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Invalid JSON in request body" })
-    };
-  }
+    const body = JSON.parse(event.body);
+    const writerId = body.writerId;
+    const { filters = {} } = body;
+    const { sports = [], locations = [] } = filters;
 
-  if (!writerId) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Missing writerId" })
-    };
-  }
+    console.log("Request body:", body);
+
+    if (!writerId) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "writerId missing" }),
+      };
+    }
 
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
@@ -36,9 +24,9 @@ exports.handler = async function(event, context) {
     await client.connect();
 
     let query = `SELECT * FROM "Assignments" 
-                JOIN "Games" ON "Games".game_id = "Assignments".game_id
-                JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id 
-                WHERE date >= CURRENT_DATE`;
+                JOIN "Games" ON "Games".game_id = "Assignments".game_id 
+                WHERE date >= CURRENT_DATE AND writer_id = $1`;
+    let values = [writerId];
 
     if (sports.length > 0) {
       values.push(sports);
