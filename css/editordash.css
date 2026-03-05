@@ -433,7 +433,6 @@
             content: "ASSIGN";
         }
 
-                /* Modal overlay */
         .modal {
             display: none;               /* Hidden by default */
             position: fixed;             /* Stay in place */
@@ -450,15 +449,16 @@
 
         /* Modal box */
         .modal-content {
-            background: linear-gradient(135deg, #4B2E83, #6E44A6); /* UW purple gradient */
-            color: white;
+            background: white;
+            color: black;
             margin: 8% auto;            /* Center vertically */
             padding: 30px 25px;
             border-radius: 16px;
+            border-color: #360f5a;
+            border: 10px;
             width: 450px;
             max-width: 90%;             /* Responsive for smaller screens */
             box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-            animation: fadeInUp 0.4s ease-out;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -494,13 +494,13 @@
             font-size: 16px;
             outline: none;
             background-color: #fff;
-            color: #4B2E83;
+            color: black;
         }
 
         /* Assign button */
         #confirm-assign {
             width: 100%;
-            background: #ffcb05;         /* Gold accent */
+            background-color: #360f5a;         /* Gold accent */
             color: #4B2E83;              /* UW purple text */
             font-weight: 600;
             padding: 12px 0;
