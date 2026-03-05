@@ -438,7 +438,7 @@
         return;
     }
 
-    await submit(currGameId, writerId);
+    await signup(currGameId, writerId);
 
     modal.style.display = "none";
     };
