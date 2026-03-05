@@ -352,7 +352,7 @@
             width: 10%;
 
             margin-left: auto;   
-            margin-right: 5%;   
+            margin-right: 2%;   
         }
 
         .submit {
@@ -431,6 +431,41 @@
 
         .assign::before {
             content: "ASSIGN";
+        }
+
+        .modal {
+            display: none; /* hidden by default */
+            position: fixed;
+            z-index: 1000;
+
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(0,0,0,0.5); /* dark overlay */
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .close-btn {
+            align-self: flex-end;
+            cursor: pointer;
+            font-size: 22px;
         }
 
         .X {
