@@ -2,19 +2,15 @@
         let currWriter = null;
 
         // Initialize Netlify Identity
-        netlifyIdentity.on("init", user => {
-            console.log('Netlify Identity Initialized:', user); // Debugging log
-            if (!user) {
-                window.location.href = "/"; // Redirect to login page if not logged in
-            }
-        });
+        netlifyIdentity.on("init", async user => {
+            console.log("Netlify Identity Initialized:", user);
 
-            netlifyIdentity.on("init", user => {
-        if (!user) {
-            window.location.href = "/";
-        } else {
-            fetchWriterData(user);
-        }
+            if (!user) {
+                window.location.href = "/";
+                return;
+            }
+
+            await fetchWriterData(user);
         });
 
         async function fetchWriterData(user) {
@@ -42,6 +38,7 @@
             locations: []
         };
 
+        let allScheduledFilters = { sports: [], locations: [] };
         let scheduleFilters = { sports: [], locations: [] };
         let availableFilters = { sports: [], locations: [] };
 
@@ -173,7 +170,94 @@
                 removeButton.addEventListener("click", async (e) => {
                     const gameId = e.target.getAttribute("data-game-id");
                     await remove(gameId);
-                    fetchScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
+                    fetchAllScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
+                });
+            });
+        }
+
+        async function fetchMyScheduledGames(writerId, filters = { sports: [], locations: [] }) {
+            // Ensure the writerId is being passed correctly
+            if (!writerId) {
+                console.log("Writer ID is missing!");
+                return;  // Exit if writerId is missing
+            }
+            
+            const response = await fetch("/.netlify/functions/scheduled-games", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ writerId, filters }) 
+            });
+
+            if (!response.ok) {
+                console.log("Failed to fetch scheduled games. Status:", response.status);
+                return;
+            }
+
+            const data = await response.json();
+            const games = data.games;
+
+            if (!games || games.length === 0) {
+                console.log("No scheduled games found.");
+            }
+
+            const container = document.getElementById("scheduled-games-container");
+            container.innerHTML = "";
+
+            games.forEach(game => {
+                const gameId = game.game_id;
+                const sport = game.sport;
+                const opp = game.opponent;
+                const location = game.location;
+                let date = new Date(game.date);
+                date = date.toLocaleDateString('en-US', {
+                timeZone: 'UTC',  
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                });
+                const time = game.time;
+                const notes = game.notes;
+                let where = "";
+                let recap = "";
+                let recap_css = "";
+                                
+                if(location == "Seattle, Wash. " || location == "Seattle, Wash."){
+                    where = "vs";
+                    recap_css = "home-recap"
+                } else {
+                    where = "@";
+                    recap_css = "away-recap"
+                }
+
+
+                const gameBox = document.createElement("div");
+                gameBox.classList.add("game-box");
+
+            gameBox.innerHTML = `
+                <div class = "sport-container">
+                    <div class = "sport-box">${sport}</div>
+                    <div class = "notes-box">${notes}</div> 
+                </div>
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+                <div class = "recap-container">
+                    <div class="${recap_css}"></div>
+                    <p class="recap-location">${location}</p>
+                </div>
+                <div class = "date">${date}</div>
+                <div class = "time">${time}</div>
+                <button class = "remove" data-game-id = "${gameId}"></div>
+            `;
+
+            container.appendChild(gameBox);
+
+                const removeButton = gameBox.querySelector(".remove");
+                removeButton.addEventListener("click", async (e) => {
+                    const gameId = e.target.getAttribute("data-game-id");
+                    await remove(gameId);
+                    fetchMyScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
                 });
             });
         }
@@ -353,12 +437,12 @@
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("scheduled-games-filter-container", filters => {
                         scheduleFilters = filters;
-                        fetchScheduledGames(currWriter.writer_id, scheduleFilters);
+                        fetchMyScheduledGames(currWriter.writer_id, scheduleFilters);
                     });
                 }
 
                 // Fetch all games initially
-                fetchScheduledGames(currWriter.writer_id, scheduleFilters); 
+                fetchMyScheduledGames(currWriter.writer_id, scheduleFilters); 
             }
 
             if (tabId == "available-games") {
