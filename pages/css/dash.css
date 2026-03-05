@@ -1,0 +1,534 @@
+        @import url('https://fonts.googleapis.com');
+        body {
+            background-color: whitesmoke;
+        }
+
+        .page {
+            height: 100%;
+        }
+
+        .main {
+            display: flex;
+            height: 100vh; /* subtract header + tab height */
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .account {
+            /*background*/
+            background: #360f5a;
+
+            /*display*/
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 50px;
+            margin-bottom: 1%;
+
+            /*text*/
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 40px;
+          }
+
+        .logout {
+            float: right;
+            justify-content: right;
+            margin-right: 100px;  /* Add a bit of space from the right edge */
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 25px;
+            cursor: pointer;
+            background-color: #360f5a;
+            border: none;
+            padding: 10px;
+        }
+
+        .logout:hover {
+            color: #fff;  /* Change color when hovering over logout */
+        }
+
+        .tab-container {
+
+            /*display*/
+            display: flex;
+            width: 85%;
+            height: 60px;
+            padding-bottom: 10px;
+            margin-bottom: 1%;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background: #eee;
+            cursor: pointer;
+
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .tab-button:hover {
+            background: #ddd;
+        }
+
+        .active-tab {
+            background-color: #360f5a;
+            color: white;
+        }        
+
+        .content {
+            flex: 5.67;
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+            margin: 0 auto;
+            min-height: 0;
+            max-height: 100%;
+        }
+
+        .games-filter-container {
+            display: flex;
+            width: 100%;
+            height: 80px;
+            border-radius: 10px;
+
+            background-color: #360f5a;
+        }
+
+        .games-filter {
+            display: flex;
+            gap: 300px;
+            align-items: center;
+            height: 100%;
+            padding-left: 20px;
+        }   
+
+        .filter-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-family: 'Calibra', sans-serif;
+            color: white;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-box {
+            padding: 8px 14px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            font-family: 'Calibra', sans-serif;
+        }
+
+        .filter-box:hover {
+            background-color: #ccc;
+        }
+
+        .filter-box.active {
+            background-color: #B7A57A;
+            color: black;
+        }
+
+        .games-container {
+            flex: 1; /* Take remaining space */
+            display: grid;
+            width: 100%; 
+            overflow-y: scroll;    
+            row-gap: 20px;
+            padding: 1% 0 0 10px;
+        }
+
+        .game-box {
+            align-items: center;
+            display: flex;
+            width: 95%;
+            height: 150px;
+            background-color: rgb(211, 210, 210);
+            border-radius: 20px;
+            border: 3px;
+            border-color: gray;
+        }
+
+        .sport-container {
+            display: grid;
+            align-items: center;
+            justify-content: left;
+            margin-left:1%;
+            margin-top: 1%;
+            width: 11%;
+            height: 100%;
+
+            background-color: transparent;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+
+            margin-right: 2%;            
+        }  
+        .sport-box {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 40%;
+            margin-bottom: 8%;
+
+            background-color: transparent;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+
+            margin-right: 5%;
+        }
+
+        .notes-box {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 20%;
+
+            background-color: transparent;
+
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            color: black;
+        }
+
+        .washington-icon {
+            align-items: center;
+            height: 80%;
+            aspect-ratio: 1/1; 
+            margin-right: 1%;
+        }
+
+        .where {
+            align-items: center;
+            height: 30%;
+            margin-right: 1%;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+        }
+
+        .opp-icon {
+            align-items: center;
+            height: 80%;
+            aspect-ratio: 1/1; 
+            margin-right: 8%;
+        }
+
+        .recap-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1%;
+            width: 10%;
+            height: 80%;
+            justify-content: center; 
+            background-color: transparent;
+            margin-right: 10%;
+        }
+
+        .home-recap {
+            display: flex;
+            height: 80%;
+            width: 100%;
+            background-color: #360f5a;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+
+            color: white;
+            font-size: x-large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        .home-recap::before {
+            content: "Home recap";
+        }
+
+        .away-recap {
+            display: flex;
+            height: 80%;
+            width: 100%;
+            background-color: #B7A57A;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+
+            color: black;
+            font-size: x-large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+        
+        .away-recap::before {
+            content: "Away recap";
+        }
+        
+        .recap-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: grey;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .date {
+            align-self: center;
+            height: 30%;
+            width: 18%;
+            margin-right: 3%;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;            
+        }
+
+        .time {
+            display: flex;
+            align-self: center;
+            height: 30%;
+            width: 8%;
+            margin-right: 3%;
+
+            font-size: x-large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            text-size-adjust: inherit;
+        }
+
+        .remove {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50%;
+            width: 10%;
+            border-radius: 10px;
+            background-color: rgb(139, 39, 39);
+
+            text-align: center;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        .remove::before {
+            content: "REMOVE";
+        }
+
+        .add {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50%;
+            width: 10%;
+            border-radius: 10px;
+            background-color: #360f5a;
+
+            text-align: center;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        .add::before {
+            content: "ADD";
+        }        
+
+        .X {
+            flex: 1; 
+            overflow-y: auto;
+        }
+
+        .tab-content {
+            display: none;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;  
+        }
+
+        /* Container fills content */
+        .invoice-container {
+            display: grid;
+            grid-template-columns: repeat(2, 400px); /* fixed column size */
+            gap: 100px;
+
+            width: 80%;
+            margin: 5% auto;
+
+            justify-content: center; /* centers grid inside container */
+            align-content: center;   /* centers vertically if container has height */
+        }
+
+        .invoice-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            width: 80%;           /* fixed width */
+            height: 80%;          /* fixed height to control icon % */
+            padding: 10px;
+            background-color: #360f5a;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .invoice-box:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Icon takes 20% of the box height */
+        .invoice-icon {
+            height: 20%;            /* 20% of box height */
+            width: auto;            /* keep aspect ratio */
+            margin-bottom: 10px;    /* spacing from text */
+        }
+
+        /* Text below icon */
+        .invoice-text {
+            font-size: 18px;
+            color: white;
+        }
+
+        .resources-dropdown {
+            width: 100%;
+            height: 100px;
+            background-color: lightgray;
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            cursor: pointer;
+        }
+
+        .resources-dropdown:hover {
+            background-color: #d3d3d3;
+        }
+
+        .arrow {
+            font-size: 20px;
+        }
+
+        .resources-list {
+            display: none;
+            width: 100%;
+            background-color: #f5f5f5;
+            border: 1px solid #888;
+            border-top: none;
+        }
+
+        .resources-list a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .resources-list a:hover {
+            background-color: #ddd;
+        }
+
+        .production {
+            width: 98%;
+            height: 80px;
+
+            background-color: lightgray;
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            cursor: pointer;
+
+            color: black;
+        }
+
+        .cq {
+            width: 98%;
+            height: 80px;
+
+            background-color: lightgray;
+            border: 1px solid black;
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            cursor: pointer;
+
+            color: black;            
+        }
+
+        .bottom {
+            /*background*/
+            background-color:#360f5a;
+            background-attachment: fixed;
+
+            /*display*/
+            width: 100%;
+            height: 25px;
+            position:fixed;
+            bottom:0;
+            padding-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /*text*/
+            color: white;
+            font-family: 'Avenir Next', sans-serif;
+            font-size: 12px;
+
+        }
