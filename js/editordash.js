@@ -95,7 +95,7 @@
             });
 
             if (!response.ok) {
-                console.log("Failed to fetch scheduled games. Status:", response.status);
+                console.log("Failed to fetch all scheduled games. Status:", response.status);
                 return;
             }
 
@@ -189,7 +189,7 @@
             });
 
             if (!response.ok) {
-                console.log("Failed to fetch scheduled games. Status:", response.status);
+                console.log("Failed to fetch my scheduled games. Status:", response.status);
                 return;
             }
 
