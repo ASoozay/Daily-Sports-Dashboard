@@ -1,5 +1,6 @@
 
         let currWriter = null;
+        let currGameId = null;
 
         // Initialize Netlify Identity
         netlifyIdentity.on("init", async user => {
@@ -32,6 +33,23 @@
 
             return currWriter; // <- return so we can await
         };
+
+        async function loadWriters() {
+
+            const response = await fetch("/.netlify/functions/get-writers");
+            const writers = await response.json();
+
+            const select = document.getElementById("writer-select");
+
+            writers.forEach(writer => {
+                const option = document.createElement("option");
+
+                option.value = writer.id;     // or email
+                option.textContent = writer.first_name + " " + writer.last_name;
+
+                select.appendChild(option);
+            });
+        }
 
         let activeFilters = {
             sports: [],
@@ -324,7 +342,7 @@
                 <div class = "time">${time}</div>
                 <div class = "options-container"> 
                     <button class = "add" data-game-id = "${gameId}"></button>
-                    <button class = "assign" onclick="openAssignModal()" data-game-id = ${gameId}></button>
+                    <button class="assign" onclick="openAssignModal(${gameId})"></button>
                 </div>    
             `;
 
@@ -389,7 +407,8 @@
         }
     }     
 
-    function openAssignModal() {
+    function openAssignModal(gameId) {
+        currGameId = gameId;
         document.getElementById("assign-modal").style.display = "flex";
     }
 
@@ -412,6 +431,20 @@
         if (event.target === modal) {
             modal.style.display = "none";
         }
+    };
+
+    document.getElementById("confirm-assign").onclick = async () => {
+
+    const writerId = document.getElementById("writer-select").value;
+
+    if (!writerId) {
+        alert("Please select a writer");
+        return;
+    }
+
+    await assign(selectedGameId, writerId);
+
+    modal.style.display = "none";
     };
 
     document.getElementById("logout").onclick = function () {
@@ -497,6 +530,7 @@
             if (!user) return;
 
             await fetchWriterData(user); // wait until currWriter is ready
+            await loadWriters();
 
             const scheduledTabId = "all-games";
             const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
