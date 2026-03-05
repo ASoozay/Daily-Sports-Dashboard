@@ -158,229 +158,102 @@
         }
 
         .game-box {
-            align-items: center;
             display: flex;
+            align-items: center; /* vertical centering */
+            padding: 10px;
+            gap: 10px; /* space between sections */
             width: 95%;
             height: 150px;
             background-color: rgb(211, 210, 210);
             border-radius: 20px;
-            border: 3px;
-            border-color: gray;
+            box-sizing: border-box;
+            overflow: hidden; /* prevent overflow */
         }
 
         .sport-container {
-            display: grid;
-            align-items: center;
-            justify-content: left;
-            margin-left:1%;
-            margin-top: 1%;
-            width: 11%;
-            height: 100%;
-
-            background-color: transparent;
-
-            font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;
-
-            margin-right: 2%;            
-        }  
-        .sport-box {
             display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 40%;
-            margin-bottom: 8%;
-
-            background-color: transparent;
-
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            min-width: 80px;
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;
-
-            margin-right: 5%;
         }
 
         .notes-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 20%;
-
-            background-color: transparent;
-
             font-size: medium;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-style: italic;
             color: black;
         }
 
-        .washington-icon {
-            align-items: center;
+        .washington-icon,
+        .opp-icon {
             height: 80%;
-            aspect-ratio: 1/1; 
-            margin-right: 1%;
+            aspect-ratio: 1/1;
         }
 
         .where {
-            align-items: center;
-            height: 30%;
-            margin-right: 1%;
-
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;
-        }
-
-        .opp-icon {
-            align-items: center;
-            height: 80%;
-            aspect-ratio: 1/1; 
-            margin-right: 8%;
         }
 
         .recap-container {
             display: flex;
             flex-direction: column;
-            margin-top: 1%;
-            width: 10%;
-            height: 80%;
-            justify-content: center; 
-            background-color: transparent;
-            margin-right: 10%;
-        }
-
-        .home-recap {
-            display: flex;
-            height: 80%;
-            width: 100%;
-            background-color: #360f5a;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 5%;
-
-            color: white;
-            font-size: x-large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: bold;
-        }
-
-        .home-recap::before {
-            content: "Home recap";
-        }
-
-        .away-recap {
-            display: flex;
-            height: 80%;
-            width: 100%;
-            background-color: #B7A57A;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 5%;
-
-            color: black;
-            font-size: x-large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: bold;
-        }
-        
-        .away-recap::before {
-            content: "Away recap";
-        }
-        
-        .recap-location {
-            display: flex;
             align-items: center;
             justify-content: center;
-
-            color: grey;
-            font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-style: italic;
-            text-align: center;
+            min-width: 100px;
         }
 
         .when-container {
-            display: grid;
-            align-self: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            height: 80%;
-            width: 20%;
-            margin-right: 1%;
+            min-width: 100px;
+            text-align: center;
         }
 
-        .date {
-            height: 40%;
-            margin-bottom: 20%;
-            font-size: large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;            
-        }
-
+        .date,
         .time {
-            height: 40%;
             font-size: large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;
-            text-size-adjust: inherit;
+            margin: 2px 0;
         }
 
         .writer {
-            display: grid;
-            align-self: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            height: 50%;
-            width: 10%;
-            margin-right: 1%;
-
-            color: black;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: large;
-         }
+            min-width: 100px;
+            text-align: center;
+        }
 
         .options-container {
-            display: grid;
-            height: 80%;
-            width: 20%;
-        } 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 120px;
+        }
 
-        .submit {
+        .submit,
+        .remove {
+            flex: 1;
+            margin: 2px 0;
+            border-radius: 10px;
+            color: white;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 40%;
-            width: 100%;
-            margin-bottom: 20%;
-            border-radius: 10px;
-            background-color: green;
-
-            text-align: center;
-            font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;            
         }
 
-        .submit::before {
-            content: "SUBMIT";
+        .submit {
+            background-color: green;
         }
 
         .remove {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 40%;
-            width: 100%;
-            border-radius: 10px;
             background-color: rgb(139, 39, 39);
-
-            text-align: center;
-            font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
         }
-
         .remove::before {
             content: "REMOVE";
         }
