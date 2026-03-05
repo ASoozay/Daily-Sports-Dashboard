@@ -18,7 +18,8 @@
     </div>
 
     <div class="tab-container">
-        <button class="tab-button" onclick="showTab(event, 'scheduled-games')">Schedule</button>
+        <button class="tab-button" onclick="showTab(event, 'all-games')">All Scheduled</button> 
+        <button class="tab-button" onclick="showTab(event, 'scheduled-games')">My Schedule</button>
         <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
         <button class="tab-button" onclick="showTab(event, 'invoices')">Invoices</button>
         <button class="tab-button" onclick="showTab(event, 'resources')">Resources</button>
@@ -26,6 +27,11 @@
 
     <div class="main">
     <div class="content">
+    
+    <div id = "all-games" class = "tab-content">
+        <div id = "all-games-container" class = "all-games-container"></div>
+        <div id = "all-games-container" class = "games-container"></div>
+    </div>    
 
     <div id="scheduled-games" class="tab-content">
         <div id="scheduled-games-filter-container" class="games-filter-container"></div>       
@@ -139,6 +145,6 @@
 
 <!---- Java Scripts--> 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="/pages/js/dash.js"></script>
+<script src="/pages/js/editordash.js"></script>
 
  
