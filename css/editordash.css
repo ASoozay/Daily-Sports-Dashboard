@@ -339,7 +339,7 @@
 
             color: black;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: medium;
+            font-size: large;
         }
 
         .options-container {
@@ -456,7 +456,7 @@
             border-radius: 16px;
             border-color: #360f5a;
             border-width: 10px;
-            height: 50%;
+            height: 25%;
             width: 450px;
             max-width: 90%;             /* Responsive for smaller screens */
             box-shadow: 0 10px 30px rgba(0,0,0,0.35);
