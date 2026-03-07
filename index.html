@@ -185,17 +185,26 @@
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <script>
+<script>
+const hash = window.location.hash;
+
+// If invite link → open signup
+if (hash.includes("invite_token") || hash.includes("type=invite")) {
+    netlifyIdentity.on("init", () => {
+        netlifyIdentity.open("signup");
+    });
+}
+
+// If password recovery
+else if (hash.includes("recovery_token")) {
+    netlifyIdentity.on("init", () => {
+        netlifyIdentity.open("recovery");
+    });
+}
+
+// Normal login flow
+else {
     netlifyIdentity.on("init", user => {
-        const hash = window.location.hash;
-
-        // If this is an invite link, open signup modal
-        if (hash.includes("invite_token")) {
-            netlifyIdentity.open("signup");
-            return;
-        }
-
-        // If already logged in, route user
         if (user) {
             fetchWriterData(user);
         }
@@ -204,10 +213,10 @@
     netlifyIdentity.on("login", user => {
         fetchWriterData(user);
     });
+}
 
-    // initialize identity AFTER listeners are registered
-    netlifyIdentity.init();
-    </script>
+netlifyIdentity.init();
+</script>
 <script>
             async function fetchWriterData(user) {
             const email = user.email;
