@@ -190,7 +190,7 @@
     netlifyIdentity.on('login', function(user) {
         // After successful login, redirect to the dashboard
         console.log('User logged in:', user);
-        window.location.href = "/pages/dashboard/dashboard.html";
+        fetchWriterData(user);
     });
 
     // On index.html, check if the user is logged in when the page is loaded
