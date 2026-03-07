@@ -183,39 +183,18 @@
         changeBackground(); // Initial call
     </script>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 <script>
-const hash = window.location.hash;
+netlifyIdentity.on("login", user => {
+    fetchWriterData(user);
+});
 
-// If invite link → open signup
-if (hash.includes("invite_token") || hash.includes("type=invite")) {
-    netlifyIdentity.on("init", () => {
-        netlifyIdentity.open("signup");
-    });
-}
-
-// If password recovery
-else if (hash.includes("recovery_token")) {
-    netlifyIdentity.on("init", () => {
-        netlifyIdentity.open("recovery");
-    });
-}
-
-// Normal login flow
-else {
-    netlifyIdentity.on("init", user => {
-        if (user) {
-            fetchWriterData(user);
-        }
-    });
-
-    netlifyIdentity.on("login", user => {
+netlifyIdentity.on("init", user => {
+    if (user) {
         fetchWriterData(user);
-    });
-}
-
-netlifyIdentity.init();
+    }
+});
 </script>
 <script>
             async function fetchWriterData(user) {
