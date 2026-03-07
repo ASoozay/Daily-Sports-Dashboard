@@ -185,6 +185,8 @@
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
+    netlifyIdentity.init();
+    
     netlifyIdentity.on("init", user => {
 
         const hash = window.location.hash;
