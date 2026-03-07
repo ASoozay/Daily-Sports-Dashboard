@@ -34,12 +34,6 @@
                 document.getElementById("greetingHeader").textContent = "Hi, Guest";
             }
 
-            if (currWriter.position === "Editor") {
-                window.location.href = "/pages/editor.html";
-            } else {
-                window.location.href = "/pages/dashboard/dashboard.html";
-            }
-
             return currWriter; // <- return so we can await
         };
 
