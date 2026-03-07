@@ -184,18 +184,18 @@
     </script>
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-    netlifyIdentity.init();
-    
-    netlifyIdentity.on("init", user => {
 
+    <script>
+    netlifyIdentity.on("init", user => {
         const hash = window.location.hash;
 
+        // If this is an invite link, open signup modal
         if (hash.includes("invite_token")) {
             netlifyIdentity.open("signup");
             return;
         }
 
+        // If already logged in, route user
         if (user) {
             fetchWriterData(user);
         }
@@ -204,6 +204,9 @@
     netlifyIdentity.on("login", user => {
         fetchWriterData(user);
     });
+
+    // initialize identity AFTER listeners are registered
+    netlifyIdentity.init();
     </script>
 <script>
             async function fetchWriterData(user) {
