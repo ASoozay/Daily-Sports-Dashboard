@@ -148,10 +148,13 @@
             color: black;
         }
 
-        .games-container{
+        .games-container {
+            flex: 1; /* Take remaining space */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 12px;
+            width: 100%; 
+            overflow-y: scroll;    
+            row-gap: 20px;
+            padding: 1% 0 0 10px;
         }
 
         .game-box {
@@ -551,65 +554,30 @@
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
-    .tab-container{
-        width:100%;
-        flex-wrap:wrap;
+    .main {
+        flex-direction: column;
     }
 
-    .tab-button{
-        flex:1 1 50%;
-        font-size:14px;
-        padding:10px;
+    .X {
+        display: none; /* hide twitter feed */
     }
 
-    .content{
-        width:100%;
+    .games-filter {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
     }
 
-    /* FILTER BAR */
-    .games-filter-container{
-        height:auto;
-        padding:10px;
+    .filter-options {
+        flex-wrap: wrap;
     }
 
-    .games-filter{
-        flex-direction:column;
-        gap:10px;   /* instead of 300px */
-        align-items:flex-start;
-    }
-
-    .filter-options{
-        flex-wrap:wrap;
-    }
-
-    /* GAME LIST */
-    .games-container{
-        padding:10px;
-        row-gap:10px;
-    }
-
-    .game-box{
-        flex-direction:column;
-        align-items:flex-start;
-        height:auto;
-        padding:10px;
-        gap:6px;
-    }
-
-    .sport-container,
-    .recap-container{
-        width:100%;
-        margin:0;
-    }
-
-    .sport-box{
-        font-size:18px;
-    }
-
-    .where{
-        font-size:18px;
+    .game-box {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
     }
 
 }
