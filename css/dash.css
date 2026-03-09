@@ -885,7 +885,7 @@
             cursor: pointer;
             height: 50%;
             width: 10%;
-            margin-right: 5%;
+            margin-right: 50px;
             border-radius: 5px;
             background-color: rgb(139, 39, 39);
 
@@ -905,7 +905,7 @@
             justify-content: center;
             height: 50%;
             width: 10%;
-            margin-right: 5%;
+            margin-right: 50px;
             border-radius: 5px;
             background-color: #360f5a;
 
