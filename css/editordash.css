@@ -399,6 +399,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             height: 40%;
             width: 100%;
             margin-bottom: 20%;
@@ -419,6 +420,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             height: 40%;
             width: 100%;
             border-radius: 10px;
@@ -1080,6 +1082,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             height: 40%;
             width: 100%;
             border-radius: 5px;
@@ -1759,6 +1762,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             height: 40%;
             width: 100%;
             margin-bottom: 20%;
@@ -1818,6 +1822,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             height: 40%;
             width: 100%;
             border-radius: 10px;
