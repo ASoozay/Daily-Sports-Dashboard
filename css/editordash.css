@@ -723,7 +723,7 @@
 
             /*display*/
             width: 100%;
-            height: 30px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -733,7 +733,7 @@
             /*text*/
             color: white;
             font-family: 'Open Sans', sans-serif;
-            font-size: 20px;
+            font-size: 35px;
           }
 
         .logout {
@@ -742,7 +742,7 @@
             margin-right: 50px;  /* Add a bit of space from the right edge */
             color: white;
             font-family: 'Open Sans', sans-serif;
-            font-size: 13px;
+            font-size: 35px;
             cursor: pointer;
             background-color: #360f5a;
             border: none;
@@ -758,7 +758,7 @@
             /*display*/
             display: flex;
             width: 85%;
-            height: 30px;
+            height: 60px;
             padding-bottom: 5px;
             margin-bottom: 1%;
         }
@@ -770,7 +770,7 @@
             background: #eee;
             cursor: pointer;
 
-            font-size: 9px;
+            font-size: 18px;
             font-family: 'Open Sans', sans-serif;
         }
 
@@ -796,7 +796,7 @@
         .games-filter-container {
             display: flex;
             width: 100%;
-            height: 40px;
+            height: 60px;
             border-radius: 5px;
 
             background-color: #360f5a;
@@ -804,7 +804,7 @@
 
         .games-filter {
             display: flex;
-            gap: 150px;
+            gap: 100px;
             align-items: center;
             height: 100%;
             padding-left: 10px;
@@ -860,7 +860,7 @@
             align-items: center;
             display: flex;
             width: 95%;
-            height: 75px;
+            height: 150px;
             background-color: rgb(211, 210, 210);
             border-radius: 10px;
             border: 2px;
@@ -960,7 +960,7 @@
             margin-bottom: 5%;
 
             color: white;
-            font-size: x-large;
+            font-size: large;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
         }
@@ -980,7 +980,7 @@
             margin-bottom: 5%;
 
             color: black;
-            font-size: x-large;
+            font-size: large;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
         }
@@ -1013,14 +1013,14 @@
         }
 
         .date {
-            font-size: x-large;
+            font-size: large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
             margin-right: 3%;            
         }
 
         .time {
-            font-size: x-large;
+            font-size: large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
             text-size-adjust: inherit;
@@ -1047,8 +1047,10 @@
             align-self: center;
             align-items: center;
             justify-content: center;
-            height: 80%;
+            height: 100%;
             width: 10%;
+            padding-top: 10%;
+            padding-bottom: 10%;
 
             margin-left: auto;   
             margin-right: 2%;   
@@ -1060,7 +1062,7 @@
             justify-content: center;
             height: 40%;
             width: 100%;
-            margin-bottom: 20%;
+            margin-bottom: 10%;
             border-radius: 5px;
             background-color: green;
 
@@ -1097,9 +1099,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 40%;
+            height: 35%;
             width: 100%;
-            margin-bottom: 20%;
+            margin-bottom: 10%;
             border-radius: 5px;
             background-color: #360f5a;
 
@@ -1117,7 +1119,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 40%;
+            height: 35%;
             width: 100%;
             border-radius: 5px;
             background-color: #360f5a;
@@ -1156,7 +1158,7 @@
             border-color: #360f5a;
             border-width: 5px;
             height: 25%;
-            width: 225px;
+            width: 450px;
             max-width: 90%;             /* Responsive for smaller screens */
             box-shadow: 0 5px 15px rgba(0,0,0,0.35);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1165,7 +1167,7 @@
         /* Modal title */
         .modal-content h2 {
             margin-top: 0;
-            font-size: 12px;
+            font-size: 25px;
             text-align: center;
             font-weight: 600;
         }
@@ -1173,7 +1175,7 @@
         /* Close button */
         .close-btn {
             float: right;
-            font-size: 13px;
+            font-size: 25px;
             font-weight: bold;
             cursor: pointer;
             color: #360f5a;
@@ -1192,7 +1194,7 @@
             border-radius: 5px;
             border-width: 1px;
             border-color: black;
-            font-size: 8px;
+            font-size: 15px;
             outline: none;
             background-color: #fff;
             color: black;
@@ -1208,7 +1210,7 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 8px;
+            font-size: 15px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -1238,7 +1240,7 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 200px); /* fixed column size */
+            grid-template-columns: repeat(2, 450px); /* fixed column size */
             gap: 50px;
 
             width: 80%;
@@ -1277,13 +1279,13 @@
 
         /* Text below icon */
         .invoice-text {
-            font-size: 9px;
+            font-size: 18px;
             color: white;
         }
 
         .resources-dropdown {
             width: 100%;
-            height: 50px;
+            height: 100px;
             background-color: lightgray;
             border: 1px solid black;
             padding: 10px;
@@ -1293,7 +1295,7 @@
             justify-content: space-between;
             align-items: center;
 
-            font-size: 10px;
+            font-size: 20px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
 
             cursor: pointer;
@@ -1304,7 +1306,7 @@
         }
 
         .arrow {
-            font-size: 10px;
+            font-size: 20px;
         }
 
         .resources-list {
@@ -1331,7 +1333,7 @@
 
         .production {
             width: 98%;
-            height: 40px;
+            height: 100px;
 
             background-color: lightgray;
             border: 1px solid black;
@@ -1352,7 +1354,7 @@
 
         .cq {
             width: 98%;
-            height: 40px;
+            height: 100px;
 
             background-color: lightgray;
             border: 1px solid black;
@@ -1377,7 +1379,7 @@
 
             /*display*/
             width: 100%;
-            height: 12px;
+            height: 25px;
             position:fixed;
             bottom:0;
             padding-top: 1px;
@@ -1388,7 +1390,7 @@
             /*text*/
             color: white;
             font-family: 'Avenir Next', sans-serif;
-            font-size: 6px;
+            font-size: 12px;
 
         }
     }
