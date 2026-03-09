@@ -161,7 +161,7 @@
         .game-box {
             align-items: center;
             display: flex;
-            width: 95%;
+            width: 220px;
             height: 150px;
             background-color: rgb(211, 210, 210);
             border-radius: 20px;
