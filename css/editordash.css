@@ -696,7 +696,7 @@
         /* #endregion */
 
         /* #region Laptop Styles */
-        @media only screen and (max-width: 1400px) {
+        @media screen and (min-width: 768px) and (max-width: 1400px) {
         @import url('https://fonts.googleapis.com');
         body {
             background-color: whitesmoke;
@@ -719,7 +719,7 @@
 
         .account {
             /*background*/
-            background: #360f5a;
+            background: pink;
 
             /*display*/
             width: 100%;
