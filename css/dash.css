@@ -532,3 +532,52 @@
             font-size: 12px;
 
         }
+
+    @media (max-width: 1800px) {
+
+    .games-filter {
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .game-box {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .date,
+    .time,
+    .remove {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .main {
+        flex-direction: column;
+    }
+
+    .X {
+        display: none; /* hide twitter feed */
+    }
+
+    .games-filter {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .filter-options {
+        flex-wrap: wrap;
+    }
+
+    .game-box {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+}
