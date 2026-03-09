@@ -1655,7 +1655,7 @@
 
         .opp-icon {
             align-items: center;
-            height: 50%;
+            height: 25%;
             aspect-ratio: 1/1; 
             margin-right: 4%;
         }
@@ -1719,7 +1719,7 @@
             justify-content: center;
 
             color: grey;
-            font-size: small;
+            font-size: xx-small;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-style: italic;
             text-align: center;
@@ -1732,7 +1732,7 @@
             align-items: center;
             justify-content: center;
             height: 90%;
-            width: 10%;
+            width: 15%;
             margin-right: 1%;
         }
 
@@ -1757,12 +1757,12 @@
             align-items: center;
             justify-content: center;
             height: 90%;
-            width: 10%;
+            width: 5%;
             margin-right: 1%;
 
             color: black;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: small;
+            font-size: xx-small;
         }
 
         .options-container {
@@ -1791,7 +1791,7 @@
             background-color: green;
 
             text-align: center;
-            font-size: xx-small;
+            font-size: 6px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
@@ -1810,7 +1810,7 @@
             background-color: rgb(139, 39, 39);
 
             text-align: center;
-            font-size: xx-small;
+            font-size: 6px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
@@ -1829,7 +1829,7 @@
             background-color: #360f5a;
 
             text-align: center;
-            font-size: xx-small;
+            font-size: 6px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
@@ -1849,7 +1849,7 @@
             background-color: #360f5a;
 
             text-align: center;
-            font-size: xx-small;
+            font-size: 6px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
@@ -1882,7 +1882,7 @@
             border-color: #360f5a;
             border-width: 1px;
             height: 25%;
-            width: 100px;
+            width: 250px;
             max-width: 90%;             /* Responsive for smaller screens */
             box-shadow: 0 1px 3px rgba(0,0,0,0.35);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
