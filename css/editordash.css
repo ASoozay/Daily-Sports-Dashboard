@@ -696,7 +696,7 @@
         /* #endregion */
 
         /* #region Laptop Styles */
-        @media screen and (min-width: 801px) and (max-width: 1400px) {
+        @media screen and (min-width: 801px) and (max-width: 1800px) {
         @import url('https://fonts.googleapis.com');
         body {
             background-color: whitesmoke;
