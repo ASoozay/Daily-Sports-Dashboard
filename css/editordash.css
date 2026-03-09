@@ -726,7 +726,7 @@
 
         .account {
             /*background*/
-            background: pink;
+            background: #360f5a;
 
             /*display*/
             width: 100%;
@@ -967,9 +967,10 @@
             margin-bottom: 5%;
 
             color: white;
-            font-size: large;
+            font-size: medium;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
+            text-align: center;
         }
 
         .home-recap::before {
@@ -987,9 +988,10 @@
             margin-bottom: 5%;
 
             color: black;
-            font-size: large;
+            font-size: medium;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
+            text-align: center;
         }
         
         .away-recap::before {
@@ -1023,7 +1025,8 @@
             font-size: large;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
-            margin-right: 3%;            
+            margin-right: 3%; 
+            text-align: center;           
         }
 
         .time {
@@ -1032,6 +1035,7 @@
             color: black;
             text-size-adjust: inherit;
             margin-right: 6%;
+            text-align: center;
         }
 
         .writer {
