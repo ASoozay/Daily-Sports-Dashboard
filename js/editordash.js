@@ -416,8 +416,8 @@
         document.getElementById("assign-modal").style.display = "flex";
     }   
 
-    const modal = document.getElementById("assign-modal");
-    const closeBtn = document.querySelector(".close-btn");
+    let modal = document.getElementById("assign-modal");
+    let closeBtn = document.querySelector(".close-btn");
 
     closeBtn.onclick = () => {
         modal.style.display = "none";
@@ -455,6 +455,13 @@
             const notes = document.getElementById("notes-input").value;
         } 
     }
+
+    modal = document.getElementById("add-modal");
+    closeBtn = document.querySelector(".close-btn");
+
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    };
 
     document.getElementById("logout").onclick = function () {
         console.log("Attempting to log out...");
