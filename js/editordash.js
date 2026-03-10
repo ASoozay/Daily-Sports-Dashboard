@@ -414,7 +414,7 @@
         currGameId = gameId;
         await loadWriters();
         document.getElementById("assign-modal").style.display = "flex";
-    }
+    }   
 
     const modal = document.getElementById("assign-modal");
     const closeBtn = document.querySelector(".close-btn");
@@ -442,6 +442,19 @@
 
     modal.style.display = "none";
     };
+
+    async function openAddGameModal() {
+        document.getElementById("add-game-modal").style.display = "flex";
+        
+        document.getElementById("confirm-add").onclick = async () => {
+            const sport = document.getElementById("sport-input").value;
+            const opponent = document.getElementById("opponent-input").value;
+            const location = document.getElementById("location-input").value;
+            const date = document.getElementById("date-input").value;
+            const time = document.getElementById("time-input").value;
+            const notes = document.getElementById("notes-input").value;
+        } 
+    }
 
     document.getElementById("logout").onclick = function () {
         console.log("Attempting to log out...");
