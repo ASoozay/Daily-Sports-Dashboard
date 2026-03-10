@@ -444,8 +444,8 @@
     };
 
     async function openAddGameModal() {
-        document.getElementById("add-game-modal").style.display = "flex";
-        
+        document.getElementById("add-modal").style.display = "flex";
+
         document.getElementById("confirm-add").onclick = async () => {
             const sport = document.getElementById("sport-input").value;
             const opponent = document.getElementById("opponent-input").value;
