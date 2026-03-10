@@ -561,6 +561,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         }
 
+        .add-box {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            height: 40px;
+            border-width: 2px;
+            border-color: black;
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
         .confirm-add {
             width: 100%;
             background-color: #360f5a;         
