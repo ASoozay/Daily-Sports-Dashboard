@@ -106,7 +106,7 @@
 
         .games-filter {
             display: flex;
-            gap: 300px;
+            gap: 250px;
             align-items: center;
             height: 100%;
             padding-left: 20px;
@@ -147,6 +147,28 @@
         .filter-box.active {
             background-color: #B7A57A;
             color: black;
+        }
+
+        .add-game {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 50%;
+            width: 150px;
+            margin-right: 60px;
+            border-radius: 5px;
+            background-color: white;
+
+            text-align: center;
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #360f5a;
+            font-weight:bold;
+        }
+
+        .add-game::before {
+            content: "+ Add game";
         }
 
         .games-container {
@@ -475,6 +497,7 @@
             text-align: center;
             font-weight: 600;
         }
+    
 
         /* Close button */
         .close-btn {
@@ -521,6 +544,34 @@
         #confirm-assign:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+
+        .add-modal-content {
+            background: white;
+            color: black;
+            margin: 8% auto;            /* Center vertically */
+            padding: 30px 25px;
+            border-radius: 16px;
+            border-color: #360f5a;
+            border-width: 10px;
+            height: 50%;
+            width: 450px;
+            max-width: 90%;             /* Responsive for smaller screens */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+
+        .confirm-add {
+            width: 100%;
+            background-color: #360f5a;         
+            color: white;              
+            font-weight: 600;
+            padding: 12px 0;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         /* Modal animation */
@@ -855,6 +906,27 @@
         .filter-box.active {
             background-color: #B7A57A;
             color: black;
+        }
+
+        .add-game {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 60;
+            width: 100px;
+            margin-right: 20px;
+            border-radius: 5px;
+            background-color: white;
+
+            text-align: center;
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #360f5a;
+        }
+
+        .add-game::before {
+            content: "+ Add";
         }
 
         .games-container {
