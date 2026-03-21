@@ -1334,7 +1334,6 @@
         }
 
        .add-modal-content {
-            display: flex;
             background: white;
             color: black;
             margin: 8% auto;            /* Center vertically */
@@ -1387,7 +1386,7 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        #sport-select {
+        #sport-input {
             width: 100%;
             padding: 5px;
             margin: 10px 0;
