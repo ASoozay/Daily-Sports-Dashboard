@@ -1,4 +1,4 @@
-// /.netlify/functions/get-writers.js
+// /.netlify/functions/get-sports.js
 const { Client } = require("pg");
 
 exports.handler = async (event) => {

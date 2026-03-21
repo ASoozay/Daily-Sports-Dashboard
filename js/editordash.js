@@ -61,14 +61,14 @@
 
             const sports = data.sports;   
 
-            const select = document.getElementById("sport-select");
+            const select = document.getElementById("sport-input");
             select.innerHTML = ""; 
 
             sports.forEach(sport => {
                 const option = document.createElement("option");
 
-                option.value = sport.sport_id;  
-                option.textContent = sport.sport_name;
+                option.value = sport.sport;  
+                option.textContent = sport.sport;
 
                 select.appendChild(option);
             });
