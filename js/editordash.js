@@ -464,7 +464,7 @@
             const opponent = document.getElementById("opponent-input").value;
             const location = document.getElementById("location-input").value;
             const date = document.getElementById("date-input").value;
-            const time = document.getElementById("time-input").value;
+            const time = convertTo12Hour(document.getElementById("time-input").value);
             const notes = document.getElementById("notes-input").value;
 
             if(!sport || !opponent || !location || !date || !time) {
@@ -652,4 +652,15 @@ function toggleResources() {
     } else {
         list.style.display = "block";
     }
+}
+
+function convertTo12Hour(time24) {
+    const [hour, minute] = time24.split(":");
+    let h = parseInt(hour);
+    const ampm = h >= 12 ? "PM" : "AM";
+
+    h = h % 12;
+    if (h === 0) h = 12;
+
+    return `${h}:${minute} ${ampm}`;
 }
