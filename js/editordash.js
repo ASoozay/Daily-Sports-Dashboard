@@ -455,6 +455,9 @@
     async function openAddGameModal() {
         await loadSports();
         document.getElementById("add-modal").style.display = "flex";
+    }    
+
+        const addModal = document.getElementById("add-modal");
 
         document.getElementById("confirm-add").onclick = async () => {
             const sport = document.getElementById("sport-input").value;
@@ -463,10 +466,14 @@
             const date = document.getElementById("date-input").value;
             const time = document.getElementById("time-input").value;
             const notes = document.getElementById("notes-input").value;
-        } 
-    }
 
-    const addModal = document.getElementById("add-modal");
+            if(!sport || !opponent || !location || !date || !time) {
+                alert("Please fill in all required fields");
+            } 
+
+            await addGame(sport, opponent, date, time, location, notes);
+            addModal.style.display = "none";
+    }
 
     document.querySelectorAll(".close-btn").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -482,6 +489,28 @@
             }
         });
     });
+
+    async function addGame(sport, opponent, date, time, location, notes) {
+        try {
+            const response = await fetch("/.netlify/functions/add-game", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ sport, opponent, date, time, location, notes })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                alert("Game successfully added to schedule");
+            } else {
+                alert("Failed to add game to schedule.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error adding game to schedule.");
+        }
+    }
 
     document.getElementById("logout").onclick = function () {
         console.log("Attempting to log out...");
