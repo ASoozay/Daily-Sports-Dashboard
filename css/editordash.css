@@ -1345,7 +1345,7 @@
             width: 450px;
             max-width: 90%;             /* Responsive for smaller screens */
             box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         }
 
         .add-modal-content h2 {
