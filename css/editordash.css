@@ -823,7 +823,7 @@
             margin-right: 50px;  /* Add a bit of space from the right edge */
             color: white;
             font-family: 'Open Sans', sans-serif;
-            font-size: 35px;
+            font-size: 30px;
             cursor: pointer;
             background-color: #360f5a;
             border: none;
@@ -877,7 +877,7 @@
         .games-filter-container {
             display: flex;
             width: 100%;
-            height: 60px;
+            height: 80px;
             border-radius: 5px;
 
             background-color: #360f5a;
@@ -885,7 +885,7 @@
 
         .games-filter {
             display: flex;
-            gap: 100px;
+            gap: 50px;
             align-items: center;
             height: 100%;
             padding-left: 10px;
@@ -909,12 +909,19 @@
         }
 
         .filter-box {
-            padding: 4px 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 5px;
+            width: 20px;
+            height: 15px;
             background-color: white;
             cursor: pointer;
             user-select: none;
-            font-size: 7px;
+            font-size: 12px;
+            text-align: center;
+            font-weight: bold;
+            
             transition: all 0.2s ease;
             font-family: 'Calibra', sans-serif;
         }
@@ -933,9 +940,9 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            height: 60;
-            width: 100px;
-            margin-right: 20px;
+            height: 50px;
+            width: 80px;
+            margin-right: 5px;
             border-radius: 5px;
             background-color: white;
 
@@ -946,7 +953,7 @@
         }
 
         .add-game::before {
-            content: "+ Add";
+            content: "+ Add Game";
         }
 
         .games-container {
@@ -1324,6 +1331,73 @@
         #confirm-assign:hover {
             transform: translateY(-1px);
             box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+        }
+
+       .add-modal-content {
+            display: flex;
+            background: white;
+            color: black;
+            margin: 8% auto;            /* Center vertically */
+            padding: 30px 25px;
+            border-radius: 16px;
+            border-color: #360f5a;
+            border-width: 10px;
+            height: 80%;
+            width: 450px;
+            max-width: 90%;             /* Responsive for smaller screens */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+
+        .add-modal-content h2 {
+            margin-top: 0;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 600;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .add-box {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            height: 40px;
+            border-width: 2px;
+            border-color: black;
+            font-size: 16px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .confirm-add {
+            width: 100%;
+            height: 50px;
+            margin-top: 40px;
+            background-color: #360f5a;         
+            color: white;              
+            font-weight: 600;
+            padding: 4px 0;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #sport-select {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: black;
+            font-size: 15px;
+            outline: none;
+            background-color: #fff;
+            color: black;
         }
 
         /* Modal animation */

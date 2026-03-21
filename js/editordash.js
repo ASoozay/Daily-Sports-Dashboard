@@ -54,6 +54,26 @@
             });
         }
 
+        async function loadSports() {
+
+            const response = await fetch("/.netlify/functions/get-sports");
+            const data = await response.json();
+
+            const sports = data.sports;   
+
+            const select = document.getElementById("sport-select");
+            select.innerHTML = ""; 
+
+            sports.forEach(sport => {
+                const option = document.createElement("option");
+
+                option.value = sport.sport_id;  
+                option.textContent = sport.sport_name;
+
+                select.appendChild(option);
+            });
+        }
+
         let activeFilters = {
             sports: [],
             locations: []
@@ -416,18 +436,7 @@
         document.getElementById("assign-modal").style.display = "flex";
     }   
 
-    let modal = document.getElementById("assign-modal");
-    let closeBtn = document.querySelector(".close-btn");
-
-    closeBtn.onclick = () => {
-        modal.style.display = "none";
-    };
-
-    window.onclick = (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    };
+    const assModal = document.getElementById("assign-modal");
 
     document.getElementById("confirm-assign").onclick = async () => {
 
@@ -440,10 +449,11 @@
 
     await signup(currGameId, writerId);
 
-    modal.style.display = "none";
+    assModal.style.display = "none";
     };
 
     async function openAddGameModal() {
+        await loadSports();
         document.getElementById("add-modal").style.display = "flex";
 
         document.getElementById("confirm-add").onclick = async () => {
@@ -456,12 +466,22 @@
         } 
     }
 
-    modal = document.getElementById("add-modal");
-    closeBtn = document.querySelector(".close-btn");
+    const addModal = document.getElementById("add-modal");
 
-    closeBtn.onclick = () => {
-        modal.style.display = "none";
-    };
+    document.querySelectorAll(".close-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const modal = btn.closest(".modal");
+            if (modal) modal.style.display = "none";
+        });
+    });
+
+    window.addEventListener("click", (event) => {
+        document.querySelectorAll(".modal").forEach(modal => {
+            if (event.target === modal) {
+            modal.style.display = "none";
+            }
+        });
+    });
 
     document.getElementById("logout").onclick = function () {
         console.log("Attempting to log out...");
