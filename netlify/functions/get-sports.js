@@ -21,7 +21,7 @@ exports.handler = async (event) => {
     console.log("Connected to DB");
 
     // Query all sports
-    const query = `SELECT DISTINCT sport FROM "Games" ORDER BY sport`;
+    const query = `SELECT sport FROM "Sports" ORDER BY sport`;
     const result = await client.query(query);
 
     await client.end();
