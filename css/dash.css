@@ -582,7 +582,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-size: 35px;
           }
 
@@ -591,7 +591,7 @@
             justify-content: right;
             margin-right: 50px;  /* Add a bit of space from the right edge */
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-size: 25px;
             cursor: pointer;
             background-color: #360f5a;
@@ -621,7 +621,7 @@
             cursor: pointer;
 
             font-size: 18px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
         }
 
         .tab-button:hover {
@@ -668,7 +668,7 @@
         .filter-title {
             font-weight: bold;
             margin-bottom: 4px;
-            font-family: 'Calibra', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: white;
         }
 
@@ -692,7 +692,7 @@
             font-weight: bold;
             
             transition: all 0.2s ease;
-            font-family: 'Calibra', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
         }
 
         .filter-box:hover {
@@ -736,7 +736,7 @@
             background-color: transparent;
 
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: black;
 
             margin-right: 2%;            
@@ -751,7 +751,7 @@
             background-color: transparent;
 
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: black;
 
             margin-right: 5%;
@@ -766,7 +766,7 @@
             background-color: transparent;
 
             font-size: medium;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-style: italic;
             color: black;
         }
@@ -784,7 +784,7 @@
             margin-right: 1%;
 
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: black;
         }
 
@@ -818,7 +818,7 @@
 
             color: white;
             font-size: medium;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-weight: bold;
             text-align: center;
         }
@@ -839,7 +839,7 @@
 
             color: black;
             font-size: medium;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-weight: bold;
             text-align: center;
         }
@@ -855,7 +855,7 @@
 
             color: grey;
             font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-style: italic;
             text-align: center;
         }
@@ -866,7 +866,7 @@
             font-size: large;
             width: 10%;
             height: 30%;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: black;
             margin-right: 3%; 
             text-align: center;           
@@ -878,7 +878,7 @@
             width: 10%;
             height: 30%;
             font-size: large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: black;
             text-size-adjust: inherit;
             margin-right: 6%;
@@ -898,7 +898,7 @@
 
             text-align: center;
             font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: white;
         }
 
@@ -918,7 +918,7 @@
 
             text-align: center;
             font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             color: white;
         }
 
@@ -962,7 +962,7 @@
             padding: 5px;
             background-color: #360f5a;
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             text-align: center;
             transition: all 0.2s ease;
         }
@@ -997,7 +997,7 @@
             align-items: center;
 
             font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
 
             cursor: pointer;
         }
@@ -1025,7 +1025,7 @@
             color: black;
             font-size: 9px;
 
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
         }
 
         .resources-list a:hover {
@@ -1046,7 +1046,7 @@
             align-items: center;
 
             font-size: 10px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
 
             cursor: pointer;
 
@@ -1066,7 +1066,7 @@
             align-items: center;
 
             font-size: 10px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
 
             cursor: pointer;
 
