@@ -15,16 +15,22 @@ exports.handler = async (event) => {
     await client.connect();
 
     const now = new Date();
-    const today = now.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); 
-    // 'YYYY-MM-DD'
+
+    // subtract 1 day (in milliseconds)
+    const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+    const formattedYesterday = yesterday.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+
+    console.log(formattedYesterday); // 
 
     // Base query
-    let query = `SELECT * FROM "Assignments" 
-                JOIN "Games" ON "Games".game_id = "Assignments".game_id
-                JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id
-                WHERE date = $1`;
+    let query = `SELECT * FROM "Assignments"
+    JOIN "Games" ON "Games".game_id = "Assignments".game_id
+    JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id
+    WHERE date = $1 
+    AND ("Games".location = 'Seattle, Wash.' OR "Games".location = 'Seattle, Wash')`;
 
-    const todaysGames = await client.query(query, [today]);
+    const todaysGames = await client.query(query, [formattedYesterday]);
 
     await client.end();
 

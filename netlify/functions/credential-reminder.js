@@ -10,10 +10,10 @@ export const config = {
 
 async function sendEmail(game) {
   const msg = {
-    to: game.email,
+    to: "sports@dailyuw.com",
     from: "sports@dailyuw.com",
-    subject: `Game Today: ${game.sport} vs ${game.opponent}`,
-    text: `Reminder: You are covering ${game.sport} vs ${game.opponent} today at ${game.time}.`,
+    subject: `Credential Reminder: ${game.first_name} ${game.last_name} for ${game.sport} vs ${game.opponent}`,
+    text: `Reminder: Please submit a credential for ${game.first_name} ${game.last_name}$ ${game.sport} vs ${game.opponent} today at ${game.time}.`,
   };
 
   await sgMail.send(msg);
@@ -21,7 +21,7 @@ async function sendEmail(game) {
 
 export async function handler() {
   // 1. Get today's games
-  const response = await fetch("https://your-site.netlify.app/.netlify/functions/get-todays-games", {
+  const response = await fetch("https://your-site.netlify.app/.netlify/functions/get-home-games", {
     method: "POST",
     body: JSON.stringify({}) // send empty object
   });
