@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     const now = new Date();
 
     // subtract 1 day (in milliseconds)
-    const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    const yesterday = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 
     const formattedYesterday = yesterday.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
 
