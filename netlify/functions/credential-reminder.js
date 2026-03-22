@@ -3,8 +3,12 @@ import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+export async function handler() {
+  console.log("SCHEDULED FUNCTION RAN", new Date().toISOString());
+}
+
 export const config = {
-  schedule: "5 16 * * *",
+  schedule: "* * * * *",
   timezone: "America/Los_Angeles"
 };
 
