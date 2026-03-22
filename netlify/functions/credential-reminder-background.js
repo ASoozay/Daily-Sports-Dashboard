@@ -1,3 +1,5 @@
+console.log("FILE LOADED");
+
 import fetch from "node-fetch";
 import sgMail from "@sendgrid/mail";
 
