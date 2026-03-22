@@ -27,7 +27,7 @@ exports.handler = async (event) => {
     let query = `SELECT * FROM "Assignments"
     JOIN "Games" ON "Games".game_id = "Assignments".game_id
     JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id
-    WHERE date = $1 
+    WHERE "Games".date = $1 
     AND ("Games".location = 'Seattle, Wash.' OR "Games".location = 'Seattle, Wash')`;
 
     const todaysGames = await client.query(query, [formattedYesterday]);
