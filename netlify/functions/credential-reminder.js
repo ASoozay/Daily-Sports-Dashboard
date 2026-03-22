@@ -8,7 +8,7 @@ export async function handler() {
 }
 
 export const config = {
-  schedule: "* * * * *",
+  schedule: "20 16 * * *",
   timezone: "America/Los_Angeles"
 };
 
@@ -25,7 +25,7 @@ async function sendEmail(game) {
 
 export async function handler() {
   // 1. Get today's games
-  const response = await fetch("https://your-site.netlify.app/.netlify/functions/get-home-games", {
+  const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-home-games", {
     method: "POST",
     body: JSON.stringify({}) // send empty object
   });

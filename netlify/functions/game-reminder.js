@@ -21,7 +21,7 @@ async function sendEmail(game) {
 
 export async function handler() {
   // 1. Get today's games
-  const response = await fetch("https://your-site.netlify.app/.netlify/functions/get-todays-games", {
+  const response = await fetch("https://uwdailysports.app/.netlify/functions/get-todays-games", {
     method: "POST",
     body: JSON.stringify({}) // send empty object
   });
