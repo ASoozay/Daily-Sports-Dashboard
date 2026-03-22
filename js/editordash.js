@@ -512,20 +512,22 @@
         }
     }
 
-    document.getElementById("logout").onclick = function () {
-        console.log("Attempting to log out...");
+        document.getElementById("logout").onclick = function () {
+            console.log("Attempting to log out...");
 
-        // Logout from Netlify Identity
-        netlifyIdentity.logout();
+            netlifyIdentity.logout();
+        };
 
-        // Clear localStorage and cookies (force logout)
-        localStorage.removeItem("netlify_identity"); // Clear Netlify Identity session from localStorage
-        document.cookie = "netlify_identity=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC"; // Expire the session cookie
+        // Listen for logout event
+        netlifyIdentity.on("logout", () => {
+            console.log("Logged out successfully");
 
+            // Optional cleanup (honestly not even needed)
+            localStorage.removeItem("netlify_identity");
 
-        // After logout, redirect to the login page
-        window.location.reload();
-    };
+            // Redirect AFTER logout finishes
+            window.location.href = "/";
+        });
 
         // Show tab content function
         window.showTab = function(event, tabId) {
