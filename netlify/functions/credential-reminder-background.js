@@ -14,7 +14,7 @@ async function sendEmail(game) {
     to: "sports@dailyuw.com",
     from: "sports@dailyuw.com",
     subject: `Credential Reminder: ${game.first_name} ${game.last_name} for ${game.sport} vs ${game.opponent}`,
-    text: `Reminder: Please submit a credential for ${game.first_name} ${game.last_name}$ ${game.sport} vs ${game.opponent} today at ${game.time}.`,
+    text: `Reminder: Please submit a credential for ${game.first_name} ${game.last_name} ${game.sport} vs ${game.opponent} tomorrow at ${game.time}.`,
   };
 
   await sgMail.send(msg);
