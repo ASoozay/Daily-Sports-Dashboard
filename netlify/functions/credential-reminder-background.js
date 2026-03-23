@@ -20,7 +20,7 @@ async function sendEmail(game) {
   await sgMail.send(msg);
 }
 
-export async function handler() {
+export default async function handler() {
   // 1. Get today's games
   const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-home-games", {
     method: "POST",
