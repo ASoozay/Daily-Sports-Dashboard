@@ -3,7 +3,7 @@ import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const config = {
-  schedule: "* * * * *",
+  schedule: "* 7 * * *",
   timezone: "America/Los_Angeles"
 };
 
