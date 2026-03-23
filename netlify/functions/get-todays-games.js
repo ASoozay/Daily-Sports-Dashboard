@@ -2,7 +2,6 @@ const { Client } = require("pg");
 
 exports.handler = async (event) => {
   try {
-    const body = JSON.parse(event.body);
 
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
