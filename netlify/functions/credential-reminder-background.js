@@ -5,8 +5,7 @@ import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const config = {
-  schedule: "20 11 * * *",
-  timezone: "America/Los_Angeles"
+  schedule: "05 19 * * *",
 };
 
 async function sendEmail(game) {
@@ -24,18 +23,17 @@ export default async function handler() {
   // 1. Get today's games
   const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-home-games", {
     method: "POST",
-    body: JSON.stringify({}) // send empty object
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({})
   });
 
   const { games } = await response.json();
 
   for (const game of games) {
     if (!game.email) continue;
+    console.log("SENDING EMAIL TO:", game.email);
     await sendEmail(game);
   }
-
-  return {
-    statusCode: 200,
-    body: "Reminders sent"
-  };
 }

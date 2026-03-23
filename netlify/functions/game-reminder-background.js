@@ -19,20 +19,20 @@ async function sendEmail(game) {
 }
 
 export default async function handler() {
-  const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-todays-games", {
-    method: "POST",
-    body: JSON.stringify({}) 
-  });
+    const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-home-games", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({})
+    });
 
   const { games } = await response.json();
 
   for (const game of games) {
     if (!game.email) continue;
+    console.log("SENDING EMAIL TO:", game.email);
     await sendEmail(game);
   }
 
-  return {
-    statusCode: 200,
-    body: "Reminders sent"
-  };
 }
