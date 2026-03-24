@@ -25,6 +25,7 @@ exports.handler = async (event) => {
     let query = `SELECT * FROM "Assignments"
     JOIN "Games" ON "Games".game_id = "Assignments".game_id
     JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id
+    JOIN "Sports" ON "Sports".sport = "Games".sport 
     WHERE "Games".date = $1 
     AND ("Games".location = 'Seattle, Wash.' OR "Games".location = 'Seattle, Wash')`;
 

@@ -3,8 +3,7 @@ import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const config = {
-  schedule: "0 7 * * *",
-  timezone: "America/Los_Angeles"
+  schedule: "0 17 * * *",
 };
 
 async function sendEmail(game) {
