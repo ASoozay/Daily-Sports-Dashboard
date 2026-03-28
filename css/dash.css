@@ -1395,11 +1395,21 @@
             text-align: center;
         }
 
+        .when-container {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+            height: 90%;
+            width: 15%;
+            margin-right: 1%;
+        }
+
         .date {
             font-size: xx-small;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;
-            margin-right: 1%;            
+            color: black;            
         }
 
         .time {
@@ -1407,7 +1417,6 @@
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
             text-size-adjust: inherit;
-            margin-right: 2%;
         }
 
           .remove {
