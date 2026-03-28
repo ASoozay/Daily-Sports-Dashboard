@@ -1483,6 +1483,7 @@
             font-family: 'Open Sans', sans-serif;
             text-align: center;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
 
         .invoice-box:hover {
@@ -1491,7 +1492,7 @@
 
         /* Icon takes 20% of the box height */
         .invoice-icon {
-            height: 20%;            /* 20% of box height */
+            height: 75px;            /* 20% of box height */
             width: auto;            /* keep aspect ratio */
             margin-bottom: 2px;    /* spacing from text */
         }
