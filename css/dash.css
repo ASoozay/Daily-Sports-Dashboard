@@ -1403,20 +1403,21 @@
             justify-content: center;
             height: 90%;
             width: 15%;
-            margin-right: 1%;
+            margin-right: 5%;
         }
 
         .date {
-            font-size: xx-small;
+            font-size: x-small;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color: black;            
+            color: black;    
+            text-align: center;        
         }
 
         .time {
-            font-size: xx-small;
+            font-size: x-small;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: black;
-            text-size-adjust: inherit;
+            text-align: center;
         }
 
           .remove {
@@ -1424,7 +1425,7 @@
             align-items: center;
             justify-content: center;
             height: 35%;
-            width: 20px;
+            width: 80px;
             border-radius: 2px;
             background-color: rgb(139, 39, 39);
 
@@ -1443,7 +1444,7 @@
             align-items: center;
             justify-content: center;
             height: 35%;
-            width: 20px;
+            width: 80px;
             border-radius: 2px;
             background-color: #360f5a;
 
