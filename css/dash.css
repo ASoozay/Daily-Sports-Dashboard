@@ -1460,7 +1460,7 @@
         .invoice-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 5px;
+            gap: 10px;
 
             width: 80%;
             margin: 5% auto;
@@ -1475,8 +1475,8 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 80%;           /* fixed width */
-            height: 100px;          /* fixed height to control icon % */
+            width: 100%;           /* fixed width */
+            height: 150px;          /* fixed height to control icon % */
             padding: 1px;
             background-color: #360f5a;
             color: white;
