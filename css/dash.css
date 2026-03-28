@@ -1172,10 +1172,9 @@
         }        
 
         .content {
-            flex: 5.67;
             display: flex;
             flex-direction: column;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
             min-height: 0;
             max-height: 100%;
@@ -1247,7 +1246,7 @@
         .game-box {
             align-items: center;
             display: flex;
-            width: 95%;
+            width: 100%;
             height: 120px;
             background-color: rgb(211, 210, 210);
             border-radius: 20px;
@@ -1443,11 +1442,6 @@
         .add::before {
             content: "ADD";
         }    
-
-        .X {
-            flex: 1; 
-            overflow-y: auto;
-        }
 
         .tab-content {
             display: none;
