@@ -1492,8 +1492,8 @@
 
         /* Icon takes 20% of the box height */
         .invoice-icon {
-            height: 25px;            /* 20% of box height */
-            width: 25px;            /* keep aspect ratio */
+            height: 75px;            /* 20% of box height */
+            width: 75px;            /* keep aspect ratio */
             margin-bottom: 2px;    /* spacing from text */
         }
 
