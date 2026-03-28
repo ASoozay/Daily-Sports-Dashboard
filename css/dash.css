@@ -1338,7 +1338,7 @@
             height: 80%;
             justify-content: center; 
             background-color: transparent;
-            margin-right: 4%;
+            margin-right: 6%;
         }
 
         .home-recap {
@@ -1403,7 +1403,7 @@
             justify-content: center;
             height: 90%;
             width: 15%;
-            margin-right: 5%;
+            margin-right: 6%;
         }
 
         .date {
@@ -1430,7 +1430,7 @@
             background-color: rgb(139, 39, 39);
 
             text-align: center;
-            font-size: 6px;
+            font-size: 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
@@ -1449,7 +1449,7 @@
             background-color: #360f5a;
 
             text-align: center;
-            font-size: 6px;
+            font-size: 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
