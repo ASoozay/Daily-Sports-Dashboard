@@ -13,15 +13,22 @@ exports.handler = async (event) => {
 
     await client.connect();
 
-    const now = new Date();
-    const today = now.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); 
-    // 'YYYY-MM-DD'
+  const now = new Date();
+
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+
+  console.log("TODAY STRING:", today);
 
     // Base query
     let query = `SELECT * FROM "Assignments" 
                 JOIN "Games" ON "Games".game_id = "Assignments".game_id
                 JOIN "Writers" ON "Writers".writer_id = "Assignments".writer_id
-                WHERE "Games".date = $1`;
+                WHERE "Games".date = $1::date`;
 
     const todaysGames = await client.query(query, [today]);
 
