@@ -1252,6 +1252,8 @@
             align-items: center;
             display: flex;
             width: 100%;
+            min-width: 0;
+            max-width: 800px;
             height: 120px;
             background-color: rgb(211, 210, 210);
             border-radius: 20px;
