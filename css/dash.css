@@ -1431,7 +1431,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 35%;
+            height: 100%;
             width: 80px;
             border-radius: 2px;
             background-color: rgb(139, 39, 39);
@@ -1450,7 +1450,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 35%;
+            height: 100%;
             width: 80px;
             border-radius: 2px;
             background-color: #360f5a;
