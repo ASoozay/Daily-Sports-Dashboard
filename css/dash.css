@@ -1420,6 +1420,13 @@
             text-align: center;
         }
 
+        .options-container {
+            flex: 0 0 60px; /* reserves space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
           .remove {
             display: flex;
             align-items: center;
