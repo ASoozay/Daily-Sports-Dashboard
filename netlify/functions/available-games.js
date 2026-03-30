@@ -17,8 +17,15 @@ exports.handler = async (event) => {
     await client.connect();
 
     // Base query
-    let query = `SELECT * FROM "Games" WHERE date >= CURRENT_DATE AND available = TRUE`;
-    let values = [];
+    let query = `SELECT * FROM "Games" WHERE date >= $1 AND available = TRUE`;
+
+    const today = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/Los_Angeles',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(new Date());
+    let values = [today];
 
     // Filter by sports if any
     if (sports.length > 0) {

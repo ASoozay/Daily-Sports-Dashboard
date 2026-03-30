@@ -25,8 +25,14 @@ exports.handler = async (event) => {
 
     let query = `SELECT * FROM "Assignments" 
                 JOIN "Games" ON "Games".game_id = "Assignments".game_id 
-                WHERE date >= CURRENT_DATE AND writer_id = $1`;
-    let values = [writerId];
+                WHERE date >= $1 AND writer_id = $2`;
+            const today = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/Los_Angeles',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(new Date());
+    let values = [today, writerId];
 
     if (sports.length > 0) {
       values.push(sports);
