@@ -11,14 +11,20 @@ async function sendEmail(game) {
     to: game.email,
     from: "sports@dailyuw.com",
     subject: `Game Today: ${game.sport} vs ${game.opponent}`,
-    text: `Reminder: You are covering ${game.sport} vs ${game.opponent} today at ${game.time}.`,
+    text: `Reminder: You are covering ${game.sport} today!
+    Opponent: ${game.opponent}
+    Date: ${game.date}
+    Time: ${game.time}
+    Location: ${game.location}
+    Notes: ${game.notes}
+    `,
   };
 
   await sgMail.send(msg);
 }
 
 export default async function handler() {
-    const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-home-games", {
+    const response = await fetch("https://uwdailysports.netlify.app/.netlify/functions/get-todays-games", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
