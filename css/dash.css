@@ -947,6 +947,7 @@
         .X {
             flex: 1; 
             overflow-y: auto;
+            height: 600px;
         }
 
         .tab-content {
