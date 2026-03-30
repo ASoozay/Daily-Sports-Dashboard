@@ -956,8 +956,7 @@
             min-height: 0;  
         }
 
-        /* Container fills content */
-        .invoice-container {
+         .invoice-container {
             display: grid;
             grid-template-columns: repeat(2, 450px); /* fixed column size */
             gap: 50px;
@@ -980,7 +979,7 @@
             padding: 5px;
             background-color: #360f5a;
             color: white;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             text-align: center;
             transition: all 0.2s ease;
         }
@@ -1001,7 +1000,7 @@
             font-size: 18px;
             color: white;
         }
-
+        
         .resources-dropdown {
             width: 100%;
             height: 100px;
