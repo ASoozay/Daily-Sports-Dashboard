@@ -12,8 +12,15 @@ async function sendEmail(game) {
     from: "sports@dailyuw.com",
     subject: `Game Today: ${game.sport} vs ${game.opponent}`,
     text: `Reminder: You are covering ${game.sport} today!
+
     Opponent: ${game.opponent}
-    Date: ${game.date}
+    Date: ${game.date.toLocaleDateString('en-US', {
+                timeZone: 'UTC',  
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                })}
     Time: ${game.time}
     Location: ${game.location}
     Notes: ${game.notes}
