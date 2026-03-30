@@ -155,14 +155,7 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                let date = new Date(game.date);
-                date = date.toLocaleDateString('en-US', {
-                timeZone: 'UTC',  
-                weekday: 'short',
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-                });
+                const date = game.date;
                 const time = game.time;
                 const notes = game.notes;
                 const name = game.first_name + " " + game.last_name;
@@ -249,14 +242,7 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                let date = new Date(game.date);
-                date = date.toLocaleDateString('en-US', {
-                timeZone: 'UTC',  
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                });
+                const date = game.date;
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";
@@ -323,14 +309,7 @@
                 const sport = game.sport;
                 const opp = game.opponent;
                 const location = game.location;
-                let date = new Date(game.date);
-                date = date.toLocaleDateString('en-US', {
-                timeZone: 'UTC',  
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                });
+                const date = game.date;
                 const time = game.time;
                 const notes = game.notes;
                 let where = "";

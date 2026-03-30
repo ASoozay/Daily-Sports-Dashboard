@@ -14,12 +14,7 @@ async function sendEmail(game) {
     text: `Reminder: You are covering ${game.sport} today!
 
     Opponent: ${game.opponent}
-    Date: ${new Date(game.date).toLocaleDateString('en-US', {
-  timeZone: 'America/Los_Angeles',
-  weekday: 'long',
-  month: 'long',
-  day: 'numeric',
-})}
+    Date: ${game.date}
     Time: ${game.time}
     Location: ${game.location}
     Notes: ${game.notes}

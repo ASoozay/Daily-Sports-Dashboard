@@ -15,11 +15,11 @@ exports.handler = async (event) => {
 
     const now = new Date();
 
-   const yesterday = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+   const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 
-    const formattedYesterday = yesterday.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+    const formattedTomorrow = tomorrow.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
 
-    console.log(formattedYesterday); // 
+    console.log(formattedTomorrow); // 
 
     // Base query
     let query = `SELECT * FROM "Assignments"
@@ -29,7 +29,7 @@ exports.handler = async (event) => {
     WHERE "Games".date = $1 
     AND ("Games".location = 'Seattle, Wash.' OR "Games".location = 'Seattle, Wash')`;
 
-    const todaysGames = await client.query(query, [formattedYesterday]);
+    const todaysGames = await client.query(query, [formattedTomorrow]);
 
     await client.end();
 
