@@ -1418,8 +1418,8 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 450px); /* fixed column size */
-            gap: 25px;
+            grid-template-columns: repeat(2, 300px); /* fixed column size */
+            gap: 50px;
 
             width: 80%;
             margin: 5% auto;
@@ -1434,15 +1434,17 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 80%;           /* fixed width */
-            height: 450px;          /* fixed height to control icon % */
+            width: auto;           /* fixed width */
+            height: 300px;          /* fixed height to control icon % */
             padding: 5px;
             background-color: #360f5a;
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             text-align: center;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
+
 
         .invoice-box:hover {
             transform: translateY(-2px);
@@ -1450,14 +1452,14 @@
 
         /* Icon takes 20% of the box height */
         .invoice-icon {
-            height: 50%;            /* 20% of box height */
+            height: 75%;            /* 20% of box height */
             width: auto;            /* keep aspect ratio */
             margin-bottom: 5px;    /* spacing from text */
         }
 
         /* Text below icon */
         .invoice-text {
-            font-size: 18px;
+            font-size: 24px;
             color: white;
             text-decoration: none;
         }
