@@ -149,7 +149,7 @@
                     <p class="recap-location">${location}</p>
                 </div>
                 <div class = "when-container">
-                    <div class = "date">${date}</div>
+                    <div class = "date">${formatDate(date)}</div>
                     <div class = "time">${time}</div>
                 </div>
                 <div class="options-container">
@@ -218,7 +218,7 @@
                     <p class="recap-location">${location}</p>
                 </div>
                 <div class = "when-container">
-                    <div class = "date">${date}</div>
+                    <div class = "date">${formatDate(date)}</div>
                     <div class = "time">${time}</div>
                 </div>
                 <div class="options-container">
@@ -414,4 +414,13 @@ function toggleResources() {
     } else {
         list.style.display = "block";
     }
+}
+
+function formatDate(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
 }

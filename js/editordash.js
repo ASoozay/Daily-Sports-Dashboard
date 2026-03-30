@@ -188,7 +188,7 @@
                     <p class="recap-location">${location}</p>
                 </div>
                 <div class = "when-container">
-                    <div class = "date">${date}</div>
+                    <div class = "date">${formatDate(date)}</div>
                     <div class = "time">${time}</div>
                 </div>
                 <div class = "writer">${name}</div>
@@ -273,7 +273,7 @@
                     <div class="${recap_css}"></div>
                     <p class="recap-location">${location}</p>
                 </div>
-                <div class = "date">${date}</div>
+                <div class = "date">${formatDate(date)}</div>
                 <div class = "time">${time}</div>
                 <div class = "options-container">
                     <button class = "remove" data-game-id = "${gameId}"></button>
@@ -340,7 +340,7 @@
                     <div class="${recap_css}"></div>
                     <p class="recap-location">${location}</p>
                 </div>
-                <div class = "date">${date}</div>
+                <div class = "date">${formatDate(date)}</div>
                 <div class = "time">${time}</div>
                 <div class = "options-container"> 
                     <button class = "add" data-game-id = "${gameId}"></button>
@@ -644,4 +644,13 @@ function convertTo12Hour(time24) {
     if (h === 0) h = 12;
 
     return `${h}:${minute} ${ampm}`;
+}
+
+function formatDate(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
 }
