@@ -800,15 +800,15 @@
             flex-direction: column;
             margin-top: 1%;
             width: 10%;
-            height: 80%;
+            height: 120px;
             justify-content: center; 
             background-color: transparent;
-            margin-right: 8%;
+            margin-right: 6%;
         }
 
         .home-recap {
             display: flex;
-            height: 80%;
+            height: 70%;
             width: 100%;
             background-color: #360f5a;
             border-radius: 5px;
@@ -829,7 +829,7 @@
 
         .away-recap {
             display: flex;
-            height: 80%;
+            height: 70%;
             width: 100%;
             background-color: #B7A57A;
             border-radius: 5px;
@@ -860,31 +860,49 @@
             text-align: center;
         }
 
-        .date {
+        .when-container {
             display: flex;
+            flex-direction: column;
+            align-self: center;
             align-items: center;
+            justify-content: center;
+            height: 90%;
+            width: 15%;
+            margin-right: 3%;
+        }
+
+        .date {
             font-size: large;
-            width: 10%;
-            height: 30%;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             margin-right: 3%; 
             text-align: center;           
         }
 
         .time {
-            display: flex;
-            align-items: center;
-            width: 10%;
-            height: 30%;
             font-size: large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
             margin-right: 6%;
             text-align: center;
         }
 
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 10%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+
+            margin-left: auto;   
+            margin-right: 2%;   
+        }
+                
         .remove {
             display: flex;
             align-items: center;
