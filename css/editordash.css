@@ -1125,7 +1125,7 @@
         }
 
         .date {
-            font-size: large;
+            font-size: medium;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             margin-right: 3%; 
@@ -1133,7 +1133,7 @@
         }
 
         .time {
-            font-size: large;
+            font-size: medium;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
