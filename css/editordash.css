@@ -1198,6 +1198,7 @@
             height: 40%;
             width: 100%;
             border-radius: 5px;
+            border-color: transparent;
             background-color: rgb(139, 39, 39);
 
             text-align: center;
@@ -1218,6 +1219,7 @@
             width: 100%;
             margin-bottom: 10%;
             border-radius: 5px;
+            border-color: transparent;
             background-color: #360f5a;
 
             text-align: center;
@@ -1237,6 +1239,7 @@
             height: 35%;
             width: 100%;
             border-radius: 5px;
+            background-color: transparent;
             background-color: #360f5a;
 
             text-align: center;
@@ -1935,7 +1938,8 @@
             cursor: pointer;
             height: 35%;
             width: 100%;
-            border-radius: 2px;
+            border-radius: 5px;
+            border-color: transparent;
             background-color: green;
 
             text-align: center;
