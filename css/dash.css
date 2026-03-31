@@ -34,7 +34,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 40px;
           }
 
@@ -43,7 +43,7 @@
             justify-content: right;
             margin-right: 100px;  /* Add a bit of space from the right edge */
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 25px;
             cursor: pointer;
             background-color: #360f5a;
@@ -73,7 +73,7 @@
             cursor: pointer;
 
             font-size: 18px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .tab-button:hover {
@@ -120,7 +120,7 @@
         .filter-title {
             font-weight: bold;
             margin-bottom: 8px;
-            font-family: 'Calibra', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -137,7 +137,7 @@
             user-select: none;
             font-size: 14px;
             transition: all 0.2s ease;
-            font-family: 'Calibra', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .filter-box:hover {
@@ -181,7 +181,7 @@
             background-color: transparent;
 
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
 
             margin-right: 2%;            
@@ -196,7 +196,7 @@
             background-color: transparent;
 
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
 
             margin-right: 5%;
@@ -211,7 +211,7 @@
             background-color: transparent;
 
             font-size: medium;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-style: italic;
             color: black;
         }
@@ -229,7 +229,7 @@
             margin-right: 1%;
 
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
         }
 
@@ -263,7 +263,7 @@
 
             color: white;
             font-size: x-large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
         }
 
@@ -283,7 +283,7 @@
 
             color: black;
             font-size: x-large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
         }
         
@@ -298,7 +298,7 @@
 
             color: grey;
             font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-style: italic;
             text-align: center;
         }
@@ -316,14 +316,14 @@
 
         .date {
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             margin-right: 3%;            
         }
 
         .time {
             font-size: x-large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
             margin-right: 6%;
@@ -341,7 +341,7 @@
 
             text-align: center;
             font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -361,7 +361,7 @@
 
             text-align: center;
             font-size: large;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -405,7 +405,7 @@
             padding: 10px;
             background-color: #360f5a;
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             text-align: center;
             transition: all 0.2s ease;
         }
@@ -440,7 +440,7 @@
             align-items: center;
 
             font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
 
             cursor: pointer;
         }
@@ -468,7 +468,7 @@
             color: black;
             font-size: 18px;
 
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .resources-list a:hover {
@@ -489,7 +489,7 @@
             align-items: center;
 
             font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
 
             cursor: pointer;
 
@@ -509,7 +509,7 @@
             align-items: center;
 
             font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
 
             cursor: pointer;
 
@@ -533,7 +533,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Avenir Next', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 12px;
 
         }
@@ -582,7 +582,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 35px;
           }
 
@@ -591,7 +591,7 @@
             justify-content: right;
             margin-right: 50px;  /* Add a bit of space from the right edge */
             color: white;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 25px;
             cursor: pointer;
             background-color: #360f5a;
@@ -621,7 +621,7 @@
             cursor: pointer;
 
             font-size: 18px;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .tab-button:hover {
@@ -668,7 +668,7 @@
         .filter-title {
             font-weight: bold;
             margin-bottom: 4px;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -692,7 +692,7 @@
             font-weight: bold;
             
             transition: all 0.2s ease;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .filter-box:hover {
@@ -736,7 +736,7 @@
             background-color: transparent;
 
             font-size: x-large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
 
             margin-right: 2%;            
@@ -751,7 +751,7 @@
             background-color: transparent;
 
             font-size: x-large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
 
             margin-right: 5%;
@@ -766,7 +766,7 @@
             background-color: transparent;
 
             font-size: medium;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-style: italic;
             color: black;
         }
@@ -784,7 +784,7 @@
             margin-right: 1%;
 
             font-size: x-large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
         }
 
@@ -818,7 +818,7 @@
 
             color: white;
             font-size: medium;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
         }
@@ -839,7 +839,7 @@
 
             color: black;
             font-size: medium;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
         }
@@ -855,7 +855,7 @@
 
             color: grey;
             font-size: large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-style: italic;
             text-align: center;
         }
@@ -908,7 +908,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            height: 50%;
+            height: 30%;
             width: 100%;
             margin-right: 50px;
             border-radius: 5px;
@@ -916,7 +916,7 @@
 
             text-align: center;
             font-size: large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -928,7 +928,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50%;
+            height: 30%;
             width: 100%;
             margin-right: 50px;
             border-radius: 5px;
@@ -936,7 +936,7 @@
 
             text-align: center;
             font-size: large;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -1017,7 +1017,7 @@
             align-items: center;
 
             font-size: 20px;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
 
             cursor: pointer;
         }
@@ -1045,7 +1045,7 @@
             color: black;
             font-size: 20px;
 
-            font-family: 'Noto Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .resources-list a:hover {
@@ -1090,7 +1090,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Avenir Next', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 12px;
 
         }
@@ -1140,7 +1140,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 20px;
           }
 
@@ -1149,7 +1149,7 @@
             justify-content: right;
             margin-right: 50px;  /* Add a bit of space from the right edge */
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 20px;
             cursor: pointer;
             background-color: #360f5a;
@@ -1179,7 +1179,7 @@
             cursor: pointer;
 
             font-size: 6px;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .tab-button:hover {
@@ -1230,7 +1230,7 @@
         .filter-title {
             font-weight: bold;
             margin-bottom: 2px;
-            font-family: 'Calibra', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -1247,7 +1247,7 @@
             user-select: none;
             font-size: 4px;
             transition: all 0.2s ease;
-            font-family: 'Calibra', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .filter-box:hover {
@@ -1293,7 +1293,7 @@
             background-color: transparent;
 
             font-size: xx-small;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
 
             margin-right: 2%;            
@@ -1308,7 +1308,7 @@
             background-color: transparent;
 
             font-size: xx-small;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
 
             margin-right: 3%;
@@ -1323,7 +1323,7 @@
             background-color: transparent;
 
             font-size: xx-small;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-style: italic;
             color: black;
         }
@@ -1341,7 +1341,7 @@
             margin-right: 1%;
 
             font-size: xx-small;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
         }
 
@@ -1375,7 +1375,7 @@
 
             color: white;
             font-size: 6px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
         }
@@ -1396,7 +1396,7 @@
 
             color: black;
             font-size: 6px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
         }
@@ -1412,7 +1412,7 @@
 
             color: grey;
             font-size: xx-small;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-style: italic;
             text-align: center;
         }
@@ -1430,14 +1430,14 @@
 
         .date {
             font-size: x-small;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;    
             text-align: center;        
         }
 
         .time {
             font-size: x-small;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-align: center;
         }
@@ -1461,7 +1461,7 @@
 
             text-align: center;
             font-size: 10px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -1480,7 +1480,7 @@
 
             text-align: center;
             font-size: 10px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: white;
         }
 
@@ -1519,7 +1519,7 @@
             padding: 1px;
             background-color: #360f5a;
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             text-align: center;
             transition: all 0.2s ease;
             text-decoration: none;
@@ -1555,7 +1555,7 @@
             align-items: center;
 
             font-size: 14px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
 
             cursor: pointer;
         }
@@ -1583,7 +1583,7 @@
             color: black;
             font-size: 8px;
 
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .resources-list a:hover {
@@ -1628,7 +1628,7 @@
 
             /*text*/
             color: white;
-            font-family: 'Avenir Next', sans-serif;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 4px;
 
         }
