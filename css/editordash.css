@@ -1885,14 +1885,14 @@
         }
 
         .date {
-            font-size: xx-small;
+            font-size: 7px;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             margin-right: 1%;            
         }
 
         .time {
-            font-size: xx-small;
+            font-size: 7px;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
