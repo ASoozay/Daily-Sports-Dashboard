@@ -944,10 +944,35 @@
             content: "ADD";
         }    
 
-        .X {
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 5px;
             flex: 1; 
             overflow-y: auto;
-            height: 600px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+        }
+
+        .links-container h4 {
+            text-align: center;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 24px;
+            color: #360f5a;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: #360f5a;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: large;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
         }
 
         .tab-content {
@@ -963,7 +988,7 @@
             gap: 50px;
 
             width: 80%;
-            margin: 5% auto;
+            margin: 2% auto;
 
             justify-content: center; /* centers grid inside container */
             align-content: center;   /* centers vertically if container has height */
@@ -981,10 +1006,14 @@
             background-color: #360f5a;
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
             text-align: center;
             transition: all 0.2s ease;
             text-decoration: none;
+            border-radius: 30px;
         }
+
 
         .invoice-box:hover {
             transform: translateY(-2px);
@@ -994,7 +1023,7 @@
         .invoice-icon {
             height: 75%;            /* 20% of box height */
             width: auto;            /* keep aspect ratio */
-            margin-bottom: 5px;    /* spacing from text */
+            margin-bottom: 20px;    /* spacing from text */
         }
 
         /* Text below icon */

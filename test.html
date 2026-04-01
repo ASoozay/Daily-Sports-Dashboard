@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/dash.css">
-<link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
+<link rel="stylesheet" href="/css/test.css">
+<link rel="icon" type="image/x-icon" href="./images/favicon.ico?v=2">
 </head>
 <meta charset="UTF-8">
 
@@ -18,7 +18,8 @@
     </div>
 
     <div class="tab-container">
-        <button class="tab-button" onclick="showTab(event, 'scheduled-games')">Schedule</button>
+        <button class="tab-button" onclick="showTab(event, 'all-games')">All Scheduled</button> 
+        <button class="tab-button" onclick="showTab(event, 'scheduled-games')">My Schedule</button>
         <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
         <button class="tab-button" onclick="showTab(event, 'invoices')">Invoices</button>
         <button class="tab-button" onclick="showTab(event, 'resources')">Resources</button>
@@ -26,15 +27,87 @@
 
     <div class="main">
     <div class="content">
+    
+    <div id = "all-games" class = "tab-content">
+        <div id = "all-games-filter-container" class = "games-filter-container"></div>
+        <div id = "all-games-container" class = "games-container">
+            <div class = "game-box" data-game-id="123">
+            <div class = "sport-container">
+                <div class = "sport-box">Baseball</div>
+                <div class = "notes-box">NCAA Tournament</div> 
+            </div>
+            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+            <div class = "where">vs</div>
+            <img class="opp-icon" src="/images/schools/Oregon.webp" alt="Oregon">
+            <div class = "recap-container">
+                <div class="home-recap"></div>
+                <p class="recap-location">Seattle, Wash.</p>
+            </div>
+            <div class = "when-container">
+                <div class = "date">Tuesday, March 31</div>
+                <div class = "time">7:00 PM</div>
+            </div>
+            <div class = "writer">John Doe</div>
+            <div class = "options-container"> 
+                <button class = "submit"></button>  
+                <button class = "remove" data-game-id = 123></button>
+            </div>  
+        </div>
+    </div>
+    </div>    
 
     <div id="scheduled-games" class="tab-content">
         <div id="scheduled-games-filter-container" class="games-filter-container"></div>       
-        <div id = "scheduled-games-container" class = "games-container"></div>
+        <div id = "scheduled-games-container" class = "games-container">
+                        <div class = "game-box" data-game-id="123">
+            <div class = "sport-container">
+                <div class = "sport-box">Baseball</div>
+                <div class = "notes-box">NCAA Tournament</div> 
+            </div>
+            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+            <div class = "where">vs</div>
+            <img class="opp-icon" src="/images/schools/Oregon.webp" alt="Oregon">
+            <div class = "recap-container">
+                <div class="home-recap"></div>
+                <p class="recap-location">Seattle, Wash.</p>
+            </div>
+            <div class = "when-container">
+                <div class = "date">Tuesday, March 31</div>
+                <div class = "time">7:00 PM</div>
+            </div>
+            <div class = "writer">John Doe</div>
+            <div class = "options-container">  
+                <button class = "remove" data-game-id = 123></button>
+            </div>  
+        </div>
+        </div>
     </div>
 
     <div id = "available-games" class="tab-content">
         <div id="available-games-filter-container" class="games-filter-container"></div>
-        <div id = "available-games-container" class = "games-container"></div>
+        <div id = "available-games-container" class = "games-container">
+                        <div class = "game-box" data-game-id="123">
+            <div class = "sport-container">
+                <div class = "sport-box">Baseball</div>
+                <div class = "notes-box">NCAA Tournament</div> 
+            </div>
+            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+            <div class = "where">vs</div>
+            <img class="opp-icon" src="/images/schools/Oregon.webp" alt="Oregon">
+            <div class = "recap-container">
+                <div class="home-recap"></div>
+                <p class="recap-location">Seattle, Wash.</p>
+            </div>
+            <div class = "when-container">
+                <div class = "date">Tuesday, March 31</div>
+                <div class = "time">7:00 PM</div>
+            </div>
+            <div class = "writer">John Doe</div>
+            <div class = "options-container"> 
+                <button class = "add"></button>  
+            </div>  
+        </div>
+        </div>
     </div>
 
     <div id="invoices" class="tab-content">
@@ -52,7 +125,7 @@
                 <img class="invoice-icon" src="/pages/dashboard/invoice/History.png" alt="Invoice 1">Invoice History</a>
             </div>
             <div class="invoice-option">
-                <a class="invoice-box" href="./invoice/Pay-Scale.png">
+                <a class="invoice-box" href="/pages/dashboard/invoice/Pay-Scale.png">
                 <img class="invoice-icon" src="/pages/dashboard/invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
             </div>
         </div>
@@ -74,15 +147,15 @@
                         <a href="./resources/Sports-Dev-Day-6-AP-Style-Practice-Test.pdf">Day 6: AP Style Practice Test</a>
                         <a href="./resources/Sports-Dev-Day-7-Hiring.pdf">Day 7: Hiring</a>
                     </div>
-                    <div class = "production">
+                    <div class = "resource-box">
                         <a href = "https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit?gid=1143417584#gid=1143417584" style="text-decoration: none;"> The Daily Sports Production Schedule</a>
                     </div>
-                    <div class = "cq">
+                    <div class = "resource-box">
                         <a href = "https://docs.google.com/spreadsheets/d/1xQaD0YLvEyfALkiY1CgX5dFDAgSHLS3iRd75rD1uQkw/edit?usp=sharing" style="text-decoration: none;">Big Ten CQs</a>
                     </div>
                 </div>
             </div>
-        </div> <!-- CLOSE .content HERE -->
+        </div>
 
         <!-- Sidebar / Twitter feed -->
         <div class="links-container">
@@ -94,7 +167,7 @@
             <a href="https://x.com/UWDailySports" target="_blank">X</a>
             <a href="https://www.instagram.com/uwdailysports/" target="_blank">Instagram</a>
         </div>
-        </div> <!-- CLOSE .main -->
+    </div> 
 
     <div class="bottom">
         <p>The Daily Sports 2026</p>
@@ -104,7 +177,6 @@
 
 <template id="games-filter-template">
     <div class="games-filter">
-
         <div class="filter-section">
             <div class="filter-title">Sport</div>
             <div class="filter-options sport-options">
@@ -136,16 +208,43 @@
                 <div class="filter-box" data-value="Away">Away</div>
             </div>
         </div>
-
+        <button class = "add-game" onclick = "openAddGameModal()"></button>
     </div>
 </template>
 
-<!---- Java Scripts--> 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script src="/js/dash.js"></script>
+<div id="assign-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Assign Writer</h2>
+
+        <select id="writer-select">
+            <option value="">Select a writer</option>
+        </select>
+
+        <button id="confirm-assign">Assign</button>
+    </div>
+</div>
+
+<div id="add-modal" class="modal">
+    <div class="add-modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Game Information</h2>
+        <select id="sport-input" class = "add-box">
+            <option value="">Select a sport</option>
+        </select>  
+        <input type="text" id="opponent-input" class = "add-box" placeholder="Opponent">
+        <input type="text" id="location-input" class = "add-box" placeholder="Location">
+        <input type="date" id="date-input" class = "add-box">
+        <input type="time" id="time-input" class = "add-box">
+        <input type="text" id="notes-input" class = "add-box" placeholder="Notes">
+        <button id="confirm-add" class = "confirm-add">Add Game</button>
+    </div>
+</div>
+
 </body>
 
-</html>
+<!---- Java Scripts--> 
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/js/editordash.js"></script>
 
-
+ 
