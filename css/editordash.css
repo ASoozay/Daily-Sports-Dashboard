@@ -1179,12 +1179,12 @@
             margin-bottom: 10%;
             border-radius: 5px;
             border-color: transparent;
-            background-color: green;
+            background-color: transparent;
 
             text-align: center;
             font-size: large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
+            color: #360f5a;
         }
 
         .submit::before {
@@ -1200,16 +1200,18 @@
             width: 100%;
             border-radius: 5px;
             border-color: transparent;
-            background-color: rgb(139, 39, 39);
+            /* background-color: rgb(139, 39, 39); */
+            background-color: transparent;
 
             text-align: center;
-            font-size: large;
+            font-size: 80px;
+            font-weight: bold;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
+            color: #360f5a;
         }
 
         .remove::before {
-            content: "REMOVE";
+            content: "-";
         }
 
         .add {
@@ -1221,16 +1223,18 @@
             margin-bottom: 10%;
             border-radius: 5px;
             border-color: transparent;
-            background-color: #360f5a;
+            /* background-color: #360f5a; */
+            background-color: transparent;
 
             text-align: center;
-            font-size: large;
+            font-weight: bold;
+            font-size: 60px;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
+            color: #360f5a;
         }
 
         .add::before {
-            content: "ADD";
+            content: "+";
         }    
         
         .assign {
@@ -1407,9 +1411,35 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .X {
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 5px;
             flex: 1; 
             overflow-y: auto;
+            background-color: whitesmoke;
+            border-radius: 10px;
+        }
+
+        .links-container h4 {
+            text-align: center;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 24px;
+            color: #360f5a;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: #360f5a;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: large;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
         }
 
         .tab-content {
@@ -1470,7 +1500,6 @@
             color: white;
             text-decoration: none;
         }
-
 
         .resources-dropdown {
             width: 100%;
@@ -2106,35 +2135,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-left: 5px;
+        .X {
             flex: 1; 
             overflow-y: auto;
-            background-color: whitesmoke;
-            border-radius: 10px;
-        }
-
-        .links-container h4 {
-            text-align: center;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 24px;
-            color: #360f5a;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        .links-container a {
-            text-decoration: none;
-            color: #360f5a;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: large;
-            padding: 8px 12px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            transition: background-color 0.2s ease;
         }
 
         .tab-content {
