@@ -193,8 +193,8 @@
                 </div>
                 <div class = "writer">${name}</div>
                 <div class = "options-container"> 
-                    <button class = "remove" data-game-id = "${gameId}"></button>
-                    <button class = "edit" onclick="openAssignModal(${gameId})"></button>
+                    <button class = "remove" data-game-id = "${gameId}">REMOVE</button>
+                    <button class = "edit" onclick="openAssignModal(${gameId})">EDIT</button>
                 </div>    
             `;
 
@@ -276,8 +276,8 @@
                 <div class = "date">${formatDate(date)}</div>
                 <div class = "time">${time}</div>
                 <div class = "options-container">
-                    <button class = "remove" data-game-id = "${gameId}"></button>
-                    <button class = "edit" onclick="openAssignModal(${gameId})"></button>
+                    <button class = "remove" data-game-id = "${gameId}">REMOVE</button>
+                    <button class = "edit" onclick="openAssignModal(${gameId})">EDIT</button>
                 </div>
             `;
 
@@ -344,9 +344,9 @@
                 <div class = "date">${formatDate(date)}</div>
                 <div class = "time">${time}</div>
                 <div class = "options-container"> 
-                    <button class = "add" data-game-id = "${gameId}"></button>
-                    <button class= "assign" onclick="openAssignModal(${gameId})"></button>
-                    <button class = "edit" onclick="openEditModal(${gameId})"></button>
+                    <button class = "add" data-game-id = "${gameId}">ADD</button>
+                    <button class= "assign" onclick="openAssignModal(${gameId})">ASSIGN</button>
+                    <button class = "edit" onclick="openEditModal(${gameId})">EDIT</button>
                 </div>    
             `;
 
