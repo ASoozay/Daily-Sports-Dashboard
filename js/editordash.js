@@ -193,8 +193,8 @@
                 </div>
                 <div class = "writer">${name}</div>
                 <div class = "options-container"> 
-                    <button class = "submit"></button>  
                     <button class = "remove" data-game-id = "${gameId}"></button>
+                    <button class = "edit" onclick="openAssignModal(${gameId})"></button>
                 </div>    
             `;
 
@@ -277,6 +277,7 @@
                 <div class = "time">${time}</div>
                 <div class = "options-container">
                     <button class = "remove" data-game-id = "${gameId}"></button>
+                    <button class = "edit" onclick="openAssignModal(${gameId})"></button>
                 </div>
             `;
 
@@ -344,7 +345,8 @@
                 <div class = "time">${time}</div>
                 <div class = "options-container"> 
                     <button class = "add" data-game-id = "${gameId}"></button>
-                    <button class="assign" onclick="openAssignModal(${gameId})"></button>
+                    <button class= "assign" onclick="openAssignModal(${gameId})"></button>
+                    <button class = "edit" onclick="openEditModal(${gameId})"></button>
                 </div>    
             `;
 

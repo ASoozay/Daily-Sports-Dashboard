@@ -22,7 +22,8 @@
         <button class="tab-button" onclick="showTab(event, 'scheduled-games')">My Schedule</button>
         <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
         <button class="tab-button" onclick="showTab(event, 'invoices')">Invoices</button>
-        <button class="tab-button" onclick="showTab(event, 'resources')">Resources</button>
+        <button class="tab-button" onclick="showTab(event, 'history')">History</button>
+        <button class="tab-button" onclick="showTab(event, 'settings')">Settings</button>
     </div>
 
     <div class="main">
@@ -49,8 +50,8 @@
             </div>
             <div class = "writer">John Doe</div>
             <div class = "options-container"> 
-                <button class = "submit"></button>  
                 <button class = "remove" data-game-id = 123></button>
+                <button class = "edit"></button>
             </div>  
         </div>
     </div>
@@ -74,10 +75,11 @@
             <div class = "when-container">
                 <div class = "date">Tuesday, March 31</div>
                 <div class = "time">7:00 PM</div>
-            </div>
+            </div>`
             <div class = "writer">John Doe</div>
             <div class = "options-container">  
                 <button class = "remove" data-game-id = 123></button>
+                <button class = "edit"></button>
             </div>  
         </div>
         </div>
@@ -104,7 +106,9 @@
             </div>
             <div class = "writer">John Doe</div>
             <div class = "options-container"> 
-                <button class = "add"></button>  
+                <button class = "add">ADD</button> 
+                <button class = "assign">ASSIGN</button>
+                <button class = "edit">EDIT</button>
             </div>  
         </div>
         </div>
@@ -135,8 +139,26 @@
             <div class="history-container">
                 <p>Coming Soon!</p>
             </div>
-        </div>
     </div>
+    <div id = "settings" class = "tab-content">
+        <div class = "settings-container">
+            <div class = "settings-option">
+                <img src = "/pages/dashboard/settings/addwriter.png" alt = "add writer" class = "settings-icon">
+                <h5>Add Writer</h5>
+            </div>
+            <div class = "settings-option">
+                <img src = "/pages/dashboard/settings/editwriter.png" alt = "edit writer" class = "settings-icon">
+                <h5>Edit Writer</h5>
+            </div>
+            <div class = "settings-option"></div>
+            <div class = "settings-option"></div>
+            <div class = "settings-option"></div>
+            <div class = "settings-option"></div>  
+            <div class = "settings-option"></div>
+            <div class = "settings-option"></div>  
+    </div>
+</div>
+</div>
 
         <!-- Sidebar / Twitter feed -->
         <div class="links-container">

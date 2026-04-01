@@ -400,8 +400,8 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 80%;           /* fixed width */
-            height: 80%;          /* fixed height to control icon % */
+            width: 200px;           /* fixed width */
+            height: 200px;          /* fixed height to control icon % */
             padding: 10px;
             background-color: #360f5a;
             color: white;
