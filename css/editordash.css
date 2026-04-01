@@ -1245,11 +1245,12 @@
             width: 100%;
             border-radius: 5px;
             background-color: transparent;
+            border-color: transparent;
 
             text-align: center;
             font-size: large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
+            color: #360f5a;
         }
 
         .assign::before {
