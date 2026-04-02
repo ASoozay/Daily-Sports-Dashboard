@@ -1290,6 +1290,18 @@
             color: black;
         }
 
+        #edit-sport-input {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: black;
+            font-size: 15px;
+            outline: none;
+            background-color: #fff;
+            color: black;
+        }
         /* Modal animation */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(-15px); }

@@ -468,17 +468,18 @@
     }
 
         async function openEditGameModal(gameId) {
+            currGameId = gameId;
             const data = await loadGameInfo(gameId);
             console.log("GAME DATA:", data);
             const game = data.game;
             await loadSports();
 
-            document.getElementById("sport-input").value = game.sport;
-            document.getElementById("opponent-input").value = game.opponent;
-            document.getElementById("location-input").value = game.location;
-            document.getElementById("date-input").value = game.date;
-            document.getElementById("time-input").value = convertTo12Hour(game.time);
-            document.getElementById("notes-input").value = game.notes || "";
+            document.getElementById("edit-sport-input").value = game.sport;
+            document.getElementById("edit-opponent-input").value = game.opponent;
+            document.getElementById("edit-location-input").value = game.location;
+            document.getElementById("edit-date-input").value = game.date;
+            document.getElementById("edit-time-input").value = convertTo24Hour(game.time);
+            document.getElementById("edit-notes-input").value = game.notes || "";
 
             document.getElementById("edit-modal").style.display = "flex";
         }    
@@ -486,18 +487,18 @@
         const editModal = document.getElementById("edit-modal");
 
         document.getElementById("confirm-edit").onclick = async () => {
-            const sport = document.getElementById("sport-input").value;
-            const opponent = document.getElementById("opponent-input").value;
-            const location = document.getElementById("location-input").value;
-            const date = document.getElementById("date-input").value;
-            const time = convertTo12Hour(document.getElementById("time-input").value);
-            const notes = document.getElementById("notes-input").value;
+            const sport = document.getElementById("edit-sport-input").value;
+            const opponent = document.getElementById("edit-opponent-input").value;
+            const location = document.getElementById("edit-location-input").value;
+            const date = document.getElementById("edit-date-input").value;
+            const time = convertTo12Hour(document.getElementById("edit-time-input").value);
+            const notes = document.getElementById("edit-notes-input").value;
 
             if(!sport || !opponent || !location || !date || !time) {
                 alert("Please fill in all required fields");
             } 
 
-            await editGame(gameId, sport, opponent, date, time, location, notes);
+            await editGame(currGameId, sport, opponent, date, time, location, notes);
             editModal.style.display = "none";
     }
 
@@ -743,6 +744,26 @@ function convertTo12Hour(time24) {
     if (h === 0) h = 12;
 
     return `${h}:${minute} ${ampm}`;
+}
+
+function convertTo24Hour(timeStr) {
+    if (!timeStr) return "";
+
+    const [time, modifier] = timeStr.split(" "); // "7:00", "PM"
+    let [hours, minutes] = time.split(":");
+
+    hours = parseInt(hours);
+
+    if (modifier === "PM" && hours !== 12) {
+        hours += 12;
+    }
+
+    if (modifier === "AM" && hours === 12) {
+        hours = 0;
+    }
+
+    // format to HH:MM
+    return `${hours.toString().padStart(2, "0")}:${minutes}`;
 }
 
 function formatDate(dateStr) {
