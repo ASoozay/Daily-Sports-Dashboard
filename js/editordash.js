@@ -74,6 +74,14 @@
             });
         }
 
+        async function loadGameInfo(gameId) {
+            const response = await fetch("/.netlify/functions/get-game-info", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ gameId })
+            });
+        }
+
         let activeFilters = {
             sports: [],
             locations: []
@@ -194,7 +202,7 @@
                 <div class = "writer">${name}</div>
                 <div class = "options-container"> 
                     <button class = "remove" data-game-id = "${gameId}">REMOVE</button>
-                    <button class = "edit" onclick="openAssignModal(${gameId})">EDIT</button>
+                    <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
                 </div>    
             `;
 
@@ -277,7 +285,7 @@
                 <div class = "time">${time}</div>
                 <div class = "options-container">
                     <button class = "remove" data-game-id = "${gameId}">REMOVE</button>
-                    <button class = "edit" onclick="openAssignModal(${gameId})">EDIT</button>
+                    <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
                 </div>
             `;
 
@@ -346,9 +354,9 @@
                 <div class = "options-container"> 
                     <button class = "add" data-game-id = "${gameId}">ADD</button>
                     <button class= "assign" onclick="openAssignModal(${gameId})">ASSIGN</button>
-                    <button class = "edit" onclick="openEditModal(${gameId})">EDIT</button>
+                    <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
                 </div>    
-            `;
+            `;``
 
             container.appendChild(gameBox);
 
@@ -456,6 +464,29 @@
             addModal.style.display = "none";
     }
 
+        async function openEditGameModal(gameId) {
+        await loadGameInfo(gameId);
+        document.getElementById("edit-modal").style.display = "flex";
+    }    
+
+        const editModal = document.getElementById("edit-modal");
+
+        document.getElementById("confirm-edit").onclick = async () => {
+            const sport = document.getElementById("sport-input").value;
+            const opponent = document.getElementById("opponent-input").value;
+            const location = document.getElementById("location-input").value;
+            const date = document.getElementById("date-input").value;
+            const time = convertTo12Hour(document.getElementById("time-input").value);
+            const notes = document.getElementById("notes-input").value;
+
+            if(!sport || !opponent || !location || !date || !time) {
+                alert("Please fill in all required fields");
+            } 
+
+            await editGame(gameId, sport, opponent, date, time, location, notes);
+            editModal.style.display = "none";
+    }
+
     document.querySelectorAll(".close-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             const modal = btn.closest(".modal");
@@ -492,6 +523,28 @@
             alert("Error adding game to schedule.");
         }
     }
+
+    async function editGame(sport, opponent, date, time, location, notes) {
+        try {
+            const response = await fetch("/.netlify/functions/edit-game", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ gameId, sport, opponent, date, time, location, notes })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                alert("Game successfully edited.");
+            } else {
+                alert("Failed to edit game.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error editing game.");
+        }
+    }      
 
         document.getElementById("logout").onclick = function () {
             console.log("Attempting to log out...");
