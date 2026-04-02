@@ -10,25 +10,17 @@ exports.handler = async (event) => {
 
     try {
         const { gameId } = JSON.parse(event.body); // Get the game ID from the request body
-        const assignedQuery = `
-        SELECT available 
-        FROM "Games"
-        WHERE game_id = $1`;
-        const assignedResult = await client.query(assignedQuery, [gameId]);
-        const assigned = assignedResult.rows[0].available;
 
-        if(assigned == TRUE) {
-            const delAssQuery = `
+        const delAssQuery = `
             DELETE 
             FROM "Assignments"
             WHERE game_id = $1`;
-            await client.query(delAssQuery, [gameId]);
-        }    
+        await client.query(delAssQuery, [gameId]);  
 
         const query = `
-        DELETE 
-        FROM "Games"
-        WHERE game_id = $1`;
+            DELETE 
+            FROM "Games"
+            WHERE game_id = $1`;
         await client.query(query, [gameId]);
 
         return {
