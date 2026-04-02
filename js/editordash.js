@@ -80,6 +80,9 @@
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ gameId })
             });
+
+            const gameInfo = await response.json();
+            return gameInfo;
         }
 
         let activeFilters = {
@@ -465,9 +468,18 @@
     }
 
         async function openEditGameModal(gameId) {
-        await loadGameInfo(gameId);
-        document.getElementById("edit-modal").style.display = "flex";
-    }    
+            const game = await loadGameInfo(gameId);
+            await loadSports();
+
+            document.getElementById("sport-input").value = game.sport;
+            document.getElementById("opponent-input").value = game.opponent;
+            document.getElementById("location-input").value = game.location;
+            document.getElementById("date-input").value = game.date;
+            document.getElementById("time-input").value = convertTo24Hour(game.time);
+            document.getElementById("notes-input").value = game.notes || "";
+
+            document.getElementById("edit-modal").style.display = "flex";
+        }    
 
         const editModal = document.getElementById("edit-modal");
 
@@ -486,6 +498,14 @@
             await editGame(gameId, sport, opponent, date, time, location, notes);
             editModal.style.display = "none";
     }
+
+    document.getElementById("delete-game").onclick = async () => {
+        if (!confirm("Are you sure you want to delete this game?")) return;
+
+        await deleteGame(currGameId);
+
+        document.getElementById("edit-modal").style.display = "none";
+    };
 
     document.querySelectorAll(".close-btn").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -524,7 +544,7 @@
         }
     }
 
-    async function editGame(sport, opponent, date, time, location, notes) {
+    async function editGame(gameId, sport, opponent, date, time, location, notes) {
         try {
             const response = await fetch("/.netlify/functions/edit-game", {
                 method: "POST",
@@ -544,10 +564,32 @@
             console.error("Error:", error);
             alert("Error editing game.");
         }
-    }      
+    } 
+    
+    async function deleteGame(gameId) {
+        try {
+            const response = await fetch("/.netlify/functions/delete-game", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ gameId })
+            });
 
-        document.getElementById("logout").onclick = function () {
-            console.log("Attempting to log out...");
+            const data = await response.json();
+            if (data.success) {
+                alert("Game successfully deleted.");
+            } else {
+                alert("Failed to delete game.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error deleting game.");
+        }
+    }
+
+    document.getElementById("logout").onclick = function () {
+        console.log("Attempting to log out...");
 
             netlifyIdentity.logout();
         };
