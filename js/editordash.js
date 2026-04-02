@@ -475,7 +475,7 @@
             document.getElementById("opponent-input").value = game.opponent;
             document.getElementById("location-input").value = game.location;
             document.getElementById("date-input").value = game.date;
-            document.getElementById("time-input").value = convertTo24Hour(game.time);
+            document.getElementById("time-input").value = convertTo12Hour(game.time);
             document.getElementById("notes-input").value = game.notes || "";
 
             document.getElementById("edit-modal").style.display = "flex";
