@@ -468,7 +468,8 @@
     }
 
         async function openEditGameModal(gameId) {
-            const game = await loadGameInfo(gameId);
+            const data = await loadGameInfo(gameId);
+            const game = data.game;
             await loadSports();
 
             document.getElementById("sport-input").value = game.sport;

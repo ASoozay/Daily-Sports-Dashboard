@@ -2,7 +2,7 @@ const { Client } = require("pg");
 
 exports.handler = async (event) => {
   try {
-    const game_id = JSON.parse(event.body);
+    const { game_id } = JSON.parse(event.body);
 
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
@@ -19,13 +19,13 @@ exports.handler = async (event) => {
 
     // if locations.length === 0 or 2, no location filter applied
 
-    const availableGames = await client.query(query, [gameId]);
+    const games = await client.query(query, [game_id]);
 
     await client.end();
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ games: availableGames.rows }),
+      body: JSON.stringify({ game: games.rows[0] }),
     };
   } catch (err) {
     console.error("Error fetching games:", err);
