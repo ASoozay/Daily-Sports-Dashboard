@@ -2,7 +2,7 @@ const { Client } = require("pg");
 
 exports.handler = async (event) => {
   try {
-    const { game_id } = JSON.parse(event.body);
+    const { gameId } = JSON.parse(event.body);
 
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
@@ -19,7 +19,7 @@ exports.handler = async (event) => {
 
     // if locations.length === 0 or 2, no location filter applied
 
-    const games = await client.query(query, [game_id]);
+    const games = await client.query(query, [gameId]);
 
     await client.end();
 
