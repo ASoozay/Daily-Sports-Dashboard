@@ -469,6 +469,7 @@
 
         async function openEditGameModal(gameId) {
             const data = await loadGameInfo(gameId);
+            console.log("GAME DATA:", data);
             const game = data.game;
             await loadSports();
 
