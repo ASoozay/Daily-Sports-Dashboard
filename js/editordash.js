@@ -54,22 +54,19 @@
             });
         }
 
-        async function loadSports() {
-
+        async function loadSports(selectId) {
             const response = await fetch("/.netlify/functions/get-sports");
             const data = await response.json();
 
-            const sports = data.sports;   
+            const sports = data.sports;
 
-            const select = document.getElementById("sport-input");
-            select.innerHTML = ""; 
+            const select = document.getElementById(selectId);
+            select.innerHTML = "";
 
             sports.forEach(sport => {
                 const option = document.createElement("option");
-
-                option.value = sport.sport;  
+                option.value = sport.sport;
                 option.textContent = sport.sport;
-
                 select.appendChild(option);
             });
         }
@@ -445,7 +442,7 @@
     };
 
     async function openAddGameModal() {
-        await loadSports();
+        await loadSports("sport-input");
         document.getElementById("add-modal").style.display = "flex";
     }    
 
@@ -472,7 +469,7 @@
             const data = await loadGameInfo(gameId);
             console.log("GAME DATA:", data);
             const game = data.game;
-            await loadSports();
+            await loadSports("edit-sport-input");
 
             document.getElementById("edit-sport-input").value = game.sport;
             document.getElementById("edit-opponent-input").value = game.opponent;
