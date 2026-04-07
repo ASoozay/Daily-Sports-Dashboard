@@ -26,13 +26,7 @@ exports.handler = async (event) => {
     let query = `SELECT * FROM "Assignments" 
                 JOIN "Games" ON "Games".game_id = "Assignments".game_id 
                 WHERE writer_id = $1`;
-            const today = new Intl.DateTimeFormat('en-CA', {
-  timeZone: 'America/Los_Angeles',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-}).format(new Date());
-    let values = [today, writerId];
+    let values = [writerId];
 
     if (sports.length > 0) {
       values.push(sports);
@@ -49,9 +43,9 @@ exports.handler = async (event) => {
 
     if (months.length > 0) {
         values.push(months);
-        query += ` AND date_trunc('month', date) = ANY($${values.length}::date[])`;
+        query += ` AND SUBSTRING(date, 6, 2) = ANY($${values.length})`;
     }
-    query += ` ORDER BY date_trunc('year', date) DESC, date_trunc('month', date) DESC, date, time`;
+    query += ` ORDER BY SUBSTRING(date, 1, 4) DESC, SUBSTRING(date, 6, 2) DESC, SUBSTRING(date, 9, 2) DESC, time`;
 
     console.log("Final query:", query);
     console.log("Values:", values);

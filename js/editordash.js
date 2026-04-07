@@ -378,7 +378,7 @@
             });
         }
 
-        async function fetchHistoryGames(writerId, filters = { sports: [], locations: [] }) {
+        async function fetchHistoryGames(writerId, filters = { sports: [], locations: [], months: [] }) {
             const response = await fetch("/.netlify/functions/history-games", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -432,14 +432,8 @@
             `;``
 
             container.appendChild(gameBox);
-
-                const addButton = gameBox.querySelector(".add");
-                addButton.addEventListener("click", async (e) => {
-                    const gameId = e.target.getAttribute("data-game-id");
-                    await signup(gameId, currWriter.writer_id);
-                });
-            });
-        }
+        });
+    }    
 
     async function signup(gameId, writerId) {
         console.log("Game ID: ", gameId, "  Writer ID: ", writerId);
