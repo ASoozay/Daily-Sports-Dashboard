@@ -391,7 +391,7 @@
             const container = document.getElementById("history-container");
             container.innerHTML = "";
 
-            games.tchorEach(game => {
+            games.forEach(game => {
                 const gameId = game.game_id;
                 const sport = game.sport;
                 const opp = game.opponent;
