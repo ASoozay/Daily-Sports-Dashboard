@@ -44,6 +44,7 @@
 
         let scheduleFilters = { sports: [], locations: [] };
         let availableFilters = { sports: [], locations: [] };
+        let historyFilters = { sports: [], locations: [], months: [] };
 
         function createGamesFilter(containerId, onFilterChange) {
             const template = document.getElementById("games-filter-template");
@@ -73,6 +74,15 @@
                     onFilterChange(activeFilters);
                 });
             });
+        }
+
+        function loadHistoryFilters() {
+            const template = document.getElementById("history-filter-template");
+            const container = document.getElementById("history-filter-container");
+
+            container.innerHTML = "";
+            const clone = template.content.cloneNode(true);
+            container.appendChild(clone);
         }
 
         function toggleFilterValue(array, value) {
@@ -349,6 +359,41 @@
                 // Fetch all games initially
                 fetchAvailableGames(availableFilters); 
             }
+
+            if (tabId == "history") {
+                const filterContainer = document.getElementById("history-filter-container");
+
+                if (!filterContainer.hasChildNodes()) {
+                    loadHistoryFilters(); 
+
+                    const container = document.getElementById("history-filter-container");
+                    const boxes = container.querySelectorAll(".filter-box, .history-month-box");
+
+                    boxes.forEach(box => {
+                        box.addEventListener("click", () => {
+                            box.classList.toggle("active");
+
+                            const value = box.dataset.value;
+
+                            if (box.closest(".sport-options")) {
+                                toggleFilterValue(historyFilters.sports, value);
+                            }
+
+                            if (box.closest(".location-options")) {
+                                toggleFilterValue(historyFilters.locations, value);
+                            }
+
+                            if (box.closest(".month-options")) {
+                                toggleFilterValue(historyFilters.months, value);
+                            }
+
+                            fetchHistoryGames(currWriter.writer_id, historyFilters);
+                        });
+                    });
+                }
+
+                fetchHistoryGames(currWriter.writer_id, historyFilters);
+            }            
 
         }
 
