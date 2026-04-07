@@ -391,7 +391,7 @@
             const container = document.getElementById("history-container");
             container.innerHTML = "";
 
-            games.forEach(game => {
+            games.tchorEach(game => {
                 const gameId = game.game_id;
                 const sport = game.sport;
                 const opp = game.opponent;
@@ -739,11 +739,11 @@
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("history-filter-container", filters => {
                         historyFilters = filters; 
-                        fetchHistoryGames(currWriter, historyFilters);
+                        fetchHistoryGames(currWriter.writer_id, historyFilters);
                     });
                 }
 
-                fetchHistoryGames(currWriter, historyFilters);
+                fetchHistoryGames(currWriter.writer_id, historyFilters);
             }    
         }
 
