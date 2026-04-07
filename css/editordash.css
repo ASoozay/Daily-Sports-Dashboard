@@ -1378,7 +1378,6 @@
             grid-template-columns: repeat(2, 300px); /* fixed column size */
             gap: 50px;
             width: 100%;
-            background-color: yellow;
 
             width: 80%;
             margin: 2% auto;

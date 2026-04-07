@@ -90,6 +90,7 @@
         let allScheduledFilters = { sports: [], locations: [] };
         let scheduleFilters = { sports: [], locations: [] };
         let availableFilters = { sports: [], locations: [] };
+        let historyFilters = { sports: [], locations: [], months: [] };
 
         function createGamesFilter(containerId, onFilterChange) {
             const template = document.getElementById("games-filter-template");
