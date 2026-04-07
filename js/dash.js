@@ -397,6 +397,63 @@
 
         }
 
+       async function fetchHistoryGames(writerId, filters = { sports: [], locations: [], months: [] }) {
+            const response = await fetch("/.netlify/functions/history-games", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ writerId, filters }) 
+            });
+
+            const data = await response.json();
+            const games = data.games;
+            
+            const container = document.getElementById("history-container");
+            container.innerHTML = "";
+
+            games.forEach(game => {
+                const gameId = game.game_id;
+                const sport = game.sport;
+                const opp = game.opponent;
+                const location = game.location;
+                const date = game.date;
+                const time = game.time;
+                const notes = game.notes;
+                let where = "";
+                let recap = "";
+                let recap_css = "";
+                                
+                if(location == "Seattle, Wash. " || location == "Seattle, Wash."){
+                    where = "vs";
+                    recap_css = "home-recap"
+                } else {
+                    where = "@";
+                    recap_css = "away-recap"
+                }
+
+
+                const gameBox = document.createElement("div");
+                gameBox.classList.add("game-box");
+
+            gameBox.innerHTML = `
+                <div class = "sport-container">
+                    <div class = "sport-box">${sport}</div>
+                    <div class = "notes-box">${notes}</div> 
+                </div>
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+                <div class = "recap-container">
+                    <div class="${recap_css}"></div>
+                    <p class="recap-location">${location}</p>
+                </div>
+                <div class = "date">${formatDate(date)}</div>
+                <div class = "time">${time}</div>   
+            `;``
+
+            container.appendChild(gameBox);
+        });
+    }            
+
         window.onload = async function() {
             const user = netlifyIdentity.currentUser();
             if (!user) return;
