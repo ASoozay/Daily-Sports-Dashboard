@@ -737,14 +737,36 @@
                 const filterContainer = document.getElementById("history-filter-container");
 
                 if (!filterContainer.hasChildNodes()) {
-                    createGamesFilter("history-filter-container", filters => {
-                        historyFilters = filters; 
-                        fetchHistoryGames(currWriter.writer_id, historyFilters);
+                    loadHistoryFilters(); 
+
+                    const container = document.getElementById("history-filter-container");
+                    const boxes = container.querySelectorAll(".filter-box, .history-month-box");
+
+                    boxes.forEach(box => {
+                        box.addEventListener("click", () => {
+                            box.classList.toggle("active");
+
+                            const value = box.dataset.value;
+
+                            if (box.closest(".sport-options")) {
+                                toggleFilterValue(historyFilters.sports, value);
+                            }
+
+                            if (box.closest(".location-options")) {
+                                toggleFilterValue(historyFilters.locations, value);
+                            }
+
+                            if (box.closest(".month-options")) {
+                                toggleFilterValue(historyFilters.months, value);
+                            }
+
+                            fetchHistoryGames(currWriter.writer_id, historyFilters);
+                        });
                     });
                 }
 
                 fetchHistoryGames(currWriter.writer_id, historyFilters);
-            }    
+            }   
         }
 
         window.onload = async function() {
