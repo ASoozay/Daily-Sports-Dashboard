@@ -121,6 +121,15 @@
             });
         }
 
+    function loadHistoryFilters() {
+        const template = document.getElementById("history-filter-template");
+        const container = document.getElementById("history-filter-container");
+
+        container.innerHTML = "";
+        const clone = template.content.cloneNode(true);
+        container.appendChild(clone);
+    }
+
         function toggleFilterValue(array, value) {
             const index = array.indexOf(value);
             if (index > -1) {
@@ -356,6 +365,69 @@
                     <button class= "assign" onclick="openAssignModal(${gameId})">ASSIGN</button>
                     <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
                 </div>    
+            `;``
+
+            container.appendChild(gameBox);
+
+                const addButton = gameBox.querySelector(".add");
+                addButton.addEventListener("click", async (e) => {
+                    const gameId = e.target.getAttribute("data-game-id");
+                    await signup(gameId, currWriter.writer_id);
+                });
+            });
+        }
+
+        async function fetchHistoryGames(writerId, filters = { sports: [], locations: [] }) {
+            const response = await fetch("/.netlify/functions/history-games", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ writerId, filters }) 
+            });
+
+            const data = await response.json();
+            const games = data.games;
+            
+            const container = document.getElementById("history-container");
+            container.innerHTML = "";
+
+            games.forEach(game => {
+                const gameId = game.game_id;
+                const sport = game.sport;
+                const opp = game.opponent;
+                const location = game.location;
+                const date = game.date;
+                const time = game.time;
+                const notes = game.notes;
+                let where = "";
+                let recap = "";
+                let recap_css = "";
+                                
+                if(location == "Seattle, Wash. " || location == "Seattle, Wash."){
+                    where = "vs";
+                    recap_css = "home-recap"
+                } else {
+                    where = "@";
+                    recap_css = "away-recap"
+                }
+
+
+                const gameBox = document.createElement("div");
+                gameBox.classList.add("game-box");
+
+            gameBox.innerHTML = `
+                <div class = "sport-container">
+                    <div class = "sport-box">${sport}</div>
+                    <div class = "notes-box">${notes}</div> 
+                </div>
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+                <div class = "recap-container">
+                    <div class="${recap_css}"></div>
+                    <p class="recap-location">${location}</p>
+                </div>
+                <div class = "date">${formatDate(date)}</div>
+                <div class = "time">${time}</div>   
             `;``
 
             container.appendChild(gameBox);
@@ -666,6 +738,18 @@
                 fetchAvailableGames(availableFilters); 
             }
 
+            if (tabId == "history") {
+                const filterContainer = document.getElementById("history-filter-container");
+
+                if (!filterContainer.hasChildNodes()) {
+                    createGamesFilter("history-filter-container", filters => {
+                        historyFilters = filters; 
+                        fetchHistoryGames(currWriter, historyFilters);
+                    });
+                }
+
+                fetchHistoryGames(currWriter, historyFilters);
+            }    
         }
 
         window.onload = async function() {

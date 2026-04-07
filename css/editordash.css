@@ -35,7 +35,7 @@
             /*text*/
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 40px;
+            font-size: 25px;
           }
 
         .logout {
@@ -530,7 +530,7 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
 
-        .add-modal-content, .edit-modal-content {
+        .add-modal-content {
             background: white;
             color: black;
             margin: 8% auto;            /* Center vertically */
@@ -545,14 +545,14 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif; 
         }
 
-        .add-modal-content h2, .edit-modal-content h2 {
+        .add-modal-content h2 {
             margin-top: 0;
             font-size: 24px;
             text-align: center;
             font-weight: 600;
         }
 
-        .add-box, .edit-box {
+        .add-box {
             width: 50%;
             padding: 10px;
             margin: 10px 0;
@@ -564,7 +564,7 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .confirm-add, .confirm-edit {
+        .confirm-add {
             width: 100%;
             height: 40px;
             background-color: #360f5a;         
@@ -754,6 +754,11 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-size: 35px;
           }
+        .account p {
+            font-size: 30px;
+            color: white;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }  
 
         .logout {
             float: right;
@@ -813,7 +818,7 @@
             padding-bottom: 5px;
         }
 
-        .games-filter-container {
+        .games-filter-container{
             display: flex;
             width: 100%;
             height: 80px;
@@ -821,6 +826,16 @@
 
             background-color: #360f5a;
         }
+
+        .history-filter-container{
+            display: flex;
+            width: 100%;
+            height: 160px;
+            border-radius: 5px;
+
+            background-color: #360f5a;
+        }        
+
 
         .games-filter {
             display: flex;
@@ -830,9 +845,29 @@
             padding-left: 10px;
         }   
 
+        .history-filter {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            height: 100%;
+            padding-left: 5px;
+        }
+
         .filter-section {
             display: flex;
             flex-direction: column;
+        }
+
+        .history-sport-section {
+            display: grid;
+            grid-template-columns: repeat(7, 50px);
+            gap: 10px;
+        }
+
+        .history-month-section {
+            display: grid;
+            grid-template-columns: repeat(6, 50px);
+            gap: 20px;
         }
 
         .filter-title {
@@ -865,11 +900,29 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .filter-box:hover {
+        .history-month-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            width: 60px;
+            height: 30px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 12px;
+            text-align: center;
+            font-weight: bold;
+            
+            transition: all 0.2s ease;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+        .filter-box:hover, .history-month-box:hover {
             background-color: #ccc;
         }
 
-        .filter-box.active {
+        .filter-box.active, .history-month-box.active {
             background-color: #B7A57A;
             color: black;
         }
@@ -1212,7 +1265,7 @@
             box-shadow: 0 3px 8px rgba(0,0,0,0.25);
         }
 
-       .add-modal-content, .edit-modal-content {
+       .add-modal-content {
             background: white;
             color: black;
             margin: 8% auto;            /* Center vertically */
@@ -1227,7 +1280,7 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .add-modal-content h2, .edit-modal-content h2 {
+        .add-modal-content h2 {
             margin-top: 0;
             font-size: 24px;
             text-align: center;
@@ -1235,7 +1288,7 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .add-box, .edit-box {
+        .add-box {
             width: 50%;
             padding: 10px;
             margin: 10px 0;
@@ -1247,26 +1300,11 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .confirm-add, .confirm-edit {
+        .confirm-add {
             width: 100%;
             height: 50px;
             margin-top: 40px;
             background-color: #360f5a;         
-            color: white;              
-            font-weight: 600;
-            padding: 4px 0;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .delete-button {
-            width: 100%;
-            height: 50px;
-            margin-top: 40px;
-            background-color: rgba(132, 8, 8, 0.53);         
             color: white;              
             font-weight: 600;
             padding: 4px 0;
@@ -1290,24 +1328,11 @@
             color: black;
         }
 
-        #edit-sport-input {
-            width: 100%;
-            padding: 5px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border-width: 1px;
-            border-color: black;
-            font-size: 15px;
-            outline: none;
-            background-color: #fff;
-            color: black;
-        }
         /* Modal animation */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
 
         .links-container {
             display: flex;
@@ -1352,6 +1377,8 @@
             display: grid;
             grid-template-columns: repeat(2, 300px); /* fixed column size */
             gap: 50px;
+            width: 100%;
+            background-color: yellow;
 
             width: 80%;
             margin: 2% auto;
@@ -1366,8 +1393,8 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 200px;           /* fixed width */
-            height: 200px;          /* fixed height to control icon % */
+            width: 250px;           /* fixed width */
+            height: 250px;          /* fixed height to control icon % */
             padding: 5px;
             background-color: #360f5a;
             color: white;
