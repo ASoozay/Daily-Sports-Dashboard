@@ -1295,7 +1295,7 @@
        .add-modal-content, .edit-modal-content {
             background: white;
             color: black;
-            margin: 8% auto;            /* Center vertically */
+            margin: 5% auto;            /* Center vertically */
             padding: 30px 25px;
             border-radius: 16px;
             border-color: #360f5a;
