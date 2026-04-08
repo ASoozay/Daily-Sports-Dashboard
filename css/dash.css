@@ -396,7 +396,7 @@
             justify-content: center;
             height: 90%;
             width: 15%;
-            margin-right: 3%;
+            margin-right: 10%;
         }
 
         .date {
@@ -428,7 +428,7 @@
             background-color: transparent;
             border: none;
 
-            font-size: 25px;
+            font-size: 35px;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: #360f5a;
         }
