@@ -1,5 +1,12 @@
         /* #region Desktop Styles */
         @import url('https://fonts.googleapis.com');
+
+        .options-container button {
+            min-height: 40px;
+            cursor: pointer;
+            z-index: 10; /* make sure buttons are on top */
+        }
+
         body {
             background-color: whitesmoke;
         }
@@ -35,8 +42,14 @@
             /*text*/
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 25px;
+            font-size: 35px;
           }
+
+        .account p {
+            font-size: 30px;
+            color: white;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }  
 
         .logout {
             float: right;
@@ -44,7 +57,7 @@
             margin-right: 100px;  /* Add a bit of space from the right edge */
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 25px;
+            font-size: 30px;
             cursor: pointer;
             background-color: #360f5a;
             border: none;
@@ -95,7 +108,7 @@
             max-height: 100%;
         }
 
-        .games-filter-container {
+        .games-filter-container{
             display: flex;
             width: 100%;
             height: 80px;
@@ -103,6 +116,18 @@
 
             background-color: #360f5a;
         }
+
+        .history-filter-container{
+            display: flex;
+            width: 100%;
+            height: 160px;
+            border-radius: 5px;
+            padding-left: 40px;
+            margin-bottom: 10px;
+
+            background-color: #360f5a;
+        }        
+
 
         .games-filter {
             display: flex;
@@ -112,9 +137,35 @@
             padding-left: 20px;
         }   
 
+        .history-filter {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            height: 100%;
+            padding-left: 5px;
+        }
+
         .filter-section {
             display: flex;
             flex-direction: column;
+        }
+
+        .history-sport-section {
+            display: grid;
+            grid-template-columns: repeat(6, 50px);
+            gap: 10px;
+        }
+
+        .history-location-section {
+            display: grid;
+            gap: 10px;
+        }
+
+        .history-month-section {
+            display: grid;
+            grid-template-columns: repeat(6, 50px);
+            gap: 20px;
+            column-gap: 30px;
         }
 
         .filter-title {
@@ -140,11 +191,48 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .filter-box:hover {
+        .history-location-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            
+            transition: all 0.2s ease;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+        .history-month-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            width: 70px;
+            height: 40px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+            
+            transition: all 0.2s ease;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+
+        .filter-box:hover, .history-location-box:hover, .history-month-box:hover {
             background-color: #ccc;
         }
 
-        .filter-box.active {
+        .filter-box.active, .history-location-box.active, .history-month-box.active {
             background-color: #B7A57A;
             color: black;
         }
@@ -154,7 +242,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            height: 50%;
+            height: 50px;
             width: 150px;
             margin-right: 60px;
             border-radius: 5px;
@@ -163,12 +251,12 @@
             text-align: center;
             font-size: medium;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: #360f5a;
-            font-weight:bold;
+            color: black;
+            font-weight: bold;
         }
 
         .add-game::before {
-            content: "+ Add game";
+            content: "+ Add Game";
         }
 
         .games-container {
@@ -284,9 +372,10 @@
             margin-bottom: 5%;
 
             color: white;
-            font-size: x-large;
+            font-size: medium;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
+            text-align: center;
         }
 
         .home-recap::before {
@@ -304,9 +393,10 @@
             margin-bottom: 5%;
 
             color: black;
-            font-size: x-large;
+            font-size: medium;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
+            text-align: center;
         }
         
         .away-recap::before {
@@ -340,15 +430,17 @@
             font-size: x-large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
-            margin-right: 3%;            
+            margin-right: 3%; 
+            text-align: center;           
         }
 
         .time {
-            font-size: x-large;
+            font-size: medium;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
             margin-right: 6%;
+            text-align: center;
         }
 
         .writer {
@@ -378,71 +470,23 @@
             margin-right: 2%;   
         }
 
-        .submit {
+        .add, .assign, .edit, .remove {
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            height: 40%;
+            height: 24px; /* slightly bigger than font */
             width: 100%;
-            margin-bottom: 20%;
-            border-radius: 10px;
-            background-color: green;
+            margin: 0;
+            padding: 0;
 
-            text-align: center;
-            font-size: large;
+            background-color: transparent;
+            border: none;
+
+            font-size: 20px;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
+            color: #360f5a;
+    }
 
-        .remove {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 40%;
-            width: 100%;
-            border-radius: 10px;
-            background-color: rgb(139, 39, 39);
-
-            text-align: center;
-            font-size: large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
-
-        .add {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 40%;
-            width: 100%;
-            margin-bottom: 20%;
-            border-radius: 10px;
-            background-color: #360f5a;
-
-            text-align: center;
-            font-size: large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }  
-        
-        .assign {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 40%;
-            width: 100%;
-            border-radius: 10px;
-            background-color: #360f5a;
-
-            text-align: center;
-            font-size: large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
 
         .modal {
             display: none;               /* Hidden by default */
@@ -454,7 +498,7 @@
             height: 100%;                
             overflow: auto;              
             background-color: rgba(0,0,0,0.5); /* Slightly transparent dark overlay */
-            backdrop-filter: blur(3px);  /* Blurred background behind modal */
+            backdrop-filter: blur(2px);  /* Blurred background behind modal */
             transition: opacity 0.3s ease;
         }
 
@@ -481,7 +525,6 @@
             text-align: center;
             font-weight: 600;
         }
-    
 
         /* Close button */
         .close-btn {
@@ -530,29 +573,30 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
 
-        .add-modal-content {
+       .add-modal-content, .edit-modal-content {
             background: white;
             color: black;
-            margin: 8% auto;            /* Center vertically */
+            margin: 5% auto;            /* Center vertically */
             padding: 30px 25px;
             border-radius: 16px;
             border-color: #360f5a;
             border-width: 10px;
-            height: 50%;
+            height: 80%;
             width: 450px;
             max-width: 90%;             /* Responsive for smaller screens */
             box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-            font-family: Calibri, "Segoe UI", Arial, sans-serif; 
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .add-modal-content h2 {
+        .add-modal-content h2, .edit-modal-content h2 {
             margin-top: 0;
             font-size: 24px;
             text-align: center;
             font-weight: 600;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .add-box {
+        .add-box, .edit-box {
             width: 50%;
             padding: 10px;
             margin: 10px 0;
@@ -566,7 +610,8 @@
 
         .confirm-add, .confirm-edit {
             width: 100%;
-            height: 40px;
+            height: 50px;
+            margin-top: 50px;
             background-color: #360f5a;         
             color: white;              
             font-weight: 600;
@@ -578,15 +623,82 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        .delete-button {
+            width: 100%;
+            height: 50px;
+            margin-top: 10px;
+            background-color: red;         
+            color: white;              
+            font-weight: 600;
+            padding: 4px 0;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }        
+
+        #sport-input {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: black;
+            font-size: 15px;
+            outline: none;
+            background-color: #fff;
+            color: black;
+        }
+
+       #edit-sport-input {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: black;
+            font-size: 15px;
+            outline: none;
+            background-color: #fff;
+            color: black;
+        }
+
         /* Modal animation */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(-30px); }
+            from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .X {
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 5px;
             flex: 1; 
             overflow-y: auto;
+            background-color: whitesmoke;
+            border-radius: 10px;
+        }
+
+        .links-container h4 {
+            text-align: center;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 24px;
+            color: #360f5a;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: #360f5a;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: large;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
         }
 
         .tab-content {
@@ -599,11 +711,10 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 400px); /* fixed column size */
+            grid-template-columns: repeat(2, 500px); /* fixed column size */
             gap: 100px;
-
-            width: 80%;
-            margin: 5% auto;
+            width: 100%;
+            margin: 2% auto;
 
             justify-content: center; /* centers grid inside container */
             align-content: center;   /* centers vertically if container has height */
@@ -615,77 +726,40 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 80%;           /* fixed width */
-            height: 80%;          /* fixed height to control icon % */
-            padding: 10px;
+            width: 350px;           /* fixed width */
+            height: 350px;          /* fixed height to control icon % */
+            padding: 5px;
             background-color: #360f5a;
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
             text-align: center;
             transition: all 0.2s ease;
+            text-decoration: none;
+            border-radius: 30px;
         }
 
+
         .invoice-box:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
         }
 
         /* Icon takes 20% of the box height */
         .invoice-icon {
-            height: 20%;            /* 20% of box height */
+            height: 75%;            /* 20% of box height */
             width: auto;            /* keep aspect ratio */
-            margin-bottom: 10px;    /* spacing from text */
+            margin-bottom: 20px;    /* spacing from text */
         }
 
         /* Text below icon */
         .invoice-text {
-            font-size: 18px;
+            font-size: 24px;
             color: white;
+            text-decoration: none;
         }
 
-        .settings-container {
-            display: grid;
-            grid-template-columns: repeat(4, 200px);
-            gap: 40px;
-            align-items: center;
-            justify-content: center;
-            height: 80%;
-            width: 100%;
-        }
-
-        .settings-option {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            height: 200px;
-            width: 200px;
-            border-radius: 10px;
-            background-color: #360f5a;
-
-            text-align: center;
-            font-size: medium;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
-
-        .settings-icon {
-            display: flex;
-            justify-content: center;
-            width: 120px;
-            height: 120px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .settings-option h5 {
-                font-size: 18px;
-                color: white;
-                margin-top: 10px;
-                margin-bottom: 0;
-                font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }
-
-        .bottom {
+         .bottom {
             /*background*/
             background-color:#360f5a;
             background-attachment: fixed;
@@ -1477,76 +1551,6 @@
             color: white;
             text-decoration: none;
         }
-
-        .resources-dropdown {
-            width: 100%;
-            height: 100px;
-            background-color: lightgray;
-            border: 1px solid black;
-            padding: 10px;
-            margin-bottom: 10px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 20px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-
-            cursor: pointer;
-        }
-
-        .resources-dropdown:hover {
-            background-color: #d3d3d3;
-        }
-
-        .arrow {
-            font-size: 20px;
-        }
-
-        .resources-list {
-            display: none;
-            width: 100%;
-            background-color: #f5f5f5;
-            border: 1px solid #888;
-            border-top: none;
-        }
-
-        .resources-list a {
-            display: block;
-            padding: 8px;
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }
-
-        .resources-list a:hover {
-            background-color: #ddd;
-        }
-
-        .resource-box {
-            width: 98%;
-            height: 100px;
-
-            background-color: lightgray;
-            border: 1px solid black;
-            padding: 10px;
-            margin-bottom: 10px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 20px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-
-            cursor: pointer;
-
-            color: black;
-        }
- 
 
         .bottom {
             /*background*/
