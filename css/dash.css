@@ -35,8 +35,14 @@
             /*text*/
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 40px;
+            font-size: 35px;
           }
+
+        .account p {
+            font-size: 30px;
+            color: white;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        } 
 
         .logout {
             float: right;
@@ -44,7 +50,7 @@
             margin-right: 100px;  /* Add a bit of space from the right edge */
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 25px;
+            font-size: 30px;
             cursor: pointer;
             background-color: #360f5a;
             border: none;
@@ -104,6 +110,17 @@
             background-color: #360f5a;
         }
 
+        .history-filter-container {
+            display: flex;
+            width: 100%;
+            height: 180px;
+            border-radius: 5px;
+            padding-left: 40px;
+            margin-bottom: 10px;
+
+            background-color: #360f5a;
+        }     
+
         .games-filter {
             display: flex;
             gap: 300px;
@@ -112,10 +129,36 @@
             padding-left: 20px;
         }   
 
+        .history-filter {
+            display: flex;
+            gap: 200px;
+            align-items: center;
+            height: 100%;
+            padding-left: 5px;
+        }        
+
         .filter-section {
             display: flex;
             flex-direction: column;
         }
+
+        .history-sport-section {
+            display: grid;
+            grid-template-columns: repeat(6, 70px);
+            gap: 15px;
+        }   
+        
+        .history-location-section {
+            display: grid;
+            gap: 10px;
+        }
+
+        .history-month-section {
+            display: grid;
+            grid-template-columns: repeat(6, 50px);
+            gap: 20px;
+            column-gap: 30px;
+        }        
 
         .filter-title {
             font-weight: bold;
@@ -131,6 +174,7 @@
 
         .filter-box {
             padding: 8px 14px;
+            width: 40px;
             border-radius: 10px;
             background-color: white;
             cursor: pointer;
@@ -138,13 +182,51 @@
             font-size: 14px;
             transition: all 0.2s ease;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            text-align: center;
+            font-weight: bold;
         }
 
-        .filter-box:hover {
+        .history-location-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            
+            transition: all 0.2s ease;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+        .history-month-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            width: 70px;
+            height: 40px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+            
+            transition: all 0.2s ease;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }        
+
+        .filter-box:hover, .history-location-box:hover, .history-month-box:hover {
             background-color: #ccc;
         }
 
-        .filter-box.active {
+        .filter-box.active, .history-location-box.active, .history-month-box.active {
             background-color: #B7A57A;
             color: black;
         }
@@ -186,6 +268,7 @@
 
             margin-right: 2%;            
         }  
+
         .sport-box {
             display: flex;
             align-items: center;
@@ -262,9 +345,10 @@
             margin-bottom: 5%;
 
             color: white;
-            font-size: x-large;
+            font-size: large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
+            text-align: center;
         }
 
         .home-recap::before {
@@ -282,9 +366,10 @@
             margin-bottom: 5%;
 
             color: black;
-            font-size: x-large;
+            font-size: large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
+            text-align: center;
         }
         
         .away-recap::before {
@@ -318,7 +403,8 @@
             font-size: x-large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
-            margin-right: 3%;            
+            margin-right: 6%; 
+            text-align: center;           
         }
 
         .time {
@@ -327,52 +413,64 @@
             color: black;
             text-size-adjust: inherit;
             margin-right: 6%;
+            text-align: center;
         }
 
-        .remove {
+        .add, .remove {
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            height: 50%;
-            width: 10%;
-            border-radius: 10px;
-            background-color: rgb(139, 39, 39);
+            height: 30px; /* slightly bigger than font */
+            width: 100%;
+            margin: 0;
+            padding: 0;
 
-            text-align: center;
-            font-size: large;
+            background-color: transparent;
+            border: none;
+
+            font-size: 25px;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
+            color: #360f5a;
         }
+
+        .add::before {
+            content: "ADD";
+        }         
 
         .remove::before {
             content: "REMOVE";
         }
 
-        .add {
+        .links-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 50%;
-            width: 10%;
-            border-radius: 10px;
-            background-color: #360f5a;
-
-            text-align: center;
-            font-size: large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
-
-        .add::before {
-            content: "ADD";
-        }    
-
-        .X {
+            margin-left: 5px;
             flex: 1; 
             overflow-y: auto;
+            background-color: whitesmoke;
+            border-radius: 10px;
         }
+
+        .links-container h4 {
+            text-align: center;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 24px;
+            color: #360f5a;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: #360f5a;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: large;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }        
 
         .tab-content {
             display: none;
@@ -384,11 +482,10 @@
         /* Container fills content */
         .invoice-container {
             display: grid;
-            grid-template-columns: repeat(2, 400px); /* fixed column size */
+            grid-template-columns: repeat(2, 500px); /* fixed column size */
             gap: 100px;
-
-            width: 80%;
-            margin: 5% auto;
+            width: 100%;
+            margin: 2% auto;
 
             justify-content: center; /* centers grid inside container */
             align-content: center;   /* centers vertically if container has height */
@@ -400,120 +497,37 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 200px;           /* fixed width */
-            height: 200px;          /* fixed height to control icon % */
-            padding: 10px;
+            width: 350px;           /* fixed width */
+            height: 350px;          /* fixed height to control icon % */
+            padding: 5px;
             background-color: #360f5a;
             color: white;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
             text-align: center;
             transition: all 0.2s ease;
+            text-decoration: none;
+            border-radius: 30px;
         }
 
+
         .invoice-box:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
         }
 
         /* Icon takes 20% of the box height */
         .invoice-icon {
-            height: 20%;            /* 20% of box height */
+            height: 75%;            /* 20% of box height */
             width: auto;            /* keep aspect ratio */
-            margin-bottom: 10px;    /* spacing from text */
+            margin-bottom: 20px;    /* spacing from text */
         }
 
         /* Text below icon */
         .invoice-text {
-            font-size: 18px;
+            font-size: 24px;
             color: white;
-        }
-
-        .resources-dropdown {
-            width: 100%;
-            height: 100px;
-            background-color: lightgray;
-            border: 1px solid black;
-            padding: 20px;
-            margin-bottom: 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 20px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-
-            cursor: pointer;
-        }
-
-        .resources-dropdown:hover {
-            background-color: #d3d3d3;
-        }
-
-        .arrow {
-            font-size: 20px;
-        }
-
-        .resources-list {
-            display: none;
-            width: 100%;
-            background-color: #f5f5f5;
-            border: 1px solid #888;
-            border-top: none;
-        }
-
-        .resources-list a {
-            display: block;
-            padding: 15px;
             text-decoration: none;
-            color: black;
-            font-size: 18px;
-
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }
-
-        .resources-list a:hover {
-            background-color: #ddd;
-        }
-
-        .production {
-            width: 98%;
-            height: 80px;
-
-            background-color: lightgray;
-            border: 1px solid black;
-            padding: 20px;
-            margin-bottom: 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 20px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-
-            cursor: pointer;
-
-            color: black;
-        }
-
-        .cq {
-            width: 98%;
-            height: 80px;
-
-            background-color: lightgray;
-            border: 1px solid black;
-            padding: 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 20px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-
-            cursor: pointer;
-
-            color: black;            
         }
 
         .bottom {
@@ -541,7 +555,7 @@
 
         /* #region Laptop Styles */
         @media screen and (min-width: 801px) and (max-width: 1800px) {
-            .options-container button {
+        .options-container button {
             min-height: 40px;
             cursor: pointer;
             z-index: 10; /* make sure buttons are on top */
