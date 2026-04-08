@@ -367,7 +367,7 @@
                     loadHistoryFilters(); 
 
                     const container = document.getElementById("history-filter-container");
-                    const boxes = container.querySelectorAll(".filter-box, .history-month-box");
+                    const boxes = container.querySelectorAll(".filter-box, .history-month-box, .history-location-box");
 
                     boxes.forEach(box => {
                         box.addEventListener("click", () => {

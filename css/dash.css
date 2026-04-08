@@ -743,11 +743,11 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
-        .filter-box:hover, .history-month-box:hover {
+        .filter-box:hover, .history-location-box:hover, .history-month-box:hover {
             background-color: #ccc;
         }
 
-        .filter-box.active, .history-month-box.active {
+        .filter-box.active, .history-location-box.active, .history-month-box.active {
             background-color: #B7A57A;
             color: black;
         }
