@@ -861,7 +861,12 @@
 
         .history-sport-section {
             display: grid;
-            grid-template-columns: repeat(7, 50px);
+            grid-template-columns: repeat(6, 50px);
+            gap: 10px;
+        }
+
+        .history-location-section {
+            display: grid;
             gap: 10px;
         }
 
@@ -902,6 +907,24 @@
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
+        .history-location-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            
+            transition: all 0.2s ease;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
         .history-month-box {
             display: flex;
             align-items: center;
@@ -919,6 +942,7 @@
             transition: all 0.2s ease;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
+
 
         .filter-box:hover, .history-month-box:hover {
             background-color: #ccc;
