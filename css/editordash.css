@@ -433,12 +433,12 @@
             font-size: x-large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
-            margin-right: 3%; 
+            margin-right: 6%; 
             text-align: center;           
         }
 
         .time {
-            font-size: medium;
+            font-size: x-large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
@@ -457,7 +457,7 @@
 
             color: black;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: large;
+            font-size: x-large;
         }
 
         .options-container {
