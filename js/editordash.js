@@ -427,7 +427,7 @@
                     <div class="${recap_css}"></div>
                     <p class="recap-location">${location}</p>
                 </div>
-                <div class = "date">${formatDate(date)}</div>
+                <div class = "date">${formatDateWithYear(date)}</div>
                 <div class = "time">${time}</div>   
             `;``
 
@@ -870,5 +870,15 @@ function formatDate(dateStr) {
     weekday: 'long',
     month: 'long',
     day: 'numeric',
+  });
+}
+
+function formatDateWithYear(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
   });
 }
