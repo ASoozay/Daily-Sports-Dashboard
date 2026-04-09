@@ -1647,7 +1647,7 @@
 
         .invoice-modal {
             display: none;               /* Hidden by default */
-            position: relative;             /* Stay in place */
+            position: fixed;             /* Stay in place */
             z-index: 1000;               /* On top of everything */
             left: 0;
             top: 0;
