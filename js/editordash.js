@@ -399,11 +399,18 @@
 
                 const invoiceBox = document.createElement("div");
                 invoiceBox.classList.add("invoice-history-box");
+                invoiceBox.style.cursor = "pointer";
 
                 invoiceBox.innerHTML = `
-                <a class = "invoice-history-box-date" href="${link}" target="_blank">${formatDateWithYear(date)}</a>
+                <div class = "invoice-history-box-date">${formatDateWithYearNoDOW(date)}</div>
                 <div class = "invoice-history-box-total">$${total}</div>
-                `;``
+                `;
+                
+                invoiceBox.addEventListener("click", () => {
+                    if (link) {
+                        window.open(link, "_blank");
+                    }
+                });
 
                 container.appendChild(invoiceBox);
             });
@@ -913,6 +920,15 @@ function formatDateWithYear(dateStr) {
   return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
     timeZone: 'America/Los_Angeles',
     weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+
+function formatDateWithYearNoDOW(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
     month: 'long',
     day: 'numeric',
     year: 'numeric'
