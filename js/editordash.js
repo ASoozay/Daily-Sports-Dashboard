@@ -378,6 +378,38 @@
             });
         }
 
+        async function fetchInvoices(writerId) {
+            const response = await fetch("/.netlify/functions/get-invoices", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ writerId }) 
+            });  
+            
+            const data = await response.json();
+            const invoices = data.invcoices;
+            
+            const container = document.getElementById("invoice-entries-container");
+            container.innerHTML = "";   
+
+            invoices.forEach(invoice => {
+                const date = invoice.date;
+                const total = invoice.total;
+                const link = invoice.link;
+
+
+                const invoiceBox = document.createElement("div");
+                invoiceBox.classList.add("invoice-history-box");
+
+                invoiceBox.innerHTML = `
+                <a class = "invoice-history-box-date" href="${link}" target="_blank">${formatDateWithYear(date)}</a>
+                <div class = "invoice-history-box-total">$${total}</div>
+                `;``
+
+                container.appendChild(invoiceBox);
+            });
+        }    
+           
+
         async function fetchHistoryGames(writerId, filters = { sports: [], locations: [], months: [] }) {
             const response = await fetch("/.netlify/functions/history-games", {
                 method: "POST",
@@ -731,6 +763,10 @@
 
                 // Fetch all games initially
                 fetchAvailableGames(availableFilters); 
+            }
+
+            if(tabId == "invoices"){
+                fetchInvoices(currWriter.writer_id);
             }
 
             if (tabId == "history") {

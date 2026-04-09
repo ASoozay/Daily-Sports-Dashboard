@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     await client.connect();
 
     // Base query
-    let query = `SELECT * FROM "Invoices" WHERE writer_id = 1 ORDER BY date DESC`;
+    let query = `SELECT * FROM "Invoices" WHERE writer_id = $1 ORDER BY date DESC`;
 
     const invoices = await client.query(query, [writerId]);
 
