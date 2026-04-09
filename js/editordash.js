@@ -992,3 +992,56 @@ async function addInvoice(writerId, date, total, link) {
         alert("Error adding invoice.");
     }
 }
+
+// New helper function to reapply active classes for games filters (sports/locations)
+function reapplyFilterStates(containerId, filters) {
+    const container = document.getElementById(containerId);
+    const boxes = container.querySelectorAll(".filter-box");
+
+    boxes.forEach(box => {
+        const value = box.dataset.value;
+        const isSport = box.closest(".sport-options");
+        const isLocation = box.closest(".location-options");
+
+        let isActive = false;
+        if (isSport && filters.sports.includes(value)) {
+            isActive = true;
+        } else if (isLocation && filters.locations.includes(value)) {
+            isActive = true;
+        }
+
+        if (isActive) {
+            box.classList.add("active");
+        } else {
+            box.classList.remove("active");
+        }
+    });
+}
+
+// New helper function to reapply active classes for history filters (sports/locations/months)
+function reapplyHistoryFilterStates(containerId, filters) {
+    const container = document.getElementById(containerId);
+    const boxes = container.querySelectorAll(".filter-box, .history-month-box, .history-location-box");
+
+    boxes.forEach(box => {
+        const value = box.dataset.value;
+        const isSport = box.closest(".sport-options");
+        const isLocation = box.closest(".location-options");
+        const isMonth = box.closest(".month-options");
+
+        let isActive = false;
+        if (isSport && filters.sports.includes(value)) {
+            isActive = true;
+        } else if (isLocation && filters.locations.includes(value)) {
+            isActive = true;
+        } else if (isMonth && filters.months.includes(value)) {
+            isActive = true;
+        }
+
+        if (isActive) {
+            box.classList.add("active");
+        } else {
+            box.classList.remove("active");
+        }
+    });
+}
