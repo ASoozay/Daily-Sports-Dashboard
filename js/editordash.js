@@ -1,5 +1,4 @@
-
-        let currWriter = null;
+let currWriter = null;
         let currGameId = null;
 
         // Initialize Netlify Identity
@@ -933,4 +932,49 @@ function formatDateWithYearNoDOW(dateStr) {
     day: 'numeric',
     year: 'numeric'
   });
+}
+
+// Add this function to open the modal
+function openInvoiceModal() {
+    document.getElementById("invoice-modal").style.display = "flex";
+}
+
+// Add this event listener for the confirm button (place it near other modal handlers)
+document.getElementById("confirm-invoice").addEventListener("click", async () => {
+    const date = document.getElementById("invoice-date-input").value;
+    const total = document.getElementById("invoice-total-input").value;
+    const link = document.getElementById("invoice-link-input").value;
+
+    if (!date || !total) {
+        alert("Please fill in the date and total.");
+        return;
+    }
+
+    await addInvoice(currWriter.writer_id, date, total, link);
+    document.getElementById("invoice-modal").style.display = "none";
+    // Refresh the invoices list
+    fetchInvoices(currWriter.writer_id);
+});
+
+// Add this function to handle adding the invoice (similar to addGame)
+async function addInvoice(writerId, date, total, link) {
+    try {
+        const response = await fetch("/.netlify/functions/add-invoice", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ writerId, date, total, link })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            alert("Invoice successfully added!");
+        } else {
+            alert("Failed to add invoice.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Error adding invoice.");
+    }
 }
