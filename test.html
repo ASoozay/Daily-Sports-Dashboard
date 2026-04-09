@@ -46,62 +46,30 @@
 
     <div id="invoices" class="tab-content">
         <div class = "invoice-sections-container">
-        <div class = "invoice-history-container">
-            <div class = "invoice-history-title">Invoice History</div>
-            <div class = "invoice-entries-container">
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
+            <div class = "invoice-history-container">
+                <div class = "invoice-history-title">Invoice History</div>
+                <div id = "invoice-entries-container" class = "invoice-entries-container">                                                                                                              
                 </div>
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>  
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>  
-                <div class =  "invoice-history-box">
-                    <div class = "invoice-history-box-date">May 20, 2024</div>
-                    <div class = "invoice-history-box-ammount">$100</div>
-                </div>                                                                                                                
             </div>
-        </div>
 
-          <div class="invoice-options-container">
-            <div class="invoice-option">
-                <a class="invoice-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240" target="_blank">
-                <img class="invoice-icon" src="/pages/dashboard/invoice/Spreadsheet.png" alt="Invoice 1">Invoice Template</a>
+            <div class="invoice-options-container">
+                <div class="invoice-option">
+                    <a class="invoice-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240" target="_blank">
+                    <img class="invoice-icon" src="/pages/dashboard/invoice/Spreadsheet.png" alt="Invoice 1">Invoice Template</a>
+                </div>
+                <div class="invoice-option">
+                    <a class="invoice-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" target="_blank">
+                    <img class="invoice-icon" src="/pages/dashboard/invoice/Upload.png" alt="Invoice 1">Submit Invoice</a>
+                </div>
+                <div class="invoice-option">
+                    <button class="invoice-box" onclick = "openInvoiceModal()">
+                    <img class="invoice-icon" src="/pages/dashboard/invoice/History.png" alt="Invoice 1">Add to History</button>
+                </div>
+                <div class="invoice-option">
+                    <a class="invoice-box" href="/pages/dashboard/invoice/Pay-Scale.png" target="_blank">
+                    <img class="invoice-icon" src="/pages/dashboard/invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
+                </div>
             </div>
-             <div class="invoice-option">
-                <a class="invoice-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" target="_blank">
-                <img class="invoice-icon" src="/pages/dashboard/invoice/Upload.png" alt="Invoice 1">Submit Invoice</a>
-            </div>
-            <div class="invoice-option">
-                <a class="invoice-box" href="" target="_blank">
-                <img class="invoice-icon" src="/pages/dashboard/invoice/History.png" alt="Invoice 1">Add to History</a>
-            </div>
-            <div class="invoice-option">
-                <a class="invoice-box" href="/pages/dashboard/invoice/Pay-Scale.png" target="_blank">
-                <img class="invoice-icon" src="/pages/dashboard/invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
-            </div>
-        </div>
         </div>
     </div>
 
@@ -270,6 +238,19 @@
         <input type="text" id="edit-notes-input" class = "edit-box" placeholder="Notes">
         <button id = "confirm-edit" class = "confirm-edit">Edit Game</button>
         <button id ="delete-game" class = "delete-button">Delete Game</button>
+    </div>
+</div>
+
+<div id="invoice-modal" class=" modal invoice-modal">
+    <div class="add-invoice-modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Add Invoice</h2>
+
+        <input type = "date" id="invoice-date-input" class = "add-invoice-box" placeholder="Date">
+        <input type = "number" id="invoice-total-input" class = "add-invoice-box" placeholder="Total Amount">
+        <input type = "text" id="invoice-link-input" class = "add-invoice-box" placeholder="Link to Invoice (Optional)">
+
+        <button id="confirm-invoice" class = "add-invoice-confirm">Add Invoice</button>
     </div>
 </div>
 
