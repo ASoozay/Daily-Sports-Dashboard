@@ -1662,15 +1662,15 @@
         .add-invoice-modal-content {
             background: white;
             color: black;
-            margin: 5% auto;            /* Center vertically */
-            padding: 30px 25px;
+            margin: 8% auto;            /* Center vertically */
+            padding: 3px 2px;
             border-radius: 16px;
             border-color: #360f5a;
-            border-width: 10px;
+            border-width: 1px;
             height: 40%;
-            width: 450px;
+            width: 250px;
             max-width: 90%;             /* Responsive for smaller screens */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.35);
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
