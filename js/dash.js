@@ -246,6 +246,51 @@
             });
         }
 
+        async function fetchInvoices(writerId) {
+            const response = await fetch("/.netlify/functions/get-invoices", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ writerId }) 
+            });  
+            
+            const data = await response.json();
+            const invoices = data.invoices;
+            
+            const container = document.getElementById("invoice-entries-container");
+            container.innerHTML = "";   
+
+            invoices.forEach(invoice => {
+                const date = invoice.date;
+                const total = invoice.total;
+                const link = invoice.link;
+
+
+                const invoiceBox = document.createElement("div");
+                invoiceBox.classList.add("invoice-history-box");
+                invoiceBox.style.cursor = "pointer";
+
+                invoiceBox.innerHTML = `
+                <div class = "invoice-history-box-date">${formatDateWithYearNoDOW(date)}</div>
+                <div class = "invoice-history-box-total">$${total}</div>
+                `;
+                
+                invoiceBox.addEventListener("click", () => {
+                    if (link) {
+                        window.open(link, "_blank");
+                    }
+                });
+
+                container.appendChild(invoiceBox);
+            });
+        }      
+        
+    document.querySelectorAll(".close-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const modal = btn.closest(".modal");
+            if (modal) modal.style.display = "none";
+        });
+    });        
+
     async function signup(gameId, writerId) {
         console.log("Game ID: ", gameId, "  Writer ID: ", writerId);
         try {
@@ -359,6 +404,10 @@
                 // Fetch all games initially
                 fetchAvailableGames(availableFilters); 
             }
+
+            if(tabId == "invoices"){
+                fetchInvoices(currWriter.writer_id);
+            }            
 
             if (tabId == "history") {
                 const filterContainer = document.getElementById("history-filter-container");
@@ -535,4 +584,58 @@ function formatDateWithYear(dateStr) {
     day: 'numeric',
     year: 'numeric'
   });
+}
+
+function formatDateWithYearNoDOW(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+
+// Add this function to open the modal
+function openInvoiceModal() {
+    document.getElementById("invoice-modal").style.display = "flex";
+}
+
+// Add this event listener for the confirm button (place it near other modal handlers)
+document.getElementById("confirm-invoice").addEventListener("click", async () => {
+    const date = document.getElementById("invoice-date-input").value;
+    const total = document.getElementById("invoice-total-input").value;
+    const link = document.getElementById("invoice-link-input").value;
+
+    if (!date || !total) {
+        alert("Please fill in the date and total.");
+        return;
+    }
+
+    await addInvoice(currWriter.writer_id, date, total, link);
+    document.getElementById("invoice-modal").style.display = "none";
+    // Refresh the invoices list
+    fetchInvoices(currWriter.writer_id);
+});
+
+// Add this function to handle adding the invoice (similar to addGame)
+async function addInvoice(writerId, date, total, link) {
+    try {
+        const response = await fetch("/.netlify/functions/add-invoice", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ writerId, date, total, link })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            alert("Invoice successfully added!");
+        } else {
+            alert("Failed to add invoice.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Error adding invoice.");
+    }
 }
