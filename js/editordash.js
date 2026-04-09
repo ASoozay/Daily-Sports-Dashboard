@@ -366,7 +366,7 @@
                     <button class= "assign" onclick="openAssignModal(${gameId})">ASSIGN</button>
                     <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
                 </div>    
-            `;``
+            `;
 
             container.appendChild(gameBox);
 
@@ -468,7 +468,7 @@
                 </div>
                 <div class = "date">${formatDateWithYear(date)}</div>
                 <div class = "time">${time}</div>   
-            `;``
+            `;
 
             container.appendChild(gameBox);
         });
