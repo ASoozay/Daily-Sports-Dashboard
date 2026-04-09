@@ -108,7 +108,7 @@
             max-height: 100%;
         }
 
-        .games-filter-container{
+        .games-filter-container {
             display: flex;
             width: 100%;
             height: 80px;
@@ -117,7 +117,7 @@
             background-color: #360f5a;
         }
 
-        .history-filter-container{
+        .history-filter-container {
             display: flex;
             width: 100%;
             height: 180px;
@@ -375,7 +375,7 @@
             margin-bottom: 5%;
 
             color: white;
-            font-size: medium;
+            font-size: large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
@@ -396,7 +396,7 @@
             margin-bottom: 5%;
 
             color: black;
-            font-size: medium;
+            font-size: large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
@@ -433,12 +433,12 @@
             font-size: x-large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
-            margin-right: 3%; 
+            margin-right: 6%; 
             text-align: center;           
         }
 
         .time {
-            font-size: medium;
+            font-size: x-large;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
             color: black;
             text-size-adjust: inherit;
@@ -457,7 +457,7 @@
 
             color: black;
             font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: large;
+            font-size: x-large;
         }
 
         .options-container {
@@ -1504,6 +1504,7 @@
             min-height: 0;  
         }
 
+        /* Container fills content */
         .invoice-sections-container {
             display: flex;
             gap: 20px;
@@ -1579,7 +1580,7 @@
             color: black;
         }  
         
-        .invoice-history-box-ammount {
+        .invoice-history-box-total {
             display: flex;
             height: 100%;
             width: 20%;
@@ -1642,6 +1643,21 @@
             font-size: 24px;
             color: white;
             text-decoration: none;
+        }
+
+        .add-invoice-modal-content {
+            background: white;
+            color: black;
+            margin: 5% auto;            /* Center vertically */
+            padding: 30px 25px;
+            border-radius: 16px;
+            border-color: #360f5a;
+            border-width: 10px;
+            height: 40%;
+            width: 450px;
+            max-width: 90%;             /* Responsive for smaller screens */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
         }
 
         .bottom {

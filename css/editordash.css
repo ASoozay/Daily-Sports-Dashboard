@@ -1645,6 +1645,70 @@
             text-decoration: none;
         }
 
+        .invoice-modal {
+            display: none;               /* Hidden by default */
+            position: fixed;             /* Stay in place */
+            z-index: 1000;               /* On top of everything */
+            left: 0;
+            top: 0;
+            width: 100%;                 
+            height: 100%;                
+            overflow: auto;              
+            background-color: rgba(0,0,0,0.5); /* Slightly transparent dark overlay */
+            backdrop-filter: blur(2px);  /* Blurred background behind modal */
+            transition: opacity 0.3s ease;
+        }
+
+        .add-invoice-modal-content {
+            background: white;
+            color: black;
+            margin: 5% auto;            /* Center vertically */
+            padding: 30px 25px;
+            border-radius: 16px;
+            border-color: #360f5a;
+            border-width: 10px;
+            height: 40%;
+            width: 450px;
+            max-width: 90%;             /* Responsive for smaller screens */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+        .add-invoice-modal-content h2 {
+            margin-top: 0;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 600;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+        .add-invoice-box {
+            width: 60%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            height: 40px;
+            border-width: 2px;
+            border-color: black;
+            font-size: 16px;
+            font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        }
+
+        .add-invoice-confirm {
+            width: 60%;
+            height: 50px;
+            margin-top: 40px;
+            background-color: #360f5a;         
+            color: white;              
+            font-weight: 600;
+            padding: 4px 0;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
         .bottom {
             /*background*/
             background-color:#360f5a;
