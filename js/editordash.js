@@ -366,7 +366,7 @@
                     <button class= "assign" onclick="openAssignModal(${gameId})">ASSIGN</button>
                     <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
                 </div>    
-            `;
+            `;``
 
             container.appendChild(gameBox);
 
@@ -468,7 +468,7 @@
                 </div>
                 <div class = "date">${formatDateWithYear(date)}</div>
                 <div class = "time">${time}</div>   
-            `;
+            `;``
 
             container.appendChild(gameBox);
         });
@@ -613,23 +613,6 @@
         document.getElementById("edit-modal").style.display = "none";
     };
 
-    async function openInvoiceModal(writerId) {
-        currWriterId = writerId;
-    }   
-
-    const invoiceModal = document.getElementById("invoice-modal");
-
-    document.getElementById("add-invoice").onclick = async () => {
-
-    const date = document.getElementById("invoice-date-input").value;
-    const total = document.getElementById("invoice-total-input").value;
-    const link = document.getElementById("invoice-link-input").value;    
-
-    await addInvoice(currWriterId, date, total, link);
-
-    invoiceModal.style.display = "none";
-    };   
-
     document.querySelectorAll(".close-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             const modal = btn.closest(".modal");
@@ -708,28 +691,6 @@
         } catch (error) {
             console.error("Error:", error);
             alert("Error deleting game.");
-        }
-    }
-
-    async function addInvoice(writerId, date, total, link) {
-        try {
-            const response = await fetch("/.netlify/functions/add-invoice", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ writerId, date, total, link })
-            });
-
-            const data = await response.json();
-            if (data.success) {
-                alert("Invoice successfully added.");
-            } else {
-                alert("Failed to add invoice.");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Error adding invoice.");
         }
     }
 
