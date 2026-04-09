@@ -23,7 +23,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ invoice: invoices.rows }),
+      body: JSON.stringify({ invoices: invoices.rows }),
     };
   } catch (err) {
     console.error("Error fetching invoices:", err);
