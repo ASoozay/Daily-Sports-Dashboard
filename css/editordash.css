@@ -1663,7 +1663,10 @@
             align-items: center;
             background: white;
             color: black;
-            margin: 8% auto;            /* Center vertically */
+            margin-top: 8%;            /* Center vertically */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
             padding-left: 20px;
             border-radius: 16px;
             border-color: #360f5a;
