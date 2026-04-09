@@ -1660,15 +1660,11 @@
         }
 
         .add-invoice-modal-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
             align-items: center;
             background: white;
             color: black;
             margin: 3% auto;            /* Center vertically */
-            padding: 10px 2px;
+            padding-left: 20px;
             border-radius: 16px;
             border-color: #360f5a;
             border-width: 1px;
