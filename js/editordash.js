@@ -386,7 +386,7 @@
             });  
             
             const data = await response.json();
-            const invoices = data.invcoices;
+            const invoices = data.invoices;
             
             const container = document.getElementById("invoice-entries-container");
             container.innerHTML = "";   
