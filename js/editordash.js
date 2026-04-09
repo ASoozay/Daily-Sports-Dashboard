@@ -86,8 +86,9 @@ let currWriter = null;
             locations: []
         };
 
+        // Declare separate filter objects for each tab (already present, but ensure they're used correctly)
         let allScheduledFilters = { sports: [], locations: [] };
-        let scheduleFilters = { sports: [], locations: [] };
+        let scheduleFilters = { sports: [], locations: [] };  // For "My Scheduled"
         let availableFilters = { sports: [], locations: [] };
         let historyFilters = { sports: [], locations: [], months: [] };
 
@@ -732,13 +733,16 @@ let currWriter = null;
                 // Only create filters once
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("all-games-filter-container", filters => {
-                        scheduleFilters = filters;
-                        fetchAllScheduledGames(currWriter.writer_id, scheduleFilters);
+                        allScheduledFilters = filters;  // Use dedicated object
+                        fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
                     });
                 }
 
-                // Fetch all games initially
-                fetchAllScheduledGames(currWriter.writer_id, scheduleFilters); 
+                // Reapply active classes to match current filters (fixes visual mismatch on tab switch)
+                reapplyFilterStates("all-games-filter-container", allScheduledFilters);
+
+                // Fetch games with current filters
+                fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters); 
             }
 
             if(tabId == "scheduled-games") {
@@ -747,12 +751,15 @@ let currWriter = null;
                 // Only create filters once
                 if (!filterContainer.hasChildNodes()) {
                     createGamesFilter("scheduled-games-filter-container", filters => {
-                        scheduleFilters = filters;
+                        scheduleFilters = filters;  // Use dedicated object
                         fetchMyScheduledGames(currWriter.writer_id, scheduleFilters);
                     });
                 }
 
-                // Fetch all games initially
+                // Reapply active classes to match current filters
+                reapplyFilterStates("scheduled-games-filter-container", scheduleFilters);
+
+                // Fetch games with current filters
                 fetchMyScheduledGames(currWriter.writer_id, scheduleFilters); 
             }
 
@@ -767,7 +774,10 @@ let currWriter = null;
                     });
                 }
 
-                // Fetch all games initially
+                // Reapply active classes to match current filters
+                reapplyFilterStates("available-games-filter-container", availableFilters);
+
+                // Fetch games with current filters
                 fetchAvailableGames(availableFilters); 
             }
 
@@ -807,6 +817,9 @@ let currWriter = null;
                     });
                 }
 
+                // Reapply active classes for history filters
+                reapplyHistoryFilterStates("history-filter-container", historyFilters);
+
                 fetchHistoryGames(currWriter.writer_id, historyFilters);
             }   
         }
@@ -834,12 +847,13 @@ let currWriter = null;
             const filterContainer = document.getElementById("all-games-filter-container");
             if (!filterContainer.hasChildNodes()) {
                 createGamesFilter("all-games-filter-container", filters => {
-                    fetchAllScheduledGames(currWriter.writer_id, filters);
+                    allScheduledFilters = filters;  // Use dedicated object
+                    fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
                 });
             }
 
             // Fetch games now that currWriter is ready
-            await fetchAllScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
+            await fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
         };
 
     window.twttr = (function(d, s, id) {
