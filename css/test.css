@@ -7,67 +7,6 @@
             z-index: 10; /* make sure buttons are on top */
         }
 
-        body {
-            background-color: whitesmoke;
-        }
-
-        .page {
-            height: 100%;
-        }
-
-        .main {
-            display: flex;
-            height: 100vh; /* subtract header + tab height */
-        }
-
-        .page {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        .account {
-            /*background*/
-            background: #360f5a;
-
-            /*display*/
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 50px;
-            margin-bottom: 1%;
-
-            /*text*/
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 35px;
-          }
-
-        .account p {
-            font-size: 30px;
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }  
-
-        .logout {
-            float: right;
-            justify-content: right;
-            margin-right: 100px;  /* Add a bit of space from the right edge */
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 30px;
-            cursor: pointer;
-            background-color: #360f5a;
-            border: none;
-            padding: 10px;
-        }
-
-        .logout:hover {
-            color: #fff;  /* Change color when hovering over logout */
-        }
-
         .tab-container {
 
             /*display*/
@@ -949,67 +888,6 @@
             z-index: 10; /* make sure buttons are on top */
         }
 
-        @import url('https://fonts.googleapis.com');
-        body {
-            background-color: whitesmoke;
-        }
-
-        .page {
-            height: 100%;
-        }
-
-        .main {
-            display: flex;
-            height: 100vh; /* subtract header + tab height */
-        }
-
-        .page {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        .account {
-            /*background*/
-            background: #360f5a;
-
-            /*display*/
-            width: 100%;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 25px;
-            margin-bottom: 1%;
-
-            /*text*/
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 35px;
-          }
-        .account p {
-            font-size: 30px;
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }  
-
-        .logout {
-            float: right;
-            justify-content: right;
-            margin-right: 50px;  /* Add a bit of space from the right edge */
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 30px;
-            cursor: pointer;
-            background-color: #360f5a;
-            border: none;
-            padding: 5px;
-        }
-
-        .logout:hover {
-            color: #fff;  /* Change color when hovering over logout */
-        }
-
         .tab-container {
 
             /*display*/
@@ -1881,62 +1759,6 @@
             min-height: 20px;
             cursor: pointer;
             z-index: 10; /* make sure buttons are on top */
-        }
-
-        @import url('https://fonts.googleapis.com');
-        body {
-            background-color: whitesmoke;
-        }
-
-        .page {
-            height: 100%;
-        }
-
-        .main {
-            display: flex;
-            height: 100vh; /* subtract header + tab height */
-        }
-
-        .page {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        .account {
-            /*background*/
-            background: #360f5a;
-
-            /*display*/
-            width: 100%;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 10px;
-            margin-bottom: 1%;
-
-            /*text*/
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 20px;
-          }
-
-        .logout {
-            float: right;
-            justify-content: right;
-            margin-right: 50px;  /* Add a bit of space from the right edge */
-            color: white;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #360f5a;
-            border: none;
-            padding: 1px;
-        }
-
-        .logout:hover {
-            color: #fff;  /* Change color when hovering over logout */
         }
 
         .tab-container {

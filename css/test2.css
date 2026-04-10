@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com');
+
+/* #region body/main/page */
+body {
+    background-color: whitesmoke;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+}
+
+.main {
+    display: flex;
+    height: 100vh; /* subtract header + tab height */
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+/* #endregion */
+
+/* #region account */
+.account {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+
+    /*Size/Shape*/
+    width: 100%;
+    height: 50px; 
+    margin-bottom: 1%; 
+
+    /*Background*/
+    background: #360f5a;
+
+    /*Text*/
+    color: white;   
+
+    /*Misc*/
+}
+
+.account p {
+    /*Text*/
+    font-size: 30px;
+    color: white;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+} 
+
+@media (max-width: 768px) {
+    .account {
+        /* Layout */
+
+        /*Size/Shape*/
+        padding-left: 10px;
+
+        /*Background*/
+
+        /*Text*/
+        font-size: 20px;
+
+        /*Misc*/
+    }
+}    
+
+@media (min-width: 769px) and (max-width: 1800px) {
+    .account {
+        /* Layout */
+
+        /*Size/Shape*/
+        padding-left: 25px;
+
+        /*Background*/
+
+        /*Text*/
+        font-size: 35px;
+
+        /*Misc*/
+    }
+} 
+
+@media (min-width: 1801px)  {
+    .account {
+        /* Layout */
+
+        /*Size/Shape*/
+        padding-left: 50px;
+
+        /*Background*/
+
+        /*Text*/
+        font-size: 35px;
+
+        /*Misc*/
+    }
+} 
+/* #endregion */
+
+/* #region logout */
+.logout {
+    /* Layout */
+    float: right;
+    justify-content: right;
+
+    /*Size/Shape*/
+    margin-right: 50px;
+    border: none;
+
+
+    /*Background*/
+    background-color: #360f5a;
+
+
+    /*Text*/
+    color: white;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+
+    /*Misc*/
+    cursor: pointer;
+}
+
+.logout:hover {
+    color: #fff;  
+}            
+            
+@media screen and (max-width: 768px) {
+    .logout {    
+        /* Layout */
+
+        /*Size/Shape*/
+        padding: 1px;
+
+        /*Background*/
+
+        /*Text*/
+        font-size: 20px;
+        
+        /*Misc*/
+    }
+}   
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+    .logout {    
+        /* Layout */
+
+        /*Size/Shape*/
+        padding: 5px;
+
+        /*Background*/
+
+        /*Text*/
+        font-size: 30px;
+
+        /*Misc*/
+    }
+}
+
+@media screen and (min-width: 1801px)  {
+    .logout {    
+        /* Layout */
+
+        /*Size/Shape*/
+        padding: 10px;
+
+        /*Background*/
+
+        /*Text*/
+        font-size: 30px;
+
+        /*Misc*/
+    }
+}               
+/* #endregion */
+
+         
+
+        
+
