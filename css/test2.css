@@ -133,7 +133,7 @@ body {
 
         /*Text*/
         font-size: 20px;
-        
+
         /*Misc*/
     }
 }   
@@ -480,6 +480,224 @@ body {
 }
 /* #endregion */
 
+/* #region filter-section */
+.filter-section {
+    /* Layout */
+    display: flex;
+    flex-direction: column;    
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
+
+}
+/* #endregion */
+
+/* #region filter-title */
+.filter-title {
+    /* Layout */
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+    font-weight: bold;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: white;    
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .filter-title {
+        /* Layout */
+
+        /* Size/Shape */
+        margin-bottom: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .filter-title {
+        /* Layout */
+
+        /* Size/Shape */
+        margin-bottom: 4px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .filter-title {
+        /* Layout */
+
+        /* Size/Shape */
+        margin-bottom: 8px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region filter-options */
+.filter-options {
+    /* Layout */
+    display: flex;
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
+}
+
+@media screen and (max-width: 800px){
+    .filter-options {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 1px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .filter-options {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .filter-options {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region filter-box */
+.filter-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
+    /* Size/Shape */
+
+    /* Background */
+    background-color: white;
+
+    /* Text */ 
+    text-align: center;
+    font-weight: bold;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        
+    /* Misc */
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+@media screen and (max-width: 800px){
+    .filter-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 10px;
+        height: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 4px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .filter-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 20px;
+        height: 15px;
+        border-radius: 5px; 
+
+        /* Background */
+
+        /* Text */
+        font-size: 12px; 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .filter-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 20px;
+        height: 15px;
+        border-radius: 5px;  
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 14px;
+        
+        /* Misc */
+    }
+}
+/* #endregion */
 
     /* Layout */
 

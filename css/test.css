@@ -26,11 +26,6 @@
             padding-left: 5px;
         }
 
-        .filter-section {
-            display: flex;
-            flex-direction: column;
-        }
-
         .history-sport-section {
             display: grid;
             grid-template-columns: repeat(6, 70px);
@@ -47,18 +42,6 @@
             grid-template-columns: repeat(6, 50px);
             gap: 20px;
             column-gap: 30px;
-        }
-
-        .filter-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
-
-        .filter-options {
-            display: flex;
-            gap: 10px;
         }
 
         .filter-box {
@@ -854,11 +837,6 @@
             padding-left: 5px;
         }
 
-        .filter-section {
-            display: flex;
-            flex-direction: column;
-        }
-
         .history-sport-section {
             display: grid;
             grid-template-columns: repeat(6, 50px);
@@ -877,35 +855,6 @@
             column-gap: 30px;
         }
 
-        .filter-title {
-            font-weight: bold;
-            margin-bottom: 4px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
-
-        .filter-options {
-            display: flex;
-            gap: 5px;
-        }
-
-        .filter-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-            width: 20px;
-            height: 15px;
-            background-color: white;
-            cursor: pointer;
-            user-select: none;
-            font-size: 12px;
-            text-align: center;
-            font-weight: bold;
-            
-            transition: all 0.2s ease;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }
 
         .history-location-box {
             display: flex;
@@ -1648,34 +1597,9 @@
             cursor: pointer;
             z-index: 10; /* make sure buttons are on top */
         }
-}
-        .filter-section {
-            display: flex;
-            flex-direction: column;
-        }
 
-        .filter-title {
-            font-weight: bold;
-            margin-bottom: 2px;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: white;
-        }
 
-        .filter-options {
-            display: flex;
-            gap: 1px;
-        }
 
-        .filter-box {
-            padding: 1px 2px;
-            border-radius: 10px;
-            background-color: white;
-            cursor: pointer;
-            user-select: none;
-            font-size: 4px;
-            transition: all 0.2s ease;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-        }
 
         .filter-box:hover {
             background-color: #ccc;
