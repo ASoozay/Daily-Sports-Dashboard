@@ -7,95 +7,6 @@
             z-index: 10; /* make sure buttons are on top */
         }
 
-        .add-game {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 50px;
-            width: 150px;
-            margin-right: 60px;
-            border-radius: 5px;
-            background-color: white;
-
-            text-align: center;
-            font-size: medium;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-            font-weight: bold;
-        }
-
-        .add-game::before {
-            content: "+ Add Game";
-        }
-
-        .games-container {
-            flex: 1; /* Take remaining space */
-            display: grid;
-            width: 100%; 
-            overflow-y: scroll;    
-            row-gap: 20px;
-            padding: 1% 0 0 1px;
-        }
-
-        .game-box {
-            align-items: center;
-            display: flex;
-            width: 95%;
-            height: 150px;
-            background-color: rgb(211, 210, 210);
-            border-radius: 20px;
-            border: 3px;
-            border-color: gray;
-        }
-
-        .sport-container {
-            display: grid;
-            align-items: center;
-            justify-content: left;
-            margin-left:1%;
-            margin-top: 1%;
-            width: 11%;
-            height: 100%;
-
-            background-color: transparent;
-
-            font-size: x-large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-
-            margin-right: 2%;            
-        }  
-        .sport-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 40%;
-            margin-bottom: 8%;
-
-            background-color: transparent;
-
-            font-size: x-large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-
-            margin-right: 5%;
-        }
-
-        .notes-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 20%;
-
-            background-color: transparent;
-
-            font-size: medium;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-style: italic;
-            color: black;
-        }
-
         .washington-icon {
             align-items: center;
             height: 80%;
@@ -714,96 +625,8 @@
             min-height: 40px;
             cursor: pointer;
             z-index: 10; /* make sure buttons are on top */
-        }
+        } 
 
-
-        .add-game {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 50px;
-            width: 80px;
-            margin-right: 5px;
-            border-radius: 5px;
-            background-color: white;
-
-            text-align: center;
-            font-size: medium;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: #360f5a;
-        }
-
-        .add-game::before {
-            content: "+ Add Game";
-        }
-
-        .games-container {
-            flex: 1; /* Take remaining space */
-            display: grid;
-            width: 100%; 
-            overflow-y: scroll;    
-            row-gap: 10px;
-            padding: 1% 0 25px 5px;
-        }
-
-        .game-box {
-            align-items: center;
-            display: flex;
-            width: 95%;
-            height: 150px;
-            background-color: rgb(211, 210, 210);
-            border-radius: 10px;
-            border: 2px;
-            border-color: gray;
-        }
-
-        .sport-container {
-            display: grid;
-            align-items: center;
-            justify-content: left;
-            margin-left:1%;
-            margin-top: 1%;
-            width: 11%;
-            height: 100%;
-
-            background-color: transparent;
-
-            font-size: x-large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-
-            margin-right: 2%;            
-        }  
-        .sport-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 40%;
-            margin-bottom: 8%;
-
-            background-color: transparent;
-
-            font-size: x-large;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-
-            margin-right: 5%;
-        }
-
-        .notes-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 20%;
-
-            background-color: transparent;
-
-            font-size: medium;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-style: italic;
-            color: black;
-        }
 
         .washington-icon {
             align-items: center;
@@ -1414,81 +1237,12 @@
         }
 
 
-
-
         .filter-box:hover {
             background-color: #ccc;
         }
 
         .filter-box.active {
             background-color: #B7A57A;
-            color: black;
-        }
-
-        .games-container {
-            flex: 1; /* Take remaining space */
-            display: grid;
-            width: 100%; 
-            overflow-y: scroll;    
-            row-gap: 5px;
-            padding: 1% 0 0 1px;
-        }
-
-        .game-box {
-            align-items: center;
-            display: flex;
-            width: 95%;
-            height: 120px;
-            background-color: rgb(211, 210, 210);
-            border-radius: 20px;
-            border: 1px;
-            border-color: gray;
-        }
-
-        .sport-container {
-            display: grid;
-            align-items: center;
-            justify-content: left;
-            margin-left: 2px;
-            margin-top: 1%;
-            width: 8%;
-            height: 100%;
-
-            background-color: transparent;
-
-            font-size: xx-small;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-
-            margin-right: 2%;            
-        }  
-        .sport-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 40%;
-            margin-bottom: 8%;
-
-            background-color: transparent;
-
-            font-size: xx-small;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            color: black;
-
-            margin-right: 3%;
-        }
-
-        .notes-box {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 20%;
-
-            background-color: transparent;
-
-            font-size: xx-small;
-            font-family: Calibri, "Segoe UI", Arial, sans-serif;
-            font-style: italic;
             color: black;
         }
 

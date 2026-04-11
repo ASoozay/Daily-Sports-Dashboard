@@ -1216,6 +1216,431 @@ body {
 
 /* #endregion */
 
+/* #region add-game */
+.add-game {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size/Shape */
+
+    /* Background */
+    background-color: white;
+
+    /* Text */ 
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: #360f5a;
+
+    /* Misc */   
+    cursor: pointer;
+}    
+
+.add-game::before {
+    content: "+ Add Game";
+}
+
+@media screen and (max-width: 800px){
+    .add-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        width: 80px;
+        margin-right: 5px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .add-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        width: 80px;
+        margin-right: 5px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .add-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        width: 150px;
+        margin-right: 60px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region games-container */
+.games-container {
+    /* Layout */
+    flex: 1;
+    display: grid;
+
+    /* Size/Shape */
+    width: 100%;
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */  
+    overflow-y: scroll;   
+}
+
+@media screen and (max-width: 800px){
+    .games-container {
+        /* Layout */
+
+        /* Size/Shape */
+        row-gap: 5px;
+        padding: 1% 0 0 1px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .games-container {
+        /* Layout */
+
+        /* Size/Shape */
+        row-gap: 10px;
+        padding: 1% 0 25px 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .games-container {
+        /* Layout */
+
+        /* Size/Shape */
+        row-gap: 20px;
+        padding: 1% 0 0 1px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region game-box */
+.game-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+
+    /* Size/Shape */
+    width: 95%;
+    border-color: gray;
+
+    /* Background */
+    background-color: rgb(211, 210, 210);
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .game-box {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 120px;
+        border-radius: 20px;
+        border: 1px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .game-box {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 150px;
+        border-radius: 10px;
+        border: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .game-box {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 150px;
+        border-radius: 20px;
+        border: 3px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */    
+
+/* #region sport-container */
+.sport-container {
+    /* Layout */
+     display: grid;
+    align-items: center;
+    justify-content: left;
+
+    /* Size/Shape */
+    height: 100%;
+    width: 11%;
+    margin-top: 1%;
+    margin-left:1%;
+    margin-right: 2%;  
+
+    /* Background */
+    background-color: transparent;
+
+    /* Text */ 
+    font-size: x-large;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .sport-container {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .sport-container {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .sport-container {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region sport-box */
+.sport-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    /* Size/Shape */
+    height: 40%;
+    margin-bottom: 8%;
+    margin-right: 5%;
+
+    /* Background */
+    background-color: transparent;
+
+    /* Text */ 
+    font-size: x-large;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}  
+
+@media screen and (max-width: 800px){
+    .sport-box {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .sport-box {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .sport-box {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+/* #endregion */
+
+/* #region notes-box */
+.notes-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    /* Size/Shape */
+    height: 20%;
+
+    /* Background */
+    background-color: transparent;
+
+    /* Text */ 
+    font-size: medium;
+    font-style: italic;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .notes-box {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .notes-box {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .notes-box {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+
     /* Layout */
 
     /* Size/Shape */
