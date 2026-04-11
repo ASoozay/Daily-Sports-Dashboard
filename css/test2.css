@@ -171,7 +171,365 @@ body {
 }               
 /* #endregion */
 
-         
+/* #region tab-container */
+.tab-container {
+    /* Layout */
+    display: flex;
 
+    /* Size/Shape */
+    width: 85%;
+    margin-bottom: 1%;
+
+    /* Background */
+
+    /* Text */ 
+
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px) {
+    .tab-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 40px;
+        padding-bottom: 2px;
+
+        /* Background */
+
+        /* Text */ 
+
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px) {
+    .tab-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 60px;
+        padding-bottom: 5px;
+
+        /* Background */
+
+        /* Text */ 
+
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px) {
+    .tab-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 60px;
+        padding-bottom: 10px;
+
+        /* Background */
+
+        /* Text */ 
+
+        /* Misc */
+    }
+}
+
+/* #endregion */         
+
+/* #region tab-button */
+.tab-button {
+    /* Layout */
+    flex: 1;
+
+    /* Size/Shape */
+    border: 1px solid #ccc;
+
+    /* Background */
+    background: #eee;
+    
+    /* Text */ 
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
         
+    /* Misc */
+    cursor: pointer;
 
+}
+
+.tab-button:hover {
+    background: #ddd;
+}
+
+@media screen and (max-width: 800px){
+    .tab-button {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 2px;
+
+        /* Background */
+
+        /* Text */
+        font-size: 6px; 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .tab-button {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 8px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 18px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .tab-button {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 15px;
+
+        /* Background */
+
+        /* Text */
+        font-size: 18px; 
+        
+        /* Misc */
+    }
+}        
+
+
+/* #endregion */        
+
+/* #region active-tab */
+.active-tab {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+        background-color: #360f5a;        
+
+        /* Text */ 
+        color: white;
+        
+        /* Misc */    
+}
+/* #endregion */
+
+/* #region content */
+.content {
+    /* Layout */
+    flex: 5.67;
+    display: flex;
+    flex-direction: column;
+
+    /* Size/Shape */
+    width: 85%;
+    min-height: 0;
+    max-height: 100%;
+    padding-bottom: 5px;
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+/* #endregion */
+
+/* #region games-filter-container */
+.games-filter-container {
+    /* Layout */
+    display: flex;
+
+    /* Size/Shape */
+   width: 100%;
+
+    /* Background */
+    background-color: #360f5a;
+    /* Text */ 
+        
+    /* Misc */
+}
+
+@media screen and (max-width: 800px){
+    .games-filter-container {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+        height: 40px;
+        border-radius: 5px;        
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .games-filter-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 80px;
+        border-radius: 5px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .games-filter-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 80px;
+        border-radius: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region games-filter */
+.games-filter {
+    /* Layout */
+    display: flex;    
+    align-items: center;
+
+    /* Size/Shape */
+    height: 100%;    
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .games-filter {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 5px;
+        padding-left: 2px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .games-filter {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 50px;
+        padding-left: 10px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .games-filter {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 200px;
+        padding-left: 20px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+
+    /* Layout */
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
+
+@media screen and (max-width: 800px){
+    . {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    . {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    . {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
