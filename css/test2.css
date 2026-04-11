@@ -644,6 +644,15 @@ body {
     transition: all 0.2s ease;
 }
 
+.filter-box:hover {
+    background-color: #ccc;
+}
+
+.filter-box.active {
+    background-color: #B7A57A;
+    color: black;
+}
+
 @media screen and (max-width: 800px){
     .filter-box {
         /* Layout */
@@ -697,6 +706,514 @@ body {
         /* Misc */
     }
 }
+/* #endregion */
+
+/* #region history-filter-container */
+.history-filter-container {
+    /* Layout */
+    display: flex;
+
+    /* Size/Shape */
+    width: 100%;
+
+    /* Background */
+    background-color: #360f5a;
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .history-filter-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 2px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-filter-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 160px;
+        border-radius: 5px;
+        padding-left: 40px;
+        margin-bottom: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-filter-container {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 180px;
+        border-radius: 5px;
+        padding-left: 40px;
+        margin-bottom: 10px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */ 
+
+ /* #region history-filter */
+ .history-filter {
+    /* Layout */
+    display: flex;
+    align-items: center;
+
+    /* Size/Shape */
+    height: 100%;
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */   
+ }
+
+ @media screen and (max-width: 800px){
+    .history-filter {
+        /* Layout */
+
+        /* Size/Shape */
+        padding-left: 2px;
+        gap: 20px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-filter {
+        /* Layout */
+
+        /* Size/Shape */
+        padding-left: 5px;
+        gap: 80px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-filter {
+        /* Layout */
+
+        /* Size/Shape */
+        padding-left: 5px;
+        gap: 200px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+ /* #endregion */
+
+/* #region history-sport-section */
+.history-sport-section {
+    /* Layout */
+    display: grid;
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
+}
+
+@media screen and (max-width: 800px){
+    .history-sport-section {
+        /* Layout */
+        grid-template-columns: repeat(6, 10px);
+
+        /* Size/Shape */
+        gap: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-sport-section {
+        /* Layout */
+        grid-template-columns: repeat(6, 50px);
+
+        /* Size/Shape */
+        gap: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-sport-section{
+        /* Layout */
+        grid-template-columns: repeat(6, 70px);
+
+        /* Size/Shape */
+        gap: 15px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+/* #endregion */
+
+/* #region history-location-section */
+.history-location-section {
+    /* Layout */
+    display: grid;
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .history-location-section {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-location-section {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-location-section {
+        /* Layout */
+
+        /* Size/Shape */
+        gap: 15px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region history-location-box */
+.history-location-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size/Shape */
+
+    /* Background */
+    background-color: white;
+
+    /* Text */
+    text-align: center;
+    font-weight: bold;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;     
+        
+    /* Misc */
+    cursor: pointer;
+    user-select: none; 
+    transition: all 0.2s ease;   
+}
+
+.history-location-box:hover {
+    background-color: #ccc;
+ }
+
+.history-location-box.active {
+    background-color: #B7A57A;
+    color: black;
+}
+
+@media screen and (max-width: 800px){
+    .history-location-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 25px;
+        height: 10px;
+        border-radius: 1px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-location-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;          
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-location-box {
+        /* Layout */
+
+        /* Size/Shape */
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;            
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+
+        /* Misc */
+    }
+}
+/* #endregion  */
+
+/* #region history-month-section */
+.history-month-section {
+    /* Layout */
+    display: grid;
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 800px){
+    .history-month-section {
+        /* Layout */
+        grid-template-columns: repeat(6, 10px);
+
+        /* Size/Shape */
+        gap: 5px;
+        column-gap: 10px;         
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-month-section {
+        /* Layout */
+        grid-template-columns: repeat(6, 50px);
+
+        /* Size/Shape */
+        gap: 20px;
+        column-gap: 30px;        
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-month-section {
+        /* Layout */
+        grid-template-columns: repeat(6, 50px);
+
+        /* Size/Shape */
+        gap: 20px;
+        column-gap: 30px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region history-month-box */
+.history-month-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
+    /* Size/Shape */
+
+    /* Background */
+    background-color: white;
+
+    /* Text */
+    text-align: center;
+    font-weight: bold;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif; 
+        
+    /* Misc */  
+    cursor: pointer;
+    user-select: none;  
+    transition: all 0.2s ease;
+}
+
+.history-month-box:hover {
+    background-color: #ccc;
+}
+
+.history-month-box.active {
+    background-color: #B7A57A;
+    color: black;
+}
+
+@media screen and (max-width: 800px){
+    .history-month-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 20px;
+        height: 10px;
+        border-radius: 1px;        
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1800px){
+    .history-month-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 70px;
+        height: 40px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 14px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .history-month-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 70px;
+        height: 40px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 14px;
+        
+        /* Misc */
+    }
+}
+
 /* #endregion */
 
     /* Layout */
