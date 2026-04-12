@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/test.css">
+<link rel="stylesheet" href="/css/test2.css">
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico?v=2">
 </head>
 <meta charset="UTF-8">
@@ -45,7 +45,7 @@
     </div>
 
     <div id="invoices" class="tab-content">
-        <div class = "invoice-sections-container">
+        <div class = "invoice-container">
             <div class = "invoice-history-container">
                 <div class = "invoice-history-title">Invoice History</div>
                 <div id = "invoice-entries-container" class = "invoice-entries-container">                                                                                                              
@@ -54,19 +54,19 @@
 
             <div class="invoice-options-container">
                 <div class="invoice-option">
-                    <a class="invoice-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240" target="_blank">
+                    <a class="invoice-option-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240" target="_blank">
                     <img class="invoice-icon" src="/pages/dashboard/invoice/Spreadsheet.png" alt="Invoice 1">Invoice Template</a>
                 </div>
                 <div class="invoice-option">
-                    <a class="invoice-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" target="_blank">
+                    <a class="invoice-option-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" target="_blank">
                     <img class="invoice-icon" src="/pages/dashboard/invoice/Upload.png" alt="Invoice 1">Submit Invoice</a>
                 </div>
                 <div class="invoice-option">
-                    <button class="invoice-box" onclick = "openInvoiceModal()">
+                    <button class="invoice-option-box" onclick = "openInvoiceModal()">
                     <img class="invoice-icon" src="/pages/dashboard/invoice/History.png" alt="Invoice 1">Add to History</button>
                 </div>
                 <div class="invoice-option">
-                    <a class="invoice-box" href="/pages/dashboard/invoice/Pay-Scale.png" target="_blank">
+                    <a class="invoice-option-box" href="/pages/dashboard/invoice/Pay-Scale.png" target="_blank">
                     <img class="invoice-icon" src="/pages/dashboard/invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
                 </div>
             </div>
@@ -237,13 +237,13 @@
         <input type="time" id="edit-time-input" class = "edit-box">
         <input type="text" id="edit-notes-input" class = "edit-box" placeholder="Notes">
         <button id = "confirm-edit" class = "confirm-edit">Edit Game</button>
-        <button id ="delete-game" class = "delete-button">Delete Game</button>
+        <button id ="delete-game" class = "delete-game">Delete Game</button>
     </div>
 </div>
 
-<div id="invoice-modal" class=" modal invoice-modal">
+<div id="invoice-modal" class= "modal">
     <div class="add-invoice-modal-content">
-        <span class="close-btn">&times;</span>
+        <span class="close-button">&times;</span>
         <h2>Add Invoice</h2>
 
         <input type = "date" id="invoice-date-input" class = "add-invoice-box" placeholder="Date">
