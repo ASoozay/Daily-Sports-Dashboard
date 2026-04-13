@@ -1,0 +1,1026 @@
+/* #region add-game */
+.add-game {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size/Shape */
+
+    /* Background */
+    background-color: white;
+
+    /* Text */ 
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: #360f5a;
+
+    /* Misc */   
+    cursor: pointer;
+}    
+
+.add-game::before {
+    content: "+ Add Game";
+}
+
+@media screen and (max-width: 768px){
+    .add-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        width: 80px;
+        margin-right: 5px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .add-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        width: 80px;
+        margin-right: 5px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .add-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        width: 150px;
+        margin-right: 60px;
+        border-radius: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region writer */
+.writer {
+    /* Layout */
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    /* Size/Shape */
+    height: 90%;
+    width: 10%;
+    margin-right: 3%;
+
+    /* Background */
+
+    /* Text */ 
+    font-size: x-large;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+/* #endregion */
+
+/* #region add / assign / edit / remove */
+.add, .assign, .edit, .remove {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
+    /* Size/Shape */
+    height: 30%;
+    width: 100%;
+    border: none;
+
+    /* Background */
+    background-color: transparent;
+
+    /* Text */ 
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: #360f5a;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    .add, .assign, .edit, .remove {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 12px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .add, .assign, .edit, .remove {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 20px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .add, .assign, .edit, .remove {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 20px;
+        
+        /* Misc */
+    }
+}
+
+/* #endregion */
+
+/* #region assign-modal-content */
+.assign-modal-content {
+    /* Layout */
+
+    /* Size/Shape */
+    height: 25%;
+    max-width: 90%;
+    margin: 8% auto;
+    border-color: #360f5a;
+
+    /* Background */
+    background: white;
+
+    /* Text */ 
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+.assign-modal-content h2 {
+    /* Layout */
+
+    /* Size/Shape */
+    margin-top: 0;
+
+    /* Background */
+
+    /* Text */
+    text-align: center;
+    font-weight: 600; 
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    .assign-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 250px; 
+        padding: 3px 2px;
+        border-radius: 16px;
+        border-width: 1px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+
+    }
+
+    .assign-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */
+        font-size: 4px; 
+            
+        /* Misc */        
+    }    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .assign-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 450px;
+        padding: 15px 23px;
+        border-radius: 8px;
+        border-width: 5px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .assign-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */
+        font-size: 24px; 
+            
+        /* Misc */        
+    }    
+}
+
+@media screen and (min-width: 1801px){
+    .assign-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 450px;
+        padding: 30px 25px;
+        border-radius: 16px;
+        border-width: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .assign-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */
+        font-size: 24px; 
+            
+        /* Misc */        
+    }
+}
+/* #endregion */
+
+/* #region writer-select */
+#writer-select {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 100%;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+    outline: none;
+
+    /* Background */
+    background-color: #fff;
+
+    /* Text */ 
+    color: black;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    #writer-select {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 1px;
+        margin: 2px 0;
+
+        /* Background */
+
+        /* Text */
+        font-size: 6px; 
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    #writer-select {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 5px;
+        margin: 10px 0;
+
+        /* Background */
+
+        /* Text */
+        font-size: 15px; 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    #writer-select {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 10px;
+        margin: 20px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region confirm-assign */
+#confirm-assign {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+
+    /* Background */
+    background-color: #360f5a;
+
+    /* Text */ 
+    color: white;
+    font-weight: bold; 
+        
+    /* Misc */ 
+    cursor: pointer; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;  
+}
+
+#confirm-assign:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+@media screen and (max-width: 768px){
+    #confirm-assign {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 2px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    #confirm-assign {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 6px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    #confirm-assign {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 12px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region add-modal-content */
+.add-modal-content {
+    /* Layout */
+
+    /* Size/Shape */
+    max-width: 90%;
+    margin: 5% auto;
+    border-radius: 16px;
+    border-color: #360f5a;
+
+    /* Background */
+    background: white;
+
+    /* Text */ 
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+.add-modal-content h2 {
+    /* Layout */
+
+    /* Size/Shape */
+    margin-top: 0;
+
+    /* Background */
+
+    /* Text */ 
+    text-align: center;
+    font-weight: 600;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    .add-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 90%;
+        width: 250px;
+        padding: 8px 6px;
+        border-width: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .add-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+            
+        /* Misc */         
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .add-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 55%;
+        width: 450px;
+        padding: 30px 25px;
+        border-width: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .add-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 24px;
+            
+        /* Misc */         
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .add-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 55%;
+        width: 450px;
+        padding: 30px 25px;
+        border-width: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .add-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 24px;
+            
+        /* Misc */    
+    }
+}
+/* #endregion */
+
+/* #region edit-modal-content */
+.edit-modal-content {
+    /* Layout */
+
+    /* Size/Shape */
+    max-width: 90%;
+    margin: 5% auto;
+    border-radius: 16px;
+    border-color: #360f5a;
+
+    /* Background */
+    background: white;
+
+    /* Text */ 
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+.edit-modal-content h2 {
+    /* Layout */
+
+    /* Size/Shape */
+    margin-top: 0;
+
+    /* Background */
+
+    /* Text */ 
+    text-align: center;
+    font-weight: 600;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: black;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    .edit-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 90%;
+        width: 250px;
+        padding: 8px 6px;
+        border-width: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .edit-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+            
+        /* Misc */         
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .edit-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 55%;
+        width: 450px;
+        padding: 30px 25px;
+        border-width: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .edit-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 24px;
+            
+        /* Misc */         
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .edit-modal-content {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 55%;
+        width: 450px;
+        padding: 30px 25px;
+        border-width: 10px;
+
+        /* Background */
+
+        /* Text */ 
+        
+        /* Misc */
+    }
+
+    .edit-modal-content h2 {
+        /* Layout */
+
+        /* Size/Shape */
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 24px;
+            
+        /* Misc */    
+    }
+}
+/* #endregion */
+
+/* #region add-box / edit-box */
+.add-box, .edit-box {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 50%;
+    border-radius: 10px;
+    border-color: black;
+
+    /* Background */
+
+    /* Text */ 
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    .add-box, .edit-box {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 10px;
+        margin: 2px 0;
+        padding: 2px;
+        border-width: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            
+        /* Misc */    
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .add-box, .edit-box {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 40px;
+        margin: 10px 0;
+        padding: 10px;
+        border-width: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            
+        /* Misc */    
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .add-box, .edit-box {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 40px;
+        margin: 10px 0;
+        padding: 10px;
+        border-width: 2px;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+            
+        /* Misc */    
+    }
+}
+/* #endregion */
+
+/* #region confirm-add / confirm-edit */
+.confirm-add, .confirm-edit {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+
+    /* Background */
+    background-color: #360f5a;
+
+    /* Text */ 
+    font-weight: bold;
+    color: white;
+        
+    /* Misc */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media screen and (max-width: 768px){
+    .confirm-add, .confirm-edit {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 10px;
+        margin-top: 10px;                       
+        padding: 3px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .confirm-add, .confirm-edit {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        margin-top: 50px;                       
+        padding: 12px 0;
+
+        /* Background */
+
+        /* Text */
+        font-size: 16px; 
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .confirm-add, .confirm-edit {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        margin-top: 50px;                       
+        padding: 12px 0;
+
+        /* Background */
+
+        /* Text */
+        font-size: 16px; 
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+/* #region delete-game */
+.delete-game {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+
+    /* Background */
+    background-color: rgba(255, 0, 0, 0.676);
+
+    /* Text */ 
+    font-weight: bold;
+    color: white;
+        
+    /* Misc */    
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media screen and (max-width: 768px){
+    .delete-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 10px;
+        margin-top: 2px;
+        padding: 1px 0;        
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .delete-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        margin-top: 10px;
+        padding: 4px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .delete-game {
+        /* Layout */
+
+        /* Size/Shape */
+        height: 50px;
+        margin-top: 10px;
+        padding: 4px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+/* #endregion
+
+    /* Layout */
+
+/* #region sport-input / edit-sport-input */
+#sport-input, #edit-sport-input {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 100%;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: black;
+    outline: none;
+
+    /* Background */
+    background-color: #fff;
+
+    /* Text */ 
+    color: black;
+        
+    /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    #sport-input, #edit-sport-input {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 1px;
+        margin: 2px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 6px;
+        
+        /* Misc */
+
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    #sport-input, #edit-sport-input {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 5px;
+        margin: 10px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+
+@media screen and (min-width: 1801px){
+    #sport-input, #edit-sport-input {
+        /* Layout */
+
+        /* Size/Shape */
+        padding: 5px;
+        margin: 10px 0;
+
+        /* Background */
+
+        /* Text */ 
+        font-size: 16px;
+        
+        /* Misc */
+    }
+}
+/* #endregion */
+
+

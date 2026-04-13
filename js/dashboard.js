@@ -604,6 +604,7 @@ async function addInvoice(writerId, date, total, link) {
 //#endregion
 
 //#region Modals
+
 document.querySelectorAll(".close-button").forEach(btn => {
     btn.addEventListener("click", () => {
         const modal = btn.closest(".modal");
