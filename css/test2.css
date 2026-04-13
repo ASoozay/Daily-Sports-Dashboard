@@ -78,7 +78,7 @@ body {
     }
 } 
 
-@media (min-width: var(--desktop-min))  {
+@media (min-width: 1801px)  {
     .account {
         /* Layout */
 
@@ -102,7 +102,8 @@ body {
     justify-content: right;
 
     /*Size/Shape*/
-    margin-right: 50px;
+    height: 100%;
+    margin-right: 50px;   
     border: none;
 
 
@@ -154,13 +155,12 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min))  {
+@media screen and (min-width: 1801px)  {
     .logout {    
         /* Layout */
 
         /*Size/Shape*/
-        padding: 10px;
-
+        
         /*Background*/
 
         /*Text*/
@@ -218,7 +218,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)) {
+@media screen and (min-width: 1801px) {
     .tab-container {
         /* Layout */
 
@@ -312,7 +312,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .tab-button {
         /* Layout */
 
@@ -416,7 +416,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .games-filter-container {
         /* Layout */
 
@@ -482,7 +482,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .games-filter {
         /* Layout */
 
@@ -563,7 +563,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .filter-title {
         /* Layout */
 
@@ -624,7 +624,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .filter-options {
         /* Layout */
 
@@ -708,13 +708,13 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .filter-box {
         /* Layout */
 
         /* Size/Shape */
-        width: 20px;
-        height: 15px;
+        width: 50px;
+        height: 35px;
         border-radius: 5px;  
 
         /* Background */
@@ -780,7 +780,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-filter-container {
         /* Layout */
 
@@ -848,7 +848,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-filter {
         /* Layout */
 
@@ -912,7 +912,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-sport-section{
         /* Layout */
         grid-template-columns: repeat(6, 70px);
@@ -975,7 +975,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-location-section {
         /* Layout */
 
@@ -1060,7 +1060,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-location-box {
         /* Layout */
 
@@ -1128,7 +1128,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-month-section {
         /* Layout */
         grid-template-columns: repeat(6, 50px);
@@ -1215,7 +1215,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .history-month-box {
         /* Layout */
 
@@ -1299,7 +1299,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .add-game {
         /* Layout */
 
@@ -1368,7 +1368,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .games-container {
         /* Layout */
 
@@ -1438,7 +1438,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .game-box {
         /* Layout */
 
@@ -1510,7 +1510,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .sport-container {
         /* Layout */
 
@@ -1577,7 +1577,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .sport-box {
         /* Layout */
 
@@ -1644,7 +1644,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .notes-box {
         /* Layout */
 
@@ -1706,7 +1706,7 @@ body {
     }
 }
 
-@media screen and (min-width: var(--desktop-min)){
+@media screen and (min-width: 1801px){
     .washington-icon {
         /* Layout */
 
