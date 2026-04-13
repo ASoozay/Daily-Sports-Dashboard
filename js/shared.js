@@ -1,7 +1,12 @@
 let currWriter = null;
 let currGameId = null;
+let activeFilters = { sports: [], locations: [] };
+let myScheduleFilters = { sports: [], locations: [] };
+let availableFilters = { sports: [], locations: [] };
+let historyFilters = { sports: [], locations: [], months: [] };
 
 //#region Logging In / Logging Out
+
 // Initialize Netlify Identity / Logging in
 netlifyIdentity.on("init", async user => {
     console.log("Netlify Identity Initialized:", user);
@@ -31,12 +36,6 @@ netlifyIdentity.on("logout", () => {
 //#endregion 
 
 //#region Fetching Methods
-
-let activeFilters = { sports: [], locations: [] };
-let allScheduledFilters = { sports: [], locations: [] };
-let scheduleFilters = { sports: [], locations: [] };
-let availableFilters = { sports: [], locations: [] };
-let historyFilters = { sports: [], locations: [], months: [] };
 
 async function fetchWriterData(user) {
     const email = user.email;
@@ -307,3 +306,345 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
 } 
 //#endregion
 
+//#region Load Methods
+
+function loadHistoryFilters() {
+    const template = document.getElementById("history-filter-template");
+    const container = document.getElementById("history-filter-container");
+
+    container.innerHTML = "";
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+ }
+//#endregion
+
+//#region Filters
+
+function createGamesFilter(containerId, onFilterChange) {
+    const template = document.getElementById("games-filter-template");
+    const clone = template.content.cloneNode(true);
+
+    const container = document.getElementById(containerId);
+    container.appendChild(clone);
+
+    const boxes = container.querySelectorAll(".filter-box");
+
+    boxes.forEach(box => {
+        box.addEventListener("click", () => {
+            box.classList.toggle("active");
+
+            const value = box.dataset.value;
+            const isSport = box.closest(".sport-options");
+            const isLocation = box.closest(".location-options");
+
+            if (isSport) {
+                toggleFilterValue(activeFilters.sports, value);
+            }
+
+            if (isLocation) {
+                toggleFilterValue(activeFilters.locations, value);
+            }
+
+            onFilterChange(activeFilters);
+        });
+    });
+}
+
+function toggleFilterValue(array, value) {
+    const index = array.indexOf(value);
+
+    if (index > -1) {
+        array.splice(index, 1);
+    } else {
+        array.push(value);
+    }
+} 
+//#endregion
+
+//#region Tabs 
+window.tabHandlers = {};
+
+tabHandlers["scheduled-games"] = function() {
+    const container = document.getElementById("scheduled-games-filter-container");
+
+    if (!container.hasChildNodes()) {
+        createGamesFilter("scheduled-games-filter-container", filters => {
+            scheduleFilters = filters;
+            fetchMySchedule(currWriter.writer_id, scheduleFilters);
+        });
+    }
+
+    fetchMySchedule(currWriter.writer_id, scheduleFilters);
+};
+
+tabHandlers["available-games"] = function() {
+    const container = document.getElementById("available-games-filter-container");
+
+    if (!container.hasChildNodes()) {
+        createGamesFilter("available-games-filter-container", filters => {
+            availableFilters = filters;
+            fetchAvailableGames(availableFilters);
+        });
+    }
+
+    fetchAvailableGames(availableFilters);
+};
+
+tabHandlers["invoices"] = function() {
+    fetchInvoices(currWriter.writer_id);
+};
+
+tabHandlers["history"] = function() {
+    const container = document.getElementById("history-filter-container");
+
+    if (!container.hasChildNodes()) {
+        loadHistoryFilters();
+    }
+
+    fetchHistoryGames(currWriter.writer_id, historyFilters);
+};
+
+window.onload = async function() {
+    const user = netlifyIdentity.currentUser();
+
+    if (!user) return;
+
+    await fetchWriterData(user); 
+            
+    const scheduledTabId = "scheduled-games";
+    const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
+    const scheduledTab = document.getElementById(scheduledTabId);
+
+            
+    const allTabs = document.getElementsByClassName("tab-content");
+    const allButtons = document.getElementsByClassName("tab-button");
+    for (let tab of allTabs) tab.style.display = "none";
+    for (let btn of allButtons) btn.classList.remove("active-tab");
+
+    scheduledTab.style.display = "flex";
+    scheduledButton.classList.add("active-tab");
+
+            
+    const filterContainer = document.getElementById("scheduled-games-filter-container");
+    if (!filterContainer.hasChildNodes()) {
+        createGamesFilter("scheduled-games-filter-container", filters => {
+            fetchMySchedule(currWriter.writer_id, filters);
+        });
+    }
+
+    await fetchMySchedule(currWriter.writer_id, myScheduleFilters);
+ };
+
+window.showTab = function(event, tabId) {
+    const tabs = document.getElementsByClassName("tab-content");
+    const buttons = document.getElementsByClassName("tab-button");
+
+    for (let tab of tabs) tab.style.display = "none";
+    for (let btn of buttons) btn.classList.remove("active-tab");
+
+    document.getElementById(tabId).style.display = "flex";
+    event.currentTarget.classList.add("active-tab");
+
+    if (tabHandlers[tabId]) {
+        tabHandlers[tabId]();
+    }
+};
+//#endregion
+
+//#region Signup / Remove 
+
+async function signup(gameId) {
+    console.log("Game ID: ", gameId, "  Writer ID: ", currWriter.writer_id);
+
+    try {
+        const response = await fetch("/.netlify/functions/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ gameId: gameId, writerId: currWriter.writer_id })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert("Game successfully added to assignments!");
+
+            fetchAvailableGames(availableFilters);
+        } else {
+            alert("Failed to add game to assignments.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Error adding game to assignments.");
+    }
+} 
+
+async function remove(gameId) {
+    console.log("Game ID: ", gameId);
+
+    try {
+        const response = await fetch("/.netlify/functions/remove", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ gameId: gameId})
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert("Game successfully removed from schedule");
+            
+            fetchMySchedule(currWriter.writerId, myScheduleFilters);
+        } else {
+            alert("Failed to remove game to schedule.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Error removing game from assignments.");
+    }
+}     
+
+//#endregion
+
+//#region Invoice
+
+function openInvoiceModal() {
+    document.getElementById("invoice-modal").style.display = "flex";
+}
+
+document.getElementById("confirm-invoice").addEventListener("click", async () => {
+    const date = document.getElementById("invoice-date-input").value;
+    const total = document.getElementById("invoice-total-input").value;
+    const link = document.getElementById("invoice-link-input").value;
+
+    if (!date || !total) {
+        alert("Please fill in the date and total.");
+        return;
+    }
+
+    await addInvoice(currWriter.writer_id, date, total, link);
+    document.getElementById("invoice-modal").style.display = "none";
+    
+    fetchInvoices(currWriter.writer_id);
+});
+
+async function addInvoice(writerId, date, total, link) {
+    try {
+        const response = await fetch("/.netlify/functions/add-invoice", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ writerId, date, total, link })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            alert("Invoice successfully added!");
+        } else {
+            alert("Failed to add invoice.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Error adding invoice.");
+    }
+}
+//#endregion
+
+//#region Modals
+document.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modal = btn.closest(".modal");
+
+        if (modal) modal.style.display = "none";
+    });
+});
+
+window.addEventListener("click", (event) => {
+    document.querySelectorAll(".modal").forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+ //#endregion
+
+//#region Functions (Times, Dates, PDFs, etc)
+function openPDF(path) {
+    if (path !== "") {
+        window.open(path, "_blank");
+    }
+}
+
+function toggleResources() {
+    const list = document.getElementById("resources-list");
+
+    if (list.style.display === "block") {
+        list.style.display = "none";
+    } else {
+        list.style.display = "block";
+    }
+}
+
+function convertTo12Hour(time24) {
+    const [hour, minute] = time24.split(":");
+    let h = parseInt(hour);
+    const ampm = h >= 12 ? "PM" : "AM";
+
+    h = h % 12;
+    if (h === 0) h = 12;
+
+    return `${h}:${minute} ${ampm}`;
+}
+
+function convertTo24Hour(timeStr) {
+    if (!timeStr) return "";
+
+    const [time, modifier] = timeStr.split(" "); // "7:00", "PM"
+    let [hours, minutes] = time.split(":");
+
+    hours = parseInt(hours);
+
+    if (modifier === "PM" && hours !== 12) {
+        hours += 12;
+    }
+
+    if (modifier === "AM" && hours === 12) {
+        hours = 0;
+    }
+
+    // format to HH:MM
+    return `${hours.toString().padStart(2, "0")}:${minutes}`;
+}
+
+function formatDate(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+function formatDateWithYear(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+
+function formatDateWithYearNoDOW(dateStr) {
+  return new Date(dateStr + "T00:00:00").toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+//#endregion
