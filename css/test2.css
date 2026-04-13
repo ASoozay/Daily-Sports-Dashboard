@@ -1326,6 +1326,7 @@ body {
 
     /* Size/Shape */
     width: 100%;
+    min-height: 0;
     padding: 1% 0 0 1px;
 
     /* Background */
@@ -2482,7 +2483,6 @@ body {
     /* Layout */
 
     /* Size/Shape */
-    height: 80%;
     max-width: 90%;
     margin: 5% auto;
     border-radius: 16px;
@@ -2520,6 +2520,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
+        height: 90%;
         width: 250px;
         padding: 8px 6px;
         border-width: 2px;
@@ -2550,6 +2551,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
+        height: 60%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -2580,6 +2582,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
+        height: 60%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;

@@ -419,10 +419,35 @@ tabHandlers["invoices"] = function() {
 };
 
 tabHandlers["history"] = function() {
-    const container = document.getElementById("history-filter-container");
+    const filterContainer = document.getElementById("history-filter-container");
 
-    if (!container.hasChildNodes()) {
-        loadHistoryFilters();
+    if (!filterContainer.hasChildNodes()) {
+        loadHistoryFilters(); 
+
+        const container = document.getElementById("history-filter-container");
+        const boxes = container.querySelectorAll(".filter-box, .history-month-box, .history-location-box");
+
+        boxes.forEach(box => {
+            box.addEventListener("click", () => {
+                box.classList.toggle("active");
+
+                const value = box.dataset.value;
+
+                if (box.closest(".sport-options")) {
+                    toggleFilterValue(historyFilters.sports, value);
+                }
+
+                if (box.closest(".location-options")) {
+                    toggleFilterValue(historyFilters.locations, value);
+                }
+
+                if (box.closest(".month-options")) {
+                    toggleFilterValue(historyFilters.months, value);
+                }
+
+                fetchHistoryGames(currWriter.writer_id, historyFilters);
+            });
+        });
     }
 
     fetchHistoryGames(currWriter.writer_id, historyFilters);
@@ -477,8 +502,8 @@ window.showTab = function(event, tabId) {
 
 //#region Signup / Remove 
 
-async function signup(gameId) {
-    console.log("Game ID: ", gameId, "  Writer ID: ", currWriter.writer_id);
+async function signup(gameId, writerId) {
+    console.log("Game ID: ", gameId, "  Writer ID: ", writerId);
 
     try {
         const response = await fetch("/.netlify/functions/signup", {
@@ -486,7 +511,7 @@ async function signup(gameId) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ gameId: gameId, writerId: currWriter.writer_id })
+            body: JSON.stringify({ gameId: gameId, writerId: writerId })
         });
 
         const data = await response.json();

@@ -128,7 +128,7 @@ async function fetchAllScheduledGames(writerId, filters = { sports: [], location
 
             await remove(gameId);
 
-            fetchAllScheduledGames(currWriter.writer_id, { sports: [], locations: [] });
+            fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
         });
     });
 }   
