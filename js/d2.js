@@ -153,6 +153,30 @@ tabHandlers["all-games"] = function() {
 
 //#region Modals
 
+async function openAssignModal(gameId) {
+    currGameId = gameId;
+
+    await loadWriters();
+
+    document.getElementById("assign-modal").style.display = "flex";
+    }   
+
+    const assignModal = document.getElementById("assign-modal");
+
+    document.getElementById("confirm-assign").onclick = async () => {
+
+    const writerId = document.getElementById("writer-select").value;
+
+    if (!writerId) {
+        alert("Please select a writer");
+        return;
+    }
+
+    await signup(currGameId, writerId);
+
+    assignModal.style.display = "none";
+};
+
 async function openAddGameModal() {
     await loadSports("sport-input");
 

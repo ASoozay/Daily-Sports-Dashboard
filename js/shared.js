@@ -180,7 +180,29 @@ async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
         const gameBox = document.createElement("div");
         gameBox.classList.add("game-box");
 
-        gameBox.innerHTML = `
+        if(currWriter.position == "Writer"){
+            gameBox.innerHTML = `
+            <div class = "sport-container">
+                <div class = "sport-box">${sport}</div>
+                <div class = "notes-box">${notes}</div> 
+            </div>
+            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+            <div class = "where">${where}</div>
+            <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            <div class = "recap-container">
+                <div class="${recap_css}"></div>
+                <p class="recap-location">${location}</p>
+            </div>
+            <div class = "date">${formatDate(date)}</div>
+            <div class = "time">${time}</div>
+            <div class = "options-container"> 
+                <button class = "add" data-game-id = "${gameId}">ADD</button>
+            </div>    
+            `;``
+        }
+
+        if(currWriter.position == "Editor"){
+            gameBox.innerHTML = `
             <div class = "sport-container">
                 <div class = "sport-box">${sport}</div>
                 <div class = "notes-box">${notes}</div> 
@@ -200,6 +222,8 @@ async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
                 <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
             </div>    
             `;``
+        }
+        
 
         container.appendChild(gameBox);
 
@@ -231,12 +255,12 @@ async function fetchInvoices(writerId) {
         const link = invoice.link;
 
         const invoiceBox = document.createElement("div");
-        invoiceBox.classList.add("invoice-history-box");
+        invoiceBox.classList.add("invoice-entry-box");
         invoiceBox.style.cursor = "pointer";
 
         invoiceBox.innerHTML = `
-            <div class = "invoice-history-box-date">${formatDateWithYearNoDOW(date)}</div>
-            <div class = "invoice-history-box-total">$${total}</div>
+            <div class = "invoice-entry-box-date">${formatDateWithYearNoDOW(date)}</div>
+            <div class = "invoice-entry-box-total">$${total}</div>
         `;
                 
         invoiceBox.addEventListener("click", () => {
@@ -291,7 +315,7 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
                 <div class = "notes-box">${notes}</div> 
             </div>
             <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
-            div class = "where">${where}</div>
+            <div class = "where">${where}</div>
             <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
             <div class = "recap-container">
                 <div class="${recap_css}"></div>
