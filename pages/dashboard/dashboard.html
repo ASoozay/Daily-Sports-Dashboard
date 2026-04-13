@@ -184,11 +184,12 @@
     </div>
 </template>
 
-<div id="invoice-modal" class=" modal invoice-modal">
+<div id="invoice-modal" class= "modal">
     <div class="add-invoice-modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Add Invoice</h2>
-
+        <div class = "modal-header">
+            <h2>Add Invoice</h2>
+            <span class="close-button">&times;</span>
+    </div>
         <input type = "date" id="invoice-date-input" class = "add-invoice-box" placeholder="Date">
         <input type = "number" id="invoice-total-input" class = "add-invoice-box" placeholder="Total Amount">
         <input type = "text" id="invoice-link-input" class = "add-invoice-box" placeholder="Link to Invoice (Optional)">

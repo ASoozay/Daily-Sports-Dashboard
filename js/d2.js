@@ -142,11 +142,11 @@ tabHandlers["all-games"] = function() {
     if (!container.hasChildNodes()) {
         createGamesFilter("all-games-filter-container", filters => {
             scheduleFilters = filters;
-            fetchAllScheduledGames(currWriter.writer_id, scheduleFilters);
+            fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
         });
     }
 
-    fetchAllScheduledGames(currWriter.writer_id, scheduleFilters);
+    fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
 };
 
 //#endregion

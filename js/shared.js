@@ -299,7 +299,7 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
             </div>
             <div class = "date">${formatDateWithYear(date)}</div>
             <div class = "time">${time}</div>   
-        `;``
+        `;
 
         container.appendChild(gameBox);
     });
@@ -369,12 +369,12 @@ tabHandlers["scheduled-games"] = function() {
 
     if (!container.hasChildNodes()) {
         createGamesFilter("scheduled-games-filter-container", filters => {
-            scheduleFilters = filters;
-            fetchMySchedule(currWriter.writer_id, scheduleFilters);
+            myScheduleFilters = filters;
+            fetchMySchedule(currWriter.writer_id, myScheduleFilters);
         });
     }
 
-    fetchMySchedule(currWriter.writer_id, scheduleFilters);
+    fetchMySchedule(currWriter.writer_id, myScheduleFilters);
 };
 
 tabHandlers["available-games"] = function() {
