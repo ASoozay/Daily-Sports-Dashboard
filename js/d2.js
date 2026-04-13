@@ -141,7 +141,7 @@ tabHandlers["all-games"] = function() {
 
     if (!container.hasChildNodes()) {
         createGamesFilter("all-games-filter-container", filters => {
-            scheduleFilters = filters;
+            allScheduledFilters = filters;
             fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
         });
     }
