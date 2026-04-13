@@ -4,11 +4,13 @@
 body {
     background-color: whitesmoke;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    overflow: hidden;
 }
 
 .main {
     display: flex;
     flex: 1;
+    min-height: 0;
 }
 
 .page {
@@ -2551,7 +2553,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 60%;
+        height: 55%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -2582,7 +2584,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 60%;
+        height: 55%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -2614,7 +2616,6 @@ body {
     /* Layout */
 
     /* Size/Shape */
-    height: 90%;
     max-width: 90%;
     margin: 5% auto;
     border-radius: 16px;
@@ -2652,6 +2653,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
+        height: 90%;
         width: 250px;
         padding: 8px 6px;
         border-width: 2px;
@@ -2682,6 +2684,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
+        height: 55%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -2712,6 +2715,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
+        height: 55%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
