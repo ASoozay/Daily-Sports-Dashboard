@@ -344,32 +344,51 @@ function loadHistoryFilters() {
 
 //#region Filters
 
-function createGamesFilter(containerId, onFilterChange) {
+function createGamesFilter(containerId, filters, onFilterChange) {
+    const container = document.getElementById(containerId);
+
+    container.innerHTML = "";
+
     const template = document.getElementById("games-filter-template");
     const clone = template.content.cloneNode(true);
-
-    const container = document.getElementById(containerId);
     container.appendChild(clone);
 
     const boxes = container.querySelectorAll(".filter-box");
 
     boxes.forEach(box => {
+        const value = box.dataset.value;
+        const isSport = box.closest(".sport-options");
+        const isLocation = box.closest(".location-options");
+
+        if (
+            (isSport && filters.sports.includes(value)) ||
+            (isLocation && filters.locations.includes(value))
+        ) {
+            box.classList.add("active");
+        }
+
         box.addEventListener("click", () => {
-            box.classList.toggle("active");
+            let targetArray = null;
 
-            const value = box.dataset.value;
-            const isSport = box.closest(".sport-options");
-            const isLocation = box.closest(".location-options");
+            if (isSport) targetArray = filters.sports;
+            if (isLocation) targetArray = filters.locations;
 
-            if (isSport) {
-                toggleFilterValue(activeFilters.sports, value);
+            if (!targetArray) return;
+
+            const index = targetArray.indexOf(value);
+
+            if (index > -1) {
+                targetArray.splice(index, 1);
+                box.classList.remove("active");
+            } else {
+                targetArray.push(value);
+                box.classList.add("active");
             }
 
-            if (isLocation) {
-                toggleFilterValue(activeFilters.locations, value);
-            }
-
-            onFilterChange(activeFilters);
+            onFilterChange({ 
+                sports: [...filters.sports], 
+                locations: [...filters.locations] 
+            });
         });
     });
 }
@@ -392,23 +411,28 @@ tabHandlers["scheduled-games"] = function() {
     const container = document.getElementById("scheduled-games-filter-container");
 
     if (!container.hasChildNodes()) {
-        createGamesFilter("scheduled-games-filter-container", filters => {
-            myScheduleFilters = filters;
-            fetchMySchedule(currWriter.writer_id, myScheduleFilters);
-        });
+        createGamesFilter(
+            "scheduled-games-filter-container",
+            myScheduleFilters,
+            filters => {
+                fetchMySchedule(currWriter.writer_id, filters);
+            });
     }
 
     fetchMySchedule(currWriter.writer_id, myScheduleFilters);
 };
 
-tabHandlers["available-games"] = function() {
+tabHandlers["available-games"] = function () {
     const container = document.getElementById("available-games-filter-container");
 
     if (!container.hasChildNodes()) {
-        createGamesFilter("available-games-filter-container", filters => {
-            availableFilters = filters;
-            fetchAvailableGames(availableFilters);
-        });
+        createGamesFilter(
+            "available-games-filter-container",
+            availableFilters,
+            filters => {
+                fetchAvailableGames(filters);
+            }
+        );
     }
 
     fetchAvailableGames(availableFilters);
