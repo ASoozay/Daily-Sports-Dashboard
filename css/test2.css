@@ -5,6 +5,7 @@ body {
     background-color: whitesmoke;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     overflow: hidden;
+    margin: 0px;
 }
 
 .main {
@@ -1324,8 +1325,9 @@ body {
 .games-container {
     /* Layout */
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-rows: min-content;
+    align-content: start; 
 
     /* Size/Shape */
     width: 100%;
