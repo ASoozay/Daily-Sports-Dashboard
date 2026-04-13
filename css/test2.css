@@ -1324,7 +1324,8 @@ body {
 .games-container {
     /* Layout */
     flex: 1;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
     /* Size/Shape */
     width: 100%;
