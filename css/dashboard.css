@@ -267,7 +267,8 @@ body {
 #production-tab {
     flex: 1;
     display: flex;
-    width: 95%;
+    height: 95%;
+    width: 100%;
     min-height: 0;
     background-color: aqua;
 }
