@@ -328,14 +328,16 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
             <div class = "matchup-container">
                 <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
                 <div class = "where">${where}</div>
-            <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
             </div>
             <div class = "recap-container">
                 <div class="${recap_css}"></div>
                 <p class="recap-location">${location}</p>
             </div>
-            <div class = "date">${formatDateWithYear(date)}</div>
-            <div class = "time">${time}</div>   
+            <div class = "when-container">
+                <div class = "date">${formatDateWithYear(date)}</div>
+                <div class = "time">${time}</div>   
+            </div>
         `;
 
         container.appendChild(gameBox);
