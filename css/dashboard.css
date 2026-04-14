@@ -4,8 +4,8 @@
 body {
     background-color: whitesmoke;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
-    overflow: auto;
-    margin: 0px;
+    overflow: hidden;
+    margin-left: 2px;
 }
 
 .main {
@@ -19,6 +19,12 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .body {/* Size / Shape */
+    margin-left: 2px;
+    }
+}    
 /* #endregion */
 
 /* #region account */
@@ -258,15 +264,15 @@ body {
     /* Misc */    
 }
 
-#sheet-tab {
+#production-tab {
     flex: 1;
     display: flex;
-    width: 100%;
+    width: 95%;
     min-height: 0;
     background-color: aqua;
 }
 
-#sheet-tab iframe {
+#production-tab iframe {
     flex: 1;     
     display: block;         
     width: 100%;
@@ -3164,12 +3170,12 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 15px;
+        height: 25px;
 
         /* Background */
 
         /* Text */ 
-        font-size: 4px;
+        font-size: 12px;
         
         /* Misc */
     }
