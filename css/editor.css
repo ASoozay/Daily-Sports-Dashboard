@@ -382,6 +382,7 @@
 
     /* Size/Shape */
     width: 100%;
+    margin-top: 10%;
     border: none;
     border-radius: 12px;
 
@@ -425,6 +426,7 @@
 
         /* Size/Shape */
         padding: 6px 0;
+        height: 50px;
 
         /* Background */
 
@@ -525,7 +527,7 @@
         /* Layout */
 
         /* Size/Shape */
-        height: 55%;
+        height: 70%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -656,7 +658,7 @@
         /* Layout */
 
         /* Size/Shape */
-        height: 55%;
+        height: 80%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -804,8 +806,7 @@
     /* Background */
     background-color: #360f5a;
 
-    /* Text */ 
-    font-weight: bold;
+    /* Text */
     color: white;
         
     /* Misc */
@@ -838,7 +839,7 @@
 
         /* Size/Shape */
         height: 50px;
-        margin-top: 50px;                       
+        margin-top: 20px;                       
         padding: 12px 0;
 
         /* Background */
@@ -882,7 +883,6 @@
     background-color: rgba(255, 0, 0, 0.676);
 
     /* Text */ 
-    font-weight: bold;
     color: white;
         
     /* Misc */    
