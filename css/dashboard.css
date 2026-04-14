@@ -369,6 +369,16 @@ body {
         
     /* Misc */    
 }
+
+@media screen and (max-width: 768px) {
+    .content {
+        /* Layout */
+        flex: 1;
+
+        /* Size/Shape */
+        width: 100%;
+    }
+}    
 /* #endregion */
 
 /* #region games-filter-container */
@@ -1313,17 +1323,23 @@ body {
     /* Layout */
     display: flex;
     align-items: center;
+    gap: 1%;
 
     /* Size/Shape */
     width: 95%;
+    max-width: 100%;
     border-color: gray;
+    box-sizing: border-box;
+    border-color: red;
+    border-style: solid;
 
     /* Background */
     background-color: rgb(211, 210, 210);
 
     /* Text */ 
         
-    /* Misc */    
+    /* Misc */ 
+    overflow: hidden;   
 }
 
 @media screen and (max-width: 768px){
@@ -1382,16 +1398,15 @@ body {
 /* #region sport-container */
 .sport-container {
     /* Layout */
-     display: grid;
+    flex: 1;
+    display: grid;
     align-items: center;
     justify-content: left;
 
     /* Size/Shape */
-    height: 100%;
-    width: 11%;
-    margin-top: 1%;
-    margin-left:1%;
-    margin-right: 2%;  
+    height: 90%;
+    min-width: 0;
+    margin-left: 1%;
 
     /* Background */
     background-color: transparent;
@@ -1402,49 +1417,6 @@ body {
     color: black;
         
     /* Misc */    
-}
-
-@media screen and (max-width: 768px){
-    .sport-container {
-        /* Layout */
-
-        /* Size/Shape */
-
-        /* Background */
-
-        /* Text */ 
-        
-        /* Misc */
-
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1800px){
-    .sport-container {
-        /* Layout */
-
-        /* Size/Shape */
-
-        /* Background */
-
-        /* Text */ 
-        
-        /* Misc */
-    }
-}
-
-@media screen and (min-width: 1801px){
-    .sport-container {
-        /* Layout */
-
-        /* Size/Shape */
-
-        /* Background */
-
-        /* Text */ 
-        
-        /* Misc */
-    }
 }
 /* #endregion */
 
@@ -1457,14 +1429,14 @@ body {
 
     /* Size/Shape */
     height: 40%;
+    min-width: 0;
     margin-bottom: 8%;
-    margin-right: 5%;
+
 
     /* Background */
     background-color: transparent;
 
     /* Text */ 
-    font-size: x-large;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: black;
         
@@ -1480,6 +1452,7 @@ body {
         /* Background */
 
         /* Text */ 
+        font-size: small;
         
         /* Misc */
 
@@ -1494,7 +1467,8 @@ body {
 
         /* Background */
 
-        /* Text */ 
+        /* Text */
+        font-size: x-large; 
         
         /* Misc */
     }
@@ -1509,6 +1483,7 @@ body {
         /* Background */
 
         /* Text */ 
+        font-size: x-large;
         
         /* Misc */
     }
@@ -1525,12 +1500,12 @@ body {
 
     /* Size/Shape */
     height: 20%;
+    min-width: 0;
 
     /* Background */
     background-color: transparent;
 
-    /* Text */ 
-    font-size: medium;
+    /* Text */
     font-style: italic;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: black;
@@ -1546,7 +1521,8 @@ body {
 
         /* Background */
 
-        /* Text */ 
+        /* Text */
+        font-size: x-small; 
         
         /* Misc */
 
@@ -1561,7 +1537,8 @@ body {
 
         /* Background */
 
-        /* Text */ 
+        /* Text */
+        font-size: medium; 
         
         /* Misc */
     }
@@ -1575,21 +1552,44 @@ body {
 
         /* Background */
 
-        /* Text */ 
+        /* Text */
+        font-size: medium; 
         
         /* Misc */
     }
 }
 /* #endregion */
 
-/* #region washington-icon */
-.washington-icon {
+/* #region matchup-container */
+.matchup-container {
+    /* Layout */
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5%;
+
+    /*Size/Shape*/
+    height: 90%;
+    min-height: 0;
+    max-height: 100%;
+    margin-right: 4%;
+
+    /*Background*/
+    /*Text*/
+    /*Misc*/    
+}
+/* #endregion */
+
+/* #region washington-icon  / opp-icon */
+.washington-icon, .opp-icon {
     /* Layout */
     display: flex;
     align-self: center;
 
     /* Size/Shape */
     height: 80%;
+    min-width: 0;
     aspect-ratio: 1/1; 
     margin-right: 1%;
 
@@ -1599,49 +1599,6 @@ body {
         
     /* Misc */    
 } 
-
-@media screen and (max-width: 768px){
-    .washington-icon {
-        /* Layout */
-
-        /* Size/Shape */
-
-        /* Background */
-
-        /* Text */ 
-        
-        /* Misc */
-
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1800px){
-    .washington-icon {
-        /* Layout */
-
-        /* Size/Shape */
-
-        /* Background */
-
-        /* Text */ 
-        
-        /* Misc */
-    }
-}
-
-@media screen and (min-width: 1801px){
-    .washington-icon {
-        /* Layout */
-
-        /* Size/Shape */
-
-        /* Background */
-
-        /* Text */ 
-        
-        /* Misc */
-    }
-}
 /* #endregion */
 
 /* #region where */
@@ -1652,52 +1609,52 @@ body {
 
     /* Size/Shape */
     height: 30%;
-    margin-right: 1%;    
+    min-width: 0;   
 
     /* Background */
 
     /* Text */
-    font-size: x-large;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: black;     
         
     /* Misc */
 }
-/* #endregion */ 
 
-/* #region opp-icon */
-.opp-icon {
-    /* Layout */
-    display: flex;
-    align-self: center;
-
-    /* Size/Shape */
-    height: 80%;
-    aspect-ratio: 1/1; 
-    margin-right: 8%;    
-
-    /* Background */
-
-    /* Text */ 
-        
-    /* Misc */
+@media screen and (max-width: 768px) {
+    .where {
+        /* Text */
+        font-size: small;
+    }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+    .where {
+        /* Text */
+        font-size: x-large;
+    }
+}
 
-/* #endregion */
-   
+@media screen and (min-width: 1801px) {
+    .where {
+        /* Text */
+        font-size: x-large;
+    }
+}
+/* #endregion */ 
+
 /* #region recap-container */
 .recap-container {
     /* Layout */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
+    gap: 6%; 
 
     /* Size/Shape */
-    width: 10%;
-    height: 80%;
-    margin-top: 1%;
-    margin-right: 8%;
+    height: 90%;
+    padding-top: 3%;
+    min-width: 0;
 
     /* Background */
     background-color: transparent;
@@ -1712,21 +1669,20 @@ body {
 /* #region home-recap / away-recap */
 .home-recap, .away-recap {
     /* Layout */
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 
     /* Size/Shape */
-    height: 80%;
-    width: 100%;
-    margin-bottom: 5%;
+    height: 50%;
+    min-width: 0;
     border-radius: 10px;
 
     /* Background */
 
     /* Text */ 
     text-align: center;
-    font-size: large;
     font-weight: bold;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
             
@@ -1748,7 +1704,7 @@ body {
 }
 
 .home-recap::before {
-    content: "Home recap";
+    content: "Home Recap";
 }
 
 .away-recap{
@@ -1766,24 +1722,46 @@ body {
 }
 
 .away-recap::before {
-            content: "Away recap";
+            content: "Away Recap";
+}
+
+@media screen and (max-width: 768px) {
+.home-recap, .away-recap {
+    /* Text */
+    font-size: small;
+}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+.home-recap, .away-recap {
+    /* Text */
+    font-size: medium;
+}
+}
+
+@media screen and (min-width: 1801px) {
+.home-recap, .away-recap {
+    /* Text */
+    font-size: large;
+}
 }
 /* #endregion */
 
 /* #region recap-location */
 .recap-location {
     /* Layout */
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;    
 
     /* Size/Shape */
+    min-width: 0;
 
     /* Background */
 
     /* Text */ 
     text-align: center;
-    font-size: large;
     font-style: italic;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: grey;
@@ -1791,27 +1769,71 @@ body {
     /* Misc */
 }
 
+@media screen and (max-width: 768px) {
+    .recap-location {
+        /* Text */
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+    .recap-location {
+        /* Text */
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 1801px) {
+    .recap-location {
+        /* Text */
+        font-size: large;
+    }
+}
+
 /* #endregion */
  
 /* #region when-container */
 .when-container {
     /* Layout */
+    flex: 1.5;
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
     justify-content: center;
+    gap: 10%;
 
     /* Size/Shape */
     height: 90%;
-    width: 15%;
-    margin-right: 3%;
+    min-width: 0;
 
     /* Background */
 
     /* Text */ 
+    text-align: center;
         
     /* Misc */
+}
+
+@media screen and (max-width: 768px) {
+    .when-container {
+        /* Text */
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+    .when-container {
+        /* Text */
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 1801px) {
+    .when-container {
+        /* Text */
+        font-size: large;
+    }
 }
 /* #endregion */
 
@@ -1821,17 +1843,30 @@ body {
     display: flex;
 
     /* Size/Shape */
-    margin-right: 6%; 
+    min-width: 0;
 
     /* Background */
 
     /* Text */ 
     text-align: center;
-    font-size: x-large;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: black;
         
     /* Misc */    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .date {
+        /*Text */
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 1801px) {
+    .date {
+        /*Text */
+        font-size: x-large;
+    }
 }
 /* #endregion */    
 
@@ -1841,33 +1876,54 @@ body {
     display: flex;
 
     /* Size/Shape */
-    margin-right: 6%;
+    min-width: 0;
 
     /* Background */
 
     /* Text */ 
     text-align: center;
-    font-size: x-large;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: black;
         
     /* Misc */    
+}
+
+@media screen and (max-width: 768px){
+    .time {
+        /*Text */
+        font-size: small;
+    }    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .time {
+        /*Text */
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 1801px) {
+    .time {
+        /*Text */
+        font-size: x-large;
+    }
 }
 /* #endregion */
 
 /* #region options-container */
 .options-container {
     /* Layout */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
-    justify-content: center;    
+    justify-content: center; 
+    gap: 10%;   
 
     /* Size/Shape */
-    height: 80%;
-    width: 10%;  
-    margin-right: 2%; 
+    height: 90%;
+    min-width: 0; 
 
     /* Background */
 
@@ -1899,8 +1955,7 @@ body {
     justify-content: center;    
 
     /* Size/Shape */
-    height: 30%;
-    width: 100%;
+    
     border: none;
 
     /* Background */
@@ -2264,6 +2319,7 @@ body {
     /* Size/Shape */
     height: 100%;
     max-height: 800px;
+    margin-left: 2%;
     margin-top: 2%;
     border-width: 2px;
     border-style: solid;

@@ -115,18 +115,21 @@ async function fetchMySchedule(writerId, filters = { sports: [], locations: [] }
                 <div class = "sport-box">${sport}</div>
                 <div class = "notes-box">${notes}</div> 
             </div>
-            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
-            <div class = "where">${where}</div>
-            <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            <div class = "matchup-container>
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            </div>
             <div class = "recap-container">
                 <div class="${recap_css}"></div>
                 <p class="recap-location">${location}</p>
             </div>
-            <div class = "date">${formatDate(date)}</div>
-            <div class = "time">${time}</div>
+            <div class = "when-container">
+                <div class = "date">${formatDate(date)}</div>
+                <div class = "time">${time}</div>
+            </div>    
             <div class = "options-container">
                 <button class = "remove" data-game-id = "${gameId}">REMOVE</button>
-                <button class = "edit" onclick="openEditGameModal(${gameId})">EDIT</button>
             </div>
             `;
 
@@ -186,15 +189,19 @@ async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
                 <div class = "sport-box">${sport}</div>
                 <div class = "notes-box">${notes}</div> 
             </div>
-            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
-            <div class = "where">${where}</div>
-            <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            <div class = "matchup-container">
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            </div>    
             <div class = "recap-container">
                 <div class="${recap_css}"></div>
                 <p class="recap-location">${location}</p>
             </div>
-            <div class = "date">${formatDate(date)}</div>
-            <div class = "time">${time}</div>
+            <div class = "when-container">
+                <div class = "date">${formatDate(date)}</div>
+                <div class = "time">${time}</div>
+            </div>    
             <div class = "options-container"> 
                 <button class = "add" data-game-id = "${gameId}">ADD</button>
             </div>    
@@ -207,15 +214,19 @@ async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
                 <div class = "sport-box">${sport}</div>
                 <div class = "notes-box">${notes}</div> 
             </div>
-            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
-            <div class = "where">${where}</div>
-            <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            <div class = "matchup-container">
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
+                <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            </div>    
             <div class = "recap-container">
                 <div class="${recap_css}"></div>
                 <p class="recap-location">${location}</p>
             </div>
-            <div class = "date">${formatDate(date)}</div>
-            <div class = "time">${time}</div>
+            <div class = "when-container">
+                <div class = "date">${formatDate(date)}</div>
+                <div class = "time">${time}</div>
+            </div>    
             <div class = "options-container"> 
                 <button class = "add" data-game-id = "${gameId}">ADD</button>
                 <button class= "assign" onclick="openAssignModal(${gameId})">ASSIGN</button>

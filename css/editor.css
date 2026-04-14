@@ -84,6 +84,7 @@
 /* #region writer */
 .writer {
     /* Layout */
+    flex: 1;
     display: flex;
     align-self: center;
     align-items: center;
@@ -91,13 +92,11 @@
 
     /* Size/Shape */
     height: 90%;
-    width: 10%;
-    margin-right: 3%;
 
     /* Background */
 
     /* Text */ 
-    font-size: x-large;
+    font-size: large;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
     color: black;
         
@@ -113,7 +112,6 @@
     justify-content: center;    
 
     /* Size/Shape */
-    height: 30%;
     width: 100%;
     border: none;
 
