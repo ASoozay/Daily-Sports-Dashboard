@@ -102,7 +102,7 @@ async function fetchAllScheduledGames(writerId, filters = { sports: [], location
                 <div class = "sport-box">${sport}</div>
                 <div class = "notes-box">${notes}</div> 
             </div>
-            <div class = "matchup-container>
+            <div class = "matchup-container">
                 <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
                 <div class = "where">${where}</div>
                 <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
