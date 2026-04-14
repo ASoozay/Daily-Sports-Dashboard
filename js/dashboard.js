@@ -325,9 +325,11 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
                 <div class = "sport-box">${sport}</div>
                 <div class = "notes-box">${notes}</div> 
             </div>
-            <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
-            <div class = "where">${where}</div>
+            <div class = "matchup-container">
+                <img class = "washington-icon" src = "/images/schools/Washington.webp" alt = "UW">
+                <div class = "where">${where}</div>
             <img class="opp-icon" src="/images/schools/${opp}.webp" alt="${opp}">
+            </div>
             <div class = "recap-container">
                 <div class="${recap_css}"></div>
                 <p class="recap-location">${location}</p>
