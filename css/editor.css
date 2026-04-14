@@ -527,7 +527,7 @@
         /* Layout */
 
         /* Size/Shape */
-        height: 70%;
+        height: 75%;
         width: 450px;
         padding: 30px 25px;
         border-width: 10px;
@@ -814,6 +814,11 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+#confirm-add:hover, #confirm-edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
 @media screen and (max-width: 768px){
     .confirm-add, .confirm-edit {
         /* Layout */
@@ -888,6 +893,11 @@
     /* Misc */    
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#delete-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 @media screen and (max-width: 768px){
