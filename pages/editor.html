@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 
 <body>
-<div class="page">
+    <div class="page">
 
     <div class="account">
         <h6 id = "greetingHeader"></h6>
@@ -19,6 +19,7 @@
     </div>
 
     <div class="tab-container">
+        <button class="tab-button" onclick="showTab(event, 'production-tab')">Production</button>
         <button class="tab-button" onclick="showTab(event, 'all-games')">All Scheduled</button> 
         <button class="tab-button" onclick="showTab(event, 'scheduled-games')">My Schedule</button>
         <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
@@ -28,63 +29,71 @@
     </div>
 
     <div class="main">
-    <div class="content">
+        <div class="content">
+
+            <div id="production-tab" class="tab-content">
+                <iframe 
+                src="https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit"
+                width="100%" 
+                height="100%" 
+                style="border:none;">
+                </iframe>
+            </div>        
     
-    <div id = "all-games" class = "tab-content">
-        <div id = "all-games-filter-container" class = "games-filter-container"></div>
-        <div id = "all-games-container" class = "games-container"></div>
-    </div>    
+            <div id = "all-games" class = "tab-content">
+                <div id = "all-games-filter-container" class = "games-filter-container"></div>
+                <div id = "all-games-container" class = "games-container"></div>
+            </div>    
 
-    <div id="scheduled-games" class="tab-content">
-        <div id="scheduled-games-filter-container" class="games-filter-container"></div>       
-        <div id = "scheduled-games-container" class = "games-container"></div>
-    </div>
+            <div id="scheduled-games" class="tab-content">
+                <div id="scheduled-games-filter-container" class="games-filter-container"></div>       
+                <div id = "scheduled-games-container" class = "games-container"></div>
+            </div>
 
-    <div id = "available-games" class="tab-content">
-        <div id="available-games-filter-container" class="games-filter-container"></div>
-        <div id = "available-games-container" class = "games-container"></div>
-    </div>
+            <div id = "available-games" class="tab-content">
+                <div id="available-games-filter-container" class="games-filter-container"></div>
+                <div id = "available-games-container" class = "games-container"></div>
+            </div>
 
-    <div id="invoices" class="tab-content">
-        <div class = "invoice-container">
-            <div class = "invoice-history-container">
-                <div class = "invoice-history-title">Invoice History</div>
-                <div id = "invoice-entries-container" class = "invoice-entries-container">                                                                                                              
+            <div id="invoices" class="tab-content">
+                <div class = "invoice-container">
+                    <div class = "invoice-history-container">
+                        <div class = "invoice-history-title">Invoice History</div>
+                        <div id = "invoice-entries-container" class = "invoice-entries-container">                                                                                                              
+                        </div>
+                    </div>
+
+                    <div class="invoice-options-container">
+                        <div class="invoice-option">
+                            <a class="invoice-option-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240" target="_blank">
+                            <img class="invoice-icon" src="/pages/dashboard/invoice/Spreadsheet.png" alt="Invoice 1">Invoice Template</a>
+                        </div>
+                        <div class="invoice-option">
+                            <a class="invoice-option-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" target="_blank">
+                            <img class="invoice-icon" src="/pages/dashboard/invoice/Upload.png" alt="Invoice 1">Submit Invoice</a>
+                        </div>
+                        <div class="invoice-option">
+                            <button class="invoice-option-box" onclick = "openInvoiceModal()">
+                            <img class="invoice-icon" src="/pages/dashboard/invoice/History.png" alt="Invoice 1">Add to History</button>
+                        </div>
+                        <div class="invoice-option">
+                            <a class="invoice-option-box" href="/pages/dashboard/invoice/Pay-Scale.png" target="_blank">
+                            <img class="invoice-icon" src="/pages/dashboard/invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="invoice-options-container">
-                <div class="invoice-option">
-                    <a class="invoice-option-box" href="https://docs.google.com/spreadsheets/d/1Dq2EpVXIapIGQtLrrnhUTMovIyf2CjOqLjCmQtBYDfE/edit?gid=1394362240#gid=1394362240" target="_blank">
-                    <img class="invoice-icon" src="/pages/dashboard/invoice/Spreadsheet.png" alt="Invoice 1">Invoice Template</a>
-                </div>
-                <div class="invoice-option">
-                    <a class="invoice-option-box" href="https://docs.google.com/forms/d/e/1FAIpQLSd2SmGoedz4DyvqfMi69UCjnuZslxs0-WqRdL_7uLBIUHDgoQ/viewform" target="_blank">
-                    <img class="invoice-icon" src="/pages/dashboard/invoice/Upload.png" alt="Invoice 1">Submit Invoice</a>
-                </div>
-                <div class="invoice-option">
-                    <button class="invoice-option-box" onclick = "openInvoiceModal()">
-                    <img class="invoice-icon" src="/pages/dashboard/invoice/History.png" alt="Invoice 1">Add to History</button>
-                </div>
-                <div class="invoice-option">
-                    <a class="invoice-option-box" href="/pages/dashboard/invoice/Pay-Scale.png" target="_blank">
-                    <img class="invoice-icon" src="/pages/dashboard/invoice/Pay.png" alt="Invoice 1">Pay Scale</a>
-                </div>
+            <div id="history" class="tab-content">
+                <div id = "history-filter-container" class = "history-filter-container"></div>
+                <div id ="history-container" class = "games-container"></div>
             </div>
+
+            <div id = "settings" class = "tab-content">
+            </div>
+
         </div>
-    </div>
 
-     <div id="history" class="tab-content">
-        <div id = "history-filter-container" class = "history-filter-container"></div>
-        <div id ="history-container" class = "games-container"></div>
-    </div>
-
-    <div id = "settings" class = "tab-content">
-    </div>
-    </div>
-
-
-         <!-- CLOSE .content HERE -->
 
         <!-- Sidebar / Twitter feed -->
         <div class="links-container">
@@ -97,7 +106,8 @@
             <a href="https://www.instagram.com/uwdailysports/" target="_blank">Instagram</a>
             <a href="https://docs.google.com/document/d/1AbVTnk5L6iNMqlh9C_b17tAvUl_IknHFXK7T5YS08dg/edit?tab=t.0" target="_blank">The Daily Handbook</a>
         </div>
-    </div> <!-- CLOSE .main -->
+
+    </div> 
 
     <div class="bottom">
         <p>The Daily Sports 2026</p>
