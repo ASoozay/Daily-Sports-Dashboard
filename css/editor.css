@@ -1,4 +1,4 @@
-/* region production-tab */
+/* #region production-tab */
 #production-tab {
     flex: 1;
     display: flex;
@@ -17,6 +17,8 @@
     overflow: hidden;
 }
 /* #endregion
+
+/* #region add-game */
 
 /* #region add-game */
 .add-game {
