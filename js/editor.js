@@ -158,7 +158,7 @@ tabHandlers["production-tab"] = function() {
 
     if (!container.hasChildNodes()) {
         const iframe = document.createElement("iframe");
-        iframe.src = "https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit";
+        iframe.src = "https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit?gid=1543249032#gid=1543249032";
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.border = "none";

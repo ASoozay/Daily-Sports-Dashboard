@@ -263,23 +263,6 @@ body {
         
     /* Misc */    
 }
-
-#production-tab {
-    flex: 1;
-    display: flex;
-    width: 100%;
-    min-height: 0;
-    overflow: auto;
-}
-
-#production-tab iframe {
-    flex: 1;     
-    display: block;         
-    width: 100%;
-    min-height: 0;
-    height: 120%;
-    border: none;
-}
 /* #endregion */
 
 /* #region tab-button */
