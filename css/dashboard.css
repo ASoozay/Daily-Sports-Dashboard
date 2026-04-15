@@ -2262,7 +2262,7 @@ body {
         /* Background */
 
         /* Text */
-        font-size: 24px; 
+        font-size: 28px; 
         
         /* Misc */
     }
@@ -2277,6 +2277,7 @@ body {
         /* Background */
 
         /* Text */ 
+        font-size: 20px;
             
         /* Misc */        
     }
@@ -2680,11 +2681,13 @@ body {
     color: white;
         
     /* Misc */
-    transition: all 0.2s ease;    
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;  
 }
 
-.invoice-box:hover {
-    transform: translateY(-2px);
+.invoice-option-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 @media screen and (max-width: 768px){

@@ -1031,4 +1031,127 @@
 }
 /* #endregion */
 
+/* #region settings-container */
+.settings-container {
+    /* Layout */
+    flex: 1;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px){
+    .settings-container {  
+        /* Layout */
+        grid-template-columns: repeat(4, 200px);
+        gap: 50px;
+
+        /* Size/Shape */
+
+        /* Background */
+        
+
+        /* Text */ 
+            
+        /* Misc */
+    }
+}    
+/* #endregion
+
+    /* Layout */
+
+/* #region settings-option */
+.settings-option {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Size/Shape */
+    height: 200px;
+    width: 200px;
+    padding-top: 10%;
+    border-radius: 15px;
+
+    /* Background */
+    background-color: #360f5a;
+
+    /* Text */ 
+    color: white;
+        
+    /* Misc */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.settings-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+/* #endregion   
+
+/* #region settings-icon */
+
+/* #region settings-icon */
+.settings-icon {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size/Shape */
+    height: 50%;
+    width: 50%;
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */    
+}
+/* #endregion */
+
+/* #region settings-title */
+.settings-title {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size/Shape */
+    height: 30%;
+
+    /* Background */
+
+    /* Text */ 
+    text-align: center;
+    font-style: bold;
+        
+    /* Misc */  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+.settings-title {
+    font-size: 24px;
+}    
+}
+/* #endregion
+
+    /* Layout */
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
