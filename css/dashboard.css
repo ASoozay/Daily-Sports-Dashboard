@@ -935,7 +935,7 @@ body {
 @media screen and (min-width: 1801px){
     .history-sport-section{
         /* Layout */
-        grid-template-columns: repeat(6, 70px);
+        grid-template-columns: repeat(9, 70px);
 
         /* Size/Shape */
         gap: 15px;
