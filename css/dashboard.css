@@ -429,6 +429,7 @@ body {
         /* Text */ 
         
         /* Misc */
+        pointer-events: auto;
 
     }
 }
@@ -560,7 +561,7 @@ body {
 
     #filter-section-sport {
         /* Layout */
-        flex: 0 0 60%;
+        flex: 0 0 40%;
     }
 
     #filter-section-location {
@@ -1329,6 +1330,8 @@ body {
 @media screen and (max-width: 768px){
     .games-container {
         /* Layout */
+        position: relative;
+        z-index: 1;
 
         /* Size/Shape */
         row-gap: 5px;
@@ -1338,6 +1341,7 @@ body {
         /* Text */ 
         
         /* Misc */
+        pointer-events: auto;
 
     }
 }
