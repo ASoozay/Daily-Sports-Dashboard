@@ -2674,21 +2674,32 @@ body {
 
 button.invoice-option-box {
     /* Layout */
-    display: flex;              
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     /* Size/Shape */
+    border-radius: 30px;
 
     /* Background */
     background-color: #360f5a;
 
-    /* Text */ 
+    /* Text */
+    text-decoration: none;
+    text-align: center; 
+    font-weight: bold;
+    
+    color: white;
         
     /* Misc */
-    all: unset;                 
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button.invoice-option-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 @media screen and (max-width: 768px){
