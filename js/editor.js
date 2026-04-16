@@ -153,19 +153,6 @@ tabHandlers["all-games"] = function() {
     fetchAllScheduledGames(currWriter.writer_id, myScheduleFilters);
 };
 
-tabHandlers["production-tab"] = function() {
-    const container = document.getElementById("production-tab");
-
-    if (!container.hasChildNodes()) {
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit?gid=1543249032#gid=1543249032";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-
-        container.appendChild(iframe);
-    }
-};
 
 //#endregion
 

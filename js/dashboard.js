@@ -422,6 +422,20 @@ function toggleFilterValue(array, value) {
 //#region Tabs 
 window.tabHandlers = {};
 
+tabHandlers["production"] = function() {
+    const container = document.getElementById("production");
+
+    if (!container.hasChildNodes()) {
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit?gid=1543249032#gid=1543249032";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+
+        container.appendChild(iframe);
+    }
+};
+
 tabHandlers["scheduled-games"] = function() {
     const container = document.getElementById("scheduled-games-filter-container");
 
@@ -499,7 +513,7 @@ window.onload = async function() {
 
     await fetchWriterData(user); 
             
-    const scheduledTabId = "scheduled-games";
+    const scheduledTabId = "production";
     const scheduledButton = document.querySelector(`button[onclick="showTab(event, '${scheduledTabId}')"]`);
     const scheduledTab = document.getElementById(scheduledTabId);
 
@@ -512,15 +526,6 @@ window.onload = async function() {
     scheduledTab.style.display = "flex";
     scheduledButton.classList.add("active-tab");
 
-            
-    const filterContainer = document.getElementById("scheduled-games-filter-container");
-    if (!filterContainer.hasChildNodes()) {
-        createGamesFilter("scheduled-games-filter-container", filters => {
-            fetchMySchedule(currWriter.writer_id, filters);
-        });
-    }
-
-    await fetchMySchedule(currWriter.writer_id, myScheduleFilters);
  };
 
 window.showTab = function(event, tabId) {
