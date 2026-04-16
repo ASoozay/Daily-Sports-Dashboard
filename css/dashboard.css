@@ -938,7 +938,7 @@ body {
         grid-template-columns: repeat(9, 70px);
 
         /* Size/Shape */
-        gap: 15px;
+        gap: 10px;
 
         /* Background */
 
