@@ -3,7 +3,7 @@
 /* #region body/main/page */
 body {
     background-color: whitesmoke;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-family: Calibri, "Segoe UI", Verdana, Arial, sans-serif;
     overflow: hidden;
     margin-left: 2px;
 }
@@ -51,7 +51,6 @@ body {
 .account p {
     /*Text*/
     color: white;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
 } 
 
 @media (max-width: 768px) {
@@ -120,7 +119,7 @@ body {
 
     /*Text*/
     color: white;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
 
     /*Misc*/
     cursor: pointer;
@@ -278,7 +277,7 @@ body {
         background: #eee;
     
     /* Text */ 
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
         
     /* Misc */
     cursor: pointer;
@@ -547,7 +546,7 @@ body {
 
     /* Text */ 
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: white;    
         
     /* Misc */    
@@ -676,7 +675,7 @@ body {
     /* Text */ 
     text-align: center;
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
         
     /* Misc */
     cursor: pointer;
@@ -1027,7 +1026,7 @@ body {
     /* Text */
     text-align: center;
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;     
+         
         
     /* Misc */
     cursor: pointer;
@@ -1182,7 +1181,7 @@ body {
     /* Text */
     text-align: center;
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif; 
+     
         
     /* Misc */  
     cursor: pointer;
@@ -1421,7 +1420,7 @@ body {
 
     /* Text */ 
     font-size: x-large;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;
         
     /* Misc */    
@@ -1445,7 +1444,7 @@ body {
     background-color: transparent;
 
     /* Text */ 
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;
         
     /* Misc */    
@@ -1515,7 +1514,7 @@ body {
 
     /* Text */
     font-style: italic;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;
         
     /* Misc */    
@@ -1622,7 +1621,7 @@ body {
     /* Background */
 
     /* Text */
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;     
         
     /* Misc */
@@ -1692,7 +1691,7 @@ body {
     /* Text */ 
     text-align: center;
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
             
     /* Misc */
 }   
@@ -1771,7 +1770,7 @@ body {
     /* Text */ 
     text-align: center;
     font-style: italic;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: grey;
         
     /* Misc */
@@ -1857,7 +1856,7 @@ body {
 
     /* Text */ 
     text-align: center;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;
         
     /* Misc */    
@@ -1890,7 +1889,7 @@ body {
 
     /* Text */ 
     text-align: center;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;
         
     /* Misc */    
@@ -1970,7 +1969,7 @@ body {
     background-color: transparent;
 
     /* Text */ 
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: #360f5a;
         
     /* Misc */    
@@ -2197,7 +2196,7 @@ body {
 
     /* Text */
     text-align: center;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif; 
+     
     color: #360f5a;
         
     /* Misc */    
@@ -2213,7 +2212,7 @@ body {
     
     /* Text */
     text-decoration: none; 
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: #360f5a;
             
     /* Misc */    
@@ -2341,7 +2340,7 @@ body {
     /* Text */ 
     text-align: center;
     font-size: large;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black;
         
     /* Misc */ 
@@ -2470,7 +2469,7 @@ body {
 
     /* Text */
     font-size: medium;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black; 
         
     /* Misc */    
@@ -2542,7 +2541,7 @@ body {
 
     /* Text */
     font-size: large;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black; 
         
     /* Misc */    
@@ -2566,7 +2565,7 @@ body {
     font-size: large;
     font-style: italic;
     font-weight: bold; 
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: green;
         
     /* Misc */    
@@ -2660,7 +2659,7 @@ body {
     text-decoration: none;
     text-align: center; 
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: white;
         
     /* Misc */
@@ -2867,7 +2866,7 @@ body {
     background: white;
 
     /* Text */
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: black; 
         
     /* Misc */    
@@ -2884,7 +2883,7 @@ body {
     /* Text */
     text-align: center;
     font-weight: bold;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif; 
+     
     color: black;
         
     /* Misc */        
@@ -2999,7 +2998,7 @@ body {
     /* Background */
 
     /* Text */
-    font-family: Calibri, "Segoe UI", Arial, sans-serif; 
+     
         
     /* Misc */    
 }
@@ -3156,7 +3155,7 @@ body {
 
     /* Text */
     font-size: 12px;
-    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    
     color: white; 
         
     /* Misc */    
