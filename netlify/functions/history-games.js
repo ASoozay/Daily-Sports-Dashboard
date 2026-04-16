@@ -16,6 +16,17 @@ exports.handler = async (event) => {
       };
     }
 
+    const now = new Date();
+
+    const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+
+    const currTime = now.toLocaleTimeString();
+
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
       ssl: { require: true, rejectUnauthorized: false },
@@ -25,8 +36,10 @@ exports.handler = async (event) => {
 
     let query = `SELECT * FROM "Assignments" 
                 JOIN "Games" ON "Games".game_id = "Assignments".game_id 
-                WHERE writer_id = $1`;
-    let values = [writerId];
+                WHERE writer_id = $1
+                AND date < $2
+                AND time < $3`;
+    let values = [writerId, today, currTime];
 
     if (sports.length > 0) {
       values.push(sports);
