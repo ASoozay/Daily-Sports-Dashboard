@@ -2673,12 +2673,21 @@ body {
 }
 
 button.invoice-option-box {
-    all: unset;                 
+    /* Layout */
     display: flex;              
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    /* Size/Shape */
+
+    /* Background */
+    background-color: #360f5a;
+
+    /* Text */ 
+        
+    /* Misc */
+    all: unset;                 
     cursor: pointer;
 }
 
@@ -2723,8 +2732,8 @@ button.invoice-option-box {
         /* Layout */
 
         /* Size/Shape */
-        width: 350px;
-        height: 350px;
+        width: 325px;
+        height: 325x;
         padding: 5px;
         
         /* Background */
@@ -3210,5 +3219,15 @@ button.invoice-option-box {
 }
 
 /* #endregion */
+
+    /* Layout */
+
+    /* Size/Shape */
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */
 
 
