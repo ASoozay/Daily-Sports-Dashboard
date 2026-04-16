@@ -2754,6 +2754,23 @@ button.invoice-option-box {
         
         /* Misc */
     }
+
+    button.invoice-option-box {
+        /* Layout */
+
+        /* Size/Shape */
+        width: 325px;
+        height: 325x;
+        padding: 5px;
+        
+        /* Background */
+
+        /* Text */
+        font-size: 20px; 
+        
+        /* Misc */
+
+    }
 }
 /* #endregion */
 
