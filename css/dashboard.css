@@ -740,7 +740,7 @@ body {
         /* Background */
 
         /* Text */ 
-        font-size: 14px;
+        font-size: 12px;
         
         /* Misc */
     }
@@ -1247,7 +1247,7 @@ body {
         /* Background */
 
         /* Text */ 
-        font-size: 14px;
+        font-size: 12px;
         
         /* Misc */
     }
@@ -2670,6 +2670,16 @@ body {
 .invoice-option-box:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+button.invoice-option-box {
+    all: unset;                 
+    display: flex;              
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px){
