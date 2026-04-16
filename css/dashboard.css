@@ -3,7 +3,7 @@
 /* #region body/main/page */
 body {
     background-color: whitesmoke;
-    font-family: Calibri, "Segoe UI", Verdana, Arial, sans-serif;
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     overflow: hidden;
     margin-left: 2px;
 }
