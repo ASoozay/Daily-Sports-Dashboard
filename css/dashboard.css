@@ -2674,6 +2674,7 @@ body {
 
 button.invoice-option-box {
     /* Layout */
+    all: unset;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2693,7 +2694,6 @@ button.invoice-option-box {
     color: white;
         
     /* Misc */
-    all: unset;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
