@@ -61,7 +61,6 @@ body {
         padding-left: 10px;
 
         /*Background*/
-        background-color: green;
 
         /*Text*/
         font-size: 20px;
@@ -286,6 +285,7 @@ body {
         background: #eee;
     
     /* Text */ 
+    color: black;
     
         
     /* Misc */
@@ -416,6 +416,9 @@ body {
 @media screen and (max-width: 768px){
     .games-filter-container {
         /* Layout */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
 
         /* Size/Shape */
 
