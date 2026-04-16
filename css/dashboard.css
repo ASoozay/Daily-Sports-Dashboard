@@ -694,7 +694,7 @@ body {
     #filter-options-sport {
         /* Layout */
         display: grid;
-        grid-template-columns: repeat(9, 1fr);
+        grid-template-columns: repeat(6, 15%);
 
 
     }
