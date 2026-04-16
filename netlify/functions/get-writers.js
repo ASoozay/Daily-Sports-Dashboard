@@ -21,7 +21,7 @@ exports.handler = async (event) => {
     console.log("Connected to DB");
 
     // Query all writers
-    const query = `SELECT * FROM "Writers" ORDER BY first_name, last_name`;
+    const query = `SELECT * FROM "Writers" ORDER BY last_name, first_name`;
     const result = await client.query(query);
 
     await client.end();
