@@ -271,7 +271,7 @@ body {
     /* Misc */    
 }
 
-#production-tab {
+#production {
     flex: 1;
     display: flex;
     width: 100%;
@@ -279,7 +279,7 @@ body {
     overflow: hidden;
 }
 
-#production-tab iframe {
+#production iframe {
     flex: 1;     
     display: block;         
     width: 100%;
