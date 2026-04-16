@@ -2693,11 +2693,12 @@ button.invoice-option-box {
     color: white;
         
     /* Misc */
+    all: unset;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.button.invoice-option-box:hover {
+button.invoice-option-box:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
@@ -2744,7 +2745,7 @@ button.invoice-option-box {
 
         /* Size/Shape */
         width: 325px;
-        height: 325x;
+        height: 325px;
         padding: 5px;
         
         /* Background */
@@ -2755,12 +2756,12 @@ button.invoice-option-box {
         /* Misc */
     }
 
-    .button.invoice-option-box {
+    button.invoice-option-box {
         /* Layout */
 
         /* Size/Shape */
         width: 325px;
-        height: 325x;
+        height: 325px;
         padding: 5px;
         
         /* Background */
