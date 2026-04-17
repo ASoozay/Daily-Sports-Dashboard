@@ -1055,6 +1055,14 @@
     /* Misc */
 }
 
+@media screen and (max-width: 768px) {
+    .settings-container {
+        /* Layout */
+        grid-template-columns: repeat(2, 45%);
+        gap: 2%;
+    }
+}
+
 @media screen and (min-width: 769px) and (max-width: 1800px){
     .settings-container {  
         /* Layout */
@@ -1101,8 +1109,6 @@
     align-items: center;
 
     /* Size/Shape */
-    height: 200px;
-    width: 200px;
     padding-top: 10%;
     border-radius: 15px;
 
@@ -1120,6 +1126,14 @@
 .settings-option:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+    .settings-option {
+        /* Size/Shape */
+        height: 20%;
+        width: 20%;      
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1800px) {
