@@ -2700,9 +2700,9 @@ body {
 
     /* Size/Shape */
     height: 100%;
-    width: 40%;
+    width: 50%;
     margin-left: 10%;
-    margin-right: 20%;
+    margin-right: 10%;
 
     /* Background */
 
@@ -2745,6 +2745,12 @@ body {
     color: green;
         
     /* Misc */    
+}
+
+@media screen and (max-width: 768px) {
+    .invoice-entry-box-total {
+        font-size: small;
+    }
 }
 /* #endregion */
 
@@ -3072,7 +3078,7 @@ button.invoice-option-box:hover {
         /* Background */
 
         /* Text */
-        font-size: 8px; 
+        font-size: 6px; 
         
         /* Misc */
     }
