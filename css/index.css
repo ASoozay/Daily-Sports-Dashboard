@@ -1,0 +1,262 @@
+/* #region body */
+body {
+    /* Layout */
+
+    /* Size/Shape */
+    min-height: 100vh;
+
+    /* Background */
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #360f5a;
+
+    /* Text */ 
+        
+    /* Misc */
+    transition: background-image 1s ease-in-out;
+
+}
+/* #endregion */
+
+/* #region nav */
+nav {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Size/Shape */
+    width:100%;
+    height: 50px;
+    margin-bottom: 50px;
+
+    /* Background */
+    background-color:#360f5a;
+
+    /* Text */
+    text-align: center; 
+    font-family: 'figtree', sans-serif;
+    color:#ccc;
+        
+    /* Misc */        
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: none !important;
+    }
+}
+/* #endregion */
+
+/* #region left-links */
+.left-links a {
+    /* Layout */
+
+    /* Size/Shape */
+    margin-left: 60px;
+
+    /* Background */
+
+    /* Text */ 
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 24px;
+    color: white;
+        
+    /* Misc */        
+}
+/* #endregion */
+
+/* #region logo-links */
+.logo-links img {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 30px;
+    height: auto;
+    margin-left: 20px;
+    padding-right: 50px;
+    vertical-align: middle;
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */        
+}
+/* #endregion */
+
+/* #region login-box */
+.login-box {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    position: absolute; 
+ 
+
+    /* Size/Shape */
+    border-radius: 10px;
+
+    /* Background */
+    background-color: white;
+
+    /* Text */ 
+    font-family: 'figtree', sans-serif;
+        
+    /* Misc */        
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box input {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 200px;
+    height: 20px;
+    padding-top: 10px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+
+    /* Background */
+
+    /* Text */ 
+    font-family: "figtree", sans-serif;
+        
+    /* Misc */        
+}
+
+.login-box button {
+    /* Layout */
+    display: block;
+
+    /* Size/Shape */
+    border: 1px solid #ccc;
+
+    /* Background */
+    background-color: #360f5a;
+
+    /* Text */ 
+    text-align: center;
+    font-family: "figtree", sans-serif;
+    color:white;
+
+    /* Misc */
+    cursor: pointer;
+}    
+
+.login-box a {
+    /* Layout */
+
+    /* Size/Shape */
+    margin-top: 25px;
+    margin-bottom: 2px;
+
+    /* Background */
+
+    /* Text */ 
+    text-align: center;
+    font-family: "figtree", sans-serif;
+    color: #360f5a;
+        
+    /* Misc */        
+}
+
+@media screen and (max-width: 768px) {
+    .login-box {
+        /* Layout */
+        justify-self: center;
+        gap: 10%;
+
+        /* Size/ Shape */
+        width: 90%;
+        height: 90%;
+    }
+
+    .login-box button {
+        /* Size / Shape */
+        width: 80%;
+        height: 10%;
+        border-radius: 10px;
+
+        /* Text */
+        text-align: center;
+        font-size: large;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1800px) {
+    .login-box {
+        /* Layout */
+
+        /* Size/ Shape */
+        width: 20%;
+        height: 50%;
+    }
+
+    .login-box button {
+        /* Size / Shape */
+        width: 80%;
+        height: 15%;        
+    }
+
+}
+/* #endregion */
+
+/* #region login-logo */
+.login-logo {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 70%;
+    height: auto;
+    margin-top: 3px;
+    margin-bottom:30px;
+
+    /* Background */
+
+    /* Text */ 
+        
+    /* Misc */        
+}
+
+
+/* #endregion */
+
+/* #region bottom */
+.bottom {
+    /* Layout */
+    position:fixed;
+    bottom:0;    
+
+    /* Size/Shape */
+    width: 100%;
+    height: 25px;    
+
+    /* Background */
+    background-attachment: fixed;
+    background-color:#360f5a;
+
+    /* Text */ 
+    text-align: center;
+    font-family: 'Avenir Next', sans-serif; 
+    font-size: 12px; 
+    color: white;  
+        
+    /* Misc */        
+}
+
+@media screen and (max-width: 768px) {
+    .bottom {
+        display: none !important;
+    }
+}
+/* #endregion */
