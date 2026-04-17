@@ -2510,7 +2510,7 @@ body {
         flex: 1;
 
         /* Size / Shape */
-        height: 625px;
+        height: 375px;
     }
 }
 
@@ -2548,14 +2548,14 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 10%;
+        height: 5%;
         margin-top: 2px;
         margin-bottom: 2px;
 
         /* Background */
 
         /* Text */
-        font-size: 16px; 
+        font-size: 20px; 
         
         /* Misc */
 
@@ -2718,7 +2718,7 @@ body {
 @media screen and (max-width: 768px) {
     .invoice-entry-box-date{
         /* Text */
-        font-size: 16px;
+        font-size: 12px;
     }
 }    
 /* #endregion */
@@ -2733,6 +2733,7 @@ body {
     height: 100%;
     width: 20%;
     margin-left: 5%;
+    margin-right: 3%;
 
     /* Background */
 
@@ -2772,6 +2773,7 @@ body {
         /* Layout */
         flex: 1;
         grid-template-columns: repeat(1, 90%);
+        justify-content: stretch;
 
         /* Size/Shape */
         padding-top: 1%;
