@@ -2510,7 +2510,7 @@ body {
         flex: 1;
 
         /* Size / Shape */
-        height: 400px;
+        height: 625px;
     }
 }
 
@@ -2548,14 +2548,14 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 10px;
+        height: 10%;
         margin-top: 2px;
         margin-bottom: 2px;
 
         /* Background */
 
         /* Text */
-        font-size: 6px; 
+        font-size: 16px; 
         
         /* Misc */
 
@@ -2647,7 +2647,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 15px;
+        height: 20%;
         margin: 2px auto;
 
         /* Background */
@@ -2713,6 +2713,14 @@ body {
         
     /* Misc */    
 }
+
+
+@media screen and (max-width: 768px) {
+    .invoice-entry-box-date{
+        /* Text */
+        font-size: 16px;
+    }
+}    
 /* #endregion */
 
 /* #region invoice-entry-box-total */
