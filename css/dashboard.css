@@ -2510,7 +2510,7 @@ body {
         flex: 1;
 
         /* Size / Shape */
-        height: 375px;
+        height: 400px;
     }
 }
 
@@ -2548,7 +2548,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 5%;
+        height: 8%;
         margin-top: 2px;
         margin-bottom: 2px;
 
@@ -2718,7 +2718,7 @@ body {
 @media screen and (max-width: 768px) {
     .invoice-entry-box-date{
         /* Text */
-        font-size: 12px;
+        font-size: 10px;
     }
 }    
 /* #endregion */
