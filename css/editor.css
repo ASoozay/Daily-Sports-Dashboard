@@ -49,7 +49,7 @@
 
         /* Size/Shape */
         height: 50px;
-        width: 80px;
+        width: 120px;
         margin-right: 5px;
         border-radius: 5px;
 
@@ -126,7 +126,7 @@
     background-color: transparent;
 
     /* Text */ 
-    
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: #360f5a;
         
     /* Misc */    

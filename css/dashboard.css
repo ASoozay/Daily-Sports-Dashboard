@@ -43,6 +43,7 @@ body {
     background: #360f5a;
 
     /*Text*/
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: white;   
 
     /*Misc*/
@@ -118,6 +119,7 @@ body {
 
 
     /*Text*/
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: white;
     
 
@@ -311,6 +313,7 @@ body {
         background: #eee;
     
     /* Text */ 
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: black;
     
         
@@ -2077,7 +2080,7 @@ body {
     background-color: transparent;
 
     /* Text */ 
-    
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: #360f5a;
         
     /* Misc */    
