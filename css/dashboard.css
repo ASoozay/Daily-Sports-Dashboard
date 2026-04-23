@@ -252,8 +252,8 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 60px;
-        padding-bottom: 10px;
+        height: 5%;
+        border-radius: 15px;
 
         /* Background */
 
@@ -444,7 +444,8 @@ body {
 @media screen and (min-width: 1801px) {
     .content {
         /* Size / Shape */
-        height: 90%;
+        height: 87%;
+        border-radius: 15px;
     }
 }
  
@@ -3466,7 +3467,7 @@ button.invoice-option-box:hover {
 
     /* Size/ Shape */
     width: 98%;
-    height: 80px;
+    height: 120px;
     border-radius: 10px;
 
     /* Background */
@@ -3475,20 +3476,28 @@ button.invoice-option-box:hover {
 
 
 /* #region resources-box-icon */
-.resources-box-icon {
+.resources-box-icon-container {
     /* Size / Shape */
     height: 60%;
-    width: auto;
+    width: 200px;
     margin-left: 1%;
-    margin-right: 10%;
+    margin-right: 15%;
+
+}
+
+.resources-box-icon {
+    /*Size / Shape */
+    height: 100%;
+    width: auto;
 }
 
 .resources-box-title {
     /* Size / Shape */
 
     /* Text */
+    text-decoration: none;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 35px;
     font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: white;
 }
@@ -3496,40 +3505,67 @@ button.invoice-option-box:hover {
 
 
 
-/* #region resources-dropdown*/
-.resources-dropdown {
+/* #region dropdown*/
+.dropdown {
     position: relative;
-    width: 200px;
 }
 
-.resources-dropdown-header {
-    background: #360f5a;
-    color: white;
-    padding: 10px;
+/* Top clickable row */
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
     cursor: pointer;
-    border-radius: 8px;
+
+    font-weight: bold;
+    font-size: 35px;
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+
 }
 
-.resources-dropdown-menu {
+
+/* Hidden dropdown */
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+
+    margin-top: 10px;
+    padding: 10px;
+
+    background: white;
+    border-radius: 10px;
+
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    
-    background: white;
-    border-radius: 8px;
-    margin-top: 5px;
+    height: 400px;
+    gap: 15px;
 
-    display: none; /* hidden by default */
+    z-index: 10;
 }
 
-.resources-dropdown-box {
-    padding: 10px;
-    cursor: pointer;
+/* Show dropdown */
+.dropdown.open .dropdown-content {
+    display: flex;
 }
 
-.resources-dropdown-box:hover {
+
+/* Links inside dropdown */
+.dropdown-content a {
+    padding: 8px;
+    text-decoration: none;
+    color: #360f5a;
+    font-size: 22px;
+}
+
+.dropdown-content a:hover {
     background: #eee;
+    border-radius: 5px;
 }
 
 /* #endregion */

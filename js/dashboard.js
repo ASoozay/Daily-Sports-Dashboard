@@ -741,4 +741,9 @@ function formatDateWithYearNoDOW(dateStr) {
     year: 'numeric'
   });
 }
+
+function toggleDropdown(element) {
+    const dropdown = element.parentElement;
+    dropdown.classList.toggle("open");
+}
 //#endregion
