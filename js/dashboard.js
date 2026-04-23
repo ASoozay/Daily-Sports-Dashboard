@@ -87,7 +87,6 @@ async function fetchMySchedule(writerId, filters = { sports: [], locations: [] }
 
         const noGames = document.createElement("div");
         
-        
         noGames.innerHTML = `
         <div class = "no-games">No Scheduled Games</div>
         `;
@@ -172,7 +171,6 @@ async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
     console.log("No available games found.");
 
     const noGames = document.createElement("div");
-    noGames.classList.add("no-games");
         
     noGames.innerHTML = `
     <div class = "no-games">No Available Games</div>
@@ -286,7 +284,6 @@ async function fetchInvoices(writerId) {
     console.log("No invoices found.");
 
     const noInvoices = document.createElement("div");
-    noGames.classList.add("no-games");
         
     noInvoices.innerHTML = `
     <div class = "no-games">No Invoices Found</div>
@@ -336,7 +333,6 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
     console.log("No history  found.");
 
     const noGames = document.createElement("div");
-    noGames.classList.add("no-games");
         
     noGames.innerHTML = `
     <div class = "no-games">No History Found</div>

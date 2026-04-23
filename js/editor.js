@@ -73,7 +73,6 @@ async function fetchAllScheduledGames(writerId, filters = { sports: [], location
     console.log("No scheduled games found.");
 
     const noGames = document.createElement("div");
-    noGames.classList.add("no-games");
         
     noGames.innerHTML = `
     <div class = "no-games">No Scheduled Games</div>
