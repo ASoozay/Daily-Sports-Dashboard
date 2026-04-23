@@ -145,7 +145,8 @@ nav {
 
     /* Text */ 
     text-align: center;
-    font-family: "figtree", sans-serif;
+    font-weight: bold;
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color:white;
 
     /* Misc */
@@ -200,14 +201,38 @@ nav {
         /* Size/ Shape */
         width: 20%;
         height: 50%;
+        margin-left: 2%;
     }
 
     .login-box button {
         /* Size / Shape */
         width: 80%;
-        height: 15%;        
+        height: 15%;  
+        border-radius: 15px;  
+        
+        /* Text */
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1801px){
+    .login-box {
+        /* Size / Shape */
+        height: 40%;
+        margin-top: 5%;
+        margin-left: 2%;
     }
 
+    .login-box button {
+        /* Size / Shape */
+        width: 70%;
+        height: 15%;
+        border-radius: 20px;
+
+        /* Text */
+        font-size: 28px;
+
+    }
 }
 /* #endregion */
 
@@ -216,10 +241,11 @@ nav {
     /* Layout */
 
     /* Size/Shape */
-    width: 70%;
+    width: 60%;
     height: auto;
     margin-top: 3px;
-    margin-bottom:30px;
+    margin-bottom: 15%;
+    border-radius: 20px;
 
     /* Background */
 
