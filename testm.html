@@ -6,26 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/dashboard.css">
 <link rel="stylesheet" href = "/css/editor.css">
+<link rel = "stylesheet" href = "/css/test.css"> 
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico?v=2">
 </head>
 <meta charset="UTF-8">
 
 <body>
+<div class="page">
+
     <div class="account">
         <p id = "greetingHeader">Hi Test Page!</p>
         <button id = "logout" class = "logout" onclick="logout()">Logout</button>
     </div>
 
-<div class="page">
-
     <div class="tab-container">
         <button class="tab-button" onclick="showTab(event, 'production-tab')">Production</button>
         <button class="tab-button" onclick="showTab(event, 'all-games')">All Scheduled</button> 
         <button class="tab-button" onclick="showTab(event, 'scheduled-games')">My Schedule</button>
-        <button class="tab-button" onclick="showTab(event, 'available-games')">Available</button>
+        <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
         <button class="tab-button" onclick="showTab(event, 'invoices')">Invoices</button>
         <button class="tab-button" onclick="showTab(event, 'history')">History</button>
-        <button class="tab-button" onclick ="showTab(event, 'resources')">Resources</button>
         <button class="tab-button" onclick="showTab(event, 'settings')">Settings</button>
     </div>
 
@@ -318,10 +318,6 @@
         <div id="history" class="tab-content">
             <div id = "history-filter-container" class = "history-filter-container"></div>
             <div id ="history-container" class = "games-container"></div>
-        </div>
-
-        <div id = "resources" class = "tab-content">
-
         </div>
 
         <div id = "settings" class = "tab-content">

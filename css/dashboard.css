@@ -2,10 +2,10 @@
 
 /* #region body/main/page */
 body {
-    background-color: whitesmoke;
+    background-color: rgb(238, 238, 238);
     font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     overflow: hidden;
-    margin-left: 2px;
+    margin: 0;
 }
 
 .main {
@@ -18,11 +18,13 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding-left: 1%;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1800px){
-    .body {/* Size / Shape */
-    margin-left: 2px;
+    body {
+        /* Size / Shape */
+        margin-left: 2px;
     }
 }    
 /* #endregion */
@@ -38,6 +40,7 @@ body {
     width: 100%;
     height: 50px; 
     margin-bottom: 1%; 
+    padding: 0 20px;
 
     /*Background*/
     background: #360f5a;
@@ -186,12 +189,18 @@ body {
 .tab-container {
     /* Layout */
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* Size/Shape */
-    width: 85%;
+    width: 78%;
     margin-bottom: 1%;
+    padding: 1%;
+    gap: 1%;
+    border: #e6e8ef;
 
     /* Background */
+    background-color: #ffffff;
 
     /* Text */ 
 
@@ -227,7 +236,7 @@ body {
 
         /* Size/Shape */
         height: 60px;
-        padding-bottom: 5px;
+        border-radius: 15px;
 
         /* Background */
 
@@ -258,7 +267,7 @@ body {
 /* #region tab-content */
 .tab-content {
     /* Layout */
-    flex: 1;
+
     display: none;
     flex-direction: column;
             
@@ -266,7 +275,7 @@ body {
     height: 100%;
     min-height: 0;
 
-    /* Background */   
+    /* Background */ 
 
     /* Text */ 
         
@@ -310,7 +319,7 @@ body {
     border: 1px solid #ccc;
 
     /* Background */
-        background: #eee;
+    background: #eee;
     
     /* Text */ 
     font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
@@ -350,6 +359,7 @@ body {
 
         /* Size/Shape */
         padding: 8px;
+        border-radius: 10px;
 
         /* Background */
 
@@ -398,18 +408,22 @@ body {
 /* #region content */
 .content {
     /* Layout */
-    flex: 5.67;
     display: flex;
     flex-direction: column;
 
     /* Size/Shape */
-    width: 85%;
-    height: 100%;
+    width: 78%;
+    height: 83%;
     min-height: 0;
     max-height: 100%;
+    margin-right: 3%;
+    padding: 1%;
     padding-bottom: 5px;
+    border-radius: 10px;
+    border: #e6e8ef;
 
     /* Background */
+    background-color: #ffffff;
 
     /* Text */ 
         
@@ -469,7 +483,7 @@ body {
 
         /* Size/Shape */
         height: 80px;
-        border-radius: 5px;        
+        border-radius: 10px;        
 
         /* Background */
 
@@ -535,7 +549,7 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        gap: 100px;
+        gap: 6%;
         padding-left: 10px;        
 
         /* Background */
@@ -833,7 +847,7 @@ body {
     display: flex;
 
     /* Size/Shape */
-    width: 100%;
+    width: 98%;
 
     /* Background */
     background-color: #360f5a;
@@ -869,7 +883,7 @@ body {
         /* Size/Shape */
         height: 160px;
         border-radius: 5px;
-        padding-left: 40px;
+        padding-left: 2%;
         margin-bottom: 10px;
 
         /* Background */
@@ -938,7 +952,7 @@ body {
 
         /* Size/Shape */
         padding-left: 5px;
-        gap: 80px;
+        gap: 8%;
 
         /* Background */
 
@@ -1417,15 +1431,14 @@ body {
     gap: 1%;
 
     /* Size/Shape */
-    width: 95%;
+    width: 98%;
     max-width: 100%;
-    border-color: gray;
-    box-sizing: border-box;
-    border-color: red;
+    border-color: #360f5a;
     border-style: solid;
+    box-sizing: border-box;
 
     /* Background */
-    background-color: rgb(211, 210, 210);
+    background-color: #ffffff;
 
     /* Text */ 
         
@@ -1460,6 +1473,8 @@ body {
         height: 150px;
         border-radius: 10px;
         border: 2px;
+        border-color: #e1dfdf;
+        border-style: solid;
 
         /* Background */
 
@@ -2285,15 +2300,17 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    justify-self: center;
 
     /* Size/Shape */
-    height: 95%;
-    margin-left: 5px;
+    height: 85%;
+    margin-right: 2%;
     border-radius: 10px;
+    border: #e6e8ef;
     
 
     /* Background */
-    background-color: whitesmoke;
+    background-color: #ffffff;
 
     /* Text */ 
         
@@ -2415,8 +2432,7 @@ body {
 
 /* #region invoice-container */
 .invoice-container {
-    flex: 1;
-
+    height: 90%;
 }
 /* #endregion
 
@@ -2798,7 +2814,7 @@ body {
 @media screen and (min-width: 769px) and (max-width: 1800px){
     .invoice-options-container {
         /* Layout */
-        grid-template-columns: repeat(2, 300px);
+        grid-template-columns: repeat(2, 250px);
 
         /* Size/Shape */
         padding-top: 0;
@@ -2838,7 +2854,7 @@ body {
     justify-content: flex-start;
 
     /* Size/Shape */
-    border-radius: 30px;
+    border-radius: 25px;
 
     /* Background */
     background-color: #360f5a;
@@ -2869,7 +2885,7 @@ button.invoice-option-box {
     justify-content: flex-start;
 
     /* Size/Shape */
-    border-radius: 30px;
+    border-radius: 25px;
 
     /* Background */
     background-color: #360f5a;
@@ -2932,8 +2948,8 @@ button.invoice-option-box:hover {
         /* Layout */
 
         /* Size/Shape */
-        width: 250px;
-        height: 250px;
+        width: 225px;
+        height: 225px;
         padding: 5px;
         
         /* Background */
@@ -2948,8 +2964,8 @@ button.invoice-option-box:hover {
         /* Layout */
 
         /* Size/Shape */
-        width: 250px;
-        height: 250px;
+        width: 225px;
+        height: 225px;
         padding: 5px;
 
         /* Background */

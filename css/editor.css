@@ -6,6 +6,7 @@
     justify-content: center;
 
     /* Size/Shape */
+    border: none;
 
     /* Background */
     background-color: white;
@@ -50,12 +51,13 @@
         /* Size/Shape */
         height: 50px;
         width: 120px;
-        margin-right: 5px;
+        margin-right: 1%;
         border-radius: 5px;
 
         /* Background */
 
         /* Text */ 
+        font-size: 16px;
         
         /* Misc */
     }
@@ -1045,8 +1047,10 @@
     display: grid;
     justify-content: center;
     align-content: center;
+    grid-template-columns: repeat(4, 1fr);
 
     /* Size/Shape */
+    margin: 0 auto;
 
     /* Background */
 
@@ -1066,7 +1070,6 @@
 @media screen and (min-width: 769px) and (max-width: 1800px){
     .settings-container {  
         /* Layout */
-        grid-template-columns: repeat(4, 200px);
         gap: 50px;
 
         /* Size/Shape */
@@ -1109,7 +1112,6 @@
     align-items: center;
 
     /* Size/Shape */
-    padding-top: 10%;
     border-radius: 15px;
 
     /* Background */
@@ -1139,8 +1141,8 @@
 @media screen and (min-width: 769px) and (max-width: 1800px) {
     .settings-option {
         /* Size/Shape */
-        height: 200px;
-        width: 200px;        
+        height: 225px;
+        width: 225px;        
     }
 }
 

@@ -1,0 +1,200 @@
+/* ===== COLOR SYSTEM ===== */
+:root {
+    --purple: #360f5a;
+    --purple-hover: #4c1d7a;
+    --purple-light: #ede9f5;
+
+    --gold: #B7A57A;
+
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --border: #e6e8ef;
+
+    --text: #1f1f2e;
+    --text-muted: #6b6f7b;
+}
+
+/* ===== BASE ===== */
+body {
+    margin: 0;
+    background: var(--bg);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+}
+
+/* ===== ACCOUNT BAR ===== */
+.account {
+    background: var(--purple);
+    color: white;
+    padding: 0 20px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.logout:hover {
+    opacity: 0.8;
+}
+
+/* ===== TABS ===== */
+.tab-container {
+    display: flex;
+    gap: 8px;
+    padding: 10px 15px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.tab-button {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tab-button:hover {
+    background: #e2dbf2;
+}
+
+.tab-button.active-tab {
+    background: var(--purple);
+    color: white;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== SIDEBAR ===== */
+.links-container {
+    flex: 1;
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 15px;
+    height: fit-content;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+}
+
+.links-container a {
+    display: block;
+    color: var(--purple);
+    text-decoration: none;
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.links-container a:hover {
+    text-decoration: underline;
+}
+
+/* ===== FILTER BAR ===== */
+.games-filter-container {
+    background: var(--purple);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* FILTER BUTTONS */
+.filter-box {
+    background: white;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.filter-box:hover {
+    background: #ddd;
+}
+
+.filter-box.active {
+    background: var(--gold);
+}
+
+/* ===== GAME CARDS ===== */
+.add, .assign, .edit, .remove {
+    background: var(--purple-light);
+    color: var(--purple);
+    border-radius: 6px;
+    padding: 6px;
+    transition: 0.2s;
+}
+
+.add:hover, .assign:hover, .edit:hover, .remove:hover {
+    background: var(--purple);
+    color: white;
+}
+
+/* ===== INVOICES ===== */
+.invoice-container {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+}
+
+.invoice-option-box {
+    background: var(--purple);
+    color: white;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.invoice-option-box:hover {
+    background: var(--purple-hover);
+    transform: translateY(-3px);
+}
+
+/* ===== SETTINGS ===== */
+.settings-option {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: 0.2s;
+}
+
+.settings-option:hover {
+    transform: translateY(-4px);
+}
+
+/* ===== FOOTER ===== */
+.bottom {
+    text-align: center;
+    padding: 10px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .main {
+        flex-direction: column;
+    }
+}

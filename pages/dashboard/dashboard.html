@@ -10,19 +10,19 @@
 <meta charset="UTF-8">
 
 <body>
-<div class="page">
-
     <div class="account">
-        <h6 id = "greetingHeader"></h6>
+        <p id = "greetingHeader">Hi Test Page!</p>
         <button id = "logout" class = "logout" onclick="logout()">Logout</button>
     </div>
+<div class="page">
 
     <div class="tab-container">
+        <button class="tab-button" onclick="showTab(event, 'production')">Production</button>
         <button class="tab-button" onclick="showTab(event, 'scheduled-games')">Schedule</button>
         <button class="tab-button" onclick="showTab(event, 'available-games')">Available Games</button>
         <button class="tab-button" onclick="showTab(event, 'invoices')">Invoices</button>
         <button class="tab-button" onclick="showTab(event, 'history')">History</button>
-        <button class="tab-button" onclick="showTab(event, 'production')">Production</button>
+        <button class="tab-button" onclick ="showTab(event, 'resources')">Resources</button>
     </div>
 
     <div class="main">
@@ -81,6 +81,10 @@
      <div id="history" class="tab-content">
         <div id = "history-filter-container" class = "history-filter-container"></div>
         <div id ="history-container" class = "games-container"></div>
+    </div>
+
+    <div id = "resources" class = "tab-content">
+
     </div>
 
     </div> <!-- CLOSE .content HERE -->
