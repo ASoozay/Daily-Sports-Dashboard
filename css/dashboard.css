@@ -440,14 +440,14 @@ body {
         /* Size/Shape */
         width: 100%;
     }
-
+}
 @media screen and (min-width: 1801px) {
     .content {
         /* Size / Shape */
         height: 90%;
     }
 }
-}    
+ 
 /* #endregion */
 
 /* #region games-filter-container */
