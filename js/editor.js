@@ -66,12 +66,21 @@ async function fetchAllScheduledGames(writerId, filters = { sports: [], location
     const data = await response.json();
     const games = data.games;
 
-    if (!games || games.length === 0) {
-        console.log("No scheduled games found.");
-    }
-
     const container = document.getElementById("all-games-container");
     container.innerHTML = "";
+
+    if (!games || games.length === 0) {
+    console.log("No scheduled games found.");
+
+    const noGames = document.createElement("div");
+    noGames.classList.add("no-games");
+        
+    noGames.innerHTML = `
+    <div class = "no-games">No Scheduled Games</div>
+    `;
+
+        container.appendChild(noGames);
+    }
 
     games.forEach(game => {
         const gameId = game.game_id;

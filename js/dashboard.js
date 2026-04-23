@@ -79,12 +79,21 @@ async function fetchMySchedule(writerId, filters = { sports: [], locations: [] }
     const data = await response.json();
     const games = data.games;
 
-    if (!games || games.length === 0) {
-        console.log("No scheduled games found.");
-    }
-
     const container = document.getElementById("scheduled-games-container");
     container.innerHTML = "";
+
+    if (!games || games.length === 0) {
+        console.log("No scheduled games found.");
+
+        const noGames = document.createElement("div");
+        noGames.classList.add("no-games");
+        
+        noGames.innerHTML = `
+        <div class = "no-games">No Scheduled Games</div>
+        `;
+
+        container.appendChild(noGames);
+    }
 
     games.forEach(game => {
         const gameId = game.game_id;
@@ -158,6 +167,19 @@ async function fetchAvailableGames(filters = { sports: [], locations: [] }) {
             
     const container = document.getElementById("available-games-container");
     container.innerHTML = "";
+
+    if (!games || games.length === 0) {
+    console.log("No available games found.");
+
+    const noGames = document.createElement("div");
+    noGames.classList.add("no-games");
+        
+    noGames.innerHTML = `
+    <div class = "no-games">No Available Games</div>
+    `;
+
+        container.appendChild(noGames);
+    }
 
     games.forEach(game => {
         const gameId = game.game_id;
@@ -260,6 +282,19 @@ async function fetchInvoices(writerId) {
     const container = document.getElementById("invoice-entries-container");
     container.innerHTML = "";   
 
+    if (!invoices || invoices.length === 0) {
+    console.log("No invoices found.");
+
+    const noInvoices = document.createElement("div");
+    noGames.classList.add("no-games");
+        
+    noInvoices.innerHTML = `
+    <div class = "no-games">No Invoices Found</div>
+    `;
+
+        container.appendChild(noInvoices);
+    }
+
     invoices.forEach(invoice => {
         const date = invoice.date;
         const total = invoice.total;
@@ -296,6 +331,19 @@ async function fetchHistoryGames(writerId, filters = { sports: [], locations: []
             
     const container = document.getElementById("history-container");
     container.innerHTML = "";
+
+    if (!games || games.length === 0) {
+    console.log("No history  found.");
+
+    const noGames = document.createElement("div");
+    noGames.classList.add("no-games");
+        
+    noGames.innerHTML = `
+    <div class = "no-games">No History Found</div>
+    `;
+
+        container.appendChild(noGames);
+    }
 
     games.forEach(game => {
         const gameId = game.game_id;
