@@ -2350,7 +2350,8 @@ body {
     /* Text */ 
         
     /* Misc */
-    overflow-y: auto;    
+    overflow-y: auto;   
+    overflow-x: hidden; 
 }
 
 
@@ -2359,8 +2360,8 @@ body {
     justify-content: center;
     height: 13%;
     background: #ffffff;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
     border-radius: 10px;
 
 }
@@ -2381,7 +2382,7 @@ body {
 
     text-align: center;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 25px;
     font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
     color: #360f5a;
 
