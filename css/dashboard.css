@@ -2396,22 +2396,17 @@ body {
 
 .links-dropdown-arrow {
     display: flex;
-    text-align: center;
-    margin-bottom: 10%;
     align-self: center;
-    font-weight: bold;
-    font-size: 35px;
-    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
+
     color: #360f5a;
     cursor: pointer;
-}
 
-.links-dropdown-arrow span {
-    display: inline-block;
     transition: transform 0.25s ease;
 }
 
-.links-dropdown.open .links-dropdown-arrow span {
+
+
+.links-dropdown.open .links-dropdown-arrow {
     transform: rotate(180deg);
 }
 
@@ -3591,7 +3586,7 @@ button.invoice-option-box:hover {
 
 /* Hidden dropdown */
 .resources-dropdown-content {
-    display: none;
+    display: flex;
     flex-direction: column;
 
     margin-top: 10px;
@@ -3608,11 +3603,23 @@ button.invoice-option-box:hover {
     gap: 15px;
 
     z-index: 10;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transform: translateY(-10px);
+    transition: 
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
 /* Show dropdown */
 .resources-dropdown.open .resources-dropdown-content {
-    display: flex;
+    max-height: 800px; /* big enough to fit content */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
