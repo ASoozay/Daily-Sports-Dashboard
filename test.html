@@ -350,14 +350,14 @@
         <div id = "resources" class = "tab-content">
             <div class = "resources-container">
 
-                <div class = "resources-box dropdown">
+                <div class = "resources-box resources-dropdown">
                     <div class = "resources-box-icon-container">
                         <img class = "resources-box-icon" src="images/daily_logo.png">
                     </div>
-                    <div class = "dropdown-header" onclick = "toggleDropdown(this)">
+                    <div class = "resources-dropdown-header" onclick = "toggleDropdown(this)">
                         <span> Sports Development Slides</span>
                     </div>  
-                    <div class="dropdown-content">
+                    <div class="resources-dropdown-content">
                         <a href="/pages/dashboard/resources/dev/Sports-Dev-Day-1-Introduction.pdf" target="_blank">Day 1: Introduction</a>
                         <a href="/pages/dashboard/resources/dev/Sports-Dev-Day-2-Writing-For-The-Daily-Sports.pdf" target="_blank">Day 2: Writing for The Daily Sports</a>
                         <a href="/pages/dashboard/resources/dev/Sports-Dev-Day-3-Writing-Sports-Articles.pdf" target="_blank">Day 3: Wriring Sports Articles</a>
@@ -437,15 +437,21 @@
 
         <!-- Sidebar / Twitter feed -->
         <div class="links-container">
-            <h4>Quick Links</h4>
-            <a href = "https://ceo3.getsnworks.com/" target = "_blank">CEO by SNworks</a>
-            <a href="https://docs.google.com/document" target="_blank">Google Docs</a>
-            <a href="https://www.instagram.com/uwdailysports/" target="_blank">Instagram</a>
-            <a href="https://docs.google.com/spreadsheets/d/1ReZfEgHbrBQnmULJR40Ko-4otU7xScpkCjUSmtFUXQI/edit?gid=1543249032#gid=1543249032" target="_blank">Production Schedule</a>
-            <a href="https://statbroadcast.com/events/statmonitr.php?gid=wash" target="_blank">Stat Broadcast</a>        
-            <a href="https://www.dailyuw.com/" target="_blank">The Daily UW</a>                   
-            <a href="https://x.com/UWDailySports" target="_blank">X</a>           
-
+            <div class = "links-box links-dropdown">
+                 <div class = "links-dropdown-header">Quick Links</div>  
+                 <div class = "links-dropdown-arrow" onclick = "toggleDropdown(this)">
+                    <span>&#8964</span>
+                 </div>
+                <div class="links-dropdown-content">
+                    <a href="https://www.dailyuw.com/" target="_blank">The Daily UW</a>
+                    <a href = "https://ceo3.getsnworks.com" target = "_blank">CEO by SNworks</a>
+                    <a href="https://statbroadcast.com/events/statmonitr.php?gid=wash" target="_blank">Stat Broadcast</a>
+                    <a href="https://docs.google.com/document" target="_blank">Google Docs</a>
+                    <a href = "https://drive.google.com/drive/u/0/home" target = "_blank">Google Drive</a>
+                    <a href="https://x.com/UWDailySports" target="_blank">X</a>
+                    <a href="https://www.instagram.com/uwdailysports/" target="_blank">Instagram</a>
+                </div>  
+            </div>        
         </div>
     </div> <!-- CLOSE .main -->
 </div>
