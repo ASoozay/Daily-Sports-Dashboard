@@ -2357,8 +2357,10 @@ body {
 
 .links-box {
     display: flex;
+    min-height: 60px; /* or whatever your header height is */
+    height: auto;
+    flex-direction: column;
     justify-content: center;
-    height: 13%;
     background: #ffffff;
     padding-left: 7%;
     padding-right: 7%;
@@ -2368,16 +2370,20 @@ body {
 
 .links-dropdown {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Top clickable row */
 .links-dropdown-header {
     display: flex;
+    flex-shrink: 0;
+
     justify-content: space-between;
     align-items: center;
 
     width: 100%;
-    height: 100%;
+    height: 50px;
     cursor: pointer;
 
     text-align: center;
@@ -2400,31 +2406,40 @@ body {
     cursor: pointer;
 }
 
+.links-dropdown-arrow span {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.links-dropdown.open .links-dropdown-arrow span {
+    transform: rotate(180deg);
+}
+
 /* Hidden dropdown */
 .links-dropdown-content {
-    display: none;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    padding: 10px;
-    background-color: #ffffff;
+    /* animation setup */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
 
-    border-radius: 10px;
-
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    height: 400px;
-    gap: 15px;
-
-    z-index: 10;
+    transform: translateY(-10px);
+    transition: 
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
 /* Show dropdown */
 .links-dropdown.open .links-dropdown-content {
-    display: flex;
-    border-radius: 10px;
+    max-height: 500px; /* big enough to fit content */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
