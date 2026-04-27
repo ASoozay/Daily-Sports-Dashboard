@@ -891,8 +891,8 @@ body {
         /* Layout */
 
         /* Size/Shape */
-        height: 160px;
-        border-radius: 5px;
+        height: 240px;
+        border-radius: 10px;
         padding-left: 2%;
         margin-bottom: 10px;
 
@@ -2204,7 +2204,7 @@ body {
     gap: 10px;
     background-color: #4CAF50; /* green success */
     color: white;
-    padding: 14px 20px;
+    padding: 10px 20px;
     margin-top: 10px;
     border-radius: 8px;
     font-weight: bold;
@@ -2410,7 +2410,8 @@ body {
 
 .links-box {
     display: flex;
-    min-height: 60px; /* or whatever your header height is */
+    align-items: center;
+    min-height: 20px; /* or whatever your header height is */
     height: auto;
     flex-direction: column;
     justify-content: center;
@@ -2434,9 +2435,11 @@ body {
 
     justify-content: space-between;
     align-items: center;
+    align-self: center;
 
     width: 100%;
-    height: 50px;
+    height: 40px;
+    margin-top: 15px;
     cursor: pointer;
 
     text-align: center;
