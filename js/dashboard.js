@@ -605,11 +605,10 @@ async function signup(gameId, writerId) {
         const data = await response.json();
 
         if (data.success) {
-            alert("Game successfully added to assignments!");
-
+            showToast("Successfully added game to schedule!", "success");
             fetchAvailableGames(availableFilters);
         } else {
-            alert("Failed to add game to assignments.");
+            showToast("Failed to add game to schedule", "error");
         }
     } catch (error) {
         console.error("Error:", error);
@@ -789,5 +788,28 @@ function formatDateWithYearNoDOW(dateStr) {
 function toggleDropdown(element) {
     const dropdown = element.parentElement;
     dropdown.classList.toggle("open");
+}
+
+function showToast(message, type) {
+    const container = document.getElementById("toast-container");
+
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+
+    if (type === "error") {
+        toast.classList.add("error");
+    }
+
+    toast.textContent = message;
+
+    container.appendChild(toast);
+
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        toast.style.animation = "fadeOut 0.3s forwards";
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 3000);
 }
 //#endregion

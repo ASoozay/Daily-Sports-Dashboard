@@ -2186,6 +2186,47 @@ body {
 
 /* #endregion */
 
+/* #region toast */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #4CAF50; /* green success */
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.3s forwards;
+}
+
+.toast.error {
+    background-color: #e74c3c; /* red for errors */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+/* #endregion */
+
 /* #region modal */
 .modal {
     /* Layout */
@@ -2503,8 +2544,6 @@ body {
 }
 
 /* #endregion */
-
-
 
 /* #region invoice-container */
 .invoice-container {
