@@ -631,11 +631,10 @@ async function remove(gameId) {
         const data = await response.json();
 
         if (data.success) {
-            alert("Game successfully removed from schedule");
-            
+            showToast("Game removed from schedule", "success")
             fetchMySchedule(currWriter.writerId, myScheduleFilters);
         } else {
-            alert("Failed to remove game to schedule.");
+            showToast("Failed to remove game from schedule", "error")
         }
     } catch (error) {
         console.error("Error:", error);
@@ -796,9 +795,16 @@ function showToast(message, type) {
     const toast = document.createElement("div");
     toast.classList.add("toast");
 
+    let icon = `<i class="fa-solid fa-check"></i>`;
     if (type === "error") {
         toast.classList.add("error");
+        icon = `<i class="fa-solid fa-xmark"></i>`;
     }
+
+    toast.innerHTML = `
+        <span class="toast-icon">${icon}</span>
+        <span>${message}</span>
+    `;
 
     toast.textContent = message;
 
@@ -806,7 +812,7 @@ function showToast(message, type) {
 
     // Auto remove after 3 seconds
     setTimeout(() => {
-        toast.style.animation = "fadeOut 0.3s forwards";
+        toast.style.animation = "fadeOut 0.6s forwards";
         setTimeout(() => {
             toast.remove();
         }, 300);

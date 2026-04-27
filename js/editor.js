@@ -277,9 +277,9 @@ async function addGame(sport, opponent, date, time, location, notes) {
         const data = await response.json();
 
         if (data.success) {
-            alert("Game successfully added to schedule");
+            showToast("New game successfully added!", "success")
         } else {
-            alert("Failed to add game to schedule.");
+            showToast("Failed to add new game", "error")
         }
     } catch (error) {
         console.error("Error:", error);
@@ -300,9 +300,9 @@ async function editGame(gameId, sport, opponent, date, time, location, notes) {
         const data = await response.json();
 
         if (data.success) {
-            alert("Game successfully edited.");
+            showToast("Game successfully edited!", "success");
         } else {
-            alert("Failed to edit game.");
+            showToast("Failed to edit game", "error");
         }
     } catch (error) {
         console.error("Error:", error);
@@ -323,9 +323,9 @@ async function deleteGame(gameId) {
        const data = await response.json();
 
         if (data.success) {
-            alert("Game successfully deleted.");
+            showToast("Game successfully deleted!", "success");
         } else {
-            alert("Failed to delete game.");
+            showToast("Failed to delete game");
         }
     } catch (error) {
         console.error("Error:", error);
