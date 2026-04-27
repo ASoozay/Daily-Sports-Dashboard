@@ -2190,9 +2190,9 @@ body {
 #toast-container {
     display: flex;
     position: fixed;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 130px;
+    left: 40%;
+    transform: translateX(-40%);
     z-index: 9999;
     text-align: center;
     pointer-events: none;
