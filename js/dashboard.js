@@ -806,8 +806,6 @@ function showToast(message, type) {
         <span>${message}</span>
     `;
 
-    toast.textContent = message;
-
     container.appendChild(toast);
 
     // Auto remove after 3 seconds
