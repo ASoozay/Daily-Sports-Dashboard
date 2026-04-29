@@ -158,7 +158,7 @@ tabHandlers["all-games"] = function() {
             });
     }
 
-    fetchAllScheduledGames(currWriter.writer_id, myScheduleFilters);
+    fetchAllScheduledGames(currWriter.writer_id, allScheduledFilters);
 };
 
 
