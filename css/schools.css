@@ -1,0 +1,216 @@
+/* #region body */
+body {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Size / Shape */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    /* Background */
+    background-color: black;
+
+    /* Misc */
+    overflow-x: hidden;
+}
+/* #endregion */
+
+/* #region top */
+.top {
+    /* Layout */
+    display: flex;
+    align-items: center;
+
+    /* Size / Shape */
+    width: 100%; 
+    height: 5%;
+    margin-bottom: 1%;
+    padding-left: 2%;
+    
+    /* Background */
+    background-color: #36045a;
+
+    /* Text */
+    font-size: 36px;
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+/* #endregion */
+
+/* #region conference-filter-container */
+.conference-filter-container {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    gap: 4%;
+    
+    /* Layout */
+    width: 96%;
+    height: 12%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 15px;
+
+    /* Background */
+    background-color: #36045a;
+}
+/* #endregion */
+
+/* #region conference-power-section */
+.conference-power-section {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+
+    /* Size / Shape */
+    height: 95%;
+    width: 20%; 
+}
+/* #endregion */
+
+/* #region conference-section-header */
+.conference-section-header {
+    /* Size / Shape */
+    width: 100%;
+    height: 15%; 
+
+    /* Text */
+    font-size: 30px;
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;    
+}
+/* #endregion */
+
+/* #region conference-power-options-container */
+.conference-power-options-container {
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2%;
+    align-items: start;
+
+    /* Size Shape */
+    width: 100%;
+    height: 70%; 
+}
+/* #endregion */
+
+/* #region conference-group-section */
+.conference-group-section {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+        
+    /* Size / Shape */
+    height: 95%;
+    width: 15%;
+}
+/* #endregion */
+
+/* #region conference-group-options-container */
+.conference-group-options-container {
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2%;
+    align-items: start;
+
+    /* Size Shape */
+    width: 100%;
+    height: 70%; 
+}
+/* #endregion */
+
+/* #region conference-mid-section */
+.conference-mid-section {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+        
+    /* Size / Shape */
+    height: 95%;
+    width: 40%;
+}
+/* #endregion */
+
+/* #region conference-mid-options-container */
+.conference-mid-options-container {
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 0.5rem;
+    align-items: start;
+
+    /* Size Shape */
+    width: 100%;
+    height: 70%; 
+}
+/* #endregion */
+
+/* #region conference-independent-section */
+.conference-independent-section {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+
+    /* Size / Shape */
+    height: 95%;
+    width: 10%; 
+}
+/* #endregion */
+
+/* #region conference-independent-options-container */
+.conference-independent-options-container {
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: start;
+
+    /* Size Shape */
+    width: 100%;
+    height: 70%; 
+}
+/* #endregion */
+
+/* #region conference-option */
+.conference-option {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    border-radius: 10px;
+
+    /* Background */
+    background-color: #ffffff;
+
+    /* Text */
+    text-align: center;
+    font-size: clamp(12px, 2vw, 24px);
+    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
+    color: black;
+
+    /* Misc */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.conference-option:hover {
+    /* Background */
+    background-color: lightgray;
+}
+
+.conference-option.active {
+    /* Background */
+    color: #B7A57A;
+}
+/* #endregion */
+
