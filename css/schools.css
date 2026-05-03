@@ -11,10 +11,11 @@ body {
     padding: 0;
 
     /* Background */
-    background-color: black;
+    background-color: #222222;
 
     /* Misc */
     overflow-x: hidden;
+    overflow: hidden;
 }
 /* #endregion */
 
@@ -27,7 +28,6 @@ body {
     /* Size / Shape */
     width: 100%; 
     height: 5%;
-    margin-bottom: 1%;
     padding-left: 2%;
     
     /* Background */
@@ -40,6 +40,238 @@ body {
 }
 /* #endregion */
 
+/* #region page */
+.page {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 100%;
+    height: 93%;
+    padding: 1%;
+}
+/* #endregion */
+
+/* #region content */
+.content {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    
+    /* Size / Shape */
+    width: 78%;
+    height: 100%;
+    margin-right: 1%;
+    border-radius: 5px;
+
+    /* Background */
+    background-color: transparent;
+}
+/* #endregion */
+
+/* #region conference-container */
+.conference-container {
+    /* Layout */
+    display: flex;
+    gap: 5%;
+    
+    /* Size / Shape */
+    width: 100%;
+    height: 10%;
+    border-radius: 5px;
+
+    /* Background */
+    background-color: #0085CA;
+}
+
+.conference-logo-container {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 10%;
+    height: 100%;
+
+    /* Background */
+    background-color: white;
+}
+
+.conference-title {
+    /* Layout */
+    display: flex;
+    align-items: center;
+
+    /* Size / Shape */
+    width: 60%;
+    height: 100%;
+
+    /* Text */
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Supria Sans", Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+
+/* #endregion */
+
+/* #region schools-container */
+.schools-container {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    
+    /* Size / Shape */
+    width: 100%;
+    height: 85%;
+    border-radius: 5px;
+
+    /* Background */
+    background-color: transparent;
+
+    /* Misc */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* #endregion */
+
+/* #region school-box */
+.school-box {
+    /* Layout */
+    display: flex;
+    align-items: center;
+
+    /* Size / Shape */
+    width: 98%;
+    height: 13%;
+    padding: 1%;
+    border: 2px solid #ffffff;
+
+    /* Background */
+    background-color: transparent;
+}
+/* #endregion */
+
+/* #region school-logo-container */
+.school-logo-container {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 10%;
+    height: 90%;
+    border-radius: 5px;
+
+}
+/* #endregion */
+
+/* #region school-logo */
+.school-logo {
+    /* Size / Shape */
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+/* #region school-divider */
+.school-divider {
+    /* Layout */
+    display: flex;
+    align-items: center;
+
+    /* Size / Shape */
+    width: 2px;
+    height: 80%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    /* Background */
+    background-color: white;
+}
+/* #endregion */
+
+/* #region school-name */
+.school-name {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 20%;
+    height: 100%;
+
+    /* Text */
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Supria Sans", Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+/* #endregion */
+
+/* #region school-acronym */
+.school-acronym {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 20%;
+    height: 100%;
+
+    /* Text */
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Supria Sans", Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+/* #endregion */
+
+/* region school-nickname */
+.school-nickname {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 20%;
+    height: 100%;
+
+    /* Text */
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Supria Sans", Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+/* #endregion */
+
+/* #region school-location */
+.school-location {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Size / Shape */
+    width: 25%;
+    height: 100%;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Supria Sans", Verdana, "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+/* #endregion */
+
 /* #region conference-filter-container */
 .conference-filter-container {
     /* Layout */
@@ -48,169 +280,15 @@ body {
     gap: 4%;
     
     /* Layout */
-    width: 96%;
-    height: 12%;
+    width: 15%;
+    height: 100%;
     padding-left: 2%;
     padding-right: 2%;
-    border-radius: 15px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
 
     /* Background */
-    background-color: #36045a;
-}
-/* #endregion */
-
-/* #region conference-power-section */
-.conference-power-section {
-    /* Layout */
-    display: flex;
-    flex-direction: column;
-    gap: 15%;
-
-    /* Size / Shape */
-    height: 95%;
-    width: 20%; 
-}
-/* #endregion */
-
-/* #region conference-section-header */
-.conference-section-header {
-    /* Size / Shape */
-    width: 100%;
-    height: 15%; 
-
-    /* Text */
-    font-size: 30px;
-    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
-    color: white;    
-}
-/* #endregion */
-
-/* #region conference-power-options-container */
-.conference-power-options-container {
-    /* Layout */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2%;
-    align-items: start;
-
-    /* Size Shape */
-    width: 100%;
-    height: 70%; 
-}
-/* #endregion */
-
-/* #region conference-group-section */
-.conference-group-section {
-    /* Layout */
-    display: flex;
-    flex-direction: column;
-    gap: 15%;
-        
-    /* Size / Shape */
-    height: 95%;
-    width: 15%;
-}
-/* #endregion */
-
-/* #region conference-group-options-container */
-.conference-group-options-container {
-    /* Layout */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2%;
-    align-items: start;
-
-    /* Size Shape */
-    width: 100%;
-    height: 70%; 
-}
-/* #endregion */
-
-/* #region conference-mid-section */
-.conference-mid-section {
-    /* Layout */
-    display: flex;
-    flex-direction: column;
-    gap: 15%;
-        
-    /* Size / Shape */
-    height: 95%;
-    width: 40%;
-}
-/* #endregion */
-
-/* #region conference-mid-options-container */
-.conference-mid-options-container {
-    /* Layout */
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 0.5rem;
-    align-items: start;
-
-    /* Size Shape */
-    width: 100%;
-    height: 70%; 
-}
-/* #endregion */
-
-/* #region conference-independent-section */
-.conference-independent-section {
-    /* Layout */
-    display: flex;
-    flex-direction: column;
-    gap: 15%;
-
-    /* Size / Shape */
-    height: 95%;
-    width: 10%; 
-}
-/* #endregion */
-
-/* #region conference-independent-options-container */
-.conference-independent-options-container {
-    /* Layout */
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    align-items: start;
-
-    /* Size Shape */
-    width: 100%;
-    height: 70%; 
-}
-/* #endregion */
-
-/* #region conference-option */
-.conference-option {
-    /* Layout */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* Size / Shape */
-    border-radius: 10px;
-
-    /* Background */
-    background-color: #ffffff;
-
-    /* Text */
-    text-align: center;
-    font-size: clamp(12px, 2vw, 24px);
-    font-family: Calibri, Verdana, "Segoe UI", Arial, sans-serif;
-    color: black;
-
-    /* Misc */
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.conference-option:hover {
-    /* Background */
-    background-color: lightgray;
-}
-
-.conference-option.active {
-    /* Background */
-    color: #B7A57A;
+    background-color: transparent;
 }
 /* #endregion */
 
