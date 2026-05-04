@@ -503,6 +503,10 @@
 @media screen and (max-width: 768px){
     .add-modal-content {
         /* Layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         /* Size/Shape */
         height: 90%;
@@ -634,6 +638,10 @@
 @media screen and (max-width: 768px){
     .edit-modal-content {
         /* Layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         /* Size/Shape */
         height: 90%;
@@ -747,7 +755,8 @@
         /* Layout */
 
         /* Size/Shape */
-        height: 15%;
+        height: 10%;
+        width: 60%;
         margin: 2px 0;
         padding: 2px;
         border-width: 2px;
@@ -755,7 +764,7 @@
         /* Background */
 
         /* Text */ 
-        font-size: 24px;
+        font-size: 18px;
         
             
         /* Misc */    
@@ -833,7 +842,8 @@
         /* Layout */
 
         /* Size/Shape */
-        height: 15%;
+        height: 10%;
+        width: 60%;
         margin-top: 10px;                       
         padding: 3px 0;
 
@@ -914,7 +924,8 @@
         /* Layout */
 
         /* Size/Shape */
-        height: 15%;
+        height: 10%;
+        width: 60%;
         margin-top: 2px;
         padding: 1px 0;        
 
@@ -992,13 +1003,15 @@
         /* Layout */
 
         /* Size/Shape */
+        height: 10%;
+        width: 60%;
         padding: 1px;
         margin: 2px 0;
 
         /* Background */
 
         /* Text */ 
-        font-size: 6px;
+        font-size: 18px;
         
         /* Misc */
 
