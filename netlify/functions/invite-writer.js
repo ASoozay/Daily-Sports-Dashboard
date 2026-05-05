@@ -7,8 +7,8 @@ exports.handler = async (event) => {
     const NETLIFY_TOKEN = process.env.NETLIFY_ADMIN_TOKEN;
     const SITE_ID = process.env.SITE_ID;
 
-    console.log("NETLIFY_TOKEN: ", NETLIFY_TOKEN);
-    console.log("SITE_ID: ", SITE_ID);
+    console.log("NETLIFY_TOKEN:", NETLIFY_TOKEN);
+    console.log("SITE_ID:", SITE_ID);
 
     if (!NETLIFY_TOKEN || !SITE_ID) {
         return {
