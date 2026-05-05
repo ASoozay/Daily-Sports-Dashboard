@@ -7,7 +7,22 @@ exports.handler = async (event) => {
     console.log("METHOD:", event.httpMethod);
     console.log("BODY LENGTH:", event.body?.length);
 
-    const { first_name, last_name, email } = JSON.parse(event.body);
+    let body = {};
+
+    try {
+        body = JSON.parse(event.body || "{}");
+    } catch (err) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({
+                error: "Invalid JSON body",
+                raw: event.body
+            })
+        };
+    }
+
+    const { first_name, last_name, email } = body;
+
     console.log("Received data:", { first_name, last_name, email });
 
     const NETLIFY_TOKEN = process.env.NETLIFY_ADMIN_TOKEN;

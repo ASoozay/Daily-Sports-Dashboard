@@ -277,8 +277,9 @@ document.getElementById("add-writer-confirm").onclick = async () => {
     const x  = document.getElementById("new-writer-x").value;
     const headshot = document.getElementById("new-writer-headshot").value;
 
-    if(!first_name || !last_name || !email) {
+    if(!first_name || !last_name || !email || !phone || !hire_date || !x || !headshot) {
         alert("Please fill in all required fields");
+        return;
     } 
 
     await addWriter(first_name, last_name, email, phone, hire_date, x, headshot);
