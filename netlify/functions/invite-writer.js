@@ -3,6 +3,9 @@ console.log("Invite function hit");
 exports.handler = async (event) => {
     console.log("RAW BODY:", event.body);
     console.log("TYPE:", typeof event.body);
+    console.log("HEADERS:", event.headers);
+    console.log("METHOD:", event.httpMethod);
+    console.log("BODY LENGTH:", event.body?.length);
 
     const { first_name, last_name, email } = JSON.parse(event.body);
     console.log("Received data:", { first_name, last_name, email });
