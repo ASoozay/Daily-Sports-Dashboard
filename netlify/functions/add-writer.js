@@ -1,3 +1,5 @@
+console.log("Add writer function hit");
+
 const { Client } = require("pg");
 
 exports.handler = async (event) => {

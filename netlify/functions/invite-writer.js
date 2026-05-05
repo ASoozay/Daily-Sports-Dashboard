@@ -1,8 +1,17 @@
+console.log("Invite function hit");
+
 exports.handler = async (event) => {
     const { first_name, last_name, email } = JSON.parse(event.body);
 
     const NETLIFY_TOKEN = process.env.NETLIFY_ADMIN_TOKEN;
     const SITE_ID = process.env.SITE_ID;
+
+    if (!NETLIFY_TOKEN || !SITE_ID) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: "Missing env vars" })
+        };
+    }
 
     try {
         const response = await fetch(
@@ -15,7 +24,7 @@ exports.handler = async (event) => {
                 },
                 body: JSON.stringify({
                     email,
-                    role: "Writer", 
+                    role: "member", 
                     metadata: {
                         full_name: `${first_name} ${last_name}`,
                         role: "Writer"   
