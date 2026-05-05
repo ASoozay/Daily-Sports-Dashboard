@@ -418,7 +418,7 @@ async function deleteGame(gameId) {
         data = { message: text };
     }
 
-    if (res.ok) {
+    if (response.ok) {
         alert("Invite sent!");
     } else {
         alert("Error: " + data.error);
