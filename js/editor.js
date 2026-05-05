@@ -260,16 +260,15 @@ document.getElementById("delete-game").onclick = async () => {
 
     document.getElementById("edit-modal").style.display = "none";
 };
-//#endregion
 
 async function openAddWriterModal() {
 
-    document.getElementById("add-modal").style.display = "flex";
+    document.getElementById("add-writer-modal").style.display = "flex";
 };    
 
 const addWriterModal = document.getElementById("add-writer-modal");
 
-document.getElementById("confirm-add").onclick = async () => {
+document.getElementById("add-writer-confirm").onclick = async () => {
     const first_name = document.getElementById("new-writer-first-name").value;
     const last_name = document.getElementById("new-writer-last-name").value;
     const email = document.getElementById("new-writer-email").value;
@@ -287,6 +286,8 @@ document.getElementById("confirm-add").onclick = async () => {
 
     addWriterModal.style.display = "none";
 };
+
+//#endregion
 
 //#region Game Functions (add, edit, delete)
 

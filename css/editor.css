@@ -733,6 +733,28 @@
 }
 /* #endregion */
 
+/* #region add-writer-model-content */
+.add-writer-modal-content {
+    /* Layout */
+
+    /* Size/Shape */
+    max-width: 90%;
+    margin: 5% auto;
+    border-radius: 16px;
+    border-color: #360f5a;
+
+    /* Background */
+    background: white;
+
+    /* Text */ 
+    
+    color: black;
+        
+    /* Misc */    
+}
+/* #endregion */
+
+
 /* #region add-box / edit-box */
 .add-box, .edit-box {
     /* Layout */
@@ -812,8 +834,26 @@
 }
 /* #endregion */
 
+/* #region add-writer-box */
+.add-writer-box {
+    /* Layout */
+
+    /* Size/Shape */
+    width: 90%;
+    border-radius: 10px;
+    border-color: black;
+
+    /* Background */
+
+    /* Text */ 
+    
+        
+    /* Misc */    
+}
+/* #endregion */
+
 /* #region confirm-add / confirm-edit */
-.confirm-add, .confirm-edit {
+.confirm-add, .confirm-edit, .add-writer-confirm {
     /* Layout */
 
     /* Size/Shape */
