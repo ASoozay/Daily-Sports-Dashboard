@@ -13,7 +13,6 @@ exports.handler = async (event) => {
     try {
         const { first_name, last_name, email, phone, hire_date, x, headshot } = JSON.parse(event.body);
 
-        // Step 1: Add the writer to the Writers table
         const insertWriterQuery = `
             INSERT INTO "Writers" (first_name, last_name, position, email, phone, hire_date, x, headshot, end_date)
             VALUES ($1, $2, 'Writer', $4, $5, $6, $7, $8, NULL)
