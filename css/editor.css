@@ -736,10 +736,16 @@
 /* #region add-writer-model-content */
 .add-writer-modal-content {
     /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
 
     /* Size/Shape */
-    max-width: 90%;
+    width: 30%;
     margin: 5% auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
     border-radius: 16px;
     border-color: #360f5a;
 
@@ -839,7 +845,9 @@
     /* Layout */
 
     /* Size/Shape */
-    width: 90%;
+    width: 80%;
+    height: 8%;
+    padding-left: 2%;
     border-radius: 10px;
     border-color: black;
 
@@ -872,13 +880,13 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-#confirm-add:hover, #confirm-edit:hover {
+#confirm-add:hover, #confirm-edit:hover, #add-writer-confirm:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 @media screen and (max-width: 768px){
-    .confirm-add, .confirm-edit {
+    .confirm-add, .confirm-edit, .add-writer-confirm {
         /* Layout */
 
         /* Size/Shape */
@@ -898,11 +906,12 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1800px){
-    .confirm-add, .confirm-edit {
+    .confirm-add, .confirm-edit, .add-writer-confirm {
         /* Layout */
 
         /* Size/Shape */
         height: 50px;
+        width: 80%;
         margin-top: 20px;                       
         padding: 12px 0;
 
@@ -916,7 +925,7 @@
 }
 
 @media screen and (min-width: 1801px){
-    .confirm-add, .confirm-edit {
+    .confirm-add, .confirm-edit, .add-writer-confirm {
         /* Layout */
 
         /* Size/Shape */
