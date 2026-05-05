@@ -58,14 +58,24 @@ exports.handler = async (event) => {
             }
         );
 
-        const data = await response.json();
+                let data;
+        const text = await response.text();
 
-        if (!response.ok) {
-            return {
-                statusCode: 500,
-                body: JSON.stringify({ error: data.message })
-            };
+        try {
+            data = JSON.parse(text);
+        } catch (e) {
+            data = { message: text }; // fallback for non-JSON responses
         }
+
+    if (!response.ok) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({
+                error: data.message || "Netlify invite failed",
+                raw: data
+            })
+        };
+    }
 
         return {
             statusCode: 200,
