@@ -34,7 +34,7 @@ exports.handler = async (event) => {
     if (!NETLIFY_TOKEN || !SITE_ID) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Missing env vars" })
+            body: JSON.stringify({ error: "Missing env vars in invite-writer" })
         };
     }
 
