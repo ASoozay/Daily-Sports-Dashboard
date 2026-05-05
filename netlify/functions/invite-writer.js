@@ -58,7 +58,8 @@ exports.handler = async (event) => {
             }
         );
 
-                let data;
+        let data;
+        
         const text = await response.text();
 
         try {

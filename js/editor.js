@@ -283,7 +283,6 @@ document.getElementById("add-writer-confirm").onclick = async () => {
     } 
 
     await addWriter(first_name, last_name, email, phone, hire_date, x, headshot);
-    await inviteWriter(first_name, last_name, email);
 
     addWriterModal.style.display = "none";
 };
