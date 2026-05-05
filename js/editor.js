@@ -401,7 +401,7 @@ async function deleteGame(gameId) {
         return;
     }
 
-    const res = await fetch("/.netlify/functions/invite-writer", {
+    const response = await fetch("/.netlify/functions/invite-writer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ first_name, last_name, email })
