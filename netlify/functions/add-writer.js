@@ -15,10 +15,10 @@ exports.handler = async (event) => {
 
         const insertWriterQuery = `
             INSERT INTO "Writers" (first_name, last_name, position, email, phone, hire_date, x, headshot, end_date)
-            VALUES ($1, $2, 'Writer', $4, $5, $6, $7, $8, NULL)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
             RETURNING *;
         `;
-        const result = await client.query(insertWriterQuery, [first_name, last_name, email, phone, hire_date, x, headshot]);
+        const result = await client.query(insertWriterQuery, [first_name, last_name, 'Writer', email, phone, hire_date, x, headshot, null]);
 
         return {
             statusCode: 200,
