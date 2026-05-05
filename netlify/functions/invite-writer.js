@@ -1,6 +1,9 @@
 console.log("Invite function hit");
 
 exports.handler = async (event) => {
+    console.log("RAW BODY:", event.body);
+    console.log("TYPE:", typeof event.body);
+
     const { first_name, last_name, email } = JSON.parse(event.body);
     console.log("Received data:", { first_name, last_name, email });
 
