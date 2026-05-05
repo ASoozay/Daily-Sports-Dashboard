@@ -371,17 +371,6 @@ async function deleteGame(gameId) {
             body: JSON.stringify({ first_name, last_name, email, phone, hire_date, x, headshot })
         });
 
-            let data;
-    const text = await res.text();
-
-    try {
-        data = JSON.parse(text);
-    } catch (e) {
-        console.error("Non-JSON response:", text);
-        alert("Server error: " + text);
-        return;
-    }
-
         if (data.success) {
             showToast("New writer successfully added!", "success");
         } else {
