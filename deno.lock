@@ -11,6 +11,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@sendgrid/mail@^8.1.6",
         "npm:jsonwebtoken@^9.0.3",
         "npm:pg@^8.19.0"
       ]
