@@ -262,6 +262,32 @@ document.getElementById("delete-game").onclick = async () => {
 };
 //#endregion
 
+async function openAddWriterModal() {
+
+    document.getElementById("add-modal").style.display = "flex";
+};    
+
+const addWriterModal = document.getElementById("add-writer-modal");
+
+document.getElementById("confirm-add").onclick = async () => {
+    const first_name = document.getElementById("new-writer-first-name").value;
+    const last_name = document.getElementById("new-writer-last-name").value;
+    const email = document.getElementById("new-writer-email").value;
+    const phone = document.getElementById("new-writer-phone").value;
+    const hire_date = document.getElementById("new-writer-hire-date").value;
+    const x  = document.getElementById("new-writer-x").value;
+    const headshot = document.getElementById("new-writer-headshot").value;
+
+    if(!first_name || !last_name || !email) {
+        alert("Please fill in all required fields");
+    } 
+
+    await addWriter(first_name, last_name, email, phone, hire_date, x, headshot);
+    await inviteWriter(first_name, last_name, email);
+
+    addWriterModal.style.display = "none";
+};
+
 //#region Game Functions (add, edit, delete)
 
 async function addGame(sport, opponent, date, time, location, notes) {
@@ -333,7 +359,53 @@ async function deleteGame(gameId) {
     }
  }
 
-//#endregion
+ async function addWriter(first_name, last_name, email, phone, hire_date, x, headshot) {
+    try {
+        const response = await fetch("/.netlify/functions/add-writer", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ first_name, last_name, email, phone, hire_date, x, headshot })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            showToast("New writer successfully added!", "success");
+        } else {
+            showToast("Failed to add new writer", "error");
+        }
+    }  
+    catch (error) {
+        console.error("Error:", error);
+        alert("Error adding new writer.");
+    }
+ }
+ 
+ async function inviteWriter(first_name, last_name, email) {
+
+    if (!email || !first_name || !last_name) {
+        alert("Missing fields");
+        return;
+    }
+
+    const res = await fetch("/.netlify/functions/invite-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ first_name, last_name, email })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+        alert("Invite sent!");
+    } else {
+        alert("Error: " + data.error);
+    }
+}
+
+//#endregion 
 
 
 

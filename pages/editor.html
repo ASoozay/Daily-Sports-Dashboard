@@ -132,7 +132,7 @@
 
         <div id = "settings" class = "tab-content">
             <div class = "settings-container">
-                <div class = "settings-option">
+                <div class = "settings-option" onclick = "openAddWriterModal()">
                     <img class = "settings-icon" src = "/pages/dashboard/settings/addwriter.png">
                     <div class = "settings-title">Add Writer</div>
                 </div>
@@ -357,6 +357,23 @@
         <button id="confirm-invoice" class = "add-invoice-confirm">Add Invoice</button>
     </div>
 </div>
+
+<div id = "add-writer-modal" class = "modal">
+    <div class = "add-writer-modal-content">
+        <div class = "modal-header">
+            <h2>Add Writer</h2>
+            <span class="close-button">&times;</span>
+        </div>
+        <input type = "text" id = "new-writer-first-name" class = "add-writer-box" placeholder="First Name">
+        <input type = "text" id = "new-writer-last-name" class = "add-writer-box" placeholder="Last Name">
+        <input type = "text" id = "new-writer-email" class = "add-writer-box" placeholder="Writer Email">
+        <input type = "text" id = "new-writer-phone" class = "add-writer-box" placeholder="Writer Phone">
+        <input type = "date" id = "new-writer-hire-date" class = "add-writer-box" placeholder="Hire Date">
+        <input type = "x" id = "new-writer-x" class = "add-writer-box" placeholder="Writer X">
+        <input type = "text" id = "new-writer-headshot" class = "add-writer-box" placeholder="Writer Headshot">
+        <button id = "confirm-add-writer" class = "add-writer-confirm">Add Writer</button>
+    </div>
+</div>    
 
 
 </body>
