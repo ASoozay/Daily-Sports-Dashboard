@@ -371,6 +371,17 @@ async function deleteGame(gameId) {
             body: JSON.stringify({ first_name, last_name, email, phone, hire_date, x, headshot })
         });
 
+            const text = await response.text();
+
+    console.log("NETLIFY RAW RESPONSE:", text);
+
+    let data;
+    try {
+        data = JSON.parse(text);
+    } catch {
+        data = { message: text };
+    }
+
         if (data.success) {
             showToast("New writer successfully added!", "success");
         } else {
@@ -396,15 +407,15 @@ async function deleteGame(gameId) {
         body: JSON.stringify({ first_name, last_name, email })
     });
 
-        let data;
-    const text = await res.text();
+    const text = await response.text();
 
+    console.log("NETLIFY RAW RESPONSE:", text);
+
+    let data;
     try {
         data = JSON.parse(text);
-    } catch (e) {
-        console.error("Non-JSON response:", text);
-        alert("Server error: " + text);
-        return;
+    } catch {
+        data = { message: text };
     }
 
     if (res.ok) {
