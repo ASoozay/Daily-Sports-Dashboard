@@ -2,6 +2,7 @@ console.log("Invite function hit");
 
 exports.handler = async (event) => {
     const { first_name, last_name, email } = JSON.parse(event.body);
+    console.log("Received data:", { first_name, last_name, email });
 
     const NETLIFY_TOKEN = process.env.NETLIFY_ADMIN_TOKEN;
     const SITE_ID = process.env.SITE_ID;
