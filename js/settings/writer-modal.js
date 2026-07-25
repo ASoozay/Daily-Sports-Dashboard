@@ -32,18 +32,24 @@ document.addEventListener("click", () => {
 // #region fecthWriterInfo() //
 
 async function fetchWriterInfo() {
-    const response = await fetch("/.netlify/functions/get-writer-info", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" }
-    });
+    let writers;
 
-    if(!response.ok) {
-        console.log("Failed to fetch writer info:", response.status);
-        return;
+    if(state.cache.settings.writers != null){
+        writers = state.cache.settings.writers;
+    } else {
+        const response = await fetch("/.netlify/functions/get-writer-info", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if(!response.ok) {
+            console.log("Failed to fetch writer info:", response.status);
+            return;
+        }
+
+        const data = await response.json();
+        writers = data.writers;
     }
-
-    const data = await response.json();
-    const writers = data.writers;
 
     const container = document.getElementById("writer-table-container");
 
@@ -146,7 +152,7 @@ async function fetchWriterInfo() {
     searchWriterInput.oninput = () => {
         const term = searchWriterInput.value.toLowerCase();
 
-        document.querySelectorAll(".writer-list-entry-container").forEach(writer => {
+        document.querySelectorAll(".writer-table-entry").forEach(writer => {
             writer.style.display =
                 writer.textContent.toLowerCase().includes(term)
                     ? "flex"
@@ -185,8 +191,11 @@ document.getElementById("add-writer-confirm").onclick = async () => {
     } ``
 
     await addWriter(first_name, last_name, position,email, phone, x, headshot, hire_date);
+    state.cache.settings.writers = null;
 
     addWriterModal.style.display = "none";
+
+    await fetchWriterInfo();
 };
 
 // #endregion //

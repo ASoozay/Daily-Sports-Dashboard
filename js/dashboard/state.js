@@ -14,6 +14,22 @@ const state = {
         availableGames: { sports: [], locations: [] },
         historyGames: { sports: [], locations: [], months: [] },
         allGames: { sports: [], locations: [], months: [] }
+    },
+
+    cache: {
+        games: {
+            myGames: null,
+            availableGames: null,
+            historyGames: null,
+            allGames: null
+
+        },
+
+        settings: {
+            games: null,
+            writers: null,
+            sports: null
+        }
     }
 };
 

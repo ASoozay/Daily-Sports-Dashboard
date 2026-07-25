@@ -163,7 +163,11 @@
                 <div class = "settings-option" onclick = "openUserSchoolModal()">
                     <img class = "settings-icon" src = "/images/settings/user-school.png">
                     <div class = "settings-title">User School</div>
-                </div>                                                                                       
+                </div>  
+                <div class = "settings-option" onclick = "openAssignBeatModal()">
+                    <img class = "settings-icon" src = "/images/settings/sports.png">
+                    <img class = "settings-title">Assign Beat</div>
+                </div>                                                                                     
             </div>
         </div>
 
@@ -633,6 +637,24 @@
         </div>
     </div>
 
+    <div id = "assign-beat-modal" class = "modal">
+        <div class = "assign-beat-modal-content">
+            <div class = "modal-header" style = "margin-bottom: 10px;">
+                <h2>Assign Beat</h2>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class = "assign-beat-modal-section">
+                <div class = "assign-beat-section-title">Sport</div>
+                <select id = "assign-beat-sport" class = "assign-beat-section-box" placeholder = "Select a Sport">
+            </div>
+            <div class = "assign-beat-modal-section">
+                <div id = "assign-beat-writer" class = "assign-beat-section-title">Writer</div>
+                <select class = "assign-beat-section-box" placeholder = "Select a Writer">
+            </div>     
+            <div class = "confirm-assign-beat">Assign Beat</div>       
+        </div>
+    </div>
+
     <div id = "user-school-modal" class = "modal">
         <div class = "user-school-modal-content">
             <div class = "modal-header" style = "margin-bottom: 10px;">
@@ -667,6 +689,7 @@
 <script src = "/js/settings/sport-modal.js"></script>
 <script src = "/js/settings/add-season.js"></script>
 <script src = "/js/settings/search-games-modal.js"></script>
+<script src= = "/js/settings/assign-beat.js"></script>
 <script src = "/js/settings/user-school.js"></script>
 <script src = "/js/tools.js"></script>
 
