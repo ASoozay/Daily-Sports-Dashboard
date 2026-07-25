@@ -70,12 +70,12 @@ async function loadSports(selectId) {
 // errors: (1) error if DB URL not set
 //         (2) statusCode 500 if error in DB query
 // #region loadWriters() //
-async function loadWriters() {
+async function loadWriters(selectId) {
     const response = await fetch("/.netlify/functions/get-writers");
     const data = await response.json();
     const writers = data.writers;   
 
-    const select = document.getElementById("writer-select");
+    const select = document.getElementById(selectId);
     select.innerHTML = ""; 
 
     const defaultOption = document.createElement("option");

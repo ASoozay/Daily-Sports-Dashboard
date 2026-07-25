@@ -80,7 +80,7 @@ async function remove(game) {
 async function openAssignGameModal(game) {
     state.currGame = game;
 
-    await loadWriters();
+    await loadWriters("writer-select");
 
     document.getElementById("assign-modal").style.display = "flex";
 }   

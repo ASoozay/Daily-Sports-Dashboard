@@ -6,15 +6,15 @@
 // Parameters: None
 // #region openAssignBeatModal() //
 async function openAssignBeatModal() {
-    await loadSports();
-    await loadWriters();
+    await loadSports("assign-beat-sport");
+    await loadWriters("assign-beat-writer");
 
     const assignBeatModal = document.getElementById("assign-beat-modal");
     assignBeatModal.style.display = "flex";
 
     document.getElementById("confirm-assign-beat").onclick = async () => {
     const sportId = document.getElementById("assign-beat-sport").value;
-    const writerId = document.getElementById("assign-bear-writer").value;
+    const writerId = document.getElementById("assign-beat-writer").value;
 
     if (!writerId) {
         alert("Please select a writer");
