@@ -18,10 +18,7 @@ exports.handler = async (event) => {
                                 WHERE sport_id = $1
                                 AND date >= CURRENT_DATE
                                 ON CONFLICT (game_id, writer_id) DO NOTHING;`
-        const result = await client.query(assignmentQuery [sportId, writerId]);
-
-        const addGameWriterInfo = `
-            `
+        const result = await client.query(assignmentQuery, [sportId, writerId]);
 
         // Step 2: Update the available column in the Games table
         const updateGameQuery = `
