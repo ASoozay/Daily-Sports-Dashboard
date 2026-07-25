@@ -12,10 +12,11 @@ exports.handler = async (event) => {
         const { sportId, writerId } = JSON.parse(event.body); 
         
         // Step 1: Add the game to the Assignments table
-        const assignmentQuery = `INSERT INTO "Assignments" (game_id, writer_id)
+        const assignmentQuery = `WITH sid AS (Select sport FROM "Sports" Where sport_id = $1)
+                                INSERT INTO "Assignments" (game_id, writer_id)
                                 SELECT game_id, $2
                                 FROM "Games"
-                                WHERE sport_id = $1
+                                WHERE "Games".sport = sid.sport
                                 AND date >= CURRENT_DATE
                                 ON CONFLICT (game_id, writer_id) DO NOTHING;`
         const result = await client.query(assignmentQuery, [sportId, writerId]);
@@ -24,7 +25,7 @@ exports.handler = async (event) => {
         const updateGameQuery = `
                                 UPDATE "Games"
                                 SET available = FALSE
-                                WHERE sport_id = $1
+                                WHERE "Games".sport = sid.sport
                                 AND date >= CURRENT_DATE
                                 RETURNING *;
         `;
