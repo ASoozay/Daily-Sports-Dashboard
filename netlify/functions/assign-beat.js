@@ -12,22 +12,24 @@ exports.handler = async (event) => {
         const { sportId, writerId } = JSON.parse(event.body); 
         
         // Step 1: Add the game to the Assignments table
-        const assignmentQuery = `WITH sid AS (Select sport FROM "Sports" Where sport_id = $1)
-                                INSERT INTO "Assignments" (game_id, writer_id)
-                                SELECT game_id, $2
-                                FROM "Games"
-                                WHERE "Games".sport = sid.sport
-                                AND date >= CURRENT_DATE
-                                ON CONFLICT (game_id, writer_id) DO NOTHING;`
+        const assignmentQuery = `INSERT INTO "Assignments" (game_id, writer_id)
+                                    SELECT g.game_id, $2
+                                    FROM "Games" g
+                                    JOIN "Sports" s
+                                    ON g.sport = s.sport
+                                    WHERE s.sport_id = $1
+                                    AND g.date >= CURRENT_DATE
+                                    ON CONFLICT (game_id, writer_id) DO NOTHING;`
         const result = await client.query(assignmentQuery, [sportId, writerId]);
 
         // Step 2: Update the available column in the Games table
-        const updateGameQuery = `
-                                UPDATE "Games"
+        const updateGameQuery = `UPDATE "Games" g
                                 SET available = FALSE
-                                WHERE "Games".sport = sid.sport
-                                AND date >= CURRENT_DATE
-                                RETURNING *;
+                                FROM "Sports" s
+                                WHERE g.sport = s.sport
+                                AND s.sport_id = $1
+                                AND g.date >= CURRENT_DATE
+                                RETURNING g.*;
         `;
         await client.query(updateGameQuery, [sportId]);
 
