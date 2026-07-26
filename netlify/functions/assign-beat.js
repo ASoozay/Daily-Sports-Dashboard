@@ -16,7 +16,7 @@ exports.handler = async (event) => {
                                     SELECT g.game_id, $2
                                     FROM "Games" g
                                     JOIN "Sports" s
-                                    ON g.sport = s.sport
+                                    ON g.sport_id = s.sport_id
                                     WHERE s.sport_id = $1
                                     AND g.date::date >= CURRENT_DATE
                                     ON CONFLICT (game_id, writer_id) DO NOTHING;`
@@ -26,7 +26,7 @@ exports.handler = async (event) => {
         const updateGameQuery = `UPDATE "Games" g
                                 SET available = FALSE
                                 FROM "Sports" s
-                                WHERE g.sport = s.sport
+                                WHERE g.sport_id = s.sport_id
                                 AND s.sport_id = $1
                                 AND g.date::date >= CURRENT_DATE
                                 RETURNING g.*;
