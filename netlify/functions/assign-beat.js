@@ -25,8 +25,7 @@ exports.handler = async (event) => {
                                     JOIN "Sports" s
                                     ON g.sport = s.sport
                                     WHERE s.sport = $1
-                                    AND g.date::date >= CURRENT_DATE
-                                    ON CONFLICT (game_id, writer_id) DO NOTHING;`
+                                    AND g.date::date >= CURRENT_DATE;`
         const result = await client.query(assignmentQuery, [sportId, writerId]);
 
         // Step 2: Update the available column in the Games table
