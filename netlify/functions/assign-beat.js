@@ -10,6 +10,13 @@ exports.handler = async (event) => {
 
     try {
         const { sportId, writerId } = JSON.parse(event.body); 
+
+        console.log({
+            sportId,
+            writerId,
+            sportIdType: typeof sportId,
+            writerIdType: typeof writerId
+        });
         
         // Step 1: Add the game to the Assignments table
         const assignmentQuery = `INSERT INTO "Assignments" (game_id, writer_id)
