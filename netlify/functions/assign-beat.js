@@ -24,7 +24,7 @@ exports.handler = async (event) => {
                                     FROM "Games" g
                                     JOIN "Sports" s
                                     ON g.sport = s.sport
-                                    WHERE s.sport_id = $1
+                                    WHERE s.sport = $1
                                     AND g.date::date >= CURRENT_DATE
                                     ON CONFLICT (game_id, writer_id) DO NOTHING;`
         const result = await client.query(assignmentQuery, [sportId, writerId]);
@@ -34,7 +34,7 @@ exports.handler = async (event) => {
                                 SET available = FALSE
                                 FROM "Sports" s
                                 WHERE g.sport = s.sport
-                                AND s.sport_id = $1
+                                AND s.sport = $1
                                 AND g.date::date >= CURRENT_DATE
                                 RETURNING g.*;
         `;
