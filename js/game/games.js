@@ -228,6 +228,7 @@ async function fetchGames(tab, filters) {
 // errors: None
 // #region createGameBox //
 function createGameBox(game, options = []) {
+    console.log("game", game.game_id);
 
     const sport = game.sport;
     const notes = game.notes || "";
