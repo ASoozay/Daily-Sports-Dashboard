@@ -294,6 +294,7 @@ function createGameBox(game, options = []) {
 
         const addButton = gameBox.querySelector('[data-action="add-game"]');
         if(addButton){
+            console.log("Add button clicked");
             addButton.addEventListener("click", async (e) => {
                 await signup(game, state.currWriter.writer_id);
             });
