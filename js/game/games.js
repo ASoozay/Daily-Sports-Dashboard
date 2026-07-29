@@ -294,15 +294,17 @@ function createGameBox(game, options = []) {
         `;
 
         const addButton = gameBox.querySelector('[data-action="add-game"]');
+        
         if(addButton){
-            console.log("Add button clicked");
+            console.log("CREATING ADD BUTTON FOR:", game);
+        
             addButton.addEventListener("click", async (e) => {
-                console.log("clicked");
-                console.log(game);
-                console.log(state.currWriter);
+                console.log("ADD CLICKED");
+                console.log("CLICK GAME:", game);
+        
                 await signup(game, state.currWriter.writer_id);
             });
-        }  
+        } 
         
         const assignButton = gameBox.querySelector('[data-action="assign-game"]');
         if(assignButton){
