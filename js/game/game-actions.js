@@ -10,6 +10,8 @@
 //         (2) statusCode 500 if error in DB query
 // #region signup() //
 async function signup(game, writerId) {
+   console.log("signup game:", game);
+    console.log("signup writer:", writerId);
     console.log("signup called", game.game_id, writerId);
     try {
         console.log("game:", game);
@@ -98,7 +100,7 @@ document.getElementById("confirm-assign").onclick = async () => {
         return;
     }
 
-    await signup(state.currGame.game_id, writerId);
+    await signup(game, writerId);
 
     assignModal.style.display = "none";
     
