@@ -66,6 +66,11 @@ document.getElementById("add-season-confirm").addEventListener("click", async ()
         }
         let date = row['Start Date'];
 
+        console.log(date);
+        console.log(date.toString());
+        console.log(date.toISOString());
+        console.log(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate());
+
         if (!date) return;
 
         if (date instanceof Date) {
@@ -82,9 +87,9 @@ document.getElementById("add-season-confirm").addEventListener("click", async ()
         }
 
         if (date && !isNaN(date)) {
-            const yyyy = date.getFullYear();
-            const mm = String(date.getMonth() + 1).padStart(2, "0");
-            const dd = String(date.getDate()).padStart(2, "0");
+            const yyyy = date.getUTCFullYear();
+            const mm = String(date.getUTCMonth() + 1).padStart(2, "0");
+            const dd = String(date.getUTCDate().padStart(2, "0");
 
             row['Start Date'] = `${yyyy}-${mm}-${dd}`;
         }
