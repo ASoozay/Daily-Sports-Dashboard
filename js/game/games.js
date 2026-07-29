@@ -296,6 +296,9 @@ function createGameBox(game, options = []) {
         if(addButton){
             console.log("Add button clicked");
             addButton.addEventListener("click", async (e) => {
+                console.log("clicked");
+                console.log(game);
+                console.log(state.currWriter);
                 await signup(game, state.currWriter.writer_id);
             });
         }  
