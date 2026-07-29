@@ -16,7 +16,7 @@ async function signup(game, writerId) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ gameId: game.gameId, writerId })
+            body: JSON.stringify({ gameId: game.game_id, writerId })
         });
 
         const data = await response.json();
